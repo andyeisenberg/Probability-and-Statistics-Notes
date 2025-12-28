@@ -7,7 +7,42 @@
     <p> Text before the first section. </p>
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-One-Sample-Tests.ptx" />
+
+  <section xml:id="sec-One-Sample-Tests" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>One Sample Tests</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
+  <section xml:id="sec-Two-Sample-Tests" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Two Sample Tests</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
+  <section xml:id="sec-Power" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Power of a Test</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
+  <section xml:id="sec-Chi-Squared" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title><m>\chi^2</m> Test</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
 
 </chapter>

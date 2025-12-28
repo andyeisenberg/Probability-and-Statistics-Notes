@@ -7,7 +7,22 @@
     <p> Text before the first section. </p>
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-Central-Limit-Theorem.ptx" />
+
+  <section xml:id="sec-CLT" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Central Limit Theorem</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
+  <section xml:id="sec-Confidence-Intervals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Confidence Intervals</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
 
 </chapter>

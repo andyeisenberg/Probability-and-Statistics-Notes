@@ -7,7 +7,22 @@
     <p> Text before the first section. </p>
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-Discrete-Random-Variables.ptx" />
+  <section xml:id="sec-Discrete-RVs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Discrete Random Variables</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
+  <section xml:id="sec-Continuous-RVs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Continuous Random Variables</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
 
 </chapter>

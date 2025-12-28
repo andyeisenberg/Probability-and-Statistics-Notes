@@ -7,7 +7,22 @@
     <p> Text before the first section. </p>
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-Covariance.ptx" />
+
+  <section xml:id="sec-Correlation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Correlation</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+  <section xml:id="sec-Linear-Regression" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Regression</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
 
 </chapter>

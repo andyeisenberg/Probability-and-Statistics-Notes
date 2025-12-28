@@ -7,7 +7,30 @@
     <p> Text before the first section. </p>
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-Expected-Value.ptx" />
+  <section xml:id="sec-Expected-Value" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Expected Value</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+  <section xml:id="sec-Variance" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Variance</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+  <!-- Need a joint distribution section first? -->
+  <section xml:id="sec-Covariance" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Covariance</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
 
 </chapter>

@@ -7,7 +7,40 @@
     <p> Text before the first section. </p>
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-Set-Theory.ptx" />
+  <section xml:id="sec-Set-Theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Set Theory</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+  <section xml:id="sec-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Definition of Probability</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
+  <section xml:id="sec-Conditional-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Conditional Probability</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
+  <section xml:id="sec-Independent-Events" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Independent Events</title>
+
+  <p> Text of section. </p>
+
+  </section>
+
+
+
 
 </chapter>
