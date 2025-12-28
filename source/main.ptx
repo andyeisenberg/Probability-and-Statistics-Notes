@@ -11,12 +11,12 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-1-Probability.ptx" />
-    <xi:include href="./ch-2-Random-Variables.ptx" />
-    <xi:include href="./ch-3-Expected-Value.ptx" />
-    <xi:include href="./ch-4-Confidence-Intervals.ptx" />
-    <xi:include href="./ch-5-Hypothesis-Testing.ptx" />
-    <xi:include href="./ch-6-Linear-Regression.ptx" />
+    <xi:include href="./ch-Probability.ptx" />
+    <xi:include href="./ch-Random-Variables.ptx" />
+    <xi:include href="./ch-Expected-Value.ptx" />
+    <xi:include href="./ch-Confidence-Intervals.ptx" />
+    <xi:include href="./ch-Hypothesis-Testing.ptx" />
+    <xi:include href="./ch-Linear-Regression.ptx" />
 
 
     <!-- Include backmatter -->
