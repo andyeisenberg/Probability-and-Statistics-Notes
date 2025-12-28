@@ -5,14 +5,18 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>Andy's Book</title>
-    <subtitle>An example to get you started</subtitle>
+    <title>Math 1044 Notes</title>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./ch-1-Probability.ptx" />
+    <xi:include href="./ch-2-Random-Variables.ptx" />
+    <xi:include href="./ch-3-Expected-Value.ptx" />
+    <xi:include href="./ch-4-Confidence-Intervals.ptx" />
+    <xi:include href="./ch-5-Hypothesis-Testing.ptx" />
+    <xi:include href="./ch-6-Linear-Regression.ptx" />
 
 
     <!-- Include backmatter -->
