@@ -1,46 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Probability Theory</title>
+    <title>Probability Theory</title>
 
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
+    <introduction>
+        <p>
+            Text before the first section.
+        </p>
+    </introduction>
 
-  <section xml:id="sec-Set-Theory" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Set Theory</title>
+    <section xml:id="sec-Set-Theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Set Theory</title>
 
-  <p> Text of section. </p>
+        <p>
+            Text of section.
+        </p>
 
-  </section>
+        <exercises xml:id="exercises-"> <exercisegroup>
+        <introduction>
+            <p>
+                Consider the sets <m>A = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}</m>, <m>B = \{2, 4, 9, 10, 12, 14, 19\}</m>, and <m>C = \{9, 10, 11, 14, 16, 17, 20\}</m>, which are all subsets of <m>\Omega = \{1, 2, 3, \dotsc, 20\}</m>.
+            </p>
+        </introduction>
 
+        <exercise>
+            <statement>
+                <p>
+                    Find <m>A - (B \cap C)</m>.
+                </p>
+            </statement>
+            <answer>
+              <p>
+                <m>\{1, 2, 3, 4, 5, 6, 7, 8\}</m>
+              </p>
+            </answer>
+        </exercise>
 
-  <section xml:id="sec-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Definition of Probability</title>
+        <exercise>
+            <statement>
+                <p>
+                    Find <m>|A|</m>, <m>|B|</m>, <m>|C|</m>, <m>|A\cup B|</m>, <m>|A \cap B|</m>, <m>|B\cap C|</m>, <m>|A\cap C|</m>, and <m>|A\cup B\cup C|</m>.
+                    Is it true that the size of the union of sets is equal to the sum of the sizes of the individual sets?
+                </p>
+            </statement>
+            <answer>
+              <p>
+                <m>|A| = 10</m>, <m>|B| = 7</m>, <m>|C| = 7</m>, <m>|A \cup B| = 13</m>, <m>|A \cap B| = 4</m>, <m>|B\cap C| = 3</m>, <m>|A\cap C| = 2</m>, <m>|A\cup B\cup C| = 17</m>. In particular, note that <m>|A\cup B| = 13 \neq 10 + 7 = |A| + |B|</m>, so it is not true in general that the size of the union of sets is the sum of the sizes of the individual sets.
+              </p>
+            </answer>
+        </exercise>
 
-  <p> Text of section. </p>
+        <exercise>
+            <statement>
+                <p>
+                    Find <m>A^c</m> and <m>(A\cup B)^c</m>.
+                </p>
+            </statement>
+            <answer>
+              <p>
+                <m>A^c = \{11, 12, 13, 14, 15, 16, 17, 18, 19, 20\}</m>, <m>(A\cup B)^c = \{11, 13, 15, 16, 17, 18, 20\}</m>.
+              </p>
+            </answer>
+        </exercise>
+        </exercisegroup>
 
-  </section>
+        <exercise>
+            <statement>
+                <p>
+                    Suppose we roll a 6-sided die two times. List the set of all possible results. [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result <m>(4, 2)</m>---rolling a 4 and then a 2.]
+                </p>
+            </statement>
+        </exercise>
 
+        <exercise>
+            <statement>
+                <p>
+                    Suppose we flip a coin two times. List the set of all possible results. What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    If we roll a 6-sided die ten times, how many possible results will there be?
+                </p>
+            </statement>
+        </exercise>
+        </exercises>
+    </section>
 
+    <section xml:id="sec-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Definition of Probability</title>
 
-  <section xml:id="sec-Conditional-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Conditional Probability</title>
+        <p>
+            Text of section.
+        </p>
+    </section>
 
-  <p> Text of section. </p>
+    <section xml:id="sec-Conditional-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Conditional Probability</title>
 
-  </section>
+        <p>
+            Text of section.
+        </p>
+    </section>
 
+    <section xml:id="sec-Independent-Events" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Independent Events</title>
 
-
-  <section xml:id="sec-Independent-Events" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Independent Events</title>
-
-  <p> Text of section. </p>
-
-  </section>
-
-
-
-
+        <p>
+            Text of section.
+        </p>
+    </section>
 </chapter>
