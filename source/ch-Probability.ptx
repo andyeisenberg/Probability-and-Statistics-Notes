@@ -306,6 +306,26 @@
       </statement>
     </example>
 
+    <definition xml:id="def-discrete-uniform">
+      <statement>
+        <p>
+          Let <m>\Omega = \{x_1, x_2, \dotsc, x_n\}</m> be a sample space and <m>A\subset \Omega</m> an event.
+          We refer to the distribution in which <m>\Pr(x_i) = \frac{1}{n}</m> for all <m>i</m> as the <term>uniform distribution</term>.
+          In this case, it follows that <m>\Pr(A) = \frac{|A|}{|\Omega|}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example>
+      <statement>
+        <p>
+          A person picks a random number from 1 to 10.
+          What is the probability that they picked 3?
+        </p>
+      </statement>
+      <!-- ehhhh? -->
+    </example>
+
     <exercises xml:id="exercises-Probability">
     <exercise>
       <statement>
@@ -492,9 +512,162 @@
   <section xml:id="sec-Conditional-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Conditional Probability</title>
 
-    <p>
-      Text of section.
-    </p>
+    <subsection xml:id="subsec-conditional-probability">
+      <title>Conditional Probability</title>
+
+      <definition xml:id="def-conditional-probability">
+        <statement>
+          <p>
+            Let <m>A</m> and <m>B</m> be events.
+            The <term>conditional probability</term> of <m>A</m> given <m>B</m> is
+            <md>
+              <mrow> \Pr(A \mid B) = \frac{\Pr(A\cap B)}{\Pr(B)}.</mrow>
+            </md>
+          </p>
+        </statement>
+      </definition>
+
+      <example xml:id="example-rolls-conditional">
+        <statement>
+          <p>
+            An experiment consists of rolling a fair 6-sided die two times.
+            Let <m>A</m> be the event that the sum of the rolls is at least 10.
+            To find <m>\Pr(A)</m>, we note that <m>A = \{(4, 6), (5, 5), (5, 6), (6, 4), (6, 5), (6, 6)\}</m>, which has 6 elements.
+            Since <m>|\Omega| = 36</m>, we have
+            <md>
+              <mrow>\Pr(A) = \frac{|A|}{|\Omega|} = \frac{6}{36} = \frac{1}{6}</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Let <m>B</m> be the event that the first roll is 6.
+            If we pause after the first die roll seeing the value of 6, we might be more inclined to expect a sum of at least 10.
+            The evidence that we've already seen changes our understanding of the situation.
+            Since <m>|B| = 6</m>, <m>\Pr(B) = \frac{6}{36} = \frac{1}{6}</m>.
+            Also, <m>A\cap B = \{(6, 4), (6, 5), (6, 6)\}</m>, so <m>\Pr(A\cap B) = \frac{3}{36} = \frac{1}{12}</m>.
+            Finally:
+            <md>
+              <mrow>\Pr(A \mid B) = \frac{\Pr(A\cap B)}{\Pr(B)} = \frac{1/12}{1/6} = \frac{1}{2}</mrow>
+            </md>
+          </p>
+        </statement>
+      </example>
+    </subsection>
+
+
+    <subsection xml:id="subsec-diagnostic-testing">
+      <title>Diagnostic Testing</title>
+
+      <p>
+        Diagnostic tests for diseases aren't perfect.
+        When a test comes back positive or negative, a patient will want to understand the (conditional) probability that they have or don't have the disease based on the evidence (the diagnostic test result).
+      </p>
+
+      <definition xml:id="def-sensitivity-specificity">
+        <statement>
+          <p>
+            The <term>sensitivity</term> of a diagnostic test is the probability that a patient who has the disease will see a positive test result.
+            The <term>specificity</term> is the probability that a patient who does not have the disease will see a negative test result.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        Introducing event notation, let <m>D</m> be the event that a patient has the disease, and let <m>P</m> be the event that they receive a positive test result.
+        Then the sensitivity of the diagnostic test is <m>\Pr(P \mid D)</m>, and the specificity is <m>\Pr(P^c \mid D^c)</m>.
+        However, when the patient takes a diagnostic test, the conditional probabilities they would be most interested in would be <m>\Pr(D \mid P)</m> and <m>\Pr(D^c \mid P^c)</m>.
+      </p>
+
+      <p>
+        Bayes' Theorem expresses the relationship between a conditional probability <m>\Pr(A \mid B)</m> and the flipped conditional probability <m>\Pr(B \mid A)</m>.
+      </p>
+
+      <theorem xml:id="thm-Bayes-v1">
+        <title>Bayes' Theorem (v1)</title>
+
+        <statement>
+          <p>
+            <md>
+              <mrow> \Pr(B \mid A) = \frac{\Pr(A \mid B)\Pr(B)}{\Pr(A)} </mrow>
+            </md>
+          </p>
+        </statement>
+      </theorem>
+
+      <p>
+        For example, if a patient sees a positive diagnostic test result, they might try to calculate:
+        <md>
+          <mrow> \Pr(D \mid P) = \frac{\Pr(P \mid D)\Pr(D)}{\Pr(P)} </mrow>
+        </md>
+        It will take some work to be able to use this formula.
+        We likely don't have direct access to <m>\Pr(P)</m> or <m>\Pr(D)</m>.
+      </p>
+
+      <p>
+        Let's consider <m>\Pr(P)</m>, the probability of receiving a positive test result.
+        The sensitivity <m>\Pr(P \mid D)</m> tells us this probability under the condition that the patient has the disease.
+        For a patient who doesn't have the disease, the specificity isn't quite the number we're looking for.
+        However, consider the complementary probability:
+        <md>
+          <mrow> \Pr(P \mid D^c) = 1 - \Pr(P^c \mid D^c) </mrow>
+        </md>
+        The total <m>\Pr(P)</m> can be divided into two categories: patients who have the disease and test positive, and patients who don't have the disease and test positive.
+        So:
+        <md number="yes">
+          <mrow> \Pr(P) \amp = \Pr(P\cap D) + \Pr(P\cap D^c) </mrow>
+          <mrow> \amp = \Pr(P\mid D)\Pr(D) + \Pr(P \mid D^c)\Pr(D^c) </mrow>
+          <mrow> \amp = \Pr(P\mid D)\Pr(D) + (1 - \Pr(P^c \mid D^c))\Pr(D^c) </mrow>
+          <mrow> \amp = (\text{sensitivity})\Pr(D) + (1 - \text{ specificity})\Pr(D^c) </mrow>
+        </md>
+        We can take this breakdown of <m>\Pr(P)</m> and write a new version of Bayes' Theorem:
+      </p>
+
+      <theorem xml:id="thm-Bayes-v2">
+        <title>Bayes' Theorem (v2)</title>
+
+        <statement>
+          <p>
+            <md>
+              <mrow> \Pr(B \mid A) = \frac{\Pr(A \mid B)\Pr(B)}{\Pr(A \mid B)\Pr(B) + (1 - \Pr(A^c \mid B^c))\Pr(B^c)} </mrow>
+            </md>
+          </p>
+        </statement>
+      </theorem>
+
+      <p>
+        We're still missing a crucial piece of information: <m>\Pr(D)</m>, the probability (not conditioned on any evidence) that the patient has the disease.
+        This is often referred to as the <term>prior</term>, as in, our prior understanding of the probability of something before we gained some new information from evidence.
+        The conditional probability calculated using Bayes' Theorem is usually called the <term>posterior</term> (i.e., after taking evidence into account).
+        There isn't always one single number that's reasonable to use as the prior probability.
+        For example, in a diagnostic testing situation, the <term>prevalence</term> of the disease<mdash/>i.e., the proportion of the population who have the disease<mdash/>might feel like a natural number to use as the prior.
+        However, what prevalence should you use? During the COVID-19 pandemic, the prevalence of COVID in a particular country, state, and city might be different.
+        There's also the possibility of applying Bayes' Theorem multiple times to take into account multiple pieces of evidence, using the posterior probability from one application of Bayes' Theorem to play the role of the prior probability in the next.
+        This idea would apply if, for example, a patient took a second diagnostic test to double-check.
+      </p>
+
+      <example>
+        <statement>
+          <p>
+            A 50-year old woman with no symptoms is screened for breast cancer and tests positive.
+            If the prevalence of breast cancer for women in her age group is 1% and the particular screening process used has a sensitivity of 90% and a specificity of 91%, what is the probability that the woman has breast cancer given her positive result?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Let <m>P</m> be the event of testing positive and <m>D</m> the event of having the disease.
+            Then the prevalence <m>\Pr(D)</m> is given as 1%, or 0.01.
+            The sensitivity is <m>\Pr(P\mid D) = 0.9</m>, and the specificity is <m>\Pr(P^c\mid D^c) = 0.91</m>.
+            So, according to Bayes' Theorem:
+            <md>
+              <mrow> \Pr(D\mid P) \amp = \frac{\Pr(P\mid D)\Pr(D)}{\Pr(P\mid D)\Pr(D) + (1 - \Pr(P^c\mid D^c))\Pr(D^c)} </mrow>
+              <mrow>  \amp = \frac{(0.9)(0.01)}{(0.9)(0.01) + (1 - 0.91)(1 - 0.01)} </mrow>
+              <mrow>  \amp \approx 0.092 </mrow>
+            </md>
+          </p>
+        </solution>
+      </example>
+    </subsection>
 
     <exercises xml:id="exercises-Conditional-Probability"> <exercisegroup>
     <introduction>
@@ -569,8 +742,50 @@
     <title>Independent Events</title>
 
     <p>
-      Text of section.
+      The idea of conditional probability is that knowledge of one event can change our understanding of the probability of another.
+      But it's also important to understand when this is not the case.
     </p>
+
+    <definition xml:id="def-independent-events">
+      <statement>
+        <p>
+          Events <m>A, B</m> are <term>independent</term> if <m>\Pr(A \mid B) = \Pr(A)</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The equation <m>\Pr(A\mid B) = \Pr(A)</m> very concretely says: knowledge that the event <m>B</m> has occurred does not change our understanding of <m>\Pr(A)</m>.
+      Assuming <m>\Pr(A) \neq 0</m>, this is equivalent to <m>\Pr(A\cap B) = \Pr(A)\Pr(B)</m>, since:
+      <md>
+        <mrow> \Pr(A\mid B) \amp = \Pr(A) </mrow>
+        <mrow> \frac{\Pr(A\cap B)}{\Pr(B)} \amp = \Pr(A) </mrow>
+        <mrow> \Pr(A\cap B) \amp = \Pr(A)\Pr(B) </mrow>
+      </md>
+      This latter form of the equation is often more useful in calculations.
+    </p>
+
+    <example xml:id="example-rolls-independent">
+      <statement>
+        <p>
+          In <xref ref="example-rolls-conditional"/>, we considered an experiment in which we rolled a fair 6-sided die twice.
+          We defined events <m>A</m> that the sum of the rolls is at least 10 and <m>B</m> that the first roll is a 6, and we found that <m>\Pr(A \mid B) \neq \Pr(A)</m>, so <m>A</m> and <m>B</m> are not independent.
+        </p>
+
+        <p>
+          Now consider the event <m>C</m> that the sum of the rolls is 7, which sounds very similar to the event <m>A</m>.
+          We have:
+          <md>
+            <mrow> C \amp = \{(1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1)\} </mrow>
+            <mrow> \Pr(C) \amp = \frac{6}{36} = \frac{1}{6} </mrow>
+            <mrow> B\cap C \amp = \{(6, 1)\} </mrow>
+            <mrow> \Pr(B\cap C) \amp = \frac{1}{36} </mrow>
+            <mrow> \text{therefore: } \Pr(C\mid B) \amp = \frac{\Pr(C\cap B)}{\Pr(B)} = \frac{1/36}{1/6} = \frac{1}{6} = \Pr(C) </mrow>
+          </md>
+          So, even though the descriptions of events <m>A</m> and <m>C</m> are very similar, the event <m>C</m> is independent with <m>B</m>, while <m>A</m> is not.
+        </p>
+      </statement>
+    </example>
 
     <exercises xml:id="exercises-Independent-Events">
     <exercise>
