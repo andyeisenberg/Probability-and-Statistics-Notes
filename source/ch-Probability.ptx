@@ -1,411 +1,547 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Probability Theory</title>
+  <title>Probability Theory</title>
 
-    <introduction>
+  <introduction>
+    <p>
+      Text before the first section.
+    </p>
+  </introduction>
+
+  <section xml:id="sec-Set-Theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Set Theory</title>
+
+    <definition xml:id="def-sample-space">
+      <statement>
         <p>
-            Text before the first section.
+          The <term>sample space</term>, often denoted <m>\Omega</m>, is the set of all possible results of an experiment.
+          A single result is called an <term>outcome</term>, while a collection of results is called an <term>event</term>.
         </p>
+      </statement>
+    </definition>
+
+    <example>
+      <statement>
+        <p>
+          An experiment consists of rolling a standard 6-sided die.
+          The sample space is <m>\Omega = \{1, 2, 3, 4, 5, 6\}</m>.
+          One possible event is <m>A = \{2, 4, 6\}</m>, i.e., the event that the result of the roll is even.
+        </p>
+
+        <p>
+          What would the sample space look like if we roll the die two times and recorded the results?
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <md>
+            <mrow> \Omega = \{\amp (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), </mrow>
+            <mrow> \amp (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), </mrow>
+            <mrow> \amp (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), </mrow>
+            <mrow> \amp (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), </mrow>
+            <mrow> \amp (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), </mrow>
+            <mrow> \amp (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\} </mrow>
+          </md>
+        </p>
+      </answer>
+    </example>
+
+    <definition xml:id="def-subset">
+      <statement>
+        <p>
+          Let <m>A</m> be a set.
+          The symbol <m>\in</m> means "is an element of", as in <m>a \in A</m>.
+          Given another set <m>B</m>, we say <m>A</m> is a <term>subset</term> of <m>B</m>, written <m>A\subset B</m>, to mean that every element of the set <m>A</m> is also an element of the set <m>B</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-set-operations">
+      <statement>
+        <p>
+          Consider sets <m>A</m> and <m>B</m>, each contained inside <m>\Omega</m>.
+          We can combine sets in a variety of ways:
+        </p>
+        <dl>
+        <li>
+          <title>Union</title>
+
+          <p>
+            The <term>union</term> of <m>A</m> and <m>B</m> is the set <m>A \cup B = \{x \mid x \in A \text{ or } x \in B\}</m>.
+          </p>
+        </li>
+
+        <li>
+          <title>Intersection</title>
+
+          <p>
+            The <term>intersection</term> of <m>A</m> and <m>B</m> is the set <m>A \cap B = \{x \mid x \in A \text{ and } x \in B\}</m>.
+          </p>
+        </li>
+
+        <li>
+          <title>Difference</title>
+
+          <p>
+            The <term>set difference</term> <m>A-B</m> is the set <m>A - B = \{x \mid x \in A \text{ and } x \notin B\}</m>.
+          </p>
+        </li>
+
+        <li>
+          <title>Complement</title>
+
+          <p>
+            The <term>complement</term> of <m>A</m> is the set <m>A^c = \{x \in \Omega \mid x \notin A\}</m>.
+          </p>
+        </li>
+
+        <li>
+          <title>Empty Set</title>
+
+          <p>
+            The <term>empty set</term>, usually written <m>\emptyset</m> or <m>\{\}</m>, is the set which contains no elements.
+          </p>
+        </li>
+        </dl>
+      </statement>
+    </definition>
+
+    <p>
+      It's useful sometimes to draw pictures representing sets...
+    </p>
+    <!-- TODO learn figures -->
+    <definition xml:id="def-disjoint">
+      <statement>
+        <p>
+          Two sets <m>A</m> and <m>B</m> are <term>disjoint</term> if <m>A \cap B = \emptyset</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-cardinality">
+      <statement>
+        <p>
+          Given a finite set <m>A</m>, the <term>cardinality</term> of <m>A</m>, written <m>|A|</m>, is the number of elements in <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <exercises xml:id="exercises-Set-Theory">
+    <exercise>
+      <introduction>
+        <p>
+          Consider the sets <m>A = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}</m>, <m>B = \{2, 4, 9, 10, 12, 14, 19\}</m>, and <m>C = \{9, 10, 11, 14, 16, 17, 20\}</m>, which are all subsets of <m>\Omega = \{1, 2, 3, \dotsc, 20\}</m>.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Find <m>A - (B \cap C)</m>.
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\{1, 2, 3, 4, 5, 6, 7, 8\}</m>
+          </p>
+        </answer>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Find <m>|A|</m>, <m>|B|</m>, <m>|C|</m>, <m>|A\cup B|</m>, <m>|A \cap B|</m>, <m>|B\cap C|</m>, <m>|A\cap C|</m>, and <m>|A\cup B\cup C|</m>.
+            Is it true that the size of the union of sets is equal to the sum of the sizes of the individual sets?
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>|A| = 10</m>, <m>|B| = 7</m>, <m>|C| = 7</m>, <m>|A \cup B| = 13</m>, <m>|A \cap B| = 4</m>, <m>|B\cap C| = 3</m>, <m>|A\cap C| = 2</m>, <m>|A\cup B\cup C| = 17</m>. In particular, note that <m>|A\cup B| = 13 \neq 10 + 7 = |A| + |B|</m>, so it is not true in general that the size of the union of sets is the sum of the sizes of the individual sets.
+          </p>
+        </answer>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Find <m>A^c</m> and <m>(A\cup B)^c</m>.
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>A^c = \{11, 12, 13, 14, 15, 16, 17, 18, 19, 20\}</m>, <m>(A\cup B)^c = \{11, 13, 15, 16, 17, 18, 20\}</m>.
+          </p>
+        </answer>
+      </task>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we roll a 6-sided die two times.
+          List the set of all possible results.
+          [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result <m>(4, 2)</m>---rolling a 4 and then a 2.]
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we flip a coin two times.
+          List the set of all possible results.
+          What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          If we roll a 6-sided die ten times, how many possible results will there be?
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Definition of Probability</title>
+
+    <definition xml:id="def-probability-distribution">
+      <statement>
+        <p>
+          A <term>probability distribution</term> on a sample space <m>\Omega</m> assigns probabilities to every event, satisfying the following conditions:
+        </p>
+
+        <ol>
+          <li>
+            <p>
+              <m>\Pr(\Omega) = 1</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>0 \leq \Pr(A) \leq 1</m> for any event <m>A</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If <m>A \cap B = \emptyset</m>, then <m>\Pr(A\cup B) = \Pr(A) + \Pr(B)</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </definition>
+
+    <exercises xml:id="exercises-Probability">
+    <exercise>
+      <statement>
+        <p>
+          Consider the sample space <m>\Omega = \{1, 2, 3, 4, 5, 6, 7, 8\}</m> with probability distribution below.
+          Calculate the probabilities of <m>A = \{1, 3, 7, 8\}</m>, <m>B = \{2, 3, 6, 7\}</m>, <m>A\cup B</m>, and <m>A \cap B</m>.
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular>
+            <row>
+              <cell halign="center"><m>x</m></cell>
+              <cell halign="center">1</cell>
+              <cell halign="center">2</cell>
+              <cell halign="center">3</cell>
+              <cell halign="center">4</cell>
+              <cell halign="center">5</cell>
+              <cell halign="center">6</cell>
+              <cell halign="center">7</cell>
+              <cell halign="center">8</cell>
+              <cell halign="center">9</cell>
+            </row>
+
+            <row>
+              <cell halign="center"><m>\Pr(x)</m></cell>
+              <cell halign="center">0.1</cell>
+              <cell halign="center">0.05</cell>
+              <cell halign="center">0.2</cell>
+              <cell halign="center">0.15</cell>
+              <cell halign="center">0.15</cell>
+              <cell halign="center">0.1</cell>
+              <cell halign="center">0.05</cell>
+              <cell halign="center">0.1</cell>
+              <cell halign="center">0.1</cell>
+            </row>
+          </tabular>
+        </table>
+        <!--</div attr= class="center">-->
+      </statement>
+    </exercise>
+
+    <exercise>
+      <introduction>
+        <p>
+          Suppose we flip a coin two times.
+          Answer the questions below.
+          What about three flips? What about four flips?
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Write all outcomes in the sample space <m>\Omega</m>.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Make a probability distribution table for <m>\Omega</m> assuming the coin is fair.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Make a probability distribution table assuming the coin comes up heads with probability 0.3.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise>
+      <introduction>
+        <p>
+          Suppose we roll a die two times.
+          Answer the questions below.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Write all outcomes in the sample space <m>\Omega</m>.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Make a probability distribution table for <m>\Omega</m> assuming the die is fair.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Let <m>A</m> be the event that the second roll is higher than the first, and let <m>B</m> be the event that the first roll is even.
+            Find <m>\Pr(A), \Pr(B)</m>, and <m>\Pr(A \mid B)</m>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose a die has the values <m>1, 2, 3, 4, 5, 6</m> on the faces, but the die is not fair.
+          Instead, the probabilities scale by the same amount as the face values.
+          For example, a result of 4 is twice as likely as a result of 2, since 4 is twice as large as 2; a result of 6 is six times more likely than a result of 1; and so on.
+          Write a probability distribution table for this die.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose a die has the values <m>1, 2, 3, 4, 5, 6</m> on the faces, but the die is not fair.
+          Instead, each even value has an equal probability, each odd value has an equal probability, and the even values are each twice as likely as the odd values to appear on a roll.
+          Write a probability distribution table for this die.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A toxin molecule inside a cell has a 0.3 probability of leaving the cell during a 1-minute period.
+          For each value of <m>n = 1, 2, 3, \dotsc</m>, find the probability of the toxin molecule leaving the cell during the <m>n</m>th minute.
+          What is the probability of the molecule leaving the cell during the first 3 minutes?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Each of 10 toxin molecules inside a cell has a 0.3 probability of leaving the cell during a 1-minute period.
+          For each value of <m>n = 1, 2, 3, \dotsc</m>, and for each value of <m>0\leq k \leq n</m>, find the probability that exactly <m>k</m> toxin molecules remain in the cell after the <m>n</m>th minute.
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-Conditional-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Conditional Probability</title>
+
+    <p>
+      Text of section.
+    </p>
+
+    <exercises xml:id="exercises-Conditional-Probability"> <exercisegroup>
+    <introduction>
+      <p>
+        In each of the following scenarios with given events <m>A</m> and <m>B</m>, alculate <m>\Pr(A), \Pr(B)</m>, <m>\Pr(A\cap B)</m>, <m>\Pr(A \mid B)</m>, and <m>\Pr(B \mid A)</m>.
+      </p>
     </introduction>
 
-    <section xml:id="sec-Set-Theory" xmlns:xi="http://www.w3.org/2001/XInclude">
-        <title>Set Theory</title>
-
+    <exercise>
+      <statement>
         <p>
-            Text of section.
+          An experiment consists of rolling a fair die two times.
+          Let <m>A</m> be the event that the sum is even, and let <m>B</m> be the event that the second roll is higher than the first.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          An experiment consists of flipping a fair coin three times.
+          Let <m>A</m> be the event that the first and second flips match.
+          Let <m>B</m> be the event that there are at least two heads.
+        </p>
+      </statement>
+    </exercise>
+    </exercisegroup>
+
+    <exercise>
+      <introduction>
+        <p>
+          A diagnostic test is developed to detect a disease present in 3.2% of the population.
+          For a patient who has the disease, the test will accurately give a positive result 65% of the time.
+          When the patient does not have the disease, the test will accurately give a negative result 99.9% of the time.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            For a patient who receives a positive test, what is the probability they have the disease?
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            TODO
+          </p>
+        </answer>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            For a patient who receives a negative test, what is the probability they do not have the disease?
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            TODO
+          </p>
+        </answer>
+      </task>
+    </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-Independent-Events" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Independent Events</title>
+
+    <p>
+      Text of section.
+    </p>
+
+    <exercises xml:id="exercises-Independent-Events">
+    <exercise>
+      <statement>
+        <p>
+          An experiment consists of rolling a fair die two times.
+          Let <m>A</m> be the event that the sum is even, and let <m>B</m> be the event that the second roll is higher than the first.
+          Are <m>A</m> and <m>B</m> independent?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          An experiment consists of flipping a fair coin three times.
+          Let <m>A</m> be the event that the first and second flips match.
+          Let <m>B</m> be the event that there are at least two heads.
+          Are <m>A</m> and <m>B</m> independent?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A = \{1, 2, 3\}</m> and <m>B = \{3, 4, 5\}</m>.
+          Fill in the following probability distribution table so that <m>A, B</m> are independent.
         </p>
 
-        <exercises xml:id="exercises-Set-Theory">
-        <exercise>
-            <introduction>
-                <p>
-                    Consider the sets <m>A = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}</m>, <m>B = \{2, 4, 9, 10, 12, 14, 19\}</m>, and <m>C = \{9, 10, 11, 14, 16, 17, 20\}</m>, which are all subsets of <m>\Omega = \{1, 2, 3, \dotsc, 20\}</m>.
-                </p>
-            </introduction>
+        <table>
+          <title></title>
 
+          <tabular>
+            <row>
+              <cell halign="center"><m>x</m></cell>
+              <cell halign="center">1</cell>
+              <cell halign="center">2</cell>
+              <cell halign="center">3</cell>
+              <cell halign="center">4</cell>
+              <cell halign="center">5</cell>
+              <cell halign="center">6</cell>
+            </row>
 
-            <task>
-                <statement>
-                    <p>
-                        Find <m>A - (B \cap C)</m>.
-                    </p>
-                </statement>
-
-                <answer>
-                    <p>
-                        <m>\{1, 2, 3, 4, 5, 6, 7, 8\}</m>
-                    </p>
-                </answer>
-            </task>
-
-
-            <task>
-                <statement>
-                    <p>
-                        Find <m>|A|</m>, <m>|B|</m>, <m>|C|</m>, <m>|A\cup B|</m>, <m>|A \cap B|</m>, <m>|B\cap C|</m>, <m>|A\cap C|</m>, and <m>|A\cup B\cup C|</m>.
-                        Is it true that the size of the union of sets is equal to the sum of the sizes of the individual sets?
-                    </p>
-                </statement>
-
-                <answer>
-                    <p>
-                        <m>|A| = 10</m>, <m>|B| = 7</m>, <m>|C| = 7</m>, <m>|A \cup B| = 13</m>, <m>|A \cap B| = 4</m>, <m>|B\cap C| = 3</m>, <m>|A\cap C| = 2</m>, <m>|A\cup B\cup C| = 17</m>. In particular, note that <m>|A\cup B| = 13 \neq 10 + 7 = |A| + |B|</m>, so it is not true in general that the size of the union of sets is the sum of the sizes of the individual sets.
-                    </p>
-                </answer>
-            </task>
-
-
-            <task>
-                <statement>
-                    <p>
-                        Find <m>A^c</m> and <m>(A\cup B)^c</m>.
-                    </p>
-                </statement>
-
-                <answer>
-                    <p>
-                        <m>A^c = \{11, 12, 13, 14, 15, 16, 17, 18, 19, 20\}</m>, <m>(A\cup B)^c = \{11, 13, 15, 16, 17, 18, 20\}</m>.
-                    </p>
-                </answer>
-            </task>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    Suppose we roll a 6-sided die two times.
-                    List the set of all possible results.
-                    [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result <m>(4, 2)</m>---rolling a 4 and then a 2.]
-                </p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    Suppose we flip a coin two times.
-                    List the set of all possible results.
-                    What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?
-                </p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    If we roll a 6-sided die ten times, how many possible results will there be?
-                </p>
-            </statement>
-        </exercise>
-        </exercises>
-    </section>
-
-    <section xml:id="sec-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
-        <title>Definition of Probability</title>
-
-        <p>
-            Text of section.
-        </p>
-
-        <exercises xml:id="exercises-Probability">
-        <exercise>
-            <statement>
-                <p>
-                    Consider the sample space <m>\Omega = \{1, 2, 3, 4, 5, 6, 7, 8\}</m> with probability distribution below.
-                    Calculate the probabilities of <m>A = \{1, 3, 7, 8\}</m>, <m>B = \{2, 3, 6, 7\}</m>, <m>A\cup B</m>, and <m>A \cap B</m>.
-                </p>
-
-                <table>
-                    <title></title>
-
-                    <tabular>
-                        <row>
-                            <cell halign="center"><m>x</m></cell>
-                            <cell halign="center">1</cell>
-                            <cell halign="center">2</cell>
-                            <cell halign="center">3</cell>
-                            <cell halign="center">4</cell>
-                            <cell halign="center">5</cell>
-                            <cell halign="center">6</cell>
-                            <cell halign="center">7</cell>
-                            <cell halign="center">8</cell>
-                            <cell halign="center">9</cell>
-                        </row>
-
-                        <row>
-                            <cell halign="center"><m>\Pr(x)</m></cell>
-                            <cell halign="center">0.1</cell>
-                            <cell halign="center">0.05</cell>
-                            <cell halign="center">0.2</cell>
-                            <cell halign="center">0.15</cell>
-                            <cell halign="center">0.15</cell>
-                            <cell halign="center">0.1</cell>
-                            <cell halign="center">0.05</cell>
-                            <cell halign="center">0.1</cell>
-                            <cell halign="center">0.1</cell>
-                        </row>
-                    </tabular>
-                </table>
-                <!--</div attr= class="center">-->
-            </statement>
-        </exercise>
-
-        <exercise>
-            <introduction>
-                <p>
-                    Suppose we flip a coin two times.
-                    Answer the questions below.
-                    What about three flips? What about four flips?
-                </p>
-            </introduction>
-
-
-            <task>
-                <statement>
-                    <p>
-                        Write all outcomes in the sample space <m>\Omega</m>.
-                    </p>
-                </statement>
-            </task>
-
-
-            <task>
-                <statement>
-                    <p>
-                        Make a probability distribution table for <m>\Omega</m> assuming the coin is fair.
-                    </p>
-                </statement>
-            </task>
-
-
-            <task>
-                <statement>
-                    <p>
-                        Make a probability distribution table assuming the coin comes up heads with probability 0.3.
-                    </p>
-                </statement>
-            </task>
-        </exercise>
-
-        <exercise>
-            <introduction>
-                <p>
-                    Suppose we roll a die two times.
-                    Answer the questions below.
-                </p>
-            </introduction>
-
-
-            <task>
-                <statement>
-                    <p>
-                        Write all outcomes in the sample space <m>\Omega</m>.
-                    </p>
-                </statement>
-            </task>
-
-
-            <task>
-                <statement>
-                    <p>
-                        Make a probability distribution table for <m>\Omega</m> assuming the die is fair.
-                    </p>
-                </statement>
-            </task>
-
-
-            <task>
-                <statement>
-                    <p>
-                        Let <m>A</m> be the event that the second roll is higher than the first, and let <m>B</m> be the event that the first roll is even.
-                        Find <m>\Pr(A), \Pr(B)</m>, and <m>\Pr(A \mid B)</m>.
-                    </p>
-                </statement>
-            </task>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    Suppose a die has the values <m>1, 2, 3, 4, 5, 6</m> on the faces, but the die is not fair.
-                    Instead, the probabilities scale by the same amount as the face values.
-                    For example, a result of 4 is twice as likely as a result of 2, since 4 is twice as large as 2; a result of 6 is six times more likely than a result of 1; and so on.
-                    Write a probability distribution table for this die.
-                </p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    Suppose a die has the values <m>1, 2, 3, 4, 5, 6</m> on the faces, but the die is not fair.
-                    Instead, each even value has an equal probability, each odd value has an equal probability, and the even values are each twice as likely as the odd values to appear on a roll.
-                    Write a probability distribution table for this die.
-                </p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    A toxin molecule inside a cell has a 0.3 probability of leaving the cell during a 1-minute period.
-                    For each value of <m>n = 1, 2, 3, \dotsc</m>, find the probability of the toxin molecule leaving the cell during the <m>n</m>th minute.
-                    What is the probability of the molecule leaving the cell during the first 3 minutes?
-                </p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    Each of 10 toxin molecules inside a cell has a 0.3 probability of leaving the cell during a 1-minute period.
-                    For each value of <m>n = 1, 2, 3, \dotsc</m>, and for each value of <m>0\leq k \leq n</m>, find the probability that exactly <m>k</m> toxin molecules remain in the cell after the <m>n</m>th minute.
-                </p>
-            </statement>
-        </exercise>
-        </exercises>
-    </section>
-
-    <section xml:id="sec-Conditional-Probability" xmlns:xi="http://www.w3.org/2001/XInclude">
-        <title>Conditional Probability</title>
-
-        <p>
-            Text of section.
-        </p>
-
-        <exercises xml:id="exercises-Conditional-Probability"> <exercisegroup>
-        <introduction>
-            <p>
-                In each of the following scenarios with given events <m>A</m> and <m>B</m>, alculate <m>\Pr(A), \Pr(B)</m>, <m>\Pr(A\cap B)</m>, <m>\Pr(A \mid B)</m>, and <m>\Pr(B \mid A)</m>.
-            </p>
-        </introduction>
-
-        <exercise>
-            <statement>
-                <p>
-                    An experiment consists of rolling a fair die two times.
-                    Let <m>A</m> be the event that the sum is even, and let <m>B</m> be the event that the second roll is higher than the first.
-                </p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    An experiment consists of flipping a fair coin three times.
-                    Let <m>A</m> be the event that the first and second flips match.
-                    Let <m>B</m> be the event that there are at least two heads.
-                </p>
-            </statement>
-        </exercise>
-        </exercisegroup>
-
-        <exercise>
-            <introduction>
-                <p>
-                    A diagnostic test is developed to detect a disease present in 3.2% of the population.
-                    For a patient who has the disease, the test will accurately give a positive result 65% of the time.
-                    When the patient does not have the disease, the test will accurately give a negative result 99.9% of the time.
-                </p>
-            </introduction>
-
-
-            <task>
-                <statement>
-                    <p>
-                        For a patient who receives a positive test, what is the probability they have the disease?
-                    </p>
-                </statement>
-
-                <answer>
-                    <p>
-                        TODO
-                    </p>
-                </answer>
-            </task>
-
-
-            <task>
-                <statement>
-                    <p>
-                        For a patient who receives a negative test, what is the probability they do not have the disease?
-                    </p>
-                </statement>
-
-                <answer>
-                    <p>
-                        TODO
-                    </p>
-                </answer>
-            </task>
-        </exercise>
-        </exercises>
-    </section>
-
-    <section xml:id="sec-Independent-Events" xmlns:xi="http://www.w3.org/2001/XInclude">
-        <title>Independent Events</title>
-
-        <p>
-            Text of section.
-        </p>
-
-        <exercises xml:id="exercises-Independent-Events">
-        <exercise>
-            <statement>
-                <p>
-                    An experiment consists of rolling a fair die two times.
-                    Let <m>A</m> be the event that the sum is even, and let <m>B</m> be the event that the second roll is higher than the first.
-                    Are <m>A</m> and <m>B</m> independent?
-                </p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    An experiment consists of flipping a fair coin three times.
-                    Let <m>A</m> be the event that the first and second flips match.
-                    Let <m>B</m> be the event that there are at least two heads.
-                    Are <m>A</m> and <m>B</m> independent?
-                </p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>
-                    Let <m>A = \{1, 2, 3\}</m> and <m>B = \{3, 4, 5\}</m>.
-                    Fill in the following probability distribution table so that <m>A, B</m> are independent.
-                </p>
-
-                <table>
-                    <title></title>
-
-                    <tabular>
-                        <row>
-                            <cell halign="center"><m>x</m></cell>
-                            <cell halign="center">1</cell>
-                            <cell halign="center">2</cell>
-                            <cell halign="center">3</cell>
-                            <cell halign="center">4</cell>
-                            <cell halign="center">5</cell>
-                            <cell halign="center">6</cell>
-                        </row>
-
-                        <row>
-                            <cell halign="center"><m>\Pr(x)</m></cell>
-                            <cell halign="center"></cell>
-                            <cell halign="center"></cell>
-                            <cell halign="center"></cell>
-                            <cell halign="center"></cell>
-                            <cell halign="center"></cell>
-                            <cell halign="center"></cell>
-                        </row>
-                    </tabular>
-                </table>
-            </statement>
-        </exercise>
-        </exercises>
-    </section>
+            <row>
+              <cell halign="center"><m>\Pr(x)</m></cell>
+              <cell halign="center"></cell>
+              <cell halign="center"></cell>
+              <cell halign="center"></cell>
+              <cell halign="center"></cell>
+              <cell halign="center"></cell>
+              <cell halign="center"></cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+    </exercises>
+  </section>
 </chapter>
