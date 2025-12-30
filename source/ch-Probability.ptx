@@ -62,49 +62,48 @@
       <statement>
         <p>
           Consider sets <m>A</m> and <m>B</m>, each contained inside <m>\Omega</m>.
-          We can combine sets in a variety of ways:
+          We can combine sets in a variety of ways: <dl>
+          <li>
+            <title>Union</title>
+
+            <p>
+              The <term>union</term> of <m>A</m> and <m>B</m> is the set <m>A \cup B = \{x \mid x \in A \text{ or } x \in B\}</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>Intersection</title>
+
+            <p>
+              The <term>intersection</term> of <m>A</m> and <m>B</m> is the set <m>A \cap B = \{x \mid x \in A \text{ and } x \in B\}</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>Difference</title>
+
+            <p>
+              The <term>set difference</term> <m>A-B</m> is the set <m>A - B = \{x \mid x \in A \text{ and } x \notin B\}</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>Complement</title>
+
+            <p>
+              The <term>complement</term> of <m>A</m> is the set <m>A^c = \{x \in \Omega \mid x \notin A\}</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>Empty Set</title>
+
+            <p>
+              The <term>empty set</term>, usually written <m>\emptyset</m> or <m>\{\}</m>, is the set which contains no elements.
+            </p>
+          </li>
+          </dl>
         </p>
-        <dl>
-        <li>
-          <title>Union</title>
-
-          <p>
-            The <term>union</term> of <m>A</m> and <m>B</m> is the set <m>A \cup B = \{x \mid x \in A \text{ or } x \in B\}</m>.
-          </p>
-        </li>
-
-        <li>
-          <title>Intersection</title>
-
-          <p>
-            The <term>intersection</term> of <m>A</m> and <m>B</m> is the set <m>A \cap B = \{x \mid x \in A \text{ and } x \in B\}</m>.
-          </p>
-        </li>
-
-        <li>
-          <title>Difference</title>
-
-          <p>
-            The <term>set difference</term> <m>A-B</m> is the set <m>A - B = \{x \mid x \in A \text{ and } x \notin B\}</m>.
-          </p>
-        </li>
-
-        <li>
-          <title>Complement</title>
-
-          <p>
-            The <term>complement</term> of <m>A</m> is the set <m>A^c = \{x \in \Omega \mid x \notin A\}</m>.
-          </p>
-        </li>
-
-        <li>
-          <title>Empty Set</title>
-
-          <p>
-            The <term>empty set</term>, usually written <m>\emptyset</m> or <m>\{\}</m>, is the set which contains no elements.
-          </p>
-        </li>
-        </dl>
       </statement>
     </definition>
 
@@ -220,29 +219,92 @@
       <statement>
         <p>
           A <term>probability distribution</term> on a sample space <m>\Omega</m> assigns probabilities to every event, satisfying the following conditions:
+          <ol>
+            <li>
+              <p>
+                <m>\Pr(\Omega) = 1</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>0 \leq \Pr(A) \leq 1</m> for any event <m>A</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                If <m>A \cap B = \emptyset</m>, then <m>\Pr(A\cup B) = \Pr(A) + \Pr(B)</m>.
+              </p>
+            </li>
+          </ol>
         </p>
-
-        <ol>
-          <li>
-            <p>
-              <m>\Pr(\Omega) = 1</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              <m>0 \leq \Pr(A) \leq 1</m> for any event <m>A</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              If <m>A \cap B = \emptyset</m>, then <m>\Pr(A\cup B) = \Pr(A) + \Pr(B)</m>.
-            </p>
-          </li>
-        </ol>
       </statement>
     </definition>
+
+    <p>
+      For small probability spaces (i.e., with finitely many outcomes in the sample space), we'll usually assign probabilities to each individual outcome, and perhaps list them in a table.
+      Then, to find the probability of any event, simply add together the probabilities of each outcome in that event.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          An experiment consists of rolling a standard 6-sided die.
+          The sample space is <m>\Omega = \{1, 2, 3, 4, 5, 6\}</m>.
+          The probability distribution (assuming a fair die) is shown below.
+        </p>
+
+        <table>
+          <title>Distribution for a fair die</title>
+
+          <tabular halign="center">
+            <row bottom="minor">
+              <cell><m>x</m></cell>
+              <cell><m>\Pr(x)</m></cell>
+            </row>
+
+            <row>
+              <cell>1</cell>
+              <cell><m>1/6</m></cell>
+            </row>
+
+            <row>
+              <cell>2</cell>
+              <cell><m>1/6</m></cell>
+            </row>
+
+            <row>
+              <cell>3</cell>
+              <cell><m>1/6</m></cell>
+            </row>
+
+            <row>
+              <cell>4</cell>
+              <cell><m>1/6</m></cell>
+            </row>
+
+            <row>
+              <cell>5</cell>
+              <cell><m>1/6</m></cell>
+            </row>
+
+            <row>
+              <cell>6</cell>
+              <cell><m>1/6</m></cell>
+            </row>
+          </tabular>
+        </table>
+
+        <p>
+          One possible event is <m>A = \{2, 4, 6\}</m>, i.e., the event that the result of the roll is even.
+          The probability of <m>A</m> is:
+          <md>
+            <mrow> \Pr(A) = \Pr(2) + \Pr(4) + \Pr(6) = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{3}{6} = \frac{1}{2} </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
 
     <exercises xml:id="exercises-Probability">
     <exercise>
@@ -255,31 +317,55 @@
         <table>
           <title></title>
 
-          <tabular>
-            <row>
-              <cell halign="center"><m>x</m></cell>
-              <cell halign="center">1</cell>
-              <cell halign="center">2</cell>
-              <cell halign="center">3</cell>
-              <cell halign="center">4</cell>
-              <cell halign="center">5</cell>
-              <cell halign="center">6</cell>
-              <cell halign="center">7</cell>
-              <cell halign="center">8</cell>
-              <cell halign="center">9</cell>
+          <tabular halign="center">
+            <row bottom="minor">
+              <cell><m>x</m></cell>
+              <cell><m>\Pr(x)</m></cell>
             </row>
 
             <row>
-              <cell halign="center"><m>\Pr(x)</m></cell>
-              <cell halign="center">0.1</cell>
-              <cell halign="center">0.05</cell>
-              <cell halign="center">0.2</cell>
-              <cell halign="center">0.15</cell>
-              <cell halign="center">0.15</cell>
-              <cell halign="center">0.1</cell>
-              <cell halign="center">0.05</cell>
-              <cell halign="center">0.1</cell>
-              <cell halign="center">0.1</cell>
+              <cell>1</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>2</cell>
+              <cell>0.05</cell>
+            </row>
+
+            <row>
+              <cell>3</cell>
+              <cell>0.2</cell>
+            </row>
+
+            <row>
+              <cell>4</cell>
+              <cell>0.15</cell>
+            </row>
+
+            <row>
+              <cell>5</cell>
+              <cell>0.15</cell>
+            </row>
+
+            <row>
+              <cell>6</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>7</cell>
+              <cell>0.05</cell>
+            </row>
+
+            <row>
+              <cell>8</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>9</cell>
+              <cell>0.1</cell>
             </row>
           </tabular>
         </table>
@@ -511,35 +597,9 @@
     <exercise>
       <statement>
         <p>
-          Let <m>A = \{1, 2, 3\}</m> and <m>B = \{3, 4, 5\}</m>.
-          Fill in the following probability distribution table so that <m>A, B</m> are independent.
+          Let <m>A = \{1, 2, 3\}</m> and <m>B = \{3, 4, 5\}</m> be events in the sample space <m>\Omega = \{1, 2, 3, 4, 5, 6\}</m>.
+          Create a probability distribution for <m>\Omega</m> so that <m>A, B</m> are independent.
         </p>
-
-        <table>
-          <title></title>
-
-          <tabular>
-            <row>
-              <cell halign="center"><m>x</m></cell>
-              <cell halign="center">1</cell>
-              <cell halign="center">2</cell>
-              <cell halign="center">3</cell>
-              <cell halign="center">4</cell>
-              <cell halign="center">5</cell>
-              <cell halign="center">6</cell>
-            </row>
-
-            <row>
-              <cell halign="center"><m>\Pr(x)</m></cell>
-              <cell halign="center"></cell>
-              <cell halign="center"></cell>
-              <cell halign="center"></cell>
-              <cell halign="center"></cell>
-              <cell halign="center"></cell>
-              <cell halign="center"></cell>
-            </row>
-          </tabular>
-        </table>
       </statement>
     </exercise>
     </exercises>
