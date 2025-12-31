@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose we observe traffic along a particular stretch of highway which typically has 200 cars pass per hour. Let <span class="process-math">\(N\)</span> be the number of cars seen in a 2-hour observation period. Since the parameter <span class="process-math">\(\lambda = 200\)</span> cars per hour is given for a 1-hour period, we should scale it to find the rate for a 2-hour period: <span class="process-math">\(\lambda t = (200)(2) = 400\)</span> cars per 2-hours. Then, for example:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\Pr(N = 375) = p(375; 200, 2) = \frac{400^{375}}{375!} e^{-400} \approx 0.01. 
+\end{gather*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-poisson-rate-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
+<div class="para">Now consider the random variable <span class="process-math">\(M\)</span> counting the number of cars seen in a 30-minute observation period. We should not calculate <span class="process-math">\(\lambda t = (200)(30) = 6000\text{,}\)</span> since <span class="process-math">\(\lambda\)</span> measures time in hours and <span class="process-math">\(t\)</span> measures time in minutes. We should first convert <span class="process-math">\(t = 0.5\)</span> hours, then we can find our appropriately scaled rate information: <span class="process-math">\((200)(0.5) = 100\)</span> cars per half-hour. Then, for example:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\Pr(M = 110) = p(110; 200, 0.5) = \frac{100^{110}}{110!}e^{-100} \approx 0.02. 
+\end{gather*}
+</div>
+<div class="para">Note that when we write the notation <span class="process-math">\(p(k; \lambda, t)\text{,}\)</span> we assume that <span class="process-math">\(\lambda\)</span> and <span class="process-math">\(t\)</span> are expressed with the same time units already.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-poisson-rate-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.17"><a href="#example-poisson-rate" title="Copy heading and permalink for Example 2.1.17" aria-label="Copy heading and permalink for Example 2.1.17">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-Discrete-RVs.html#example-poisson-rate">in-context</a></span>
+</body>
+</html>
