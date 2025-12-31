@@ -306,7 +306,7 @@
       </statement>
     </example>
 
-    <definition xml:id="def-discrete-uniform">
+    <definition xml:id="def-discrete-uniform-distribution">
       <statement>
         <p>
           Let <m>\Omega = \{x_1, x_2, \dotsc, x_n\}</m> be a sample space and <m>A\subset \Omega</m> an event.

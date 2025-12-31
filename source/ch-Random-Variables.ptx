@@ -12,80 +12,335 @@
   <section xml:id="sec-Discrete-RVs" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Discrete Random Variables</title>
 
-    <definition xml:id="def-RV">
-      <statement>
-        <p>
-          Let <m>\Omega</m> be a sample space.
-          A <term>random variable</term> is a function <m>X \colon \Omega \to \mathbb{R}</m> which assigns a number to each outcome.
-        </p>
-      </statement>
-    </definition>
+    <subsection xml:id="subsec-Discrete-RVs">
+      <title>Discrete Random Variables</title>
 
-    <example>
-      <statement>
-        <p>
-          Suppose an experiment consists of flipping a fair coin 4 times.
-          Let <m>X</m> be the number of heads.
-          The actual outcomes in the experiment are heads/tails sequences of length 4, such as <m>HTHT</m> and <m>HHHT</m>.
-          The random variable <m>X</m> assigns a numerical measurement to the outcomes, such as <m>X(HTHT) = 2</m> and <m>X(HHHT) = 3</m>.
-        </p>
+      <definition xml:id="def-RV">
+        <statement>
+          <p>
+            Let <m>\Omega</m> be a sample space.
+            A <term>random variable</term> is a function <m>X \colon \Omega \to \R</m> which assigns a number to each outcome.
+          </p>
+        </statement>
+      </definition>
 
-        <p>
-          For any real number value <m>a</m>, we can consider the event consisting of outcomes such that <m>X = a</m>.
-          For example, the flip sequences <m>HHHT, HHTH, HTHH</m>, and <m>THHH</m> all have 3 heads, so <m>\Pr(X = 3) = \frac{4}{16} = \frac{1}{4}</m>.
-        </p>
-      </statement>
-    </example>
+      <example>
+        <statement>
+          <p>
+            Suppose an experiment consists of flipping a fair coin 4 times.
+            Let <m>X</m> be the number of heads.
+            The actual outcomes in the experiment are heads/tails sequences of length 4, such as <m>HTHT</m> and <m>HHHT</m>.
+            The random variable <m>X</m> assigns a numerical measurement to the outcomes, such as <m>X(HTHT) = 2</m> and <m>X(HHHT) = 3</m>.
+          </p>
 
-    <example>
-      <title>Indicator Random Variable</title>
+          <p>
+            For any real number value <m>a</m>, we can consider the event consisting of outcomes such that <m>X = a</m>.
+            For example, the flip sequences <m>HHHT, HHTH, HTHH</m>, and <m>THHH</m> all have 3 heads, so <m>\Pr(X = 3) = \frac{4}{16} = \frac{1}{4}</m>.
+          </p>
+        </statement>
+      </example>
 
-      <statement>
-        <p>
-          Let <m>A</m> be an event in the sample space <m>\Omega</m>.
-          An <term>indicator random variable</term> for <m>A</m> is the random variable <m>X</m> such that
-          <md>
-            <mrow> X(\omega) = \begin{cases}  1 \amp \omega \in A \\ 0 \amp \omega \notin A \end{cases} </mrow>
-          </md>
-        </p>
-      </statement>
-    </example>
+      <example xml:id="example-indicator-distribution">
+        <title>Indicator Random Variable</title>
 
-    <p>
-      Indicator random variables are also called <term>Bernoulli random variables</term>, although we'll prefer the former term since it more clearly states the purpose of these random variables: to indicate whether or not a particular event has occurred.
-      We'll use the language "<m>X</m> indicates <m>A</m>" to mean that <m>X</m> is an indicator random variable for the event <m>A</m>.
-      In this case, <m>\Pr(X = 1) = \Pr(A)</m>, and <m>\Pr(X = 0) = 1 - \Pr(A)</m>.
-    </p>
+        <statement>
+          <p>
+            Let <m>A</m> be an event in the sample space <m>\Omega</m>.
+            An <term>indicator random variable</term> for <m>A</m> is the random variable <m>X</m> such that
+            <md>
+              <mrow> X(\omega) = \begin{cases}  1 \amp \omega \in A \\ 0 \amp \omega \notin A \end{cases} </mrow>
+            </md>
+          </p>
+        </statement>
+      </example>
 
-    <definition xml:id="def-discrete-and-continuous">
-      <statement>
-        <p>
-          Consider the set <m>S</m> of all real numbers which are actually output by a random variable <m>X</m>.
-          If <m>S</m> does not contain any interval of values, then the random variable <m>X</m> is called <term>discrete</term>.
-          Otherwise, it's called <term>continuous</term>.
-        </p>
-      </statement>
-    </definition>
+      <p>
+        Indicator random variables are also called <term>Bernoulli random variables</term>, although we'll prefer the former term since it more clearly states the purpose of these random variables: to indicate whether or not a particular event has occurred.
+        We'll use the language "<m>X</m> indicates <m>A</m>" to mean that <m>X</m> is an indicator random variable for the event <m>A</m>.
+        In this case, <m>\Pr(X = 1) = \Pr(A)</m>, and <m>\Pr(X = 0) = 1 - \Pr(A)</m>.
+      </p>
 
-    <example>
-      <statement>
-        <p>
-          Any random variable <m>X</m> defined on a finite sample space <m>\Omega</m> is discrete<mdash/>the set of outputs of <m>X</m> cannot contain an interval if it only has finitely many values.
-        </p>
+      <definition xml:id="def-discrete-and-continuous">
+        <statement>
+          <p>
+            Consider the set <m>S</m> of all real numbers which are actually output by a random variable <m>X</m>.
+            If <m>S</m> does not contain any interval of values, then the random variable <m>X</m> is called <term>discrete</term>.
+            Otherwise, it's called <term>continuous</term>.
+          </p>
+        </statement>
+      </definition>
 
-        <p>
-          Suppose an experiment consists of growing a plant in a new fertilizer, and a random variable <m>Y</m> measures the height of the plant after a set growing period.
-          Now <m>Y</m> could conceivably take on an interval's worth of values (such as, e.g., any real number between 10 inches and 20 inches), so this random variable would be continuous.
-        </p>
+      <example>
+        <statement>
+          <p>
+            Any random variable <m>X</m> defined on a finite sample space <m>\Omega</m> is discrete<mdash/>the set of outputs of <m>X</m> cannot contain an interval if it only has finitely many values.
+          </p>
 
-        <p>
-          The distinction between discrete and continuous random variables is not simply the distinction of whether the sample space is finite or infinite.
-          Consider the experiment in which we flip a coin repeatedly until we first see a coin come up heads.
-          Let <m>Z</m> be the number of times the coin is flipped. Then there are infinitely many possible values of <m>Z</m> (1, 2, 3, and so on), but there's no interval of real numbers which are all possible outputs of <m>Z</m>.
-          The possible outputs of <m>Z</m> are discrete (in the non-technical, English sense of the word: separated).
-        </p>
-      </statement>
-    </example>
+          <p>
+            Suppose an experiment consists of growing a plant in a new fertilizer, and a random variable <m>Y</m> measures the height of the plant after a set growing period.
+            Now <m>Y</m> could conceivably take on an interval's worth of values (such as, e.g., any real number between 10 inches and 20 inches), so this random variable would be continuous.
+          </p>
+
+          <p>
+            The distinction between discrete and continuous random variables is not simply the distinction of whether the sample space is finite or infinite.
+            Consider the experiment in which we flip a coin repeatedly until we first see a coin come up heads.
+            Let <m>Z</m> be the number of times the coin is flipped.
+            Then there are infinitely many possible values of <m>Z</m> (1, 2, 3, and so on), but there's no interval of real numbers which are all possible outputs of <m>Z</m>.
+            The possible outputs of <m>Z</m> are discrete (in the non-technical, English sense of the word: separated).
+          </p>
+        </statement>
+      </example>
+
+      <p>
+        There are several particular types of distributions that appear repeatedly, since they model common behaviors.
+        Indicator random variables, for example, will appear any time a random process generates a yes/no or success/failure type of answer to a question.
+        Below are some other common distributions.
+      </p>
+    </subsection>
+
+
+    <subsection xml:id="subsec-binomial-distribution">
+      <title>The Binomial Distribution</title>
+
+      <definition xml:id="def-binomial-distribution">
+        <statement>
+          <p>
+            Suppose an event occurs with probability <m>p</m>.
+            If we perform <m>n</m> independent trials, let <m>S</m> be the random variable which counts the number of trials in which the event occurred.
+            Then <m>S</m> has the <term>binomial distribution</term> with parameters <m>n</m> and <m>p</m>.
+            We'll write <m>S \sim \Bin(n, p)</m> to denote this.
+            For each value <m>0 \leq k \leq n</m>, we'll write <m>b(k)</m> for <m>\Pr(S = k)</m>.
+            (If we want to keep track of the parameter values, we may write <m>b(k; n, p)</m>.)
+          </p>
+        </statement>
+      </definition>
+
+      <example>
+        <statement>
+          <p>
+            Suppose we have a coin which comes up heads with probability <m>p = 0.4</m>.
+            If we flip the coin three times and let <m>S</m> be the number of heads, then <m>S</m> is binomially distributed with parameters <m>n = 3</m> and <m>p = 0.4</m>.
+            Then <m>S</m> has the distribution below.
+          </p>
+
+          <table xml:id="table-binomial-example">
+            <title><m>\Bin(3, 0.4)</m></title>
+
+            <tabular halign="center">
+              <row header="yes" bottom="minor">
+                <cell><m>k</m></cell>
+                <cell><m>\Pr(S = k)</m></cell>
+              </row>
+
+              <row>
+                <cell>0</cell>
+                <cell>0.216</cell>
+              </row>
+
+              <row>
+                <cell>1</cell>
+                <cell>0.432</cell>
+              </row>
+
+              <row>
+                <cell>2</cell>
+                <cell>0.288</cell>
+              </row>
+
+              <row>
+                <cell>3</cell>
+                <cell>0.064</cell>
+              </row>
+            </tabular>
+          </table>
+        </statement>
+      </example>
+
+      <p>
+        To understand how these probabilities are calculated, consider a particular heads/tails sequence, such as <m>HHHT</m>.
+        If the probability of heads is 0.4, then the probability of tails is 0.6.
+        Since the results of different coin flips are independent from each other, the probability of seeing precisely the sequence <m>HHT</m> would be the product <m>(0.4)(0.4)(0.6) = 0.096</m>.
+        The probability of seeing precisely <m>HTH</m> would be <m>(0.4)(0.6)(0.4) = 0.096</m>, the same product of terms in a different order.
+        So, if we knew exactly the number of flip sequences of length 3 with exactly 2 heads, we could calculate the probability of seeing 2 heads as:
+        <md>
+          <mrow> \Pr(S = 2) = (\text{number of sequences})(\text{probability of each sequence}) </mrow>
+        </md>
+        The probability for each sequence is straightforward to generalize: if there are <m>n</m> flips and <m>k</m> of them are heads, then <m>n - k</m> of them are tails.
+        So the product we should calculate will have <m>k</m> copies of the parameter <m>p</m> and <m>n - k</m> copies of the complementary probability <m>1 - p</m>:
+        <md>
+          <mrow>\text{probability of each sequence } = p^k(1-p)^k</mrow>
+        </md>
+      </p>
+
+      <definition xml:id="def-binomial-coefficient">
+        <statement>
+          <p>
+            We'll write the symbol <m>{n \choose k}</m> to mean the number of ways to choose <m>k</m> things out of <m>n</m> things.
+            The number <m>{n \choose k}</m> is read "<m>n</m> choose <m>k</m>" and called a <term>binomial coefficient</term>.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        The term "binomial coefficient" is used here because these numbers form coefficients of a polynomial in an important theorem about binomials called the <url href="https://en.wikipedia.org/wiki/Binomial_theorem">Binomial Theorem</url>.
+        The binomial coefficients will precisely tell us the number of flip sequences of length <m>n</m> with precisely <m>k</m> heads (to build such a sequence, we must choose <m>k</m> out of <m>n</m> flips in the sequence to be heads; the rest must be tails).
+        So, now we need a way to find the numbers <m>{n \choose k}</m>.
+      </p>
+
+      <definition xml:id="def-factorial">
+        <statement>
+          <p>
+            Let <m>n</m> be a positive integer.
+            Then the <term>factorial</term> of <m>n</m>, written <m>n!</m>, is the product of the positive integers up to <m>n</m>, i.e.:
+            <md>
+              <mrow> n! = 1 \times 2 \times 3 \times \dotsb \times (n-1) \times n. </mrow>
+            </md>
+          </p>
+        </statement>
+      </definition>
+
+      <fact xml:id="fact-binomial-coefficient-formula">
+        <title>Binomial Coefficient Formula</title>
+
+        <statement>
+          <p>
+            For any <m>0 \leq k \leq n</m>,
+            <md>
+              <mrow>{n \choose k} = \frac{n!}{k!(n-k)!}</mrow>
+            </md>
+          </p>
+        </statement>
+      </fact>
+
+      <p>
+        We won't provide a justification of this formula here, but we'll put it to use to calculate probabilities in the binomial distribution.
+        For example, the number of flip sequences of length 3 with exactly 2 heads is:
+        <md>
+          <mrow> {3 \choose 2} = \frac{3!}{2!1!} = \frac{6}{2} = 3. </mrow>
+        </md>
+        Since we previously said the probability of such a sequence is 0.096, we can now find the probability of seeing exactly 2 heads in 3 flips of the coin:
+        <md>
+          <mrow> \Pr(S = 2) \amp = (\text{number of sequences})(\text{probability of each sequence}) </mrow>
+          <mrow> \amp = (3)(0.096) </mrow>
+          <mrow> \amp = 0.288, </mrow>
+        </md>
+        which matches the value in <xref ref="table-binomial-example"/>.
+        More generally:
+      </p>
+
+      <fact xml:id="fact-binomial-probability-formula">
+        <title>Binomial Probability Formula</title>
+
+        <statement>
+          <p>
+            <md>
+              <mrow>b(k; n, p) = {n \choose k} p^k (1-p)^{n-k}</mrow>
+            </md>
+          </p>
+        </statement>
+      </fact>
+    </subsection>
+
+
+    <subsection xml:id="subsec-geometric-distribution">
+      <title>Geometric Distribution</title>
+
+      <definition xml:id="def-geometric-distribution">
+        <statement>
+          <p>
+            Suppose an event occurs with probability <m>p</m>.
+            If we perform independent trials repeatedly, let <m>N</m> be the random variable which counts the number of trials performed until we see the event occur for the first time.
+            (<m>N</m> counts the final trial in which the event occurs.) Then <m>N</m> has the <term>geometric distribution</term> with parameter <m>p</m>.
+            We'll write <m>N \sim \Geom(p)</m> to denote this.
+            For each value <m>k \geq 1</m>, we'll write <m>g(k)</m> for <m>\Pr(N = k)</m>.
+            (If we want to keep track of the parameter value, we may write <m>g(k; p)</m>.)
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        Suppose we flip a coin repeatedly until we first see heads.
+        The number <m>N</m> of flips is geometrically distributed with parameter <m>p</m>, which gives the probability of a flip coming up heads.
+        Then the probability of tails is <m>1 - p</m>.
+        For any particular <m>k \geq 1</m>, in order to have <m>N = k</m>, we must see exactly the flip sequence <m>TT\dotsm TH</m>, where the number of tails is exactly <m>k - 1</m>.
+        The probability of seeing this particular sequence is then:
+      </p>
+
+      <fact xml:id="fact-geometric-probability-formula">
+        <title>Geometric Probability Formula</title>
+
+        <statement>
+          <p>
+            <md>
+              <mrow> g(k; p) = (1-p)^{k-1} p </mrow>
+            </md>
+          </p>
+        </statement>
+      </fact>
+    </subsection>
+
+
+    <subsection xml:id="subsec-poisson-distribution">
+      <title>Poisson Distribution</title>
+
+      <definition xml:id="def-poisson-distribution">
+        <statement>
+          <p>
+            A <term>Poisson process</term> is one in which some event occurs randomly at a constant probabilistic rate <m>\lambda</m> over time.
+            Suppose we observe a Poisson process for a fixed amount of time <m>t</m>, and let <m>N</m> count the number of occurrences of the event.
+            Then <m>N</m> has the <term>Poisson distribution</term> with parameters <m>\lambda</m> and <m>t</m>.
+            We'll write <m>N \sim \Poiss(\lambda, t)</m> to denote this.
+            For each value <m>k \geq 0</m>, we'll write <m>p(k)</m> for <m>\Pr(N = k)</m>.
+            (If we want to keep track of the parameter values, we may write <m>p(k; \lambda, t)</m>.
+            See <xref ref="example-poisson-rate"/> for an important detail about units.)
+          </p>
+        </statement>
+      </definition>
+
+      <fact xml:id="fact-poisson-probability-formula">
+        <title>Poisson Probability Formula</title>
+
+        <statement>
+          <p>
+            <md>
+              <mrow> p(k; \lambda, t) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}. </mrow>
+            </md>
+          </p>
+        </statement>
+      </fact>
+
+      <p>
+        The term <m>\lambda t</m> is potentially misleading here depending on the units given for each value.
+        The idea is that the rate information might be given for a different period of time than the observation period, so the rate should be scaled before calculating a probability.
+        But the rate and observation time must be using the same time unit before multiplying.
+        See the following example.
+      </p>
+
+      <example xml:id="example-poisson-rate">
+        <statement>
+          <p>
+            Suppose we observe traffic along a particular stretch of highway which typically has 200 cars pass per hour.
+            Let <m>N</m> be the number of cars seen in a 2-hour observation period.
+            Since the parameter <m>\lambda = 200</m> cars per hour is given for a 1-hour period, we should scale it to find the rate for a 2-hour period: <m>\lambda t = (200)(2) = 400</m> cars per 2-hours.
+            Then, for example:
+            <md>
+              <mrow> \Pr(N = 375) = p(375; 200, 2) = \frac{400^{375}}{375!} e^{-400} \approx 0.01. </mrow>
+            </md>
+          </p>
+
+          <p>
+            Now consider the random variable <m>M</m> counting the number of cars seen in a 30-minute observation period.
+            We should not calculate <m>\lambda t = (200)(30) = 6000</m>, since <m>\lambda</m> measures time in hours and <m>t</m> measures time in minutes.
+            We should first convert <m>t = 0.5</m> hours, then we can find our appropriately scaled rate information: <m>(200)(0.5) = 100</m> cars per half-hour.
+            Then, for example:
+            <md>
+              <mrow> \Pr(M = 110) = p(110; 200, 0.5) = \frac{100^{110}}{110!}e^{-100} \approx 0.02. </mrow>
+            </md>
+            Note that when we write the notation <m>p(k; \lambda, t)</m>, we assume that <m>\lambda</m> and <m>t</m> are expressed with the same time units already.
+          </p>
+        </statement>
+      </example>
+    </subsection>
 
     <exercises xml:id="exercises-Discrete-RVs">
     <exercise>
@@ -101,7 +356,7 @@
       <statement>
         <p>
           An experiment consists of flipping a biased coin 20 times.
-          If the coin comes up heads with probability <m>\theta = 0.3</m>, find the probability of seeing 5 heads.
+          If the coin comes up heads with probability <m>p = 0.3</m>, find the probability of seeing 5 heads.
           Find the probability of seeing up to (and including) 3 heads.
         </p>
       </statement>
@@ -158,7 +413,78 @@
     <title>Continuous Random Variables</title>
 
     <p>
-      Text of section.
+      We have to think about probability differently for continuous random variables.
+      If <m>X</m> is a continuous random variable taking values in an interval <m>[a, b]</m>, it doesn't quite make sense to ask, as we have for discrete random variables, to find the probabilities of each individual outcome.
+    </p>
+
+    <p>
+      When we roll a fair 6-sided die, there are 6 equally likely outcomes, so they each get assigned the probability <m>1/6</m>.
+      If we try to select a random number in the interval <m>[0, 1]</m> in a similarly "fair" way (i.e., with each outcome equally likely), then what probability <m>\alpha</m> should we assign to each outcome? If <m>\alpha > 0</m>, then we have a problem: if you add up the probabilities of all the (infinitely many) outcomes, you get an infinite total, whereas the total probability in any sample space should be 1.
+      If <m>\alpha = 0</m>, then we also have a problem: if you add up the probabilities of all the outcomes, you get total of 0, whereas the total probability in any sample space should be 1.
+    </p>
+
+    <p>
+      We need a new way to model and calculate probabilities for continuous random variables.
+    </p>
+
+    <definition xml:id="def-pdf">
+      <statement>
+        <p>
+          Let <m>X</m> be a continuous random variable taking values in the interval <m>[a, b]</m>.
+          The <term>probability density function</term> (or <term>pdf</term>) for <m>X</m> is a function <m>f(x)</m> defined on <m>[a, b]</m> satisfying the properties:
+          <ol>
+            <li>
+              <p>
+                <m>f(x) \geq 0</m> for all <m>x \in [a, b]</m>, and
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\displaystyle{\int_a^b f(x)\ dx = 1}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      It's important to keep in mind that the output values of a pdf <m>f(x)</m> are <em>probability densities</em>, not probabilities.
+      You can (somewhat casually) think of the units of <m>f(x)</m> values as "probability per &lt;units of the sample space&gt;".
+      You may not have discussed the units of the differential <m>dx</m> very much in your Calculus 1 course, but <m>dx</m> has the same units as <m>x</m> and is being multiplied by the integrand when you take an integral.
+      So, although <m>f(x)</m> is not a probability, the result of computing <m>\int_c^d f(x)\ dx</m> <em>is</em> a probability.
+    </p>
+
+    <p>
+      A pdf's purpose in life is to be integrated, which tells us probabilities for a continuous random variable:
+      <md>
+        <mrow> \Pr(c \leq X \leq d) = \int_c^d f(x)\ dx. </mrow>
+      </md>
+    </p>
+
+    <definition xml:id="def-continuous-uniform-distribution">
+      <statement>
+        <p>
+          Let <m>X</m> take values in the interval <m>[a, b]</m>.
+          We say that <m>X</m> has the <term>uniform distribution</term> if, for any subinterval <m>[c, d] \subset [a, b]</m>, the probability that <m>X</m> lies within <m>[c, d]</m> is equal to the proportion of the total sample space taken by <m>[c, d]</m>.
+          That is:
+          <md>
+            <mrow> \Pr(c \leq X \leq d) = \frac{d - c}{b - a}. </mrow>
+          </md>
+          In this case, <m>X</m> has the pdf <m>f(x) = \frac{1}{b - a}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      We'll ignore for the moment how to find this pdf and instead we'll quickly check that it behaves the way we want it to:
+      <md>
+        <mrow> \Pr(c \leq X \leq d) \amp = \int_c^d \frac{1}{b-a}\ dx </mrow>
+        <mrow> \amp = \frac{x}{b - a}\bigg|_c^d </mrow>
+        <mrow> \amp = \frac{d - c}{b - a}, </mrow>
+      </md>
+      as we wanted.
     </p>
 
     <exercises xml:id="exercises-Continuous-RVs">
