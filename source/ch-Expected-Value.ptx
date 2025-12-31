@@ -4,33 +4,495 @@
   <title>Expected Value and Variance</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p>
+      Text before the first section.
+    </p>
   </introduction>
 
   <section xml:id="sec-Expected-Value" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Expected Value</title>
+    <title>Expected Value</title>
 
-  <p> Text of section. </p>
+    <subsection xml:id="subsec-discrete-EV">
+      <title>Discrete Expected Value</title>
 
+      <p>
+        A full probability distribution (for a discrete random variable) or a density function (for a continuous random variable) carry all of the probability information.
+        Often, we seek <term>statistics</term>, i.e., numbers that summarize a distribution in some way.
+      </p>
+
+      <definition xml:id="def-discrete-expected-value">
+        <statement>
+          <p>
+            Let <m>X</m> be a discrete random variable taking the values <m>x_1, x_2, \dotsc, x_n</m>.
+            The <term>expected value</term> (also called <term>mean</term>, or <term>expectation</term>) of <m>X</m> is the weighted average of the values of <m>X</m>, where the weights are the probabilities of <m>X</m> taking each value:
+            <md>
+              <mrow> \E(X) = \sum_{i=1}^n x_i \Pr(X = x_i).  </mrow>
+            </md>
+          </p>
+        </statement>
+      </definition>
+
+      <example xml:id="example-EV-die">
+        <statement>
+          <p>
+            If <m>X</m> takes on the values <m>x_1, x_2, \dotsc, x_n</m> uniformly (i.e., each value having probability <m>\frac{1}{n}</m>), then the expected value is the usual average:
+            <md>
+              <mrow> \E(X) \amp = x_1 \cdot \frac{1}{n} + x_2\cdot \frac{1}{n} + \dotsb + x_n \cdot \frac{1}{n} </mrow>
+              <mrow> \amp = \frac{x_1 + x_2 + \dotsb + x_n}{n} </mrow>
+            </md>
+            For example, the expected value of a fair 6-sided die roll <m>R</m> is:
+            <md>
+              <mrow> \E(R) = \frac{1 + 2 + \dotsb + 6}{6} = \frac{21}{6} = \frac{7}{2}. </mrow>
+            </md>
+          </p>
+        </statement>
+      </example>
+
+      <example xml:id="example-EV-sum-2-dice">
+        <statement>
+          <p>
+            Suppose we roll a fair 6-sided die two times, and let <m>S</m> be the sum of the rolls.
+            It's straightforward to check the distribution for <m>S</m> shown below.
+            We've also included a column containing the products <m>k \Pr(S = k)</m>, which must be summed up to find <m>\E(S)</m>.
+          </p>
+
+          <table>
+            <title></title>
+
+            <tabular halign="center">
+              <row header="yes" bottom="minor">
+                <cell><m>k</m></cell>
+                <cell><m>\Pr(S = k)</m></cell>
+                <cell><m>k \cdot \Pr(S = k)</m></cell>
+              </row>
+
+              <row>
+                <cell>2</cell>
+                <cell><m>1/36</m></cell>
+                <cell><m>2/36</m></cell>
+              </row>
+
+              <row>
+                <cell>3</cell>
+                <cell><m>2/36</m></cell>
+                <cell><m>6/36</m></cell>
+              </row>
+
+              <row>
+                <cell>4</cell>
+                <cell><m>3/36</m></cell>
+                <cell><m>12/36</m></cell>
+              </row>
+
+              <row>
+                <cell>5</cell>
+                <cell><m>4/36</m></cell>
+                <cell><m>20/36</m></cell>
+              </row>
+
+              <row>
+                <cell>6</cell>
+                <cell><m>5/36</m></cell>
+                <cell><m>30/36</m></cell>
+              </row>
+
+              <row>
+                <cell>7</cell>
+                <cell><m>6/36</m></cell>
+                <cell><m>42/36</m></cell>
+              </row>
+
+              <row>
+                <cell>8</cell>
+                <cell><m>5/36</m></cell>
+                <cell><m>40/36</m></cell>
+              </row>
+
+              <row>
+                <cell>9</cell>
+                <cell><m>4/36</m></cell>
+                <cell><m>36/36</m></cell>
+              </row>
+
+              <row>
+                <cell>10</cell>
+                <cell><m>3/36</m></cell>
+                <cell><m>30/36</m></cell>
+              </row>
+
+              <row>
+                <cell>11</cell>
+                <cell><m>2/36</m></cell>
+                <cell><m>22/36</m></cell>
+              </row>
+
+              <row>
+                <cell>12</cell>
+                <cell><m>1/36</m></cell>
+                <cell><m>12/36</m></cell>
+              </row>
+            </tabular>
+          </table>
+
+          <p>
+            The sum of the third column gives <m>\E(S) = \frac{252}{36} = 7</m>.
+          </p>
+        </statement>
+      </example>
+
+      <example xml:id="example-indicator-EV">
+        <statement>
+          <p>
+            Let <m>X</m> indicate an event <m>A</m> which has probability <m>p</m>.
+            Then:
+            <md>
+              <mrow> \E(X) = 0 \cdot (1-p) + 1 \cdot p = p. </mrow>
+            </md>
+            That is, the expected value of an indicator random variable is the probability of the event that it indicates.
+          </p>
+        </statement>
+      </example>
+
+      <p>
+        Having found the expected value for one named distribution, we may be tempted to run through our other discrete distributions (binomial, geometric, and Poisson) and find nice formulas for their expected values.
+        Unfortunately, both the geometric distribution and the Poisson distribution have infinitely many possible values, and the summation of infinitely many discrete terms is beyond the scope of this course.
+        (A Calculus 2 course covering series would give the right tools to find expected value formulas with full justification for these distributions.)
+      </p>
+
+      <p>
+        The binomial distribution takes only finitely many values, and we have <xref ref="fact-binomial-probability-formula"/> that lets us generate a distribution table reasonably quickly, given the parameters <m>n</m> and <m>p</m>.
+        Feel free to pick some parameter values (keep <m>n</m> fairly small!) to try this calculation by hand, but we'll use a powerful theorem a bit later to give a very nice general formula depending on <m>n</m> and <m>p</m>.
+      </p>
+    </subsection>
+
+
+    <subsection xml:id="subsec-continuous-EV">
+      <title>Continuous Expected Value</title>
+
+      <p>
+      </p>
+    </subsection>
+
+
+    <subsection xml:id="subsec-linearity-EV">
+      <title>Linearity of Expected Value</title>
+
+      <p>
+      </p>
+    </subsection>
+
+    <exercises xml:id="exercises-Expected-Value">
+    <exercise>
+      <statement>
+        <p>
+          Consider a random variable <m>X</m> with probability distribution below.
+          Find <m>\E(X)</m>.
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell><m>x</m></cell>
+              <cell><m>\Pr(X = x)</m></cell>
+            </row>
+
+            <row>
+              <cell>1</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>2</cell>
+              <cell>0.05</cell>
+            </row>
+
+            <row>
+              <cell>3</cell>
+              <cell>0.2</cell>
+            </row>
+
+            <row>
+              <cell>4</cell>
+              <cell>0.15</cell>
+            </row>
+
+            <row>
+              <cell>5</cell>
+              <cell>0.15</cell>
+            </row>
+
+            <row>
+              <cell>6</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>7</cell>
+              <cell>0.05</cell>
+            </row>
+
+            <row>
+              <cell>8</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>9</cell>
+              <cell>0.1</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>X</m> and <m>Y</m> be random variables each taking the values 1, 2, 3, 4, 5.
+          Write different distribution tables for <m>X</m> and <m>Y</m> so that they have the same expected value.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we flip a coin <m>n = 100</m> times, and let <m>N</m> count the number of heads.
+          If the coin comes up heads on a flip with probability <m>p = 0.4</m>, what is <m>\E(N)</m>? What if <m>n = 80</m> and <m>p = 0.6</m>? What if <m>n = 200</m> and <m>p = 0.5</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          If <m>\E(X) = 3</m>, <m>\E(Y) = -2</m>, and <m>\E(Z) = 1</m>, what is <m>\E(4X + 5Y - Z + 3)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[0, 1]</m> has p.d.f.
+          <m>f(x) = 2x</m>.
+          What is <m>\E(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[-1, 1]</m> has p.d.f.
+          <m>f(x) = \frac{3x^2}{2}</m>.
+          What is <m>\E(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+          <m>f(x) = \frac{4}{3x^2}</m>.
+          What is <m>\E(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+          <m>f(x) = k(x - \sqrt{x})</m> for some constant <m>k</m>.
+          In a previous problem, you found the value of <m>k</m>.
+          Now, find <m>\E(X)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 2]</m> has p.d.f.
+          <m>\displaystyle{f(x) = \frac{1}{2}\left(\frac{1}{x^2} + x\right)}</m>.
+          Find <m>\E(X)</m>.
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
 
   <section xml:id="sec-Variance" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Variance</title>
+    <title>Variance</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-Variance">
+    <exercise>
+      <statement>
+        <p>
+          Consider a random variable <m>X</m> with probability distribution below.
+          Find <m>\Var(X)</m>.
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell><m>x</m></cell>
+              <cell><m>\Pr(X = x)</m></cell>
+            </row>
+
+            <row>
+              <cell>1</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>2</cell>
+              <cell>0.05</cell>
+            </row>
+
+            <row>
+              <cell>3</cell>
+              <cell>0.2</cell>
+            </row>
+
+            <row>
+              <cell>4</cell>
+              <cell>0.15</cell>
+            </row>
+
+            <row>
+              <cell>5</cell>
+              <cell>0.15</cell>
+            </row>
+
+            <row>
+              <cell>6</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>7</cell>
+              <cell>0.05</cell>
+            </row>
+
+            <row>
+              <cell>8</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>9</cell>
+              <cell>0.1</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>X</m> be a random variable taking the values 1, 2, 3, 4, 5.
+          Write a distribution table for <m>X</m>, then use your table to write a distribution for <m>X^2</m>.
+          Then, find <m>\Var(X)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we flip a coin <m>n = 100</m> times, and let <m>N</m> count the number of heads.
+          If the coin comes up heads on a flip with probability <m>p = 0.4</m>, what is <m>\Var(N)</m>? What if <m>n = 80</m> and <m>p = 0.6</m>? What if <m>n = 200</m> and <m>p = 0.5</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          If <m>\E(X) = 3</m>, <m>\Var(X) = 2</m>, what is <m>\E(X^2)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[0, 1]</m> has p.d.f.
+          <m>f(x) = 2x</m>.
+          What is <m>\Var(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[-1, 1]</m> has p.d.f.
+          <m>f(x) = \frac{3x^2}{2}</m>.
+          What is <m>\Var(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+          <m>f(x) = \frac{4}{3x^2}</m>.
+          What is <m>\Var(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+          <m>f(x) = k(x - \sqrt{x})</m> for some constant <m>k</m>.
+          In a previous problem, you found the value of <m>k</m>.
+          Now, find <m>\Var(X)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 2]</m> has p.d.f.
+          <m>\displaystyle{f(x) = \frac{1}{2}\left(\frac{1}{x^2} + x\right)}</m>.
+          Find <m>\Var(X)</m>.
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
 
-
-  <!-- Need a joint distribution section first? -->
-  <section xml:id="sec-Covariance" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Need a joint distribution section first? --> <section xml:id="sec-Covariance" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Covariance</title>
 
-  <p> Text of section. </p>
+  <p>
+    Text of section.
+  </p>
 
-  </section>
-
-
-
+  <exercises xml:id="exercises-Covariance">
+  <exercise>
+    <statement>
+      <p>
+      </p>
+    </statement>
+  </exercise>
+  </exercises>
+</section>
 </chapter>

@@ -31,6 +31,10 @@
     \DeclareMathOperator{\Geom}{Geom}
     \DeclareMathOperator{\Poiss}{Poiss}
     \DeclareMathOperator{\Exp}{Exp}
+
+    <!-- other notation -->
+    \DeclareMathOperator{\E}{E}
+    \DeclareMathOperator{\Var}{Var}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
