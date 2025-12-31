@@ -4,25 +4,217 @@
   <title>Random Variables</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p>
+      Text before the first section.
+    </p>
   </introduction>
 
   <section xml:id="sec-Discrete-RVs" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Discrete Random Variables</title>
+    <title>Discrete Random Variables</title>
 
-  <p> Text of section. </p>
+    <definition xml:id="def-RV">
+      <statement>
+        <p>
+          Let <m>\Omega</m> be a sample space.
+          A <term>random variable</term> is a function <m>X \colon \Omega \to \mathbb{R}</m> which assigns a number to each outcome.
+        </p>
+      </statement>
+    </definition>
 
+    <example>
+      <statement>
+        <p>
+          Suppose an experiment consists of flipping a fair coin 4 times.
+          Let <m>X</m> be the number of heads.
+          The actual outcomes in the experiment are heads/tails sequences of length 4, such as <m>HTHT</m> and <m>HHHT</m>.
+          The random variable <m>X</m> assigns a numerical measurement to the outcomes, such as <m>X(HTHT) = 2</m> and <m>X(HHHT) = 3</m>.
+        </p>
+
+        <p>
+          For any real number value <m>a</m>, we can consider the event consisting of outcomes such that <m>X = a</m>.
+          For example, the flip sequences <m>HHHT, HHTH, HTHH</m>, and <m>THHH</m> all have 3 heads, so <m>\Pr(X = 3) = \frac{4}{16} = \frac{1}{4}</m>.
+        </p>
+      </statement>
+    </example>
+
+    <example>
+      <title>Indicator Random Variable</title>
+
+      <statement>
+        <p>
+          Let <m>A</m> be an event in the sample space <m>\Omega</m>.
+          An <term>indicator random variable</term> for <m>A</m> is the random variable <m>X</m> such that
+          <md>
+            <mrow> X(\omega) = \begin{cases}  1 \amp \omega \in A \\ 0 \amp \omega \notin A \end{cases} </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Indicator random variables are also called <term>Bernoulli random variables</term>, although we'll prefer the former term since it more clearly states the purpose of these random variables: to indicate whether or not a particular event has occurred.
+      We'll use the language "<m>X</m> indicates <m>A</m>" to mean that <m>X</m> is an indicator random variable for the event <m>A</m>.
+      In this case, <m>\Pr(X = 1) = \Pr(A)</m>, and <m>\Pr(X = 0) = 1 - \Pr(A)</m>.
+    </p>
+
+    <definition xml:id="def-discrete-and-continuous">
+      <statement>
+        <p>
+          Consider the set <m>S</m> of all real numbers which are actually output by a random variable <m>X</m>.
+          If <m>S</m> does not contain any interval of values, then the random variable <m>X</m> is called <term>discrete</term>.
+          Otherwise, it's called <term>continuous</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <example>
+      <statement>
+        <p>
+          Any random variable <m>X</m> defined on a finite sample space <m>\Omega</m> is discrete<mdash/>the set of outputs of <m>X</m> cannot contain an interval if it only has finitely many values.
+        </p>
+
+        <p>
+          Suppose an experiment consists of growing a plant in a new fertilizer, and a random variable <m>Y</m> measures the height of the plant after a set growing period.
+          Now <m>Y</m> could conceivably take on an interval's worth of values (such as, e.g., any real number between 10 inches and 20 inches), so this random variable would be continuous.
+        </p>
+
+        <p>
+          The distinction between discrete and continuous random variables is not simply the distinction of whether the sample space is finite or infinite.
+          Consider the experiment in which we flip a coin repeatedly until we first see a coin come up heads.
+          Let <m>Z</m> be the number of times the coin is flipped. Then there are infinitely many possible values of <m>Z</m> (1, 2, 3, and so on), but there's no interval of real numbers which are all possible outputs of <m>Z</m>.
+          The possible outputs of <m>Z</m> are discrete (in the non-technical, English sense of the word: separated).
+        </p>
+      </statement>
+    </example>
+
+    <exercises xml:id="exercises-Discrete-RVs">
+    <exercise>
+      <statement>
+        <p>
+          We flip a coin with unknown bias 100 times and observe 43 heads.
+          What is the maximum likelihood estimation for the probability of the coin coming up heads?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          An experiment consists of flipping a biased coin 20 times.
+          If the coin comes up heads with probability <m>\theta = 0.3</m>, find the probability of seeing 5 heads.
+          Find the probability of seeing up to (and including) 3 heads.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          An experiment consists of flipping a coin repeatedly until we first see heads.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          If the coin comes up heads with probability 0.4, what is the probability we’ll see our first heads within three flips? What about precisely on the third flip?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose the coin has an unknown probability of coming up heads.
+          We perform the experiment in five independent trials, during which it takes 4, 5, 4, 3, and 6 flips to see our first heads in each trial.
+          What is the maximum likelihood estimation for the probability of the coin coming up heads on a flip?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A particular store has an average of 20 customers each hour.
+          During a 4-hour afternoon shift, what is the probability of serving 80 customers.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A particular store owner wants to approximate the average hourly rate at which customers come into the store.
+          They observe 80 customers enter during a particular 4-hour shift.
+          What is the maximum likelihood estimation for the hourly customer rate?
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
-
 
   <section xml:id="sec-Continuous-RVs" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Continuous Random Variables</title>
+    <title>Continuous Random Variables</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-Continuous-RVs">
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+          <m>f(x) = k(x - \sqrt{x})</m> for some constant <m>k</m>.
+          What is the value of <m>k</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 2]</m> has p.d.f.
+          <m>\displaystyle{f(x) = \frac{1}{2}\left(\frac{1}{x^2} + x\right)}</m>.
+          Find the c.d.f.
+          <m>F(x)</m>.
+          Use your c.d.f.
+          to find <m>\Pr\left(1 \leq X \leq \frac{3}{2}\right)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[2, 3]</m> has c.d.f.
+          <m>F(x) = \frac{x^3}{3} - x^2 + 4</m>.
+          Find the p.d.f.
+          <m>f(x)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A radioactive material emits particles at an unknown probabilistic rate <m>\lambda</m> particles per minute.
+          We observe particles emitted at times 1.1, 1.7, 1.3, 2.2, 1.9, and 1.8 minutes.
+          Write the likelihood function <m>\mathcal{L}(\lambda)</m> based on this data.
+          What is the maximum likelihood estimation for <m>\lambda</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose a parameter <m>\theta</m> takes values in <m>[0, 1]</m> with likelihood function <m>\mathcal{L}(\theta) = \sqrt{\theta} - \theta^2</m>.
+          Find the maximum likelihood estimation of <m>\theta</m>.
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
-
-
 </chapter>
