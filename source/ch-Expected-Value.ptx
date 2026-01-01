@@ -538,8 +538,54 @@
     <title>Variance</title>
 
     <p>
-      Text of section.
+      The expected value is one of several statistics sometimes referred to as a "measure of central tendency".
+      These are statistics that try to capture the "typical" value of the random variable.
+      Our next statistic tries to measure how spread out a distribution is.
     </p>
+
+    <definition xml:id="def-variance">
+      <statement>
+        <p>
+          Let <m>X</m> be a random variable.
+          The <term>variance</term> of <m>X</m> is:
+          <md>
+            <mrow>\Var(X) = \E\left[ \left(X - \E(X)\right)^2 \right].</mrow>
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      This formula tries to capture some measure of how spread out the distribution is.
+      One way we might hope to measure spread is to calculate how far away <m>X</m> is from its expected value on average.
+      Squaring the term <m>X - \E(X)</m> ensures that any difference between the value of the random variable and its expected value contributes positively.
+      ("Distance away from" should be positive.) So, the formula in <xref ref="def-variance"/> is conceptually clear.
+      In practice, there's another way to structure the formula that makes for cleaner calculation:
+    </p>
+
+    <theorem xml:id="thm-variance-formula">
+      <statement>
+        <p>
+          Let <m>X</m> be a random variable.
+          Then:
+          <md>
+            <mrow>\Var(X) = \E\left(X^2\right) - \left(\E(X)\right)^2.</mrow>
+          </md>
+        </p>
+      </statement>
+    </theorem>
+
+
+    <proof>
+      <p>
+        <md>
+          <mrow> \Var(X) \amp = \E\left[ \left(X - \E(X)\right)^2 \right] </mrow>
+          <mrow> \amp = \E\left[ X^2 - 2 \E(X) X + \left(\E(X)\right)^2\right] </mrow>
+          <mrow> \amp = \E\left(X^2\right)  - 2 \E(X) \E(X) + \left(\E(X)\right)^2</mrow>
+          <mrow> \amp = \E\left(X^2\right) - \left(\E(X)\right)^2. </mrow>
+        </md>
+      </p>
+    </proof>
 
     <exercises xml:id="exercises-Variance">
     <exercise>
