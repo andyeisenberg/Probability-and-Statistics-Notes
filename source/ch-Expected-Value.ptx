@@ -639,6 +639,56 @@
       </statement>
     </example>
 
+    <p>
+      Variance is <em>not</em> linear.
+      In general, you can't split up variance across plus or minus signs, and you can't pull multiplied constants out of the variance like you can with expected value.
+      However, there are some properties we can use to do similar manipulations to the variance.
+    </p>
+
+    <theorem xml:id="thm-variance-properties">
+      <statement>
+        <p>
+          Let <m>X</m> and <m>Y</m> be random variables, and let <m>\alpha \in \R</m>.
+          Then:
+          <ol>
+            <li>
+              <p>
+                <m>\Var(X + \alpha) = \Var(X)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\Var(\alpha X) = \alpha^2 \Var(X)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                If <m>X</m> and <m>Y</m> are independent, then <m>\Var(X + Y) = \Var(X) + \Var(Y)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      We'll omit the proofs and just casually observe that these are reasonable properties.
+      <m>X + \alpha</m> is a shift of <m>X</m>, and shifting shouldn't change how spread out the distribution is.
+      <m>\alpha X</m> scaled <m>X</m> by a constant, so it should scale the spread of the distribution by the same constant. 
+      But recall that the variance calculation involves squaring; it's an indirect measure of spread.
+      So it's reasonable that scaling the distribution by a constant should scale the variance by its square.
+    </p>
+
+    <example xml:id="example-binomial-variance">
+      <statement>
+        <p>
+          TODO
+        </p>
+      </statement>
+    </example>
+
     <exercises xml:id="exercises-Variance">
     <exercise>
       <statement>

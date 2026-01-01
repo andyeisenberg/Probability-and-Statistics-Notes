@@ -763,4 +763,133 @@
     </exercise>
     </exercises>
   </section>
+
+  <section xml:id="sec-Joint-Distributions">
+    <title>Joint Distributions</title>
+
+    <p>
+      Sometimes multiple measurements are taken simultaneously and data is naturally grouped by combinations of measurement values.
+      Consider a poll that asks respondents two yes or no questions.
+      It may be natural to report counts of respondents who answered yes/yes, yes/no, no/yes, no/no.
+    </p>
+
+    <definition xml:id="def-joint-distribution">
+      <statement>
+        <p>
+          Let <m>X</m> be a random variable taking values <m>x_1, x_2, \dotsc, x_m</m>.
+          Let <m>Y</m> be a random variable taking values <m>y_1, y_2, \dotsc, y_n</m>.
+          The <term>joint distribution</term> for <m>X</m> and <m>Y</m> is the collection of probabilities <m>\Pr(X = x_i, Y = y_j)</m> for all <m>1 \leq i \leq m, 1 \leq j \leq n</m>.
+          The individual distributions for <m>X</m> and <m>Y</m> separately are called the <term>marginal distributions</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      In the probability <m>\Pr(X = x_i, Y = y_j)</m>, the comma should be read as "and".
+      Think of the conditions <m>X = x_i</m> and <m>Y = y_j</m> as events, and <m>\Pr(X = x_i, Y = y_j)</m> is the probability of the intersection of these two events.
+    </p>
+
+    <p>
+      We're restricting our attention here to joint distributions of two random variables, each taking only finitely many values.
+      It shouldn't be hard to imagine how to generalize this definition for a joint distribution of three or more discrete random variables.
+      A bit more adjustment would need to be made for a joint distribution of continuous random variables, or a joint distribution between a discrete and continuous random variable.
+    </p>
+
+    <example xml:id="example-joint-indicators">
+      <statement>
+        <p>
+          A poll asks two yes/no questions.
+          Let <m>X</m> indicate a yes on Question 1 and <m>Y</m> indicate a yes on Question 2.
+          When the data is collected, the following joint distribution for <m>X</m> and <m>Y</m> is created:
+        </p>
+
+        <table>
+          <title>Joint Distribution for Indicator Random Variables</title>
+
+          <tabular halign="center">
+            <row bottom="minor">
+              <cell right="minor"></cell>
+              <cell right="minor"><m>X = 0</m></cell>
+              <cell><m>X = 1</m></cell>
+            </row>
+
+            <row bottom="minor">
+              <cell right="minor"><m>Y = 0</m></cell>
+              <cell right="minor">0.1</cell>
+              <cell>0.2</cell>
+            </row>
+
+            <row>
+              <cell right="minor"><m>Y = 1</m></cell>
+              <cell right="minor">0.3</cell>
+              <cell>0.4</cell>
+            </row>
+          </tabular>
+        </table>
+
+        <p>
+          Note that the sum of all values in the table is 1; this is a probability distribution, and total probability must be 1.
+          This table doesn't show the distributions for <m>X</m> or <m>Y</m> individually.
+          The data for the two distributions is mixed together.
+          We can, if we wish, take this information and determine separate distributions for <m>X</m> and <m>Y</m>.
+          For the distribution for <m>X</m>, we need to know <m>\Pr(X = 0)</m> and <m>\Pr(X = 1)</m> (with no reference to <m>Y</m>).
+          We can get these probabilities by summing along the columns of the table:
+          <md>
+            <mrow> \Pr(X = 0) \amp = 0.1 + 0.3 = 0.4 </mrow>
+            <mrow> \Pr(X = 1) \amp = 0.2 + 0.4 = 0.6 </mrow>
+          </md>
+          To get the distribution for <m>Y</m>, we should add along the rows:
+          <md>
+            <mrow> \Pr(Y = 0) \amp = 0.1 + 0.2 = 0.3 </mrow>
+            <mrow> \Pr(Y = 1) \amp = 0.3 + 0.4 = 0.7 </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      If we start with the joint distribution, we can get the marginal distributions.
+      If we start with the marginal distributions, we can't necessarily find the joint distribution, because we won't know how the random variables interact.
+    </p>
+
+    <definition xml:id="def-independent-RVs">
+      <statement>
+        <p>
+          Random variables <m>X</m> and <m>Y</m> are called <term>independent</term> if the events <m>X = x</m> and <m>Y = y</m> are independent for every possible combination of <m>x</m> and <m>y</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="example-independent-indicators">
+      <statement>
+        <p>
+          Using the joint distribution and marginal distributions in <xref ref="example-joint-indicators"/>, we can check independence of <m>X</m> and <m>Y</m> by going cell by cell through the joint distribution table.
+          The top-left cell shows <m>\Pr(X = 0, Y = 0) = 0.1</m>.
+          The marginal distributions have <m>\Pr(X = 0) = 0.4</m> and <m>\Pr(Y = 0) = 0.3</m>.
+          If <m>X</m> and <m>Y</m> were independent, we would have
+          <md>
+            <mrow> \Pr(X = 0, Y = 0) \amp = \Pr(X = 0) \Pr(Y = 0) </mrow>
+            <mrow> \text{however, } 0.1 \amp \neq (0.4)(0.3) </mrow>
+          </md>
+          Therefore, <m>X</m> and <m>Y</m> are not independent.
+        </p>
+
+        <p>
+          Note that we can stop checking now.
+          As soon as we find one cell in the joint distribution table where the independence condition fails, the two random variables are not independent.
+          In order to establish independence of random variables, <em>all</em> cells in the joint distribution table would have to pass our check.
+        </p>
+      </statement>
+    </example>
+
+    <exercises xml:id="exercises-Joint-Distributions">
+    <exercise>
+      <statement>
+        <p>
+          TODO
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
+  </section>
 </chapter>
