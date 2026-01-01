@@ -42,7 +42,8 @@
             </md>
             For example, the expected value of a fair 6-sided die roll <m>R</m> is:
             <md>
-              <mrow> \E(R) = \frac{1 + 2 + \dotsb + 6}{6} = \frac{21}{6} = \frac{7}{2}. </mrow>
+              <mrow> \E(R) \amp = 1 \left(\frac{1}{6}\right) + 2 \left(\frac{1}{6}\right) + 3 \left(\frac{1}{6}\right) + 4 \left(\frac{1}{6}\right) + 5 \left(\frac{1}{6}\right) + 6 \left(\frac{1}{6}\right) </mrow>
+              <mrow> \amp = \frac{1 + 2 + \dotsb + 6}{6} = \frac{21}{6} = \frac{7}{2}. </mrow>
             </md>
           </p>
         </statement>
@@ -196,7 +197,7 @@
         So, both <m>\sum x_i \Pr(X = x_i)</m> and <m>\int_a^b x f(x)\ dx</m> should be understood as taking the products of values with their probabilities and then summing up those products.
       </p>
 
-      <example>
+      <example xml:id="example-uniform-EV">
         <statement>
           <p>
             Let <m>X</m> be uniform on the interval <m>[a, b]</m>.
@@ -586,6 +587,57 @@
         </md>
       </p>
     </proof>
+
+    <example xml:id="example-var-die">
+      <statement>
+        <p>
+          Let <m>R</m> be the value of a fair 6-sided die roll.
+          We've seen in <xref ref="example-EV-die"/> that <m>\E(R) = \frac{7}{2}</m>.
+          To find <m>\E\left(R^2\right)</m>:
+          <md>
+            <mrow> \E\left(R^2\right) \amp = 1^2 \left(\frac{1}{6}\right) + 2^2 \left(\frac{1}{6}\right) + 3^2 \left(\frac{1}{6}\right) + 4^2 \left(\frac{1}{6}\right) + 5^2 \left(\frac{1}{6}\right) + 6^2 \left(\frac{1}{6}\right) </mrow>
+            <mrow> \amp = 1 \left(\frac{1}{6}\right) + 4 \left(\frac{1}{6}\right) + 9 \left(\frac{1}{6}\right) + 16 \left(\frac{1}{6}\right) + 25 \left(\frac{1}{6}\right) + 36 \left(\frac{1}{6}\right) </mrow>
+            <mrow> \amp = \frac{91}{6}. </mrow>
+          </md>
+          Then
+          <md>
+            <mrow>\Var(R) = \E\left(R^2\right) - \left(\E(R)\right)^2 = \frac{91}{6} - \frac{49}{4} = \frac{35}{12}. </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Notice that in the <m>\E\left(R^2\right)</m> calculation, we're just taking the basic structure of the <m>\E(R)</m> calculation and squaring the <m>R</m> values.
+      The analogous calculation for a continuous random variable looks similar:
+    </p>
+
+    <example xml:id="example-uniform-variance">
+      <statement>
+        <p>
+          Let <m>X</m> be uniform on the interval <m>[a, b]</m>.
+          So <m>X</m> has the pdf <m>f(x) = \frac{1}{b - a}</m>, and we saw in <xref ref="example-uniform-EV"/> that <m>\E(X) = \frac{a + b}{2}</m>.
+          Now:
+          <md>
+            <mrow> \E\left(X^2\right) \amp = \int_a^b x^2 f(x)\ dx </mrow>
+            <mrow> \amp = \int_a^b \frac{x^2}{b - a} \ dx </mrow>
+            <mrow> \amp = \frac{1}{b-a} \left(\frac{x^3}{3}\right)\bigg|_a^b </mrow>
+            <mrow> \amp = \frac{1}{b-a} \left( \frac{b^3}{3} - \frac{a^3}{3} \right) </mrow>
+            <mrow> \amp = \frac{1}{b - a}\left( \frac{(b - a)(a^2 + ab + b^2)}{3}\right) </mrow>
+            <mrow> \amp = \frac{a^2 + ab + b^2}{3}. </mrow>
+          </md>
+          Then:
+          <md>
+            <mrow> \Var(X) \amp = \E\left(X^2\right) - \left(\E(X)\right)^2 </mrow>
+            <mrow> \amp = \frac{a^2 + ab + b^2}{3} - \frac{(a+b)^2}{4} </mrow>
+            <mrow> \amp = \frac{a^2 + ab + b^2}{3} - \frac{a^2 + 2ab + b^2}{4} </mrow>
+            <mrow> \amp = \frac{4a^2 + 4ab + 4b^2}{12} - \frac{3a^2 + 6ab + 3b^2}{12} </mrow>
+            <mrow> \amp = \frac{a^2 - 2ab + b^2}{12} </mrow>
+            <mrow> \amp = \frac{(a - b)^2}{12}. </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
 
     <exercises xml:id="exercises-Variance">
     <exercise>
