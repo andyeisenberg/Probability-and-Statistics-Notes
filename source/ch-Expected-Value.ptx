@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- TODO make sure to include EV/Var of all standard distributions, perhaps include a table? -->
+
 <chapter xml:id="ch-Expected-Value" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Expected Value and Variance</title>
 
@@ -676,15 +678,47 @@
     <p>
       We'll omit the proofs and just casually observe that these are reasonable properties.
       <m>X + \alpha</m> is a shift of <m>X</m>, and shifting shouldn't change how spread out the distribution is.
-      <m>\alpha X</m> scaled <m>X</m> by a constant, so it should scale the spread of the distribution by the same constant. 
+      <m>\alpha X</m> scaled <m>X</m> by a constant, so it should scale the spread of the distribution by the same constant.
       But recall that the variance calculation involves squaring; it's an indirect measure of spread.
       So it's reasonable that scaling the distribution by a constant should scale the variance by its square.
     </p>
 
+    <p>
+      Let's put these properties to use in a pair of related examples:
+    </p>
+
+    <example xml:id="example-indicator-variance">
+      <statement>
+        <p>
+          Let <m>X</m> indicate an event <m>A</m> which has probability <m>p</m>.
+          In <xref ref="example-indicator-EV"/>, we saw <m>\E(X) = p</m>.
+          Notice that <m>X</m> takes the values 0 and 1 (with probabilities <m>1 - p</m> and <m>p</m>, respectively).
+          But <m>0^2 = 0</m>, and <m>1^1 = 1</m>, so the expected value calculation for <m>X^2</m> is precisely the same as for <m>X</m>!
+          <md>
+            <mrow> \E\left(X^2\right) \amp = 0^2 \cdot (1-p) + 1^2 \cdot p = p. </mrow>
+          </md>
+          So:
+          <md>
+            <mrow> \Var(X) \amp \E\left(X^2\right) - \left(\E(X)\right)^2 = p - p^2 = p(1 - p). </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
     <example xml:id="example-binomial-variance">
       <statement>
         <p>
-          TODO
+          Recall the setup from <xref ref="example-binomial-EV"/>: a binomial random variable <m>S</m> is the sum <m>H_1 + H_2 + \dotsb + H_n</m> of <m>n</m> indicator random variables, each with parameter <m>p</m>.
+          The results of different coin flips are independent from each other, so the random variables <m>H_1, \dotsc, H_n</m> are independent from each other.
+          From <xref ref="example-indicator-variance"/>, we know that <m>\Var(H_i) = p(1-p)</m> for each <m>i</m>.
+          Therefore:
+          <md>
+            <mrow> \Var(S) \amp = \Var(H_1 + H_2 + \dotsb + H_n) </mrow>
+            <mrow> \amp = \Var(H_1) + \Var(H_2) + \dotsb + \Var(H_n) </mrow>
+            <mrow> \amp = \underbrace{p(1-p) + p(1-p) + \dotsb + p(1-p)}_{n \text{ times}} </mrow>
+            <mrow> \amp = np(1-p). </mrow>
+          </md>
+          Remember this formula! We'll make frequent use of it.
         </p>
       </statement>
     </example>
