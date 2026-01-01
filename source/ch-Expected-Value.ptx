@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- TODO make sure to include EV/Var of all standard distributions, perhaps include a table? -->
-
 <chapter xml:id="ch-Expected-Value" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Expected Value and Variance</title>
 
@@ -880,6 +879,80 @@
   <exercise>
     <statement>
       <p>
+        Calculate the covariance of <m>X</m> and <m>Y</m>:
+      </p>
+
+      <table>
+        <title></title>
+
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell right="minor"></cell>
+            <cell right="minor"><m>X = 1</m></cell>
+            <cell><m>X = 2</m></cell>
+          </row>
+
+          <row bottom="minor">
+            <cell right="minor"><m>Y = 0</m></cell>
+            <cell right="minor">0.12</cell>
+            <cell>0.24</cell>
+          </row>
+
+          <row>
+            <cell right="minor"><m>Y = 1</m></cell>
+            <cell right="minor">0.3</cell>
+            <cell>34</cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Calculate the covariance of <m>X</m> and <m>Y</m>:
+      </p>
+
+      <table>
+        <title></title>
+
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell right="minor"></cell>
+            <cell right="minor"><m>X = 0</m></cell>
+            <cell right="minor"><m>X = 1</m></cell>
+            <cell><m>X = 2</m></cell>
+          </row>
+
+          <row bottom="minor">
+            <cell right="minor"><m>Y = 0</m></cell>
+            <cell right="minor">0.08</cell>
+            <cell right="minor">0.16</cell>
+            <cell>0.1</cell>
+          </row>
+
+          <row>
+            <cell right="minor"><m>Y = 1</m></cell>
+            <cell right="minor">0.14</cell>
+            <cell right="minor">0.2</cell>
+            <cell>0.32</cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose we roll a fair, 4-sided die two times.
+        Let <m>X</m> be the sum of the rolls, and let <m>Y</m> be the product of the rolls.
+        Find the covariance of <m>X</m> and <m>Y</m>.
+      </p>
+
+      <p>
+        [Note: Somewhat tedious.]
       </p>
     </statement>
   </exercise>

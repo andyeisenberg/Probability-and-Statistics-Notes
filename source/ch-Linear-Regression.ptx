@@ -4,25 +4,268 @@
   <title>Linear Regression</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p>
+      Text before the first section.
+    </p>
   </introduction>
 
-
   <section xml:id="sec-Correlation" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Correlation</title>
+    <title>Correlation</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-Correlation">
+    <exercise>
+      <statement>
+        <p>
+          Calculate the correlation of <m>X</m> and <m>Y</m>:
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell right="minor"></cell>
+              <cell right="minor"><m>X = 1</m></cell>
+              <cell><m>X = 2</m></cell>
+            </row>
+
+            <row bottom="minor">
+              <cell right="minor"><m>Y = 0</m></cell>
+              <cell right="minor">0.12</cell>
+              <cell>0.24</cell>
+            </row>
+
+            <row>
+              <cell right="minor"><m>Y = 1</m></cell>
+              <cell right="minor">0.3</cell>
+              <cell>34</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Calculate the correlation of <m>X</m> and <m>Y</m>:
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell right="minor"></cell>
+              <cell right="minor"><m>X = 0</m></cell>
+              <cell right="minor"><m>X = 1</m></cell>
+              <cell><m>X = 2</m></cell>
+            </row>
+
+            <row bottom="minor">
+              <cell right="minor"><m>Y = 0</m></cell>
+              <cell right="minor">0.08</cell>
+              <cell right="minor">0.16</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell right="minor"><m>Y = 1</m></cell>
+              <cell right="minor">0.14</cell>
+              <cell right="minor">0.2</cell>
+              <cell>0.32</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we roll a fair, 4-sided die two times.
+          Let <m>X</m> be the sum of the rolls, and let <m>Y</m> be the product of the rolls.
+          Find the correlation of <m>X</m> and <m>Y</m>.
+        </p>
+
+        <p>
+          [Note: Somewhat tedious.]
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
 
   <section xml:id="sec-Linear-Regression" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Linear Regression</title>
+    <title>Linear Regression</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-Linear-Regression">
+    <exercise>
+      <statement>
+        <p>
+          A survey of local companies collects information about marketing budgets <m>X</m> and revenue <m>Y</m> (each measures in thousands of dollars), shown below.
+          A linear regression gives the best linear fit as <m>Y = 18.28 X + 29.69</m>.
+          What is the coefficient of determination <m>r^2</m>?
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular>
+            <row header="yes" bottom="minor">
+              <cell halign="right"><m>x_i</m></cell>
+              <cell halign="right"><m>y_i</m></cell>
+              <cell halign="right"><m>(y_i - \text{avg})^2</m></cell>
+              <cell halign="right"><m>\text{pred } y_i</m></cell>
+              <cell halign="right"><m>\text{res}^2</m></cell>
+            </row>
+
+            <row>
+              <cell halign="right">200</cell>
+              <cell halign="right">4300</cell>
+              <cell halign="right">2073600</cell>
+              <cell halign="right">3686</cell>
+              <cell halign="right">377377</cell>
+            </row>
+
+            <row>
+              <cell halign="right">420</cell>
+              <cell halign="right">7700</cell>
+              <cell halign="right">3841600</cell>
+              <cell halign="right">7707</cell>
+              <cell halign="right">53</cell>
+            </row>
+
+            <row>
+              <cell halign="right">270</cell>
+              <cell halign="right">4500</cell>
+              <cell halign="right">1537600</cell>
+              <cell halign="right">4965</cell>
+              <cell halign="right">216495</cell>
+            </row>
+
+            <row>
+              <cell halign="right">380</cell>
+              <cell halign="right">7000</cell>
+              <cell halign="right">1587600</cell>
+              <cell halign="right">6976</cell>
+              <cell halign="right">572</cell>
+            </row>
+
+            <row bottom="minor">
+              <cell halign="right">300</cell>
+              <cell halign="right">5200</cell>
+              <cell halign="right">291600</cell>
+              <cell halign="right">5514</cell>
+              <cell halign="right">98401</cell>
+            </row>
+
+            <row>
+              <cell halign="right">sum:</cell>
+              <cell halign="right">28700</cell>
+              <cell halign="right">9332000</cell>
+              <cell halign="right">28848</cell>
+              <cell halign="right">692898</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A sample of 100 measurements are taken and a best fit line is calculated, resulting in the data below (the final line shows the sums for each column).
+          Find the coefficient of determination.
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular>
+            <row header="yes" bottom="minor">
+              <cell halign="center"><m>x_i</m></cell>
+              <cell halign="center"><m>y_i</m></cell>
+              <cell halign="center"><m>\text{pred } y_i</m></cell>
+              <cell halign="center"><m>(y - \text{avg})^2</m></cell>
+              <cell halign="center"><m>\text{res}^2</m></cell>
+            </row>
+
+            <row>
+              <cell halign="center">38.00</cell>
+              <cell halign="center">121.00</cell>
+              <cell halign="center">93.17</cell>
+              <cell halign="center">11.83</cell>
+              <cell halign="center">774.33</cell>
+            </row>
+
+            <row>
+              <cell halign="center">87.00</cell>
+              <cell halign="center">241.00</cell>
+              <cell halign="center">238.95</cell>
+              <cell halign="center">13586.23</cell>
+              <cell halign="center">4.22</cell>
+            </row>
+
+            <row>
+              <cell halign="center">30.00</cell>
+              <cell halign="center">61.00</cell>
+              <cell halign="center">69.37</cell>
+              <cell halign="center">4024.63</cell>
+              <cell halign="center">70.12</cell>
+            </row>
+
+            <row>
+              <cell halign="center">35.00</cell>
+              <cell halign="center">85.00</cell>
+              <cell halign="center">84.25</cell>
+              <cell halign="center">1555.51</cell>
+              <cell halign="center">0.57</cell>
+            </row>
+
+            <row>
+              <cell halign="center">⋮</cell>
+              <cell halign="center">⋮</cell>
+              <cell halign="center">⋮</cell>
+              <cell halign="center">⋮</cell>
+              <cell halign="center">⋮</cell>
+            </row>
+
+            <row>
+              <cell halign="center">33.00</cell>
+              <cell halign="center">108.00</cell>
+              <cell halign="center">78.30</cell>
+              <cell halign="center">270.27</cell>
+              <cell halign="center">882.19</cell>
+            </row>
+
+            <row bottom="minor">
+              <cell halign="center">26.00</cell>
+              <cell halign="center">32.00</cell>
+              <cell halign="center">57.47</cell>
+              <cell halign="center">8545.15</cell>
+              <cell halign="center">648.91</cell>
+            </row>
+
+            <row>
+              <cell halign="center">sum:</cell>
+              <cell halign="center">12444.00</cell>
+              <cell halign="center">12444.00</cell>
+              <cell halign="center">515206.64</cell>
+              <cell halign="center">29789.80</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
-
-
 </chapter>

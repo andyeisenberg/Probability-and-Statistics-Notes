@@ -4,25 +4,187 @@
   <title>Confidence Intervals</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p>
+      Text before the first section.
+    </p>
   </introduction>
 
-
   <section xml:id="sec-CLT" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Central Limit Theorem</title>
+    <title>Central Limit Theorem</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-CLT">
+    <exercise>
+      <statement>
+        <p>
+          Suppose a coin has probability 0.4 of coming up heads, and we flip the coin 100 times.
+          Let <m>S</m> be the number of heads.
+          Estimate the probability that <m>34 \leq S \leq 44</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose a fair die is rolled 100 times, and let <m>m</m> be the average value of the rolls.
+          Estimate the probability that <m>3.45 \leq m \leq 3.55</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <introduction>
+        <p>
+          The heights of men in the US have a mean of 69 in and a variance of about 9 in<m>^2</m>, and the heights of women in the US have a mean of 63.5 in with a variance of 6.25 in<m>^2</m>.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Suppose the heights of 30 men are sampled, and a sample mean <m>m</m> is taken.
+            Find the expected value and variance of <m>m</m>.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Estimate the probability that <m>m \geq 69.5</m>.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            What if the sampled group was women?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+    </exercises>
   </section>
-
-
 
   <section xml:id="sec-Confidence-Intervals" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Confidence Intervals</title>
+    <title>Confidence Intervals</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-Confidence-Intervals">
+    <exercise>
+      <statement>
+        <p>
+          Suppose we flip a coin 100 times and count 60 heads.
+          Let <m>p</m> be the (unknown) probability that the coin comes up heads on a flip.
+          Give an approximate 95% confidence interval for the value of <m>p</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <introduction>
+        <p>
+          Suppose in a sample of 100 people, 12 are left-handed.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Give a 95% confidence interval for the proportion <m>p</m> of left-handed people.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Give a 90% confidence interval.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          The weights of five mice are measured and recorded below.
+          Give a 95% confidence interval for the sample mean weight of mice.
+          (Pretend 5 measurements is large enough for the CLT to apply.)
+        </p>
+
+      <table>
+        <title></title>
+
+        <tabular>
+          <row header="yes">
+            <cell halign="center">mouse <m>i</m></cell>
+            <cell halign="center">1</cell>
+            <cell halign="center">2</cell>
+            <cell halign="center">3</cell>
+            <cell halign="center">4</cell>
+            <cell halign="center">5</cell>
+          </row>
+
+          <row>
+            <cell halign="center">weight <m>\widetilde{w}_i</m> (g)</cell>
+            <cell halign="center">26</cell>
+            <cell halign="center">32</cell>
+            <cell halign="center">33</cell>
+            <cell halign="center">20</cell>
+            <cell halign="center">29</cell>
+          </row>
+        </tabular>
+      </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          The heights of five plants are measured and recorded below.
+          Give a 95% confidence interval around the sample mean for the heights of the plants.
+          (Pretend 5 measurements is large enough for the CLT to apply.)
+        </p>
+
+      <table>
+        <title></title>
+
+        <tabular>
+          <row header="yes">
+            <cell halign="center">plant <m>i</m></cell>
+            <cell halign="center">1</cell>
+            <cell halign="center">2</cell>
+            <cell halign="center">3</cell>
+            <cell halign="center">4</cell>
+            <cell halign="center">5</cell>
+          </row>
+
+          <row>
+            <cell halign="center">height <m>\widetilde{h}_i</m> (in)</cell>
+            <cell halign="center">15</cell>
+            <cell halign="center">14</cell>
+            <cell halign="center">18</cell>
+            <cell halign="center">21</cell>
+            <cell halign="center">17</cell>
+          </row>
+        </tabular>
+      </table>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
-
 </chapter>

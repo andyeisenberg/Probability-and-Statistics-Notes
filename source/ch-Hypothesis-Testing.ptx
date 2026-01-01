@@ -4,45 +4,332 @@
   <title>Hypothesis Testing</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p>
+      Text before the first section.
+    </p>
   </introduction>
 
-
   <section xml:id="sec-One-Sample-Tests" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>One Sample Tests</title>
+    <title>One Sample Tests</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-One-Sample-Tests">
+    <exercise>
+      <introduction>
+        <p>
+          In each of the following scenarios, determine whether we should use a 1-tailed test or a 2-tailed test.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            We have a coin which we've flipped many times, seeing an above-average number of heads.
+            We suspect the coin comes up heads more often than a fair coin would.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            We find a coin on the street and wonder whether or not it's a fair coin.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            We suspect there will be a difference in average weight of mice caught during the summer versus during the winter.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            In a medical study, a group of patients are gathered and the proportion experiencing particular symptoms is measured.
+            A new drug intended to eliminate these symptoms is administered, after which the proportion experiencing symptoms is measured again.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we find a coin and wonder whether it's fair.
+          As a first test, we decide to flip the coin 200 times and count the number of heads.
+          If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we have a coin which we suspect comes up heads more often than a fair coin would.
+          As a first test, we decide to flip the coin 200 times and count the number of heads.
+          If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we find a six-sided die and wonder whether it's fair.
+          As a first test, we decide to roll the die 100 times and count the number of times it comes up 1.
+          If we roll 22 1's, should we accept or reject the null hypothesis of a fair die at a significance level of 0.05?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in<m>^2</m>.
+          We suspect that growing this plant in a greenhouse will increase its height.
+          A sample of 50 plants grown in a greenhouse has an average height of 40 in.
+          Is this significant enough data to reject the null hypothesis of equal means at the <m>p = 0.05</m> significance level?
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
-
 
   <section xml:id="sec-Two-Sample-Tests" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Two Sample Tests</title>
+    <title>Two Sample Tests</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-Two-Sample-Tests">
+    <exercise>
+      <statement>
+        <p>
+          A farmer is testing an experimental new plant fertilizer that is supposed to increase the weight of a particular apple variety.
+          A control sample of 25 apples grown using the usual fertilizer have a mean weight of 75 grams and a sample variance of 90 grams<m>^2</m> (for an individual apple).
+          An experimental sample of 25 apples grown using the new fertilizer have a mean weight of 79 grams and a sample variance of 90 grams<m>^2</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          We have an established factory which produces coins that are close to fair.
+          We're opening up a second factory, and we'd like to ensure the machines are calibrated to produce coins which behave similarly to the ones produced in the established factory.
+          We pick one sample coin from each factory, and flip each sample coin 100 times.
+          The coin from the established factory flips 52 heads in 100 flips.
+          The coin from the new factory flips 62 heads in 100 flips.
+          Is this strong enough evidence to reject the null hypothesis that the two factories produce similar coins at a 0.05 significance level?
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
-
 
   <section xml:id="sec-Power" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Power of a Test</title>
+    <title>Power of a Test</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-Power">
+    <exercise>
+      <statement>
+        <p>
+          Suppose we find a coin and wonder whether it's fair.
+          As a first test, we decide to flip the coin 200 times and count the number of heads, <m>S</m>.
+          What values of <m>S</m> would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we have a coin which we suspect comes up heads more often than a fair coin would.
+          As a first test, we decide to flip the coin 200 times and count the number of heads, <m>S</m>.
+          What values of <m>S</m> would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <introduction>
+        <p>
+          Suppose we find a six-sided die and wonder whether it's fair.
+          As a first test, we decide to roll the die 100 times and count the number of times it comes up 1.
+          The expected number of 1's is 50/3, with a variance of 125/9.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Using a normal approximation, what is the smallest number of 1's greater than 50/3 that would be extreme enough to reject the null hypothesis of a fair die?
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Using a normal approximation, what is the greatest number of 1's less than 50/3 that would be extreme enough to reject the null hypothesis of a fair die?
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Suppose that this die is weighted so that it rolls a 1 with probability 0.2.
+            What would be the power of our test?
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Suppose we roll the die 100 times and see 23 1's.
+            Use the maximum likelihood value for the probability of rolling a 1 to calculate the power of the test.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in<m>^2</m>.
+          We suspect that growing this plant in a greenhouse will increase its height.
+          We take the average height of a sample of 50 plants grown in a greenhouse.
+          What is the minimum average height of this sample that would be extreme enough to reject the null hypothesis of equal means at the <m>p = 0.05</m> significance level? If the plants, when grown in a greenhouse, would truly have an average height of 41 in, what is the power of our test?
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
   </section>
-
-
 
   <section xml:id="sec-Chi-Squared" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title><m>\chi^2</m> Test</title>
+    <title><m>\chi^2</m> Test</title>
 
-  <p> Text of section. </p>
+    <p>
+      Text of section.
+    </p>
 
+    <exercises xml:id="exercises-Chi-Squared">
+    <exercise>
+      <statement>
+        <p>
+          A store owner wants to determine how much shelf space to allocate to each of the drinks that they sell.
+          They survey their customers about their favorite drinks.
+          Is the data below consistent with the null hypothesis that each type of drink will be equally preferred?
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular>
+            <row header="yes" bottom="minor">
+              <cell halign="center">drink type</cell>
+              <cell halign="center">water</cell>
+              <cell halign="center">soda</cell>
+              <cell halign="center">tea</cell>
+              <cell halign="center">coffee</cell>
+              <cell halign="center">energy drinks</cell>
+            </row>
+
+            <row>
+              <cell halign="center">favorite</cell>
+              <cell halign="center">28</cell>
+              <cell halign="center">17</cell>
+              <cell halign="center">15</cell>
+              <cell halign="center">26</cell>
+              <cell halign="center">14</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <introduction>
+        <p>
+          A particular drug is administered in 100 independent trials.
+          In each trial, the drug is administered to four people, and we count how many respond to the drug.
+          The table below shows how many trials have each different count of people who respond to the drug.
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular>
+            <row header="yes" bottom="minor">
+              <cell halign="center"># who respond to drug</cell>
+              <cell halign="center">0</cell>
+              <cell halign="center">1</cell>
+              <cell halign="center">2</cell>
+              <cell halign="center">3</cell>
+              <cell halign="center">4</cell>
+            </row>
+
+            <row>
+              <cell halign="center"># of trials</cell>
+              <cell halign="center">3</cell>
+              <cell halign="center">11</cell>
+              <cell halign="center">31</cell>
+              <cell halign="center">34</cell>
+              <cell halign="center">21</cell>
+            </row>
+          </tabular>
+        </table>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Is the data consistent with a binomial distribution with parameter <m>p = 0.7</m>?
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            What is the total number of people who have been administered the drug? What is the total number who have responded to it? What is the maximum likelihood estimation for the probability <m>p</m> that a person will respond to the drug?
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Is the data consistent with a binomial distribution with the MLE value of <m>p</m>?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+    </exercises>
   </section>
-
-
-
-
 </chapter>
