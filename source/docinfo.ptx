@@ -35,6 +35,7 @@
     <!-- other notation -->
     \DeclareMathOperator{\E}{E}
     \DeclareMathOperator{\Var}{Var}
+    \DeclareMathOperator{\Cov}{Cov}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
