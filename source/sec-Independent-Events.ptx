@@ -1,0 +1,81 @@
+<section xml:id="sec-Independent-Events" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Independent Events</title>
+
+    <p>
+      The idea of conditional probability is that knowledge of one event can change our understanding of the probability of another.
+      But it's also important to understand when this is not the case.
+    </p>
+
+    <definition xml:id="def-independent-events">
+      <statement>
+        <p>
+          Events <m>A, B</m> are <term>independent</term> if <m>\Pr(A \mid B) = \Pr(A)</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The equation <m>\Pr(A\mid B) = \Pr(A)</m> very concretely says: knowledge that the event <m>B</m> has occurred does not change our understanding of <m>\Pr(A)</m>.
+      Assuming <m>\Pr(A) \neq 0</m>, this is equivalent to <m>\Pr(A\cap B) = \Pr(A)\Pr(B)</m>, since:
+      <md>
+        <mrow> \Pr(A\mid B) \amp = \Pr(A) </mrow>
+        <mrow> \frac{\Pr(A\cap B)}{\Pr(B)} \amp = \Pr(A) </mrow>
+        <mrow> \Pr(A\cap B) \amp = \Pr(A)\Pr(B) </mrow>
+      </md>
+      This latter form of the equation is often more useful in calculations.
+    </p>
+
+    <example xml:id="example-rolls-independent">
+      <statement>
+        <p>
+          In <xref ref="example-rolls-conditional"/>, we considered an experiment in which we rolled a fair 6-sided die twice.
+          We defined events <m>A</m> that the sum of the rolls is at least 10 and <m>B</m> that the first roll is a 6, and we found that <m>\Pr(A \mid B) \neq \Pr(A)</m>, so <m>A</m> and <m>B</m> are not independent.
+        </p>
+
+        <p>
+          Now consider the event <m>C</m> that the sum of the rolls is 7, which sounds very similar to the event <m>A</m>.
+          We have:
+          <md>
+            <mrow> C \amp = \{(1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1)\} </mrow>
+            <mrow> \Pr(C) \amp = \frac{6}{36} = \frac{1}{6} </mrow>
+            <mrow> B\cap C \amp = \{(6, 1)\} </mrow>
+            <mrow> \Pr(B\cap C) \amp = \frac{1}{36} </mrow>
+            <mrow> \text{therefore: } \Pr(C\mid B) \amp = \frac{\Pr(C\cap B)}{\Pr(B)} = \frac{1/36}{1/6} = \frac{1}{6} = \Pr(C) </mrow>
+          </md>
+          So, even though the descriptions of events <m>A</m> and <m>C</m> are very similar, the event <m>C</m> is independent with <m>B</m>, while <m>A</m> is not.
+        </p>
+      </statement>
+    </example>
+
+    <exercises xml:id="exercises-Independent-Events">
+    <exercise>
+      <statement>
+        <p>
+          An experiment consists of rolling a fair die two times.
+          Let <m>A</m> be the event that the sum is even, and let <m>B</m> be the event that the second roll is higher than the first.
+          Are <m>A</m> and <m>B</m> independent?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          An experiment consists of flipping a fair coin three times.
+          Let <m>A</m> be the event that the first and second flips match.
+          Let <m>B</m> be the event that there are at least two heads.
+          Are <m>A</m> and <m>B</m> independent?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A = \{1, 2, 3\}</m> and <m>B = \{3, 4, 5\}</m> be events in the sample space <m>\Omega = \{1, 2, 3, 4, 5, 6\}</m>.
+          Create a probability distribution for <m>\Omega</m> so that <m>A, B</m> are independent.
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
+  </section>

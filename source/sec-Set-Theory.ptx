@@ -1,0 +1,291 @@
+<section xml:id="sec-Set-Theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Set Theory</title>
+
+    <p>
+      When we perform an experiment, there are many results that we might see.
+      We want to be able to quantify the likelihood of seeing certain results.
+      For this, we need to develop some mathematical terminology.
+    </p>
+
+    <definition xml:id="def-sample-space">
+      <statement>
+        <p>
+          The <term>sample space</term>, often denoted <m>\Omega</m>, is the set of all possible results of an experiment.
+          A single result is called an <term>outcome</term>, while a collection of results is called an <term>event</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="example-sample-space">
+      <statement>
+        <p>
+          An experiment consists of rolling a standard 6-sided die.
+          The sample space is <m>\Omega = \{1, 2, 3, 4, 5, 6\}</m>.
+          One possible event is <m>A = \{2, 4, 6\}</m>, i.e., the event that the result of the roll is even.
+        </p>
+
+        <p>
+          What would the sample space look like if we roll the die two times and recorded the results?
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <md>
+            <mrow> \Omega = \{\amp (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), </mrow>
+            <mrow> \amp (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), </mrow>
+            <mrow> \amp (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), </mrow>
+            <mrow> \amp (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), </mrow>
+            <mrow> \amp (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), </mrow>
+            <mrow> \amp (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\} </mrow>
+          </md>
+          Note that, for example, <m>(1, 2)</m> is a different outcome from <m>(2, 1)</m>.
+        </p>
+      </answer>
+    </example>
+
+    <definition xml:id="def-subset">
+      <statement>
+        <p>
+          Let <m>A</m> be a set.
+          The symbol <m>\in</m> means "is an element of", as in <m>a \in A</m>.
+          Given another set <m>B</m>, we say <m>A</m> is a <term>subset</term> of <m>B</m>, written <m>A\subset B</m>, to mean that every element of the set <m>A</m> is also an element of the set <m>B</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The subset symbol includes the possibility that <m>A</m> and <m>B</m> are equal sets, i.e., that they contain precisely the same elements.
+    </p>
+
+    <definition xml:id="def-set-operations">
+      <statement>
+        <p>
+          Consider sets <m>A</m> and <m>B</m>, each contained inside <m>\Omega</m>.
+          We can combine sets in a variety of ways: <dl>
+          <li>
+            <title>Union</title>
+
+            <p>
+              The <term>union</term> of <m>A</m> and <m>B</m> is the set <m>A \cup B = \{x \mid x \in A \text{ or } x \in B\}</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>Intersection</title>
+
+            <p>
+              The <term>intersection</term> of <m>A</m> and <m>B</m> is the set <m>A \cap B = \{x \mid x \in A \text{ and } x \in B\}</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>Difference</title>
+
+            <p>
+              The <term>set difference</term> <m>A-B</m> is the set <m>A - B = \{x \mid x \in A \text{ and } x \notin B\}</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>Complement</title>
+
+            <p>
+              The <term>complement</term> of <m>A</m> is the set <m>A^c = \{x \in \Omega \mid x \notin A\}</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>Empty Set</title>
+
+            <p>
+              The <term>empty set</term>, usually written <m>\emptyset</m> or <m>\{\}</m>, is the set which contains no elements.
+            </p>
+          </li>
+          </dl>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      It's useful sometimes to draw pictures called <term>Venn diagrams</term> representing sets:
+    </p>
+
+    <figure xml:id="fig-Venn-diagram">
+      <caption>Example Venn Diagram</caption>
+      <image width="50%">
+        <description>
+          <p>
+            Venn diagram showing sets <m>A, B, C</m> with the region representing <m>(A\cup B\cup C) - (A \cap C)</m> shaded.
+          </p>
+        </description>
+        <latex-image>
+        \begin{tikzpicture}
+        \def\firstcircle{(90:1.75cm) circle (2.5cm)}
+        \def\secondcircle{(210:1.75cm) circle (2.5cm)}
+        \def\thirdcircle{(330:1.75cm) circle (2.5cm)}
+        \fill[gray!30] \firstcircle;
+        \fill[gray!30] \secondcircle;
+        \fill[gray!30] \thirdcircle;
+        \begin{scope}
+        \clip \firstcircle;
+        \clip \thirdcircle;
+        \fill[white] \firstcircle;
+        \end{scope}
+        \draw \firstcircle node[text=black,above] {$A$};
+        \draw \secondcircle node [text=black,below left] {$B$};
+        \draw \thirdcircle node [text=black,below right] {$C$};
+        \node at (0, -4.5) {$(A\cup B\cup C) - (A \cap C)$};
+        \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+    <!-- TODO learn figures -->
+    <definition xml:id="def-disjoint">
+      <statement>
+        <p>
+          Two sets <m>A</m> and <m>B</m> are <term>disjoint</term> if <m>A \cap B = \emptyset</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-cardinality">
+      <statement>
+        <p>
+          Given a finite set <m>A</m>, the <term>cardinality</term> of <m>A</m>, written <m>|A|</m>, is the number of elements in <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <exercises xml:id="exercises-Set-Theory">
+    <exercise>
+      <introduction>
+        <p>
+          Consider the sets <m>A = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}</m>, <m>B = \{2, 4, 9, 10, 12, 14, 19\}</m>, and <m>C = \{9, 10, 11, 14, 16, 17, 20\}</m>, which are all subsets of <m>\Omega = \{1, 2, 3, \dotsc, 20\}</m>.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Find <m>A - (B \cap C)</m>.
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>\{1, 2, 3, 4, 5, 6, 7, 8\}</m>
+          </p>
+        </answer>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Find <m>|A|</m>, <m>|B|</m>, <m>|C|</m>, <m>|A\cup B|</m>, <m>|A \cap B|</m>, <m>|B\cap C|</m>, <m>|A\cap C|</m>, and <m>|A\cup B\cup C|</m>.
+            Is it true that the size of the union of sets is equal to the sum of the sizes of the individual sets?
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>|A| = 10</m>, <m>|B| = 7</m>, <m>|C| = 7</m>, <m>|A \cup B| = 13</m>, <m>|A \cap B| = 4</m>, <m>|B\cap C| = 3</m>, <m>|A\cap C| = 2</m>, <m>|A\cup B\cup C| = 17</m>. In particular, note that <m>|A\cup B| = 13 \neq 10 + 7 = |A| + |B|</m>, so it is not true in general that the size of the union of sets is the sum of the sizes of the individual sets.
+          </p>
+        </answer>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Find <m>A^c</m> and <m>(A\cup B)^c</m>.
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <m>A^c = \{11, 12, 13, 14, 15, 16, 17, 18, 19, 20\}</m>, <m>(A\cup B)^c = \{11, 13, 15, 16, 17, 18, 20\}</m>.
+          </p>
+        </answer>
+      </task>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we have a 6-sided die that's weighted to roll a 6 half of the time.
+          We roll the die two times.
+          List the set of all possible results.
+          [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result <m>(4, 2)</m>---rolling a 4 and then a 2.]
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <md>
+            <mrow> \Omega = \{\amp (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), </mrow>
+            <mrow> \amp (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), </mrow>
+            <mrow> \amp (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), </mrow>
+            <mrow> \amp (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), </mrow>
+            <mrow> \amp (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), </mrow>
+            <mrow> \amp (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\} </mrow>
+          </md>
+          Note that <m>\Omega</m> simply lists outcomes with no reference to the probabilities.
+          So the answer here is the same as in <xref ref="example-sample-space"/>.
+        </p>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we flip a coin two times.
+          List the set of all possible results.
+          What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          For two flips: <m>\Omega = \{ HH, HT, TH, TT \}</m>.
+        </p>
+
+        <p>
+          For three flips: <m>\Omega = \{ HHH, HHT, HTH, THH, HTT, THT, TTH, TTT \}</m>.
+        </p>
+
+        <p>
+          For four flips:
+          <md>
+            <mrow> \Omega = \{ \amp HHHH, HHHT, HHTH, HTHH, </mrow>
+            <mrow> \amp THHH, HHTT, HTHT, HTTH, </mrow>
+            <mrow> \amp THHT, THTH, TTHH, HTTT, </mrow>
+            <mrow> \amp THTT, TTHT, TTTH, TTTT \}. </mrow>
+          </md>
+        </p>
+
+        <p>
+          Each additional flip doubles the number of outcomes.
+          So, with ten flips, we'll have <m>|\Omega| = 2^{10} = 1024</m>.
+        </p>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          If we roll a 6-sided die ten times, how many possible results will there be?
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          Each additional roll will multiply the number of outcomes by 6.
+          So, with 10 rolls, we'll have <m>|\Omega| = 6^{10}.</m>
+        </p>
+      </answer>
+    </exercise>
+    </exercises>
+  </section>
