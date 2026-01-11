@@ -295,6 +295,8 @@ eBookConfig.enable_chatcodes =  false;
 <section class="subsection" id="subsec-conditional-probability"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Conditional Probability</span>
 </h3>
+<div class="para" id="subsec-conditional-probability-2">Sometimes events can interact with each other. We would like to have the language to talk about a scenario in which evidence that one event has occurred can alter our understanding of the probability of another event occurring. We would also like to develop the mathematical tools to quantify exactly how much that probability changes.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-conditional-probability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="def-conditional-probability"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
@@ -325,6 +327,7 @@ eBookConfig.enable_chatcodes =  false;
 \Pr(A \mid B) = \frac{\Pr(A\cap B)}{\Pr(B)} = \frac{1/12}{1/6} = \frac{1}{2}
 \end{gather*}
 </div>
+<div class="para">Before the experiment, we would have said there was only a <span class="process-math">\(\frac{1}{6}\)</span> chance that the sum of the rolls is at least 10. However, with the additional knowledge of seeing the first roll of 6, we find the probability of a sum of at least 10 to be <span class="process-math">\(\frac{1}{2}\text{,}\)</span> substantially more likely than before.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#example-rolls-conditional-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Example 1.3.2"><a href="#example-rolls-conditional" title="Copy heading and permalink for Example 1.3.2" aria-label="Copy heading and permalink for Example 1.3.2">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.3.1: Conditional Probability"><a href="#subsec-conditional-probability" title="Copy heading and permalink for Subsection 1.3.1: Conditional Probability" aria-label="Copy heading and permalink for Subsection 1.3.1: Conditional Probability">🔗</a></div></section><section class="subsection" id="subsec-diagnostic-testing"><h3 class="heading hide-type">
@@ -372,12 +375,12 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para">The total <span class="process-math">\(\Pr(P)\)</span> can be divided into two categories: patients who have the disease and test positive, and patients who don’t have the disease and test positive. So:</div>
 <div class="displaymath process-math" id="subsec-diagnostic-testing-8-5">
-\begin{align}
-\Pr(P) \amp = \Pr(P\cap D) + \Pr(P\cap D^c) \tag{1.3.1}\\
-\amp = \Pr(P\mid D)\Pr(D) + \Pr(P \mid D^c)\Pr(D^c) \tag{1.3.2}\\
-\amp = \Pr(P\mid D)\Pr(D) + (1 - \Pr(P^c \mid D^c))\Pr(D^c) \tag{1.3.3}\\
-\amp = (\text{sensitivity})\Pr(D) + (1 - \text{ specificity})\Pr(D^c) \tag{1.3.4}
-\end{align}
+\begin{align*}
+\Pr(P) \amp = \Pr(P\cap D) + \Pr(P\cap D^c) \\
+\amp = \Pr(P\mid D)\Pr(D) + \Pr(P \mid D^c)\Pr(D^c) \\
+\amp = \Pr(P\mid D)\Pr(D) + (1 - \Pr(P^c \mid D^c))\Pr(D^c) \\
+\amp = (\text{sensitivity})\Pr(D) + (1 - \text{ specificity})\Pr(D^c) 
+\end{align*}
 </div>
 <div class="para">We can take this breakdown of <span class="process-math">\(\Pr(P)\)</span> and write a new version of Bayes’ Theorem:</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagnostic-testing-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -393,28 +396,31 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-Bayes-v2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 1.3.5: Bayes’ Theorem (v2)"><a href="#thm-Bayes-v2" title="Copy heading and permalink for Theorem 1.3.5: Bayes’ Theorem (v2)" aria-label="Copy heading and permalink for Theorem 1.3.5: Bayes’ Theorem (v2)">🔗</a></div></article><div class="para" id="subsec-diagnostic-testing-10">We’re still missing a crucial piece of information: <span class="process-math">\(\Pr(D)\text{,}\)</span> the probability (not conditioned on any evidence) that the patient has the disease. This is often referred to as the <dfn class="terminology">prior</dfn>, as in, our prior understanding of the probability of something before we gained some new information from evidence. The conditional probability calculated using Bayes’ Theorem is usually called the <dfn class="terminology">posterior</dfn> (i.e., after taking evidence into account). There isn’t always one single number that’s reasonable to use as the prior probability. For example, in a diagnostic testing situation, the <dfn class="terminology">prevalence</dfn> of the disease—i.e., the proportion of the population who have the disease—might feel like a natural number to use as the prior. However, what prevalence should you use? During the COVID-19 pandemic, the prevalence of COVID in a particular country, state, and city might be different. There’s also the possibility of applying Bayes’ Theorem multiple times to take into account multiple pieces of evidence, using the posterior probability from one application of Bayes’ Theorem to play the role of the prior probability in the next. This idea would apply if, for example, a patient took a second diagnostic test to double-check.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagnostic-testing-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 1.3.5: Bayes’ Theorem (v2)"><a href="#thm-Bayes-v2" title="Copy heading and permalink for Theorem 1.3.5: Bayes’ Theorem (v2)" aria-label="Copy heading and permalink for Theorem 1.3.5: Bayes’ Theorem (v2)">🔗</a></div></article><div class="para" id="subsec-diagnostic-testing-10">We’re still missing a crucial piece of information: <span class="process-math">\(\Pr(D)\text{,}\)</span> the probability (not conditioned on any evidence) that the patient has the disease. This is often referred to as the <dfn class="terminology">prior</dfn>, as in, our prior understanding of the probability of something before we gained some new information from evidence. The conditional probability calculated using Bayes’ Theorem is usually called the <dfn class="terminology">posterior</dfn> (i.e., after taking evidence into account).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagnostic-testing-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="subsec-diagnostic-testing-11"><h4 class="heading">
+<div class="para" id="subsec-diagnostic-testing-11">There isn’t always one single number that’s reasonable to use as the prior probability. For example, in a diagnostic testing situation, the <dfn class="terminology">prevalence</dfn> of the disease—i.e., the proportion of the population who have the disease—might feel like a natural number to use as the prior. However, what prevalence should you use? During the COVID-19 pandemic, the prevalence of COVID in a particular country, state, and city might be different. There’s also the possibility of applying Bayes’ Theorem multiple times to take into account multiple pieces of evidence, using the posterior probability from one application of Bayes’ Theorem to play the role of the prior probability in the next. This idea would apply if, for example, a patient took a second diagnostic test to double-check. (Complicating the issue further, the developers of diagnostic tests often publish two or even more sets of sensitivity and specificity values, depending on whether a patient is already showing certain symptoms.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagnostic-testing-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="subsec-diagnostic-testing-12"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="subsec-diagnostic-testing-11-1-1">A 50-year old woman with no symptoms is screened for breast cancer and tests positive. If the prevalence of breast cancer for women in her age group is 1% and the particular screening process used has a sensitivity of 90% and a specificity of 91%, what is the probability that the woman has breast cancer given her positive result?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagnostic-testing-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-diagnostic-testing-12-1-1">A 50-year old woman with no symptoms is screened for breast cancer and tests positive. If the prevalence of breast cancer for women in her age group is 1% and the particular screening process used has a sensitivity of 90% and a specificity of 91%, what is the probability that the woman has breast cancer given her positive result?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagnostic-testing-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="subsec-diagnostic-testing-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="subsec-diagnostic-testing-11-2-1">
+<div class="solutions"><details id="subsec-diagnostic-testing-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-diagnostic-testing-12-2-1">
 <div class="para">Let <span class="process-math">\(P\)</span> be the event of testing positive and <span class="process-math">\(D\)</span> the event of having the disease. Then the prevalence <span class="process-math">\(\Pr(D)\)</span> is given as 1%, or 0.01. The sensitivity is <span class="process-math">\(\Pr(P\mid D) = 0.9\text{,}\)</span> and the specificity is <span class="process-math">\(\Pr(P^c\mid D^c) = 0.91\text{.}\)</span> So, according to Bayes’ Theorem:</div>
-<div class="displaymath process-math" id="subsec-diagnostic-testing-11-2-1-6">
+<div class="displaymath process-math" id="subsec-diagnostic-testing-12-2-1-6">
 \begin{align*}
 \Pr(D\mid P) \amp = \frac{\Pr(P\mid D)\Pr(D)}{\Pr(P\mid D)\Pr(D) + (1 - \Pr(P^c\mid D^c))\Pr(D^c)} \\
 \amp = \frac{(0.9)(0.01)}{(0.9)(0.01) + (1 - 0.91)(1 - 0.01)} \\
 \amp \approx 0.092 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagnostic-testing-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">This may seem like a surprising result. Despite sensitivity and specificty values around 90%, it turns out a positive test result only indicates a less than 10% chance of actually having the disease. Keep in mind that many ideas in probability and statistics can be highly counterintuitive. It’s important to be very precise with statements and calculations.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-diagnostic-testing-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 1.3.6.1"><a href="#subsec-diagnostic-testing-11-2" title="Copy heading and permalink for Solution 1.3.6.1" aria-label="Copy heading and permalink for Solution 1.3.6.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 1.3.6.1"><a href="#subsec-diagnostic-testing-12-2" title="Copy heading and permalink for Solution 1.3.6.1" aria-label="Copy heading and permalink for Solution 1.3.6.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 1.3.6"><a href="#subsec-diagnostic-testing-11" title="Copy heading and permalink for Example 1.3.6" aria-label="Copy heading and permalink for Example 1.3.6">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.3.2: Diagnostic Testing"><a href="#subsec-diagnostic-testing" title="Copy heading and permalink for Subsection 1.3.2: Diagnostic Testing" aria-label="Copy heading and permalink for Subsection 1.3.2: Diagnostic Testing">🔗</a></div></section><section class="exercises" id="exercises-Conditional-Probability"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 1.3.6"><a href="#subsec-diagnostic-testing-12" title="Copy heading and permalink for Example 1.3.6" aria-label="Copy heading and permalink for Example 1.3.6">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.3.2: Diagnostic Testing"><a href="#subsec-diagnostic-testing" title="Copy heading and permalink for Subsection 1.3.2: Diagnostic Testing" aria-label="Copy heading and permalink for Subsection 1.3.2: Diagnostic Testing">🔗</a></div></section><section class="exercises" id="exercises-Conditional-Probability"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <div class="exercisegroup" id="exercises-Conditional-Probability-1">
@@ -425,9 +431,55 @@ eBookConfig.enable_chatcodes =  false;
 <article class="exercise exercise-like" id="exercises-Conditional-Probability-1-2"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para" id="exercises-Conditional-Probability-1-2-1-1">An experiment consists of rolling a fair die two times. Let <span class="process-math">\(A\)</span> be the event that the sum is even, and let <span class="process-math">\(B\)</span> be the event that the second roll is higher than the first.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="solutions"><details id="exercises-Conditional-Probability-1-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="exercises-Conditional-Probability-1-2-2-1">
+<div class="displaymath process-math" id="exercises-Conditional-Probability-1-2-2-1-1">
+\begin{align*}
+A = \{ \amp (1, 1), (1, 3), (1, 5), (2, 2), (2, 4), (2, 6), \\
+\amp (3, 1), (3, 3), (3, 5), (4, 2), (4, 4), (4, 6), \\
+\amp (5, 1), (5, 3), (5, 5), (6, 2), (6, 4), (6, 6)\} \\
+B = \{ \amp (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), \\
+\amp (2, 3), (2, 4), (2, 5), (2, 6), \\
+\amp (3, 4), (3, 5), (3, 6), \\
+\amp (4, 5), (4, 6), \\
+\amp (5, 6)\} \\
+A \cap B = \{ \amp (1, 3), (1, 5), (2, 4), (2, 6), (3, 5), (4, 6)\} 
+\end{align*}
+</div>
+<div class="para">So <span class="process-math">\(\Pr(A) = \frac{18}{36} = \frac{1}{2}\text{,}\)</span> <span class="process-math">\(\Pr(B) = \frac{15}{36} = \frac{5}{12}\text{,}\)</span> and <span class="process-math">\(\Pr(A\cap B) = \frac{6}{36} = \frac{1}{6}\text{.}\)</span> Finally:</div>
+<div class="displaymath process-math" id="exercises-Conditional-Probability-1-2-2-1-5">
+\begin{align*}
+\Pr(A \mid B) \amp = \frac{\Pr(A\cap B)}{\Pr(B)} = \frac{6/36}{15/36} = \frac{6}{15} = \frac{2}{5} \\
+\Pr(B \mid A) \amp = \frac{\Pr(B\cap A)}{\Pr(A)} = \frac{6/36}{18/36} = \frac{6}{18} = \frac{1}{3} 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 1.3.3.1.1"><a href="#exercises-Conditional-Probability-1-2-2" title="Copy heading and permalink for Answer 1.3.3.1.1" aria-label="Copy heading and permalink for Answer 1.3.3.1.1">🔗</a></div>
+</div></details></div>
 <div class="autopermalink" data-description="Exercise 1.3.3.1"><a href="#exercises-Conditional-Probability-1-2" title="Copy heading and permalink for Exercise 1.3.3.1" aria-label="Copy heading and permalink for Exercise 1.3.3.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Conditional-Probability-1-3"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para" id="exercises-Conditional-Probability-1-3-1-1">An experiment consists of flipping a fair coin three times. Let <span class="process-math">\(A\)</span> be the event that the first and second flips match. Let <span class="process-math">\(B\)</span> be the event that there are at least two heads.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="solutions"><details id="exercises-Conditional-Probability-1-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="exercises-Conditional-Probability-1-3-2-1">
+<div class="displaymath process-math" id="exercises-Conditional-Probability-1-3-2-1-1">
+\begin{align*}
+A \amp = \{ HHH, HHT, TTH, TTT \} \\
+B \amp = \{ HHH, HHT, HTH, THH \} \\
+A\cap B \amp = \{HHH, HHT\} 
+\end{align*}
+</div>
+<div class="para">So <span class="process-math">\(\Pr(A) = \frac{4}{8} = \frac{1}{2}\text{,}\)</span> <span class="process-math">\(\Pr(B) = \frac{4}{8} = \frac{1}{2}\text{,}\)</span> and <span class="process-math">\(\Pr(A\cap B) = \frac{2}{8} = \frac{1}{4}\text{.}\)</span> Finally:</div>
+<div class="displaymath process-math" id="exercises-Conditional-Probability-1-3-2-1-5">
+\begin{align*}
+\Pr(A \mid B) \amp = \frac{\Pr(A\cap B)}{\Pr(B)} = \frac{2/8}{4/8} = \frac{2}{4} = \frac{1}{2} \\
+\Pr(B \mid A) \amp = \frac{\Pr(B\cap A)}{\Pr(A)} = \frac{2/8}{4/8} = \frac{2}{4} = \frac{1}{2} 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 1.3.3.2.1"><a href="#exercises-Conditional-Probability-1-3-2" title="Copy heading and permalink for Answer 1.3.3.2.1" aria-label="Copy heading and permalink for Answer 1.3.3.2.1">🔗</a></div>
+</div></details></div>
 <div class="autopermalink" data-description="Exercise 1.3.3.2"><a href="#exercises-Conditional-Probability-1-3" title="Copy heading and permalink for Exercise 1.3.3.2" aria-label="Copy heading and permalink for Exercise 1.3.3.2">🔗</a></div></article>
 </div>
 <div class="autopermalink" data-description="Exercise Group 1.3.3.1–2"><a href="#exercises-Conditional-Probability-1" title="Copy heading and permalink for Exercise Group 1.3.3.1–2" aria-label="Copy heading and permalink for Exercise Group 1.3.3.1–2">🔗</a></div>
@@ -439,7 +491,16 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="exercises-Conditional-Probability-2-2-1-1">For a patient who receives a positive test, what is the probability they have the disease?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="exercises-Conditional-Probability-2-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para" id="exercises-Conditional-Probability-2-2-2-1">TODO<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="exercises-Conditional-Probability-2-2-2-1">
+<div class="para">Let <span class="process-math">\(P\)</span> be the event of testing positive and <span class="process-math">\(D\)</span> the event of having the disease. Then the prevalence <span class="process-math">\(\Pr(D)\)</span> is given as 3.2%, or 0.032. The sensitivity is <span class="process-math">\(\Pr(P\mid D) = 0.65\text{,}\)</span> and the specificity is <span class="process-math">\(\Pr(P^c\mid D^c) = 0.999\text{.}\)</span> So, according to Bayes’ Theorem:</div>
+<div class="displaymath process-math" id="exercises-Conditional-Probability-2-2-2-1-6">
+\begin{align*}
+\Pr(D\mid P) \amp = \frac{\Pr(P\mid D)\Pr(D)}{\Pr(P\mid D)\Pr(D) + (1 - \Pr(P^c\mid D^c))\Pr(D^c)} \\
+\amp = \frac{(0.65)(0.032)}{(0.65)(0.032) + (1 - 0.999)(1 - 0.032)} \\
+\amp \approx 0.96 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Answer 1.3.3.3.a.1"><a href="#exercises-Conditional-Probability-2-2-2" title="Copy heading and permalink for Answer 1.3.3.3.a.1" aria-label="Copy heading and permalink for Answer 1.3.3.3.a.1">🔗</a></div>
 </div></details></div>
@@ -447,7 +508,15 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="exercises-Conditional-Probability-2-3-1-1">For a patient who receives a negative test, what is the probability they do not have the disease?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="exercises-Conditional-Probability-2-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para" id="exercises-Conditional-Probability-2-3-2-1">TODO<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="exercises-Conditional-Probability-2-3-2-1">
+<div class="displaymath process-math" id="exercises-Conditional-Probability-2-3-2-1-1">
+\begin{align*}
+\Pr(D^c\mid P^c) \amp = \frac{\Pr(P^c\mid D^c)\Pr(D^c)}{\Pr(P^c\mid D^c)\Pr(D^c) + (1 - \Pr(P\mid D))\Pr(D)} \\
+\amp = \frac{(0.999)(1 - 0.032)}{(0.999)(1 - 0.032) + (1 - 0.65)(0.032)} \\
+\amp \approx 0.99 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Conditional-Probability-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Answer 1.3.3.3.b.1"><a href="#exercises-Conditional-Probability-2-3-2" title="Copy heading and permalink for Answer 1.3.3.3.b.1" aria-label="Copy heading and permalink for Answer 1.3.3.3.b.1">🔗</a></div>
 </div></details></div>
