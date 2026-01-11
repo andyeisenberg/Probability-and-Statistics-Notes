@@ -11,6 +11,7 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
+    <xi:include href="./ch-Introduction.ptx" />
     <xi:include href="./ch-Probability.ptx" />
     <xi:include href="./ch-Random-Variables.ptx" />
     <xi:include href="./ch-Expected-Value.ptx" />

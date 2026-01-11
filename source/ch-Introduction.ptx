@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-Introduction" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
+
+  <section xml:id="sec-Introduction">
+    <title>Introduction</title>
+    
+    <p>
+        These notes are compiled from a collection of course materials from previous iterations of Math 1044.
+        I've also been learning <pretext /> as I've been going.
+        You should consider these notes to be very much a work in progress, and be aware of the possibility of typos or errors.
+    </p>
+  </section>
+
+
+  </chapter>
