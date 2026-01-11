@@ -146,8 +146,13 @@
     <!-- override defaults.  Ex:<css theme="denver"/>          -->
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-      <css theme="boulder"/>
-      <!-- <css theme="salem"/> -->
+    <css
+        theme="boulder"
+        primary-color="#386F94"
+        primary-color-dark="#5192BD"
+        provide-dark-mode="yes"
+    />
+          <!-- <css theme="salem"/> -->
 
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search
     feature (but then variant should be set to none to avoid conflict) -->
