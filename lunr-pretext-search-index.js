@@ -10,13 +10,22 @@ var ptx_lunr_docs = [
   "body": "  "
 },
 {
+  "id": "sec-Introduction",
+  "level": "1",
+  "url": "sec-Introduction.html",
+  "type": "Section",
+  "number": "0.1",
+  "title": "Introduction",
+  "body": " Introduction  These notes are compiled from a collection of course materials from previous iterations of Math 1044. I've also been learning PreTeXt as I've been going. You should consider these notes to be very much a work in progress, and be aware of the possibility of typos or errors.  "
+},
+{
   "id": "sec-Set-Theory",
   "level": "1",
   "url": "sec-Set-Theory.html",
   "type": "Section",
   "number": "1.1",
   "title": "Set Theory",
-  "body": " Set Theory    The sample space , often denoted , is the set of all possible results of an experiment. A single result is called an outcome , while a collection of results is called an event .      An experiment consists of rolling a standard 6-sided die. The sample space is . One possible event is , i.e., the event that the result of the roll is even.  What would the sample space look like if we roll the die two times and recorded the results?           Let be a set. The symbol means \"is an element of\", as in . Given another set , we say is a subset of , written , to mean that every element of the set is also an element of the set .      Consider sets and , each contained inside . We can combine sets in a variety of ways:   Union  The union of and is the set .    Intersection  The intersection of and is the set .    Difference  The set difference  is the set .    Complement  The complement of is the set .    Empty Set  The empty set , usually written or , is the set which contains no elements.       It's useful sometimes to draw pictures representing sets...     Two sets and are disjoint if .      Given a finite set , the cardinality of , written , is the number of elements in .       Consider the sets , , and , which are all subsets of .     Find .           Find , , , , , , , and . Is it true that the size of the union of sets is equal to the sum of the sizes of the individual sets?     , , , , , , , . In particular, note that , so it is not true in general that the size of the union of sets is the sum of the sizes of the individual sets.      Find and .     , .       Suppose we roll a 6-sided die two times. List the set of all possible results. [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result ---rolling a 4 and then a 2.]      Suppose we flip a coin two times. List the set of all possible results. What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?      If we roll a 6-sided die ten times, how many possible results will there be?     "
+  "body": " Set Theory  When we perform an experiment, there are many results that we might see. We want to be able to quantify the likelihood of seeing certain results. For this, we need to develop some mathematical terminology.    The sample space , often denoted , is the set of all possible results of an experiment. A single result is called an outcome , while a collection of results is called an event .      An experiment consists of rolling a standard 6-sided die. The sample space is . One possible event is , i.e., the event that the result of the roll is even.  What would the sample space look like if we roll the die two times and recorded the results?     Note that, for example, is a different outcome from .      Let be a set. The symbol means \"is an element of\", as in . Given another set , we say is a subset of , written , to mean that every element of the set is also an element of the set .    The subset symbol includes the possibility that and are equal sets, i.e., that they contain precisely the same elements.    Consider sets and , each contained inside . We can combine sets in a variety of ways:   Union  The union of and is the set .    Intersection  The intersection of and is the set .    Difference  The set difference  is the set .    Complement  The complement of is the set .    Empty Set  The empty set , usually written or , is the set which contains no elements.       It's useful sometimes to draw pictures called Venn diagrams representing sets:   Example Venn Diagram    Venn diagram showing sets with the region representing shaded.         Two sets and are disjoint if .      Given a finite set , the cardinality of , written , is the number of elements in .       Consider the sets , , and , which are all subsets of .     Find .           Find , , , , , , , and . Is it true that the size of the union of sets is equal to the sum of the sizes of the individual sets?     , , , , , , , . In particular, note that , so it is not true in general that the size of the union of sets is the sum of the sizes of the individual sets.      Find and .     , .       Suppose we have a 6-sided die that's weighted to roll a 6 half of the time. We roll the die two times. List the set of all possible results. [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result ---rolling a 4 and then a 2.]     Note that simply lists outcomes with no reference to the probabilities. So the answer here is the same as in .      Suppose we flip a coin two times. List the set of all possible results. What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?    For two flips: .  For three flips: .  For four flips:   Each additional flip doubles the number of outcomes. So, with ten flips, we'll have .      If we roll a 6-sided die ten times, how many possible results will there be?    Each additional roll will multiply the number of outcomes by 6. So, with 10 rolls, we'll have      "
 },
 {
   "id": "def-sample-space",
@@ -28,13 +37,13 @@ var ptx_lunr_docs = [
   "body": "  The sample space , often denoted , is the set of all possible results of an experiment. A single result is called an outcome , while a collection of results is called an event .   "
 },
 {
-  "id": "sec-Set-Theory-3",
+  "id": "example-sample-space",
   "level": "2",
-  "url": "sec-Set-Theory.html#sec-Set-Theory-3",
+  "url": "sec-Set-Theory.html#example-sample-space",
   "type": "Example",
   "number": "1.1.2",
   "title": "",
-  "body": "  An experiment consists of rolling a standard 6-sided die. The sample space is . One possible event is , i.e., the event that the result of the roll is even.  What would the sample space look like if we roll the die two times and recorded the results?        "
+  "body": "  An experiment consists of rolling a standard 6-sided die. The sample space is . One possible event is , i.e., the event that the result of the roll is even.  What would the sample space look like if we roll the die two times and recorded the results?     Note that, for example, is a different outcome from .   "
 },
 {
   "id": "def-subset",
@@ -55,11 +64,29 @@ var ptx_lunr_docs = [
   "body": "  Consider sets and , each contained inside . We can combine sets in a variety of ways:   Union  The union of and is the set .    Intersection  The intersection of and is the set .    Difference  The set difference  is the set .    Complement  The complement of is the set .    Empty Set  The empty set , usually written or , is the set which contains no elements.      "
 },
 {
+  "id": "sec-Set-Theory-8",
+  "level": "2",
+  "url": "sec-Set-Theory.html#sec-Set-Theory-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Venn diagrams "
+},
+{
+  "id": "fig-Venn-diagram",
+  "level": "2",
+  "url": "sec-Set-Theory.html#fig-Venn-diagram",
+  "type": "Figure",
+  "number": "1.1.5",
+  "title": "",
+  "body": " Example Venn Diagram    Venn diagram showing sets with the region representing shaded.     "
+},
+{
   "id": "def-disjoint",
   "level": "2",
   "url": "sec-Set-Theory.html#def-disjoint",
   "type": "Definition",
-  "number": "1.1.5",
+  "number": "1.1.6",
   "title": "",
   "body": "  Two sets and are disjoint if .   "
 },
@@ -68,7 +95,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-Set-Theory.html#def-cardinality",
   "type": "Definition",
-  "number": "1.1.6",
+  "number": "1.1.7",
   "title": "",
   "body": "  Given a finite set , the cardinality of , written , is the number of elements in .   "
 },
@@ -88,7 +115,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.1.2",
   "title": "",
-  "body": "  Suppose we roll a 6-sided die two times. List the set of all possible results. [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result ---rolling a 4 and then a 2.]   "
+  "body": "  Suppose we have a 6-sided die that's weighted to roll a 6 half of the time. We roll the die two times. List the set of all possible results. [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result ---rolling a 4 and then a 2.]     Note that simply lists outcomes with no reference to the probabilities. So the answer here is the same as in .   "
 },
 {
   "id": "exercises-Set-Theory-3",
@@ -97,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.1.3",
   "title": "",
-  "body": "  Suppose we flip a coin two times. List the set of all possible results. What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?   "
+  "body": "  Suppose we flip a coin two times. List the set of all possible results. What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?    For two flips: .  For three flips: .  For four flips:   Each additional flip doubles the number of outcomes. So, with ten flips, we'll have .   "
 },
 {
   "id": "exercises-Set-Theory-4",
@@ -106,7 +133,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.1.4",
   "title": "",
-  "body": "  If we roll a 6-sided die ten times, how many possible results will there be?   "
+  "body": "  If we roll a 6-sided die ten times, how many possible results will there be?    Each additional roll will multiply the number of outcomes by 6. So, with 10 rolls, we'll have    "
 },
 {
   "id": "sec-Probability",
@@ -115,7 +142,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Definition of Probability",
-  "body": " Definition of Probability    A probability distribution on a sample space assigns probabilities to every event, satisfying the following conditions:    .     for any event .    If , then .       For small probability spaces (i.e., with finitely many outcomes in the sample space), we'll usually assign probabilities to each individual outcome, and perhaps list them in a table. Then, to find the probability of any event, simply add together the probabilities of each outcome in that event.    An experiment consists of rolling a standard 6-sided die. The sample space is . The probability distribution (assuming a fair die) is shown below.   Distribution for a fair die        1     2     3     4     5     6      One possible event is , i.e., the event that the result of the roll is even. The probability of is:       Let be a sample space and an event. We refer to the distribution in which for all as the uniform distribution . In this case, it follows that .      A person picks a random number from 1 to 10. What is the probability that they picked 3?        Consider the sample space with probability distribution below. Calculate the probabilities of , , , and .          1  0.1    2  0.05    3  0.2    4  0.15    5  0.15    6  0.1    7  0.05    8  0.1    9  0.1          Suppose we flip a coin two times. Answer the questions below. What about three flips? What about four flips?     Write all outcomes in the sample space .      Make a probability distribution table for assuming the coin is fair.      Make a probability distribution table assuming the coin comes up heads with probability 0.3.       Suppose we roll a die two times. Answer the questions below.     Write all outcomes in the sample space .      Make a probability distribution table for assuming the die is fair.      Let be the event that the second roll is higher than the first, and let be the event that the first roll is even. Find , and .       Suppose a die has the values on the faces, but the die is not fair. Instead, the probabilities scale by the same amount as the face values. For example, a result of 4 is twice as likely as a result of 2, since 4 is twice as large as 2; a result of 6 is six times more likely than a result of 1; and so on. Write a probability distribution table for this die.      Suppose a die has the values on the faces, but the die is not fair. Instead, each even value has an equal probability, each odd value has an equal probability, and the even values are each twice as likely as the odd values to appear on a roll. Write a probability distribution table for this die.      A toxin molecule inside a cell has a 0.3 probability of leaving the cell during a 1-minute period. For each value of , find the probability of the toxin molecule leaving the cell during the th minute. What is the probability of the molecule leaving the cell during the first 3 minutes?      Each of 10 toxin molecules inside a cell has a 0.3 probability of leaving the cell during a 1-minute period. For each value of , and for each value of , find the probability that exactly toxin molecules remain in the cell after the th minute.     "
+  "body": " Definition of Probability  Now that we have the language to refer to outcomes and events of an experiment, we want to start quantifying how likely those outcomes\/events are to occur.    A probability distribution on a sample space assigns probabilities to every event, satisfying the following conditions:    .     for any event .    If , then .       For small probability spaces (i.e., with finitely many outcomes in the sample space), we'll usually assign probabilities to each individual outcome, and perhaps list them in a table. Then, to find the probability of any event, simply add together the probabilities of each outcome in that event.    An experiment consists of rolling a standard 6-sided die. The sample space is . The probability distribution (assuming a fair die) is shown below.   Distribution for a fair die        1     2     3     4     5     6      One possible event is , i.e., the event that the result of the roll is even. The probability of is:       Let be a sample space and an event. We refer to the distribution in which for all as the uniform distribution . In this case, it follows that .    When we talk about a fair coin flip or a fair die roll, the word \"fair\" is indicating a uniform distribution. However, don't make the mistake of assuming that all distributions are uniform by default.    A person picks a random number from 1 to 10. What is the probability that they picked 3?    Without assuming the distribution is fair (i.e., that each value ) has probability of occurring), we don't have enough information to answer this question.  In fact, the situation is even more vague than that: the sample space itself is unclear. Are we only allowed to pick integer values? What about fractions like ? What about irrational numbers like ?       Consider the sample space with probability distribution below. Calculate the probabilities of , , , and .          1  0.1    2  0.05    3  0.2    4  0.15    5  0.15    6  0.1    7  0.05    8  0.1    9  0.1              Suppose we flip a coin two times. Answer the questions below. What about three flips? What about four flips?     Write all outcomes in the sample space .           Make a probability distribution table for assuming the coin is fair.     Probability Distribution for Two Fair Coin Flips         0.25     0.25     0.25     0.25         Make a probability distribution table assuming the coin comes up heads with probability 0.3.     Probability Distribution for Two Fair Coin Flips         0.09     0.21     0.21     0.49          Suppose we roll a die two times. Answer the questions below.     Write all outcomes in the sample space .           Make a probability distribution table for assuming the die is fair.    We'll avoid an overly large table and note that, since the die is fair, every outcome is equally likely. Therefore, for every .      Let be the event that the second roll is higher than the first, and let be the event that the first roll is even. Find , and .     Therefore        Suppose a die has the values on the faces, but the die is not fair. Instead, the probabilities scale by the same amount as the face values. For example, a result of 4 is twice as likely as a result of 2, since 4 is twice as large as 2; a result of 6 is six times more likely than a result of 1; and so on. Write a probability distribution table for this die.     Probability Distribution for a Linearly Scaled Die        1     2     3     4     5     6          Suppose a die has the values on the faces, but the die is not fair. Instead, each even value has an equal probability, each odd value has an equal probability, and the even values are each twice as likely as the odd values to appear on a roll. Write a probability distribution table for this die.     Probability Distribution for an Even-biased Die        1     2     3     4     5     6          A toxin molecule inside a cell has a 0.3 probability of leaving the cell during a 1-minute period. For each value of , find the probability of the toxin molecule leaving the cell during the th minute. What is the probability of the molecule leaving the cell during the first 3 minutes?    For short, write to mean the probability of the toxin molecule leaving during the th minute. Then   The probability of leaving during the first 3 minutes is       "
 },
 {
   "id": "def-probability-distribution",
@@ -127,9 +154,9 @@ var ptx_lunr_docs = [
   "body": "  A probability distribution on a sample space assigns probabilities to every event, satisfying the following conditions:    .     for any event .    If , then .      "
 },
 {
-  "id": "sec-Probability-4",
+  "id": "sec-Probability-5",
   "level": "2",
-  "url": "sec-Probability.html#sec-Probability-4",
+  "url": "sec-Probability.html#sec-Probability-5",
   "type": "Example",
   "number": "1.2.2",
   "title": "",
@@ -145,13 +172,13 @@ var ptx_lunr_docs = [
   "body": "  Let be a sample space and an event. We refer to the distribution in which for all as the uniform distribution . In this case, it follows that .   "
 },
 {
-  "id": "sec-Probability-6",
+  "id": "sec-Probability-8",
   "level": "2",
-  "url": "sec-Probability.html#sec-Probability-6",
+  "url": "sec-Probability.html#sec-Probability-8",
   "type": "Example",
   "number": "1.2.5",
   "title": "",
-  "body": "  A person picks a random number from 1 to 10. What is the probability that they picked 3?    "
+  "body": "  A person picks a random number from 1 to 10. What is the probability that they picked 3?    Without assuming the distribution is fair (i.e., that each value ) has probability of occurring), we don't have enough information to answer this question.  In fact, the situation is even more vague than that: the sample space itself is unclear. Are we only allowed to pick integer values? What about fractions like ? What about irrational numbers like ?   "
 },
 {
   "id": "exercises-Probability-1",
@@ -160,7 +187,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.2.1",
   "title": "",
-  "body": "  Consider the sample space with probability distribution below. Calculate the probabilities of , , , and .          1  0.1    2  0.05    3  0.2    4  0.15    5  0.15    6  0.1    7  0.05    8  0.1    9  0.1       "
+  "body": "  Consider the sample space with probability distribution below. Calculate the probabilities of , , , and .          1  0.1    2  0.05    3  0.2    4  0.15    5  0.15    6  0.1    7  0.05    8  0.1    9  0.1           "
 },
 {
   "id": "exercises-Probability-2",
@@ -169,7 +196,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.2.2",
   "title": "",
-  "body": "  Suppose we flip a coin two times. Answer the questions below. What about three flips? What about four flips?     Write all outcomes in the sample space .      Make a probability distribution table for assuming the coin is fair.      Make a probability distribution table assuming the coin comes up heads with probability 0.3.    "
+  "body": "  Suppose we flip a coin two times. Answer the questions below. What about three flips? What about four flips?     Write all outcomes in the sample space .           Make a probability distribution table for assuming the coin is fair.     Probability Distribution for Two Fair Coin Flips         0.25     0.25     0.25     0.25         Make a probability distribution table assuming the coin comes up heads with probability 0.3.     Probability Distribution for Two Fair Coin Flips         0.09     0.21     0.21     0.49       "
 },
 {
   "id": "exercises-Probability-3",
@@ -178,7 +205,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.2.3",
   "title": "",
-  "body": "  Suppose we roll a die two times. Answer the questions below.     Write all outcomes in the sample space .      Make a probability distribution table for assuming the die is fair.      Let be the event that the second roll is higher than the first, and let be the event that the first roll is even. Find , and .    "
+  "body": "  Suppose we roll a die two times. Answer the questions below.     Write all outcomes in the sample space .           Make a probability distribution table for assuming the die is fair.    We'll avoid an overly large table and note that, since the die is fair, every outcome is equally likely. Therefore, for every .      Let be the event that the second roll is higher than the first, and let be the event that the first roll is even. Find , and .     Therefore     "
 },
 {
   "id": "exercises-Probability-4",
@@ -187,7 +214,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.2.4",
   "title": "",
-  "body": "  Suppose a die has the values on the faces, but the die is not fair. Instead, the probabilities scale by the same amount as the face values. For example, a result of 4 is twice as likely as a result of 2, since 4 is twice as large as 2; a result of 6 is six times more likely than a result of 1; and so on. Write a probability distribution table for this die.   "
+  "body": "  Suppose a die has the values on the faces, but the die is not fair. Instead, the probabilities scale by the same amount as the face values. For example, a result of 4 is twice as likely as a result of 2, since 4 is twice as large as 2; a result of 6 is six times more likely than a result of 1; and so on. Write a probability distribution table for this die.     Probability Distribution for a Linearly Scaled Die        1     2     3     4     5     6       "
 },
 {
   "id": "exercises-Probability-5",
@@ -196,7 +223,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.2.5",
   "title": "",
-  "body": "  Suppose a die has the values on the faces, but the die is not fair. Instead, each even value has an equal probability, each odd value has an equal probability, and the even values are each twice as likely as the odd values to appear on a roll. Write a probability distribution table for this die.   "
+  "body": "  Suppose a die has the values on the faces, but the die is not fair. Instead, each even value has an equal probability, each odd value has an equal probability, and the even values are each twice as likely as the odd values to appear on a roll. Write a probability distribution table for this die.     Probability Distribution for an Even-biased Die        1     2     3     4     5     6       "
 },
 {
   "id": "exercises-Probability-6",
@@ -205,16 +232,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.2.6",
   "title": "",
-  "body": "  A toxin molecule inside a cell has a 0.3 probability of leaving the cell during a 1-minute period. For each value of , find the probability of the toxin molecule leaving the cell during the th minute. What is the probability of the molecule leaving the cell during the first 3 minutes?   "
-},
-{
-  "id": "exercises-Probability-7",
-  "level": "2",
-  "url": "sec-Probability.html#exercises-Probability-7",
-  "type": "Exercise",
-  "number": "1.2.7",
-  "title": "",
-  "body": "  Each of 10 toxin molecules inside a cell has a 0.3 probability of leaving the cell during a 1-minute period. For each value of , and for each value of , find the probability that exactly toxin molecules remain in the cell after the th minute.   "
+  "body": "  A toxin molecule inside a cell has a 0.3 probability of leaving the cell during a 1-minute period. For each value of , find the probability of the toxin molecule leaving the cell during the th minute. What is the probability of the molecule leaving the cell during the first 3 minutes?    For short, write to mean the probability of the toxin molecule leaving during the th minute. Then   The probability of leaving during the first 3 minutes is    "
 },
 {
   "id": "sec-Conditional-Probability",
@@ -721,13 +739,67 @@ var ptx_lunr_docs = [
   "body": "  Suppose a parameter takes values in with likelihood function . Find the maximum likelihood estimation of .   "
 },
 {
+  "id": "sec-Joint-Distributions",
+  "level": "1",
+  "url": "sec-Joint-Distributions.html",
+  "type": "Section",
+  "number": "2.3",
+  "title": "Joint Distributions",
+  "body": " Joint Distributions  Sometimes multiple measurements are taken simultaneously and data is naturally grouped by combinations of measurement values. Consider a poll that asks respondents two yes or no questions. It may be natural to report counts of respondents who answered yes\/yes, yes\/no, no\/yes, no\/no.    Let be a random variable taking values . Let be a random variable taking values . The joint distribution for and is the collection of probabilities for all . The individual distributions for and separately are called the marginal distributions .    In the probability , the comma should be read as \"and\". Think of the conditions and as events, and is the probability of the intersection of these two events.  We're restricting our attention here to joint distributions of two random variables, each taking only finitely many values. It shouldn't be hard to imagine how to generalize this definition for a joint distribution of three or more discrete random variables. A bit more adjustment would need to be made for a joint distribution of continuous random variables, or a joint distribution between a discrete and continuous random variable.    A poll asks two yes\/no questions. Let indicate a yes on Question 1 and indicate a yes on Question 2. When the data is collected, the following joint distribution for and is created:   Joint Distribution for Indicator Random Variables          0.1  0.2     0.3  0.4     Note that the sum of all values in the table is 1; this is a probability distribution, and total probability must be 1. This table doesn't show the distributions for or individually. The data for the two distributions is mixed together. We can, if we wish, take this information and determine separate distributions for and . For the distribution for , we need to know and (with no reference to ). We can get these probabilities by summing along the columns of the table: To get the distribution for , we should add along the rows:     If we start with the joint distribution, we can get the marginal distributions. If we start with the marginal distributions, we can't necessarily find the joint distribution, because we won't know how the random variables interact.    Random variables and are called independent if the events and are independent for every possible combination of and .      Using the joint distribution and marginal distributions in , we can check independence of and by going cell by cell through the joint distribution table. The top-left cell shows . The marginal distributions have and . If and were independent, we would have Therefore, and are not independent.  Note that we can stop checking now. As soon as we find one cell in the joint distribution table where the independence condition fails, the two random variables are not independent. In order to establish independence of random variables, all cells in the joint distribution table would have to pass our check.       TODO     "
+},
+{
+  "id": "def-joint-distribution",
+  "level": "2",
+  "url": "sec-Joint-Distributions.html#def-joint-distribution",
+  "type": "Definition",
+  "number": "2.3.1",
+  "title": "",
+  "body": "  Let be a random variable taking values . Let be a random variable taking values . The joint distribution for and is the collection of probabilities for all . The individual distributions for and separately are called the marginal distributions .   "
+},
+{
+  "id": "example-joint-indicators",
+  "level": "2",
+  "url": "sec-Joint-Distributions.html#example-joint-indicators",
+  "type": "Example",
+  "number": "2.3.2",
+  "title": "",
+  "body": "  A poll asks two yes\/no questions. Let indicate a yes on Question 1 and indicate a yes on Question 2. When the data is collected, the following joint distribution for and is created:   Joint Distribution for Indicator Random Variables          0.1  0.2     0.3  0.4     Note that the sum of all values in the table is 1; this is a probability distribution, and total probability must be 1. This table doesn't show the distributions for or individually. The data for the two distributions is mixed together. We can, if we wish, take this information and determine separate distributions for and . For the distribution for , we need to know and (with no reference to ). We can get these probabilities by summing along the columns of the table: To get the distribution for , we should add along the rows:    "
+},
+{
+  "id": "def-independent-RVs",
+  "level": "2",
+  "url": "sec-Joint-Distributions.html#def-independent-RVs",
+  "type": "Definition",
+  "number": "2.3.4",
+  "title": "",
+  "body": "  Random variables and are called independent if the events and are independent for every possible combination of and .   "
+},
+{
+  "id": "example-independent-indicators",
+  "level": "2",
+  "url": "sec-Joint-Distributions.html#example-independent-indicators",
+  "type": "Example",
+  "number": "2.3.5",
+  "title": "",
+  "body": "  Using the joint distribution and marginal distributions in , we can check independence of and by going cell by cell through the joint distribution table. The top-left cell shows . The marginal distributions have and . If and were independent, we would have Therefore, and are not independent.  Note that we can stop checking now. As soon as we find one cell in the joint distribution table where the independence condition fails, the two random variables are not independent. In order to establish independence of random variables, all cells in the joint distribution table would have to pass our check.   "
+},
+{
+  "id": "exercises-Joint-Distributions-1",
+  "level": "2",
+  "url": "sec-Joint-Distributions.html#exercises-Joint-Distributions-1",
+  "type": "Exercise",
+  "number": "2.3.1",
+  "title": "",
+  "body": "  TODO   "
+},
+{
   "id": "sec-Expected-Value",
   "level": "1",
   "url": "sec-Expected-Value.html",
   "type": "Section",
   "number": "3.1",
   "title": "Expected Value",
-  "body": " Expected Value   Discrete Expected Value  A full probability distribution (for a discrete random variable) or a density function (for a continuous random variable) carry all of the probability information. Often, we seek statistics , i.e., numbers that summarize a distribution in some way.    Let be a discrete random variable taking the values . The expected value (also called mean , or expectation ) of is the weighted average of the values of , where the weights are the probabilities of taking each value:       If takes on the values uniformly (i.e., each value having probability ), then the expected value is the usual average: For example, the expected value of a fair 6-sided die roll is:       Suppose we roll a fair 6-sided die two times, and let be the sum of the rolls. It's straightforward to check the distribution for shown below. We've also included a column containing the products , which must be summed up to find .           2      3      4      5      6      7      8      9      10      11      12       The sum of the third column gives .      Let indicate an event which has probability . Then: That is, the expected value of an indicator random variable is the probability of the event that it indicates.    Having found the expected value for one named distribution, we may be tempted to run through our other discrete distributions (binomial, geometric, and Poisson) and find nice formulas for their expected values. Unfortunately, both the geometric distribution and the Poisson distribution have infinitely many possible values, and the summation of infinitely many discrete terms is beyond the scope of this course. (A Calculus 2 course covering series would give the right tools to find expected value formulas with full justification for these distributions.)  The binomial distribution takes only finitely many values, and we have that lets us generate a distribution table reasonably quickly, given the parameters and . Feel free to pick some parameter values (keep fairly small!) to try this calculation by hand, but we'll use a powerful theorem a bit later to give a very nice general formula depending on and .    Continuous Expected Value      Linearity of Expected Value        Consider a random variable with probability distribution below. Find .          1  0.1    2  0.05    3  0.2    4  0.15    5  0.15    6  0.1    7  0.05    8  0.1    9  0.1         Let and be random variables each taking the values 1, 2, 3, 4, 5. Write different distribution tables for and so that they have the same expected value.      Suppose we flip a coin times, and let count the number of heads. If the coin comes up heads on a flip with probability , what is ? What if and ? What if and ?      If , , and , what is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. for some constant . In a previous problem, you found the value of . Now, find .      A continuous random variable taking values in has p.d.f. . Find .     "
+  "body": " Expected Value   Discrete Expected Value  A full probability distribution (for a discrete random variable) or a density function (for a continuous random variable) carry all of the probability information. Often, we seek statistics , i.e., numbers that summarize a distribution in some way.    Let be a discrete random variable taking the values . The expected value (also called mean , or expectation ) of is the weighted average of the values of , where the weights are the probabilities of taking each value:       If takes on the values uniformly (i.e., each value having probability ), then the expected value is the usual average: For example, the expected value of a fair 6-sided die roll is:       Suppose we roll a fair 6-sided die two times, and let be the sum of the rolls. It's straightforward to check the distribution for shown below. We've also included a column containing the products , which must be summed up to find .           2      3      4      5      6      7      8      9      10      11      12       The sum of the third column gives .      Let indicate an event which has probability . Then: That is, the expected value of an indicator random variable is the probability of the event that it indicates.    Having found the expected value for one named distribution, we may be tempted to run through our other discrete distributions (binomial, geometric, and Poisson) and find nice formulas for their expected values. Unfortunately, both the geometric distribution and the Poisson distribution have infinitely many possible values, and the summation of infinitely many discrete terms is beyond the scope of this course. (A Calculus 2 course covering series would give the right tools to find expected value formulas with full justification for these distributions.)  The binomial distribution takes only finitely many values, and we have that lets us generate a distribution table reasonably quickly, given the parameters and . Feel free to pick some parameter values (keep fairly small!) to try this calculation by hand, but we'll use a powerful theorem a bit later to give a very nice general formula depending on and .    Continuous Expected Value  Expected value for a discrete random variable is a weighted average of the values taken by the variable with weights provided by the probability distribution. We'd like to use the same idea for a continuous random variable, but now we're averaging over an interval's worth of values. Also, individual values don't have probabilities, they have probability densities.    Let be a continuous random variable taking values in the interval with pdf . The expected value of is given by:     It's worth viewing this definition side-by-side with to understand that they have analogous structure. The pdf values are densities, not probabilities. But the product is probability. So the expression is analogous to : value times probability. Finally, the integral symbol is meant to look like a stretched out letter \"S\" because it is a form of infinite summation. So, both and should be understood as taking the products of values with their probabilities and then summing up those products.    Let be uniform on the interval . So has the pdf . We might reasonably expect that the average value of would be the midpoint of the interval. Let's check that:       Let take values in with pdf .       Linearity of Expected Value  In the context of many areas of mathematics, the word \"linearity\" doesn't refer to some graph being a straight line. Rather, it refers to a situation in which some mathematical object or operation behaves in the nicest possible way under the operations of addition and scalar multiplication (i.e., multiplication by a constant). You've already encountered linearity several times in Calculus 1, whether or not it was phrased that way.   Limits are linear:     Derivatives are linear:     Integrals (both definite and indefinite) are linear:    Now, we see that expected value is also linear:   Linearity of Expectation   Let and be random variables and . Then:     Some application of the linearity of expectation will seem entirely reasonable:    In , we saw that the expected value of a fair 6-sided die roll is 3.5. In , we saw that the expected value of the sum of two die rolls is 7, which is precisely 2 times 3.5. The calculation in would be very tedious to recreate for three die rolls, let alone generalizing for rolls. However, suppose we define separate random variables for the result of each individual roll. Let be the sum of the rolls. Then By linearity: For two rolls, we recover our previous result: But now we have a general formula that tells the expected sum for any number of rolls. It also gives a perfectly reasonable answer: the expected sum of rolls is times the expected value of a single roll.      Suppose . describes a binomially distributed random variable as counting the number of occurrences of some event, which either happens or not in each of independent trials. This leads us to a very natural idea: identify each individual possible occurrence of the event, and assign it an indicator random variable. In this case, let indicate that flip comes up heads. Then We already know ( ) that the expected value of each is the probability of the indicated event that flip is heads. This is precisely the parameter . Therefore: Remember this formula! We'll make frequent use of it.    The previous examples are so reasonable it may seem unimpressive. But consider the following use of linearity:    We say a flip sequence has a run of 4 heads starting at if flips are all heads. We don't care about overlaps: the flip sequence has a run of 4 heads starting at 1 and another run starting at 2.  Suppose we flip a fair coin 100 times. How many runs of 4 heads should we expect?    Can you mimic the structure of ?    Let indicate a run of 4 heads starting at . Since this requires 4 precise flips to come up heads, the probability of the indicated event should be The very last starting flip for a run of 4 heads is flip number 97 (so that flips 97, 98, 99, and 100 would all be heads). Then precisely counts the number of runs of 4 heads. Using linearity: Notice that, unlike , the events being indicated here are not independent from each other. Linearity is unaffected by the fact that that the runs of heads can overlap.        Consider a random variable with probability distribution below. Find .          1  0.1    2  0.05    3  0.2    4  0.15    5  0.15    6  0.1    7  0.05    8  0.1    9  0.1         Let and be random variables each taking the values 1, 2, 3, 4, 5. Write different distribution tables for and so that they have the same expected value.      Suppose we flip a coin times, and let count the number of heads. If the coin comes up heads on a flip with probability , what is ? What if and ? What if and ?      If , , and , what is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. for some constant . In a previous problem, you found the value of . Now, find .      A continuous random variable taking values in has p.d.f. . Find .     "
 },
 {
   "id": "subsec-discrete-EV-2",
@@ -739,9 +811,9 @@ var ptx_lunr_docs = [
   "body": "statistics "
 },
 {
-  "id": "def-discrete-expected-value",
+  "id": "def-discrete-EV",
   "level": "2",
-  "url": "sec-Expected-Value.html#def-discrete-expected-value",
+  "url": "sec-Expected-Value.html#def-discrete-EV",
   "type": "Definition",
   "number": "3.1.1",
   "title": "",
@@ -773,6 +845,69 @@ var ptx_lunr_docs = [
   "number": "3.1.5",
   "title": "",
   "body": "  Let indicate an event which has probability . Then: That is, the expected value of an indicator random variable is the probability of the event that it indicates.   "
+},
+{
+  "id": "def-continuous-EV",
+  "level": "2",
+  "url": "sec-Expected-Value.html#def-continuous-EV",
+  "type": "Definition",
+  "number": "3.1.6",
+  "title": "",
+  "body": "  Let be a continuous random variable taking values in the interval with pdf . The expected value of is given by:    "
+},
+{
+  "id": "example-uniform-EV",
+  "level": "2",
+  "url": "sec-Expected-Value.html#example-uniform-EV",
+  "type": "Example",
+  "number": "3.1.7",
+  "title": "",
+  "body": "  Let be uniform on the interval . So has the pdf . We might reasonably expect that the average value of would be the midpoint of the interval. Let's check that:    "
+},
+{
+  "id": "subsec-continuous-EV-6",
+  "level": "2",
+  "url": "sec-Expected-Value.html#subsec-continuous-EV-6",
+  "type": "Example",
+  "number": "3.1.8",
+  "title": "",
+  "body": "  Let take values in with pdf .    "
+},
+{
+  "id": "thm-linearity-of-EV",
+  "level": "2",
+  "url": "sec-Expected-Value.html#thm-linearity-of-EV",
+  "type": "Theorem",
+  "number": "3.1.9",
+  "title": "Linearity of Expectation.",
+  "body": " Linearity of Expectation   Let and be random variables and . Then:    "
+},
+{
+  "id": "example-EV-sum-n-dice",
+  "level": "2",
+  "url": "sec-Expected-Value.html#example-EV-sum-n-dice",
+  "type": "Example",
+  "number": "3.1.10",
+  "title": "",
+  "body": "  In , we saw that the expected value of a fair 6-sided die roll is 3.5. In , we saw that the expected value of the sum of two die rolls is 7, which is precisely 2 times 3.5. The calculation in would be very tedious to recreate for three die rolls, let alone generalizing for rolls. However, suppose we define separate random variables for the result of each individual roll. Let be the sum of the rolls. Then By linearity: For two rolls, we recover our previous result: But now we have a general formula that tells the expected sum for any number of rolls. It also gives a perfectly reasonable answer: the expected sum of rolls is times the expected value of a single roll.   "
+},
+{
+  "id": "example-binomial-EV",
+  "level": "2",
+  "url": "sec-Expected-Value.html#example-binomial-EV",
+  "type": "Example",
+  "number": "3.1.11",
+  "title": "",
+  "body": "  Suppose . describes a binomially distributed random variable as counting the number of occurrences of some event, which either happens or not in each of independent trials. This leads us to a very natural idea: identify each individual possible occurrence of the event, and assign it an indicator random variable. In this case, let indicate that flip comes up heads. Then We already know ( ) that the expected value of each is the probability of the indicated event that flip is heads. This is precisely the parameter . Therefore: Remember this formula! We'll make frequent use of it.   "
+},
+{
+  "id": "subsec-linearity-EV-8",
+  "level": "2",
+  "url": "sec-Expected-Value.html#subsec-linearity-EV-8",
+  "type": "Example",
+  "number": "3.1.12",
+  "title": "",
+  "body": "  We say a flip sequence has a run of 4 heads starting at if flips are all heads. We don't care about overlaps: the flip sequence has a run of 4 heads starting at 1 and another run starting at 2.  Suppose we flip a fair coin 100 times. How many runs of 4 heads should we expect?    Can you mimic the structure of ?    Let indicate a run of 4 heads starting at . Since this requires 4 precise flips to come up heads, the probability of the indicated event should be The very last starting flip for a run of 4 heads is flip number 97 (so that flips 97, 98, 99, and 100 would all be heads). Then precisely counts the number of runs of 4 heads. Using linearity: Notice that, unlike , the events being indicated here are not independent from each other. Linearity is unaffected by the fact that that the runs of heads can overlap.   "
 },
 {
   "id": "exercises-Expected-Value-1",
@@ -862,7 +997,79 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Variance",
-  "body": " Variance  Text of section.     Consider a random variable with probability distribution below. Find .          1  0.1    2  0.05    3  0.2    4  0.15    5  0.15    6  0.1    7  0.05    8  0.1    9  0.1         Let be a random variable taking the values 1, 2, 3, 4, 5. Write a distribution table for , then use your table to write a distribution for . Then, find .      Suppose we flip a coin times, and let count the number of heads. If the coin comes up heads on a flip with probability , what is ? What if and ? What if and ?      If , , what is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. for some constant . In a previous problem, you found the value of . Now, find .      A continuous random variable taking values in has p.d.f. . Find .     "
+  "body": " Variance  The expected value is one of several statistics sometimes referred to as a \"measure of central tendency\". These are statistics that try to capture the \"typical\" value of the random variable. Our next statistic tries to measure how spread out a distribution is.    Let be a random variable. The variance of is:     This formula tries to capture some measure of how spread out the distribution is. One way we might hope to measure spread is to calculate how far away is from its expected value on average. Squaring the term ensures that any difference between the value of the random variable and its expected value contributes positively. (\"Distance away from\" should be positive.) So, the formula in is conceptually clear. In practice, there's another way to structure the formula that makes for cleaner calculation:    Let be a random variable. Then:            Let be the value of a fair 6-sided die roll. We've seen in that . To find : Then     Notice that in the calculation, we're just taking the basic structure of the calculation and squaring the values. The analogous calculation for a continuous random variable looks similar:    Let be uniform on the interval . So has the pdf , and we saw in that . Now: Then:     Variance is not linear. In general, you can't split up variance across plus or minus signs, and you can't pull multiplied constants out of the variance like you can with expected value. However, there are some properties we can use to do similar manipulations to the variance.    Let and be random variables, and let . Then:    .     .    If and are independent, then .       We'll omit the proofs and just casually observe that these are reasonable properties. is a shift of , and shifting shouldn't change how spread out the distribution is. scaled by a constant, so it should scale the spread of the distribution by the same constant. But recall that the variance calculation involves squaring; it's an indirect measure of spread. So it's reasonable that scaling the distribution by a constant should scale the variance by its square.  Let's put these properties to use in a pair of related examples:    Let indicate an event which has probability . In , we saw . Notice that takes the values 0 and 1 (with probabilities and , respectively). But , and , so the expected value calculation for is precisely the same as for ! So:       Recall the setup from : a binomial random variable is the sum of indicator random variables, each with parameter . The results of different coin flips are independent from each other, so the random variables are independent from each other. From , we know that for each . Therefore: Remember this formula! We'll make frequent use of it.       Consider a random variable with probability distribution below. Find .          1  0.1    2  0.05    3  0.2    4  0.15    5  0.15    6  0.1    7  0.05    8  0.1    9  0.1         Let be a random variable taking the values 1, 2, 3, 4, 5. Write a distribution table for , then use your table to write a distribution for . Then, find .      Suppose we flip a coin times, and let count the number of heads. If the coin comes up heads on a flip with probability , what is ? What if and ? What if and ?      If , , what is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. . What is ?      A continuous random variable taking values in has p.d.f. for some constant . In a previous problem, you found the value of . Now, find .      A continuous random variable taking values in has p.d.f. . Find .     "
+},
+{
+  "id": "def-variance",
+  "level": "2",
+  "url": "sec-Variance.html#def-variance",
+  "type": "Definition",
+  "number": "3.2.1",
+  "title": "",
+  "body": "  Let be a random variable. The variance of is:    "
+},
+{
+  "id": "thm-variance-formula",
+  "level": "2",
+  "url": "sec-Variance.html#thm-variance-formula",
+  "type": "Theorem",
+  "number": "3.2.2",
+  "title": "",
+  "body": "  Let be a random variable. Then:    "
+},
+{
+  "id": "sec-Variance-6",
+  "level": "2",
+  "url": "sec-Variance.html#sec-Variance-6",
+  "type": "Proof",
+  "number": "3.2.1",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "example-var-die",
+  "level": "2",
+  "url": "sec-Variance.html#example-var-die",
+  "type": "Example",
+  "number": "3.2.3",
+  "title": "",
+  "body": "  Let be the value of a fair 6-sided die roll. We've seen in that . To find : Then    "
+},
+{
+  "id": "example-uniform-variance",
+  "level": "2",
+  "url": "sec-Variance.html#example-uniform-variance",
+  "type": "Example",
+  "number": "3.2.4",
+  "title": "",
+  "body": "  Let be uniform on the interval . So has the pdf , and we saw in that . Now: Then:    "
+},
+{
+  "id": "thm-variance-properties",
+  "level": "2",
+  "url": "sec-Variance.html#thm-variance-properties",
+  "type": "Theorem",
+  "number": "3.2.5",
+  "title": "",
+  "body": "  Let and be random variables, and let . Then:    .     .    If and are independent, then .      "
+},
+{
+  "id": "example-indicator-variance",
+  "level": "2",
+  "url": "sec-Variance.html#example-indicator-variance",
+  "type": "Example",
+  "number": "3.2.6",
+  "title": "",
+  "body": "  Let indicate an event which has probability . In , we saw . Notice that takes the values 0 and 1 (with probabilities and , respectively). But , and , so the expected value calculation for is precisely the same as for ! So:    "
+},
+{
+  "id": "example-binomial-variance",
+  "level": "2",
+  "url": "sec-Variance.html#example-binomial-variance",
+  "type": "Example",
+  "number": "3.2.7",
+  "title": "",
+  "body": "  Recall the setup from : a binomial random variable is the sum of indicator random variables, each with parameter . The results of different coin flips are independent from each other, so the random variables are independent from each other. From , we know that for each . Therefore: Remember this formula! We'll make frequent use of it.   "
 },
 {
   "id": "exercises-Variance-1",
@@ -952,7 +1159,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Covariance",
-  "body": " Covariance  Text of section.          "
+  "body": " Covariance    Let and be random variables. The covariance of and is:     Let's write and to make this is a bit cleaner to look at: This looks like a pretty natural generalization of the variance. In fact: One difference worth noting is that , as the average of squared values, must always be nonnegative. The expression can be negative for combinations of and values where one is greater than its average and the other is smaller. If this is the average behavior, then can be negative overall. This is useful information: a negative would imply that (on average, not necessarily always) when is larger than typical, is smaller than typical, and vice versa.  Also as with variance, the covariance definition formula gives us some useful insight, but it can be unwieldy to work with. There is an alternative formula, analogous to :    Let and be random variables. Then:     To make use of this formula, it's helpful to have both a joint distribution and marginal distributions. The marginal distributions let you find and . The joint distribution lets you find .    Let and be indicator random variables with joint and marginal distributions below.             0.2  0.1     0.2  0.5            0 0.4    1 0.6            0 0.3    1 0.7      Since they're indicator random variables, we can immediately see that and (see ). For , we'll traverse cell by cell through the joint distribution table, constructing products of the form -value times -value times probability: Finally:        Calculate the covariance of and :            0.12  0.24     0.3  34         Calculate the covariance of and :             0.08  0.16  0.1     0.14  0.2  0.32         Suppose we roll a fair, 4-sided die two times. Let be the sum of the rolls, and let be the product of the rolls. Find the covariance of and .  [Note: Somewhat tedious.]     "
+},
+{
+  "id": "def-covariance",
+  "level": "2",
+  "url": "sec-Covariance.html#def-covariance",
+  "type": "Definition",
+  "number": "3.3.1",
+  "title": "",
+  "body": "  Let and be random variables. The covariance of and is:    "
+},
+{
+  "id": "thm-covariance-formula",
+  "level": "2",
+  "url": "sec-Covariance.html#thm-covariance-formula",
+  "type": "Theorem",
+  "number": "3.3.2",
+  "title": "",
+  "body": "  Let and be random variables. Then:    "
+},
+{
+  "id": "sec-Covariance-7",
+  "level": "2",
+  "url": "sec-Covariance.html#sec-Covariance-7",
+  "type": "Example",
+  "number": "3.3.3",
+  "title": "",
+  "body": "  Let and be indicator random variables with joint and marginal distributions below.             0.2  0.1     0.2  0.5            0 0.4    1 0.6            0 0.3    1 0.7      Since they're indicator random variables, we can immediately see that and (see ). For , we'll traverse cell by cell through the joint distribution table, constructing products of the form -value times -value times probability: Finally:    "
 },
 {
   "id": "exercises-Covariance-1",
@@ -961,7 +1195,25 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.3.1",
   "title": "",
-  "body": "     "
+  "body": "  Calculate the covariance of and :            0.12  0.24     0.3  34      "
+},
+{
+  "id": "exercises-Covariance-2",
+  "level": "2",
+  "url": "sec-Covariance.html#exercises-Covariance-2",
+  "type": "Exercise",
+  "number": "3.3.2",
+  "title": "",
+  "body": "  Calculate the covariance of and :             0.08  0.16  0.1     0.14  0.2  0.32      "
+},
+{
+  "id": "exercises-Covariance-3",
+  "level": "2",
+  "url": "sec-Covariance.html#exercises-Covariance-3",
+  "type": "Exercise",
+  "number": "3.3.3",
+  "title": "",
+  "body": "  Suppose we roll a fair, 4-sided die two times. Let be the sum of the rolls, and let be the product of the rolls. Find the covariance of and .  [Note: Somewhat tedious.]   "
 },
 {
   "id": "sec-CLT",
@@ -970,7 +1222,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Central Limit Theorem",
-  "body": " Central Limit Theorem  Text of section.  "
+  "body": " Central Limit Theorem  Text of section.     Suppose a coin has probability 0.4 of coming up heads, and we flip the coin 100 times. Let be the number of heads. Estimate the probability that .      Suppose a fair die is rolled 100 times, and let be the average value of the rolls. Estimate the probability that .      The heights of men in the US have a mean of 69 in and a variance of about 9 in , and the heights of women in the US have a mean of 63.5 in with a variance of 6.25 in .     Suppose the heights of 30 men are sampled, and a sample mean is taken. Find the expected value and variance of .      Estimate the probability that .      What if the sampled group was women?      "
+},
+{
+  "id": "exercises-CLT-1",
+  "level": "2",
+  "url": "sec-CLT.html#exercises-CLT-1",
+  "type": "Exercise",
+  "number": "4.1.1",
+  "title": "",
+  "body": "  Suppose a coin has probability 0.4 of coming up heads, and we flip the coin 100 times. Let be the number of heads. Estimate the probability that .   "
+},
+{
+  "id": "exercises-CLT-2",
+  "level": "2",
+  "url": "sec-CLT.html#exercises-CLT-2",
+  "type": "Exercise",
+  "number": "4.1.2",
+  "title": "",
+  "body": "  Suppose a fair die is rolled 100 times, and let be the average value of the rolls. Estimate the probability that .   "
+},
+{
+  "id": "exercises-CLT-3",
+  "level": "2",
+  "url": "sec-CLT.html#exercises-CLT-3",
+  "type": "Exercise",
+  "number": "4.1.3",
+  "title": "",
+  "body": "  The heights of men in the US have a mean of 69 in and a variance of about 9 in , and the heights of women in the US have a mean of 63.5 in with a variance of 6.25 in .     Suppose the heights of 30 men are sampled, and a sample mean is taken. Find the expected value and variance of .      Estimate the probability that .      What if the sampled group was women?    "
 },
 {
   "id": "sec-Confidence-Intervals",
@@ -979,7 +1258,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "Confidence Intervals",
-  "body": " Confidence Intervals  Text of section.  "
+  "body": " Confidence Intervals  Text of section.     Suppose we flip a coin 100 times and count 60 heads. Let be the (unknown) probability that the coin comes up heads on a flip. Give an approximate 95% confidence interval for the value of .      Suppose in a sample of 100 people, 12 are left-handed.     Give a 95% confidence interval for the proportion of left-handed people.      Give a 90% confidence interval.       The weights of five mice are measured and recorded below. Give a 95% confidence interval for the sample mean weight of mice. (Pretend 5 measurements is large enough for the CLT to apply.)      mouse  1  2  3  4  5    weight (g)  26  32  33  20  29         The heights of five plants are measured and recorded below. Give a 95% confidence interval around the sample mean for the heights of the plants. (Pretend 5 measurements is large enough for the CLT to apply.)      plant  1  2  3  4  5    height (in)  15  14  18  21  17        "
+},
+{
+  "id": "exercises-Confidence-Intervals-1",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#exercises-Confidence-Intervals-1",
+  "type": "Exercise",
+  "number": "4.2.1",
+  "title": "",
+  "body": "  Suppose we flip a coin 100 times and count 60 heads. Let be the (unknown) probability that the coin comes up heads on a flip. Give an approximate 95% confidence interval for the value of .   "
+},
+{
+  "id": "exercises-Confidence-Intervals-2",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#exercises-Confidence-Intervals-2",
+  "type": "Exercise",
+  "number": "4.2.2",
+  "title": "",
+  "body": "  Suppose in a sample of 100 people, 12 are left-handed.     Give a 95% confidence interval for the proportion of left-handed people.      Give a 90% confidence interval.    "
+},
+{
+  "id": "exercises-Confidence-Intervals-3",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#exercises-Confidence-Intervals-3",
+  "type": "Exercise",
+  "number": "4.2.3",
+  "title": "",
+  "body": "  The weights of five mice are measured and recorded below. Give a 95% confidence interval for the sample mean weight of mice. (Pretend 5 measurements is large enough for the CLT to apply.)      mouse  1  2  3  4  5    weight (g)  26  32  33  20  29      "
+},
+{
+  "id": "exercises-Confidence-Intervals-4",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#exercises-Confidence-Intervals-4",
+  "type": "Exercise",
+  "number": "4.2.4",
+  "title": "",
+  "body": "  The heights of five plants are measured and recorded below. Give a 95% confidence interval around the sample mean for the heights of the plants. (Pretend 5 measurements is large enough for the CLT to apply.)      plant  1  2  3  4  5    height (in)  15  14  18  21  17      "
 },
 {
   "id": "sec-One-Sample-Tests",
@@ -988,7 +1303,52 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "One Sample Tests",
-  "body": " One Sample Tests  Text of section.  "
+  "body": " One Sample Tests  Text of section.     In each of the following scenarios, determine whether we should use a 1-tailed test or a 2-tailed test.     We have a coin which we've flipped many times, seeing an above-average number of heads. We suspect the coin comes up heads more often than a fair coin would.      We find a coin on the street and wonder whether or not it's a fair coin.      We suspect there will be a difference in average weight of mice caught during the summer versus during the winter.      In a medical study, a group of patients are gathered and the proportion experiencing particular symptoms is measured. A new drug intended to eliminate these symptoms is administered, after which the proportion experiencing symptoms is measured again.       Suppose we find a coin and wonder whether it's fair. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?      Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?      Suppose we find a six-sided die and wonder whether it's fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. If we roll 22 1's, should we accept or reject the null hypothesis of a fair die at a significance level of 0.05?      Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in . We suspect that growing this plant in a greenhouse will increase its height. A sample of 50 plants grown in a greenhouse has an average height of 40 in. Is this significant enough data to reject the null hypothesis of equal means at the significance level?     "
+},
+{
+  "id": "exercises-One-Sample-Tests-1",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#exercises-One-Sample-Tests-1",
+  "type": "Exercise",
+  "number": "5.1.1",
+  "title": "",
+  "body": "  In each of the following scenarios, determine whether we should use a 1-tailed test or a 2-tailed test.     We have a coin which we've flipped many times, seeing an above-average number of heads. We suspect the coin comes up heads more often than a fair coin would.      We find a coin on the street and wonder whether or not it's a fair coin.      We suspect there will be a difference in average weight of mice caught during the summer versus during the winter.      In a medical study, a group of patients are gathered and the proportion experiencing particular symptoms is measured. A new drug intended to eliminate these symptoms is administered, after which the proportion experiencing symptoms is measured again.    "
+},
+{
+  "id": "exercises-One-Sample-Tests-2",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#exercises-One-Sample-Tests-2",
+  "type": "Exercise",
+  "number": "5.1.2",
+  "title": "",
+  "body": "  Suppose we find a coin and wonder whether it's fair. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?   "
+},
+{
+  "id": "exercises-One-Sample-Tests-3",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#exercises-One-Sample-Tests-3",
+  "type": "Exercise",
+  "number": "5.1.3",
+  "title": "",
+  "body": "  Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?   "
+},
+{
+  "id": "exercises-One-Sample-Tests-4",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#exercises-One-Sample-Tests-4",
+  "type": "Exercise",
+  "number": "5.1.4",
+  "title": "",
+  "body": "  Suppose we find a six-sided die and wonder whether it's fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. If we roll 22 1's, should we accept or reject the null hypothesis of a fair die at a significance level of 0.05?   "
+},
+{
+  "id": "exercises-One-Sample-Tests-5",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#exercises-One-Sample-Tests-5",
+  "type": "Exercise",
+  "number": "5.1.5",
+  "title": "",
+  "body": "  Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in . We suspect that growing this plant in a greenhouse will increase its height. A sample of 50 plants grown in a greenhouse has an average height of 40 in. Is this significant enough data to reject the null hypothesis of equal means at the significance level?   "
 },
 {
   "id": "sec-Two-Sample-Tests",
@@ -997,7 +1357,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "Two Sample Tests",
-  "body": " Two Sample Tests  Text of section.  "
+  "body": " Two Sample Tests  Text of section.     A farmer is testing an experimental new plant fertilizer that is supposed to increase the weight of a particular apple variety. A control sample of 25 apples grown using the usual fertilizer have a mean weight of 75 grams and a sample variance of 90 grams (for an individual apple). An experimental sample of 25 apples grown using the new fertilizer have a mean weight of 79 grams and a sample variance of 90 grams .      We have an established factory which produces coins that are close to fair. We're opening up a second factory, and we'd like to ensure the machines are calibrated to produce coins which behave similarly to the ones produced in the established factory. We pick one sample coin from each factory, and flip each sample coin 100 times. The coin from the established factory flips 52 heads in 100 flips. The coin from the new factory flips 62 heads in 100 flips. Is this strong enough evidence to reject the null hypothesis that the two factories produce similar coins at a 0.05 significance level?     "
+},
+{
+  "id": "exercises-Two-Sample-Tests-1",
+  "level": "2",
+  "url": "sec-Two-Sample-Tests.html#exercises-Two-Sample-Tests-1",
+  "type": "Exercise",
+  "number": "5.2.1",
+  "title": "",
+  "body": "  A farmer is testing an experimental new plant fertilizer that is supposed to increase the weight of a particular apple variety. A control sample of 25 apples grown using the usual fertilizer have a mean weight of 75 grams and a sample variance of 90 grams (for an individual apple). An experimental sample of 25 apples grown using the new fertilizer have a mean weight of 79 grams and a sample variance of 90 grams .   "
+},
+{
+  "id": "exercises-Two-Sample-Tests-2",
+  "level": "2",
+  "url": "sec-Two-Sample-Tests.html#exercises-Two-Sample-Tests-2",
+  "type": "Exercise",
+  "number": "5.2.2",
+  "title": "",
+  "body": "  We have an established factory which produces coins that are close to fair. We're opening up a second factory, and we'd like to ensure the machines are calibrated to produce coins which behave similarly to the ones produced in the established factory. We pick one sample coin from each factory, and flip each sample coin 100 times. The coin from the established factory flips 52 heads in 100 flips. The coin from the new factory flips 62 heads in 100 flips. Is this strong enough evidence to reject the null hypothesis that the two factories produce similar coins at a 0.05 significance level?   "
 },
 {
   "id": "sec-Power",
@@ -1006,7 +1384,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "Power of a Test",
-  "body": " Power of a Test  Text of section.  "
+  "body": " Power of a Test  Text of section.     Suppose we find a coin and wonder whether it's fair. As a first test, we decide to flip the coin 200 times and count the number of heads, . What values of would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?      Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads, . What values of would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?      Suppose we find a six-sided die and wonder whether it's fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. The expected number of 1's is 50\/3, with a variance of 125\/9.     Using a normal approximation, what is the smallest number of 1's greater than 50\/3 that would be extreme enough to reject the null hypothesis of a fair die?      Using a normal approximation, what is the greatest number of 1's less than 50\/3 that would be extreme enough to reject the null hypothesis of a fair die?      Suppose that this die is weighted so that it rolls a 1 with probability 0.2. What would be the power of our test?      Suppose we roll the die 100 times and see 23 1's. Use the maximum likelihood value for the probability of rolling a 1 to calculate the power of the test.       Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in . We suspect that growing this plant in a greenhouse will increase its height. We take the average height of a sample of 50 plants grown in a greenhouse. What is the minimum average height of this sample that would be extreme enough to reject the null hypothesis of equal means at the significance level? If the plants, when grown in a greenhouse, would truly have an average height of 41 in, what is the power of our test?     "
+},
+{
+  "id": "exercises-Power-1",
+  "level": "2",
+  "url": "sec-Power.html#exercises-Power-1",
+  "type": "Exercise",
+  "number": "5.3.1",
+  "title": "",
+  "body": "  Suppose we find a coin and wonder whether it's fair. As a first test, we decide to flip the coin 200 times and count the number of heads, . What values of would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?   "
+},
+{
+  "id": "exercises-Power-2",
+  "level": "2",
+  "url": "sec-Power.html#exercises-Power-2",
+  "type": "Exercise",
+  "number": "5.3.2",
+  "title": "",
+  "body": "  Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads, . What values of would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?   "
+},
+{
+  "id": "exercises-Power-3",
+  "level": "2",
+  "url": "sec-Power.html#exercises-Power-3",
+  "type": "Exercise",
+  "number": "5.3.3",
+  "title": "",
+  "body": "  Suppose we find a six-sided die and wonder whether it's fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. The expected number of 1's is 50\/3, with a variance of 125\/9.     Using a normal approximation, what is the smallest number of 1's greater than 50\/3 that would be extreme enough to reject the null hypothesis of a fair die?      Using a normal approximation, what is the greatest number of 1's less than 50\/3 that would be extreme enough to reject the null hypothesis of a fair die?      Suppose that this die is weighted so that it rolls a 1 with probability 0.2. What would be the power of our test?      Suppose we roll the die 100 times and see 23 1's. Use the maximum likelihood value for the probability of rolling a 1 to calculate the power of the test.    "
+},
+{
+  "id": "exercises-Power-4",
+  "level": "2",
+  "url": "sec-Power.html#exercises-Power-4",
+  "type": "Exercise",
+  "number": "5.3.4",
+  "title": "",
+  "body": "  Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in . We suspect that growing this plant in a greenhouse will increase its height. We take the average height of a sample of 50 plants grown in a greenhouse. What is the minimum average height of this sample that would be extreme enough to reject the null hypothesis of equal means at the significance level? If the plants, when grown in a greenhouse, would truly have an average height of 41 in, what is the power of our test?   "
 },
 {
   "id": "sec-Chi-Squared",
@@ -1015,7 +1429,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.4",
   "title": "<span class=\"process-math\">\\(\\chi^2\\)<\/span> Test",
-  "body": " Test  Text of section.  "
+  "body": " Test  Text of section.     A store owner wants to determine how much shelf space to allocate to each of the drinks that they sell. They survey their customers about their favorite drinks. Is the data below consistent with the null hypothesis that each type of drink will be equally preferred?      drink type  water  soda  tea  coffee  energy drinks    favorite  28  17  15  26  14         A particular drug is administered in 100 independent trials. In each trial, the drug is administered to four people, and we count how many respond to the drug. The table below shows how many trials have each different count of people who respond to the drug.      # who respond to drug  0  1  2  3  4    # of trials  3  11  31  34  21        Is the data consistent with a binomial distribution with parameter ?      What is the total number of people who have been administered the drug? What is the total number who have responded to it? What is the maximum likelihood estimation for the probability that a person will respond to the drug?      Is the data consistent with a binomial distribution with the MLE value of ?      "
+},
+{
+  "id": "exercises-Chi-Squared-1",
+  "level": "2",
+  "url": "sec-Chi-Squared.html#exercises-Chi-Squared-1",
+  "type": "Exercise",
+  "number": "5.4.1",
+  "title": "",
+  "body": "  A store owner wants to determine how much shelf space to allocate to each of the drinks that they sell. They survey their customers about their favorite drinks. Is the data below consistent with the null hypothesis that each type of drink will be equally preferred?      drink type  water  soda  tea  coffee  energy drinks    favorite  28  17  15  26  14      "
+},
+{
+  "id": "exercises-Chi-Squared-2",
+  "level": "2",
+  "url": "sec-Chi-Squared.html#exercises-Chi-Squared-2",
+  "type": "Exercise",
+  "number": "5.4.2",
+  "title": "",
+  "body": "  A particular drug is administered in 100 independent trials. In each trial, the drug is administered to four people, and we count how many respond to the drug. The table below shows how many trials have each different count of people who respond to the drug.      # who respond to drug  0  1  2  3  4    # of trials  3  11  31  34  21        Is the data consistent with a binomial distribution with parameter ?      What is the total number of people who have been administered the drug? What is the total number who have responded to it? What is the maximum likelihood estimation for the probability that a person will respond to the drug?      Is the data consistent with a binomial distribution with the MLE value of ?    "
 },
 {
   "id": "sec-Correlation",
@@ -1024,7 +1456,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Correlation",
-  "body": " Correlation  Text of section.  "
+  "body": " Correlation  Text of section.     Calculate the correlation of and :            0.12  0.24     0.3  34         Calculate the correlation of and :             0.08  0.16  0.1     0.14  0.2  0.32         Suppose we roll a fair, 4-sided die two times. Let be the sum of the rolls, and let be the product of the rolls. Find the correlation of and .  [Note: Somewhat tedious.]     "
+},
+{
+  "id": "exercises-Correlation-1",
+  "level": "2",
+  "url": "sec-Correlation.html#exercises-Correlation-1",
+  "type": "Exercise",
+  "number": "6.1.1",
+  "title": "",
+  "body": "  Calculate the correlation of and :            0.12  0.24     0.3  34      "
+},
+{
+  "id": "exercises-Correlation-2",
+  "level": "2",
+  "url": "sec-Correlation.html#exercises-Correlation-2",
+  "type": "Exercise",
+  "number": "6.1.2",
+  "title": "",
+  "body": "  Calculate the correlation of and :             0.08  0.16  0.1     0.14  0.2  0.32      "
+},
+{
+  "id": "exercises-Correlation-3",
+  "level": "2",
+  "url": "sec-Correlation.html#exercises-Correlation-3",
+  "type": "Exercise",
+  "number": "6.1.3",
+  "title": "",
+  "body": "  Suppose we roll a fair, 4-sided die two times. Let be the sum of the rolls, and let be the product of the rolls. Find the correlation of and .  [Note: Somewhat tedious.]   "
 },
 {
   "id": "sec-Linear-Regression",
@@ -1033,7 +1492,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.2",
   "title": "Linear Regression",
-  "body": " Linear Regression  Text of section.  "
+  "body": " Linear Regression  Text of section.     A survey of local companies collects information about marketing budgets and revenue (each measures in thousands of dollars), shown below. A linear regression gives the best linear fit as . What is the coefficient of determination ?             200  4300  2073600  3686  377377    420  7700  3841600  7707  53    270  4500  1537600  4965  216495    380  7000  1587600  6976  572    300  5200  291600  5514  98401    sum:  28700  9332000  28848  692898         A sample of 100 measurements are taken and a best fit line is calculated, resulting in the data below (the final line shows the sums for each column). Find the coefficient of determination.             38.00  121.00  93.17  11.83  774.33    87.00  241.00  238.95  13586.23  4.22    30.00  61.00  69.37  4024.63  70.12    35.00  85.00  84.25  1555.51  0.57    ⋮  ⋮  ⋮  ⋮  ⋮    33.00  108.00  78.30  270.27  882.19    26.00  32.00  57.47  8545.15  648.91    sum:  12444.00  12444.00  515206.64  29789.80        "
+},
+{
+  "id": "exercises-Linear-Regression-1",
+  "level": "2",
+  "url": "sec-Linear-Regression.html#exercises-Linear-Regression-1",
+  "type": "Exercise",
+  "number": "6.2.1",
+  "title": "",
+  "body": "  A survey of local companies collects information about marketing budgets and revenue (each measures in thousands of dollars), shown below. A linear regression gives the best linear fit as . What is the coefficient of determination ?             200  4300  2073600  3686  377377    420  7700  3841600  7707  53    270  4500  1537600  4965  216495    380  7000  1587600  6976  572    300  5200  291600  5514  98401    sum:  28700  9332000  28848  692898      "
+},
+{
+  "id": "exercises-Linear-Regression-2",
+  "level": "2",
+  "url": "sec-Linear-Regression.html#exercises-Linear-Regression-2",
+  "type": "Exercise",
+  "number": "6.2.2",
+  "title": "",
+  "body": "  A sample of 100 measurements are taken and a best fit line is calculated, resulting in the data below (the final line shows the sums for each column). Find the coefficient of determination.             38.00  121.00  93.17  11.83  774.33    87.00  241.00  238.95  13586.23  4.22    30.00  61.00  69.37  4024.63  70.12    35.00  85.00  84.25  1555.51  0.57    ⋮  ⋮  ⋮  ⋮  ⋮    33.00  108.00  78.30  270.27  882.19    26.00  32.00  57.47  8545.15  648.91    sum:  12444.00  12444.00  515206.64  29789.80      "
 },
 {
   "id": "backmatter-2",

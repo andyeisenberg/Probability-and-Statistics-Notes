@@ -9,7 +9,7 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: default-modern                 *-->
+<!--*  Theme: boulder                        *-->
 <!--*  Palette:                              *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.5';
+eBookConfig.runestone_version = '7.11.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.42217a82c75796c8.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.7e141ad8414abf4a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -129,7 +129,13 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-Probability.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Probability.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Probability.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-Probability.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Probability.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Probability.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
 \newcommand{\Q}{\mathbb Q} 
@@ -144,6 +150,7 @@ eBookConfig.enable_chatcodes =  false;
 
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -151,8 +158,12 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Introduction.html" class="internal"><span class="codenumber">0</span> <span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Introduction.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Introduction</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Theory</span></a></div>
 <ul class="structural toc-item-list contains-active">
@@ -201,6 +212,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Continuous-RVs.html#exercises-Continuous-RVs" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Joint-Distributions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Joint Distributions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Joint-Distributions.html#exercises-Joint-Distributions" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -228,24 +243,48 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Confidence-Intervals.html" class="internal"><span class="codenumber">4</span> <span class="title">Confidence Intervals</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CLT.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Central Limit Theorem</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Confidence-Intervals.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Confidence Intervals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-CLT.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Central Limit Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-CLT.html#exercises-CLT" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Confidence-Intervals.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Confidence Intervals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Confidence-Intervals.html#exercises-Confidence-Intervals" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Hypothesis-Testing.html" class="internal"><span class="codenumber">5</span> <span class="title">Hypothesis Testing</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-One-Sample-Tests.html" class="internal"><span class="codenumber">5.1</span> <span class="title">One Sample Tests</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Two-Sample-Tests.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Two Sample Tests</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Power.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Power of a Test</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Chi-Squared.html" class="internal"><span class="codenumber">5.4</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Test</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-One-Sample-Tests.html" class="internal"><span class="codenumber">5.1</span> <span class="title">One Sample Tests</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-One-Sample-Tests.html#exercises-One-Sample-Tests" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Two-Sample-Tests.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Two Sample Tests</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Two-Sample-Tests.html#exercises-Two-Sample-Tests" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Power.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Power of a Test</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Power.html#exercises-Power" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Chi-Squared.html" class="internal"><span class="codenumber">5.4</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Test</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Chi-Squared.html#exercises-Chi-Squared" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Linear-Regression.html" class="internal"><span class="codenumber">6</span> <span class="title">Linear Regression</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Correlation.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Correlation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Linear-Regression.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Linear Regression</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Correlation.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Correlation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Correlation.html#exercises-Correlation" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-Linear-Regression.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Linear Regression</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Linear-Regression.html#exercises-Linear-Regression" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -253,20 +292,22 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Set-Theory"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Set Theory</span>
 </h2>
+<div class="para" id="sec-Set-Theory-2">When we perform an experiment, there are many results that we might see. We want to be able to quantify the likelihood of seeing certain results. For this, we need to develop some mathematical terminology.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Set-Theory-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="def-sample-space"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="def-sample-space-1-1">The <dfn class="terminology">sample space</dfn>, often denoted <span class="process-math">\(\Omega\text{,}\)</span> is the set of all possible results of an experiment. A single result is called an <dfn class="terminology">outcome</dfn>, while a collection of results is called an <dfn class="terminology">event</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-sample-space-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.1.1"><a href="#def-sample-space" title="Copy heading and permalink for Definition 1.1.1" aria-label="Copy heading and permalink for Definition 1.1.1">🔗</a></div></article><article class="example example-like" id="sec-Set-Theory-3"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 1.1.1"><a href="#def-sample-space" title="Copy heading and permalink for Definition 1.1.1" aria-label="Copy heading and permalink for Definition 1.1.1">🔗</a></div></article><article class="example example-like" id="example-sample-space"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec-Set-Theory-3-1-1">An experiment consists of rolling a standard 6-sided die. The sample space is <span class="process-math">\(\Omega = \{1, 2, 3, 4, 5, 6\}\text{.}\)</span> One possible event is <span class="process-math">\(A = \{2, 4, 6\}\text{,}\)</span> i.e., the event that the result of the roll is even.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Set-Theory-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="sec-Set-Theory-3-1-2">What would the sample space look like if we roll the die two times and recorded the results?<div class="autopermalink" data-description="Paragraph"><a href="#sec-Set-Theory-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-sample-space-1-1">An experiment consists of rolling a standard 6-sided die. The sample space is <span class="process-math">\(\Omega = \{1, 2, 3, 4, 5, 6\}\text{.}\)</span> One possible event is <span class="process-math">\(A = \{2, 4, 6\}\text{,}\)</span> i.e., the event that the result of the roll is even.<div class="autopermalink" data-description="Paragraph"><a href="#example-sample-space-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="example-sample-space-1-2">What would the sample space look like if we roll the die two times and recorded the results?<div class="autopermalink" data-description="Paragraph"><a href="#example-sample-space-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec-Set-Theory-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
-<div class="para logical" id="sec-Set-Theory-3-2-1">
-<div class="displaymath process-math" id="sec-Set-Theory-3-2-1-1">
+<div class="solutions"><details id="example-sample-space-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="example-sample-space-2-1">
+<div class="displaymath process-math" id="example-sample-space-2-1-1">
 \begin{align*}
 \Omega = \{\amp (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), \\
 \amp (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), \\
@@ -276,16 +317,20 @@ eBookConfig.enable_chatcodes =  false;
 \amp (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\} 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-Set-Theory-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Note that, for example, <span class="process-math">\((1, 2)\)</span> is a different outcome from <span class="process-math">\((2, 1)\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Answer 1.1.2.1"><a href="#sec-Set-Theory-3-2" title="Copy heading and permalink for Answer 1.1.2.1" aria-label="Copy heading and permalink for Answer 1.1.2.1">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-sample-space-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 1.1.2.1"><a href="#example-sample-space-2" title="Copy heading and permalink for Answer 1.1.2.1" aria-label="Copy heading and permalink for Answer 1.1.2.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 1.1.2"><a href="#sec-Set-Theory-3" title="Copy heading and permalink for Example 1.1.2" aria-label="Copy heading and permalink for Example 1.1.2">🔗</a></div></article><article class="definition definition-like" id="def-subset"><h3 class="heading">
+<div class="autopermalink" data-description="Example 1.1.2"><a href="#example-sample-space" title="Copy heading and permalink for Example 1.1.2" aria-label="Copy heading and permalink for Example 1.1.2">🔗</a></div></article><article class="definition definition-like" id="def-subset"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="def-subset-1-1">Let <span class="process-math">\(A\)</span> be a set. The symbol <span class="process-math">\(\in\)</span> means "is an element of", as in <span class="process-math">\(a \in A\text{.}\)</span> Given another set <span class="process-math">\(B\text{,}\)</span> we say <span class="process-math">\(A\)</span> is a <dfn class="terminology">subset</dfn> of <span class="process-math">\(B\text{,}\)</span> written <span class="process-math">\(A\subset B\text{,}\)</span> to mean that every element of the set <span class="process-math">\(A\)</span> is also an element of the set <span class="process-math">\(B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-subset-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.1.3"><a href="#def-subset" title="Copy heading and permalink for Definition 1.1.3" aria-label="Copy heading and permalink for Definition 1.1.3">🔗</a></div></article><article class="definition definition-like" id="def-set-operations"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 1.1.3"><a href="#def-subset" title="Copy heading and permalink for Definition 1.1.3" aria-label="Copy heading and permalink for Definition 1.1.3">🔗</a></div></article><div class="para" id="sec-Set-Theory-6">The subset symbol includes the possibility that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are equal sets, i.e., that they contain precisely the same elements.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Set-Theory-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-set-operations"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="def-set-operations-1-1">
@@ -314,19 +359,23 @@ eBookConfig.enable_chatcodes =  false;
 </dl>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-set-operations-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.1.4"><a href="#def-set-operations" title="Copy heading and permalink for Definition 1.1.4" aria-label="Copy heading and permalink for Definition 1.1.4">🔗</a></div></article><div class="para" id="sec-Set-Theory-6">It’s useful sometimes to draw pictures representing sets...<div class="autopermalink" data-description="Paragraph"><a href="#sec-Set-Theory-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 1.1.4"><a href="#def-set-operations" title="Copy heading and permalink for Definition 1.1.4" aria-label="Copy heading and permalink for Definition 1.1.4">🔗</a></div></article><div class="para" id="sec-Set-Theory-8">It’s useful sometimes to draw pictures called <dfn class="terminology">Venn diagrams</dfn> representing sets:<div class="autopermalink" data-description="Paragraph"><a href="#sec-Set-Theory-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="def-disjoint"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<figure class="figure figure-like" id="fig-Venn-diagram"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="generated/latex-image/fig-Venn-diagram-2.svg" role="img" class="contained" alt="described in detail following the image" aria-describedby="fig-Venn-diagram-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-Venn-diagram-2-description"><div class="para" id="fig-Venn-diagram-2-1-1">Venn diagram showing sets <span class="process-math">\(A, B, C\)</span> with the region representing <span class="process-math">\((A\cup B\cup C) - (A \cap C)\)</span> shaded.<div class="autopermalink" data-description="Paragraph"><a href="#fig-Venn-diagram-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Example Venn Diagram<div class="autopermalink" data-description="Figure 1.1.5"><a href="#fig-Venn-diagram" title="Copy heading and permalink for Figure 1.1.5" aria-label="Copy heading and permalink for Figure 1.1.5">🔗</a></div></figcaption></figure><article class="definition definition-like" id="def-disjoint"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="def-disjoint-1-1">Two sets <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <dfn class="terminology">disjoint</dfn> if <span class="process-math">\(A \cap B = \emptyset\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-disjoint-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.1.5"><a href="#def-disjoint" title="Copy heading and permalink for Definition 1.1.5" aria-label="Copy heading and permalink for Definition 1.1.5">🔗</a></div></article><article class="definition definition-like" id="def-cardinality"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 1.1.6"><a href="#def-disjoint" title="Copy heading and permalink for Definition 1.1.6" aria-label="Copy heading and permalink for Definition 1.1.6">🔗</a></div></article><article class="definition definition-like" id="def-cardinality"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="def-cardinality-1-1">Given a finite set <span class="process-math">\(A\text{,}\)</span> the <dfn class="terminology">cardinality</dfn> of <span class="process-math">\(A\text{,}\)</span> written <span class="process-math">\(|A|\text{,}\)</span> is the number of elements in <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-cardinality-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.1.6"><a href="#def-cardinality" title="Copy heading and permalink for Definition 1.1.6" aria-label="Copy heading and permalink for Definition 1.1.6">🔗</a></div></article><section class="exercises" id="exercises-Set-Theory"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Definition 1.1.7"><a href="#def-cardinality" title="Copy heading and permalink for Definition 1.1.7" aria-label="Copy heading and permalink for Definition 1.1.7">🔗</a></div></article><section class="exercises" id="exercises-Set-Theory"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-Set-Theory-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
@@ -360,14 +409,57 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Answer 1.1.1.c.1"><a href="#exercises-Set-Theory-1-4-2" title="Copy heading and permalink for Answer 1.1.1.c.1" aria-label="Copy heading and permalink for Answer 1.1.1.c.1">🔗</a></div>
 </div></details></div>
 <div class="autopermalink" data-description="Task 1.1.1.c"><a href="#exercises-Set-Theory-1-4" title="Copy heading and permalink for Task 1.1.1.c" aria-label="Copy heading and permalink for Task 1.1.1.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 1.1.1"><a href="#exercises-Set-Theory-1" title="Copy heading and permalink for Exercise 1.1.1" aria-label="Copy heading and permalink for Exercise 1.1.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Set-Theory-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-Set-Theory-2-1-1">Suppose we roll a 6-sided die two times. List the set of all possible results. [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result <span class="process-math">\((4, 2)\)</span>---rolling a 4 and then a 2.]<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises-Set-Theory-2-1-1">Suppose we have a 6-sided die that’s weighted to roll a 6 half of the time. We roll the die two times. List the set of all possible results. [Note: the result (2, 4)---rolling a 2 and then a 4---is different from the result <span class="process-math">\((4, 2)\)</span>---rolling a 4 and then a 2.]<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="solutions"><details id="exercises-Set-Theory-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para logical" id="exercises-Set-Theory-2-2-1">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-sample-space.html" id="exercises-Set-Theory-2-2-1-1">
+\begin{align*}
+\Omega = \{\amp (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), \\
+\amp (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), \\
+\amp (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), \\
+\amp (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), \\
+\amp (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), \\
+\amp (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\} 
+\end{align*}
+</div>
+<div class="para">Note that <span class="process-math">\(\Omega\)</span> simply lists outcomes with no reference to the probabilities. So the answer here is the same as in <a href="sec-Set-Theory.html#example-sample-space" class="xref" data-knowl="./knowl/xref/example-sample-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.2">Example 1.1.2</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 1.1.2.1"><a href="#exercises-Set-Theory-2-2" title="Copy heading and permalink for Answer 1.1.2.1" aria-label="Copy heading and permalink for Answer 1.1.2.1">🔗</a></div>
+</div></details></div>
 <div class="autopermalink" data-description="Exercise 1.1.2"><a href="#exercises-Set-Theory-2" title="Copy heading and permalink for Exercise 1.1.2" aria-label="Copy heading and permalink for Exercise 1.1.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Set-Theory-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises-Set-Theory-3-1-1">Suppose we flip a coin two times. List the set of all possible results. What about flipping three times? Four times? If we flip the coin 10 times, how many possible results will there be?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="solutions"><details id="exercises-Set-Theory-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="exercises-Set-Theory-3-2-1">For two flips: <span class="process-math">\(\Omega = \{ HH, HT, TH, TT \}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="exercises-Set-Theory-3-2-2">For three flips: <span class="process-math">\(\Omega = \{ HHH, HHT, HTH, THH, HTT, THT, TTH, TTT \}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exercises-Set-Theory-3-2-3">
+<div class="para">For four flips:</div>
+<div class="displaymath process-math" id="exercises-Set-Theory-3-2-3-1">
+\begin{align*}
+\Omega = \{ \amp HHHH, HHHT, HHTH, HTHH, \\
+\amp THHH, HHTT, HTHT, HTTH, \\
+\amp THHT, THTH, TTHH, HTTT, \\
+\amp THTT, TTHT, TTTH, TTTT \}. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="exercises-Set-Theory-3-2-4">Each additional flip doubles the number of outcomes. So, with ten flips, we’ll have <span class="process-math">\(|\Omega| = 2^{10} = 1024\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 1.1.3.1"><a href="#exercises-Set-Theory-3-2" title="Copy heading and permalink for Answer 1.1.3.1" aria-label="Copy heading and permalink for Answer 1.1.3.1">🔗</a></div>
+</div></details></div>
 <div class="autopermalink" data-description="Exercise 1.1.3"><a href="#exercises-Set-Theory-3" title="Copy heading and permalink for Exercise 1.1.3" aria-label="Copy heading and permalink for Exercise 1.1.3">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Set-Theory-4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises-Set-Theory-4-1-1">If we roll a 6-sided die ten times, how many possible results will there be?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="solutions"><details id="exercises-Set-Theory-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="exercises-Set-Theory-4-2-1">Each additional roll will multiply the number of outcomes by 6. So, with 10 rolls, we’ll have <span class="process-math">\(|\Omega| = 6^{10}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Set-Theory-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 1.1.4.1"><a href="#exercises-Set-Theory-4-2" title="Copy heading and permalink for Answer 1.1.4.1" aria-label="Copy heading and permalink for Answer 1.1.4.1">🔗</a></div>
+</div></details></div>
 <div class="autopermalink" data-description="Exercise 1.1.4"><a href="#exercises-Set-Theory-4" title="Copy heading and permalink for Exercise 1.1.4" aria-label="Copy heading and permalink for Exercise 1.1.4">🔗</a></div></article><div class="autopermalink" data-description="Exercises 1.1"><a href="#exercises-Set-Theory" title="Copy heading and permalink for Exercises 1.1" aria-label="Copy heading and permalink for Exercises 1.1">🔗</a></div></section><div class="autopermalink" data-description="Section 1.1: Set Theory"><a href="#sec-Set-Theory" title="Copy heading and permalink for Section 1.1: Set Theory" aria-label="Copy heading and permalink for Section 1.1: Set Theory">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-Probability.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Probability.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
