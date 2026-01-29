@@ -398,6 +398,13 @@
           Which flip has the highest chance of being the first flip to come up heads?
         </p>
       </statement>
+
+      <solution>
+        <p>
+          <m>\Pr(T = k) = 0.6^{k-1} \cdot 0.4</m>, so every additional flip multiplies the probability by 0.6.
+          Therefore, the highest value for <m>\Pr(T = k)</m> occurs when <m>k = 1</m>, in which case <m>\Pr(T = 1) = 0.4.</m>
+        </p>
+      </solution>
     </task>
   </exercise>
   <!--
@@ -418,6 +425,18 @@
         During a 4-hour afternoon shift, what is the probability of serving 80 customers.
       </p>
     </statement>
+
+    <solution>
+      <p>
+        Let <m>N</m> be the number of customers seen during the afternoon shift.
+        Since the store averages 20 customers per hour, it will average 80 per 4-hours.
+        So <m>N \sim \Poiss(20, 4)</m> will have distribution <m>\Pr(N = k) = \frac{80^{k}}{k!} e^{-80}</m>.
+        Therefore:
+        <md>
+          <mrow> \Pr(N = 80) = \frac{80^{80}}{80!} e^{-80} \approx 0.045. </mrow>
+        </md>
+      </p>
+    </solution>
   </exercise>
   <!--
   <exercise>

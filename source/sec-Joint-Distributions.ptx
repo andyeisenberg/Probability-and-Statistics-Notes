@@ -120,9 +120,84 @@
   <exercise>
     <statement>
       <p>
-        TODO
+        Consider <m>X, Y</m> with the joint distribution table below.
+        Are <m>X, Y</m> independent?
+      </p>
+
+      <table>
+        <title>Joint distribution for <m>X, Y</m></title>
+
+        <tabular halign="center">
+          <row bottom="minor">
+            <cell right="minor"></cell>
+            <cell right="minor"><m>X = 0</m></cell>
+            <cell><m>X = 1</m></cell>
+          </row>
+
+          <row bottom="minor">
+            <cell right="minor"><m>Y = 0</m></cell>
+            <cell right="minor">0.2</cell>
+            <cell>0.3</cell>
+          </row>
+
+          <row>
+            <cell right="minor"><m>Y = 1</m></cell>
+            <cell right="minor">0.4</cell>
+            <cell>0.1</cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+
+    <answer>
+      <p>
+        No.
+        For example, <m>\Pr(X = 0, Y = 0) \neq \Pr(X = 0)\Pr(Y = 0).</m>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>X, Y</m> have the distributions:
+        <md>
+          <mrow> \Pr(X = 0) \amp = 0.1 \amp \Pr(Y = 0) \amp = 0.4 </mrow>
+          <mrow> \Pr(X = 1) \amp = 0.4 \amp \Pr(Y = 1) \amp = 0.6 </mrow>
+          <mrow> \Pr(X = 2) \amp = 0.5  </mrow>
+        </md>
+        Assuming <m>X, Y</m> are independent, write a joint distribution table.
       </p>
     </statement>
+
+    <answer>
+      <table>
+        <title>Joint Distribution</title>
+
+        <tabular halign="center">
+          <row bottom="minor">
+            <cell right="minor"></cell>
+            <cell right="minor"><m>X = 0</m></cell>
+            <cell right="minor"><m>X = 1</m></cell>
+            <cell><m>X = 2</m></cell>
+          </row>
+
+          <row bottom="minor">
+            <cell right="minor"><m>Y = 0</m></cell>
+            <cell right="minor">0.04</cell>
+            <cell right="minor">0.16</cell>
+            <cell>0.2</cell>
+          </row>
+
+          <row>
+            <cell right="minor"><m>Y = 1</m></cell>
+            <cell right="minor">0.06</cell>
+            <cell right="minor">0.24</cell>
+            <cell>0.3</cell>
+          </row>
+        </tabular>
+      </table>
+    </answer>
   </exercise>
   </exercises>
 </section>
