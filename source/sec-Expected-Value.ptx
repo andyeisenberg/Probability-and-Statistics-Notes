@@ -1,0 +1,655 @@
+<section xml:id="sec-Expected-Value" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Expected Value</title>
+
+  <subsection xml:id="subsec-discrete-EV">
+    <title>Discrete Expected Value</title>
+
+    <p>
+      A full probability distribution (for a discrete random variable) or a density function (for a continuous random variable) carry all of the probability information.
+      Often, we seek <term>statistics</term>, i.e., numbers that summarize a distribution in some way.
+    </p>
+
+    <definition xml:id="def-discrete-EV">
+      <statement>
+        <p>
+          Let <m>X</m> be a discrete random variable taking the values <m>x_1, x_2, \dotsc, x_n</m>.
+          The <term>expected value</term> (also called <term>mean</term>, or <term>expectation</term>) of <m>X</m> is the weighted average of the values of <m>X</m>, where the weights are the probabilities of <m>X</m> taking each value:
+          <md>
+            <mrow> \E(X) = \sum_{i=1}^n x_i \Pr(X = x_i).  </mrow>
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="example-EV-die">
+      <statement>
+        <p>
+          If <m>X</m> takes on the values <m>x_1, x_2, \dotsc, x_n</m> uniformly (i.e., each value having probability <m>\frac{1}{n}</m>), then the expected value is the usual average:
+          <md>
+            <mrow> \E(X) \amp = x_1 \cdot \frac{1}{n} + x_2\cdot \frac{1}{n} + \dotsb + x_n \cdot \frac{1}{n} </mrow>
+            <mrow> \amp = \frac{x_1 + x_2 + \dotsb + x_n}{n} </mrow>
+          </md>
+          For example, the expected value of a fair 6-sided die roll <m>R</m> is:
+          <md>
+            <mrow> \E(R) \amp = 1 \left(\frac{1}{6}\right) + 2 \left(\frac{1}{6}\right) + 3 \left(\frac{1}{6}\right) + 4 \left(\frac{1}{6}\right) + 5 \left(\frac{1}{6}\right) + 6 \left(\frac{1}{6}\right) </mrow>
+            <mrow> \amp = \frac{1 + 2 + \dotsb + 6}{6} = \frac{21}{6} = \frac{7}{2}. </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="example-EV-sum-2-dice">
+      <statement>
+        <p>
+          Suppose we roll a fair 6-sided die two times, and let <m>S</m> be the sum of the rolls.
+          It's straightforward to check the distribution for <m>S</m> shown below.
+          We've also included a column containing the products <m>k \Pr(S = k)</m>, which must be summed up to find <m>\E(S)</m>.
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell><m>k</m></cell>
+              <cell><m>\Pr(S = k)</m></cell>
+              <cell><m>k \cdot \Pr(S = k)</m></cell>
+            </row>
+
+            <row>
+              <cell>2</cell>
+              <cell><m>1/36</m></cell>
+              <cell><m>2/36</m></cell>
+            </row>
+
+            <row>
+              <cell>3</cell>
+              <cell><m>2/36</m></cell>
+              <cell><m>6/36</m></cell>
+            </row>
+
+            <row>
+              <cell>4</cell>
+              <cell><m>3/36</m></cell>
+              <cell><m>12/36</m></cell>
+            </row>
+
+            <row>
+              <cell>5</cell>
+              <cell><m>4/36</m></cell>
+              <cell><m>20/36</m></cell>
+            </row>
+
+            <row>
+              <cell>6</cell>
+              <cell><m>5/36</m></cell>
+              <cell><m>30/36</m></cell>
+            </row>
+
+            <row>
+              <cell>7</cell>
+              <cell><m>6/36</m></cell>
+              <cell><m>42/36</m></cell>
+            </row>
+
+            <row>
+              <cell>8</cell>
+              <cell><m>5/36</m></cell>
+              <cell><m>40/36</m></cell>
+            </row>
+
+            <row>
+              <cell>9</cell>
+              <cell><m>4/36</m></cell>
+              <cell><m>36/36</m></cell>
+            </row>
+
+            <row>
+              <cell>10</cell>
+              <cell><m>3/36</m></cell>
+              <cell><m>30/36</m></cell>
+            </row>
+
+            <row>
+              <cell>11</cell>
+              <cell><m>2/36</m></cell>
+              <cell><m>22/36</m></cell>
+            </row>
+
+            <row>
+              <cell>12</cell>
+              <cell><m>1/36</m></cell>
+              <cell><m>12/36</m></cell>
+            </row>
+          </tabular>
+        </table>
+
+        <p>
+          The sum of the third column gives <m>\E(S) = \frac{252}{36} = 7</m>.
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="example-indicator-EV">
+      <statement>
+        <p>
+          Let <m>X</m> indicate an event <m>A</m> which has probability <m>p</m>.
+          Then:
+          <md>
+            <mrow> \E(X) = 0 \cdot (1-p) + 1 \cdot p = p. </mrow>
+          </md>
+          That is, the expected value of an indicator random variable is the probability of the event that it indicates.
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Having found the expected value for one named distribution, we may be tempted to run through our other discrete distributions (binomial, geometric, and Poisson) and find nice formulas for their expected values.
+      Unfortunately, both the geometric distribution and the Poisson distribution have infinitely many possible values, and the summation of infinitely many discrete terms is beyond the scope of this course.
+      (A Calculus 2 course covering series would give the right tools to find expected value formulas with full justification for these distributions.)
+    </p>
+
+    <p>
+      The binomial distribution takes only finitely many values, and we have <xref ref="fact-binomial-probability-formula"/> that lets us generate a distribution table reasonably quickly, given the parameters <m>n</m> and <m>p</m>.
+      Feel free to pick some parameter values (keep <m>n</m> fairly small!) to try this calculation by hand, but we'll use a powerful theorem a bit later to give a very nice general formula depending on <m>n</m> and <m>p</m>.
+    </p>
+  </subsection>
+
+
+  <subsection xml:id="subsec-continuous-EV">
+    <title>Continuous Expected Value</title>
+
+    <p>
+      Expected value for a discrete random variable is a weighted average of the values taken by the variable with weights provided by the probability distribution.
+      We'd like to use the same idea for a continuous random variable, but now we're averaging over an interval's worth of values.
+      Also, individual values don't have probabilities, they have probability densities.
+    </p>
+
+    <definition xml:id="def-continuous-EV">
+      <statement>
+        <p>
+          Let <m>X</m> be a continuous random variable taking values in the interval <m>[a, b]</m> with pdf <m>f(x)</m>.
+          The <term>expected value</term> of <m>X</m> is given by:
+          <md>
+            <mrow> \E(X) = \int_a^b x f(x)\ dx.  </mrow>
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      It's worth viewing this definition side-by-side with <xref ref="def-discrete-EV"/> to understand that they have analogous structure.
+      The pdf values <m>f(x)</m> are densities, not probabilities.
+      But the product <m>f(x)\ dx</m> is probability.
+      So the expression <m>x f(x)\ dx</m> is analogous to <m>x_i \Pr(X = x_i)</m>: value times probability.
+      Finally, the integral symbol <m>\int</m> is meant to look like a stretched out letter "S" because it is a form of infinite summation.
+      So, both <m>\sum x_i \Pr(X = x_i)</m> and <m>\int_a^b x f(x)\ dx</m> should be understood as taking the products of values with their probabilities and then summing up those products.
+    </p>
+
+    <example xml:id="example-uniform-EV">
+      <statement>
+        <p>
+          Let <m>X</m> be uniform on the interval <m>[a, b]</m>.
+          So <m>X</m> has the pdf <m>f(x) = \frac{1}{b - a}</m>.
+          We might reasonably expect that the average value of <m>X</m> would be the midpoint of the interval.
+          Let's check that:
+          <md>
+            <mrow> \E(X) \amp = \int_a^b x f(x)\ dx </mrow>
+            <mrow> \amp = \int_a^b \frac{x}{b - a} \ dx </mrow>
+            <mrow> \amp = \frac{1}{b-a} \left(\frac{x^2}{2}\right)\bigg|_a^b </mrow>
+            <mrow> \amp = \frac{1}{b-a} \left( \frac{b^2}{2} - \frac{a^2}{2} \right) </mrow>
+            <mrow> \amp = \frac{1}{b - a}\left( \frac{(b - a)(b + a)}{2}\right) </mrow>
+            <mrow> \amp = \frac{a + b}{2}. </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Let <m>X</m> take values in <m>[0, 4]</m> with pdf <m>f(x) = \frac{3\sqrt{x}}{16}</m>.
+          <md>
+            <mrow> \E(X) \amp = \int_0^4 x f(x)\ dx </mrow>
+            <mrow> \amp = \int_0^4 \frac{3x^{3/2}}{16}\ dx </mrow>
+            <mrow> \amp = \frac{3}{16}\left(\frac{x^{5/2}}{5/2}\right)\bigg|_0^4</mrow>
+            <mrow> \amp = \frac{3}{16}\left(\frac{2x^{5/2}}{5}\right)\bigg|_0^4</mrow>
+            <mrow> \amp = \frac{3}{40}\left(x^{5/2}\right)\bigg|_0^4</mrow>
+            <mrow> \amp = \frac{3}{40}(32 - 0) </mrow>
+            <mrow> \amp = \frac{12}{5} </mrow>
+            <mrow> \amp = 2.4. </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+
+  <subsection xml:id="subsec-linearity-EV">
+    <title>Linearity of Expected Value</title>
+
+    <p>
+      In the context of many areas of mathematics, the word "linearity" doesn't refer to some graph being a straight line.
+      Rather, it refers to a situation in which some mathematical object or operation behaves in the nicest possible way under the operations of addition and scalar multiplication (i.e., multiplication by a constant).
+      You've already encountered linearity several times in Calculus 1, whether or not it was phrased that way.
+      <ul>
+        <li>
+          <p>
+            Limits are linear:
+            <md>
+              <mrow>\lim f(x) + g(x) \amp = \lim f(x) + \lim g(x)</mrow>
+              <mrow>\lim c f(x) \amp = c \lim f(x)</mrow>
+            </md>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Derivatives are linear:
+            <md>
+              <mrow>\frac{d}{dx}(f(x) + g(x)) \amp = \frac{d}{dx}(f(x)) + \frac{d}{dx}(g(x))</mrow>
+              <mrow>\frac{d}{dx}(c f(x)) \amp = c \frac{d}{dx}(f(x))</mrow>
+            </md>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Integrals (both definite and indefinite) are linear:
+            <md>
+              <mrow>\int f(x) + g(x) \amp = \int f(x) + \int g(x)</mrow>
+              <mrow>\int c f(x) \amp = c \int f(x)</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+      Now, we see that expected value is also linear:
+    </p>
+
+    <theorem xml:id="thm-linearity-of-EV">
+      <title>Linearity of Expectation</title>
+
+      <statement>
+        <p>
+          Let <m>X</m> and <m>Y</m> be random variables and <m>\alpha \in \R</m>.
+          Then:
+          <md>
+            <mrow> \E(X + Y) \amp = \E(X) + \E(Y) </mrow>
+            <mrow> \E(\alpha X) \amp = \alpha \E(X) </mrow>
+          </md>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      Some application of the linearity of expectation will seem entirely reasonable:
+    </p>
+
+    <example xml:id="example-EV-sum-n-dice">
+      <statement>
+        <p>
+          In <xref ref="example-EV-die"/>, we saw that the expected value of a fair 6-sided die roll is 3.5.
+          In <xref ref="example-EV-sum-2-dice"/>, we saw that the expected value of the sum of two die rolls is 7, which is precisely 2 times 3.5.
+          The calculation in <xref ref="example-EV-sum-2-dice"/> would be very tedious to recreate for three die rolls, let alone generalizing for <m>n</m> rolls.
+          However, suppose we define separate random variables <m>R_1, R_2, \dotsc, R_n</m> for the result of each individual roll.
+          Let <m>S</m> be the sum of the <m>n</m> rolls.
+          Then <m>S = R_1 + R_2 + \dotsb + R_n.</m> By linearity:
+          <md>
+            <mrow> \E(S) \amp = \E(R_1 + R_2 + \dotsb + R_n) </mrow>
+            <mrow> \amp = \E(R_1) + \E(R_2) + \dotsb + \E(R_n) </mrow>
+            <mrow> \amp = \underbrace{3.5 + 3.5 + \dotsb + 3.5}_{n \text{ times}} </mrow>
+            <mrow> \amp = 3.5n. </mrow>
+          </md>
+          For two rolls, we recover our previous result: <m>3.5(2) = 7.</m> But now we have a general formula that tells the expected sum for any number of rolls.
+          It also gives a perfectly reasonable answer: the expected sum of <m>n</m> rolls is <m>n</m> times the expected value of a single roll.
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="example-binomial-EV">
+      <statement>
+        <p>
+          Suppose <m>S \sim \Bin(n, p)</m>.
+          <xref ref="def-binomial-distribution"/> describes a binomially distributed random variable as counting the number of occurrences of some event, which either happens or not in each of <m>n</m> independent trials.
+          This leads us to a very natural idea: identify each individual possible occurrence of the event, and assign it an indicator random variable.
+          In this case, let <m>H_i</m> indicate that flip <m>i</m> comes up heads.
+          Then
+          <md>
+            <mrow> S = H_1 + H_2 + \dotsb + H_n. </mrow>
+          </md>
+          We already know (<xref ref="example-indicator-EV"/>) that the expected value of each <m>H_i</m> is the probability of the indicated event<mdash/>that flip <m>i</m> is heads.
+          This is precisely the parameter <m>p</m>.
+          Therefore:
+          <md>
+            <mrow> \E(S) \amp = \E(H_1 + H_2 + \dotsb + H_n) </mrow>
+            <mrow> \amp = \E(H_1) + \E(H_2) + \dotsb + \E(H_n) </mrow>
+            <mrow> \amp = \underbrace{p + p + \dotsb + p}_{n \text{ times}} </mrow>
+            <mrow> \amp = np. </mrow>
+          </md>
+          Remember this formula! We'll make frequent use of it.
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      The previous examples are so reasonable it may seem unimpressive.
+      But consider the following use of linearity:
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          We say a flip sequence has a <term>run of 4 heads starting at <m>k</m></term> if flips <m>k, k+1, k+2, k+3</m> are all heads.
+          We don't care about overlaps: the flip sequence <m>HHHHH</m> has a run of 4 heads starting at 1 and another run starting at 2.
+        </p>
+
+        <p>
+          Suppose we flip a fair coin 100 times.
+          How many runs of 4 heads should we expect?
+        </p>
+      </statement>
+
+      <hint>
+        <p>
+          Can you mimic the structure of <xref ref="example-binomial-EV"/>?
+        </p>
+      </hint>
+
+      <solution>
+        <p>
+          Let <m>R_k</m> indicate a run of 4 heads starting at <m>k</m>.
+          Since this requires 4 precise flips to come up heads, the probability of the indicated event should be
+          <md>
+            <mrow>\left(\frac{1}{2}\right)^4 = \frac{1}{16}</mrow>
+          </md>
+          The very last starting flip for a run of 4 heads is flip number 97 (so that flips 97, 98, 99, and 100 would all be heads).
+          Then <m>S = R_1 + R_2 + \dotsb + R_{97}</m> precisely counts the number of runs of 4 heads.
+          Using linearity:
+          <md>
+            <mrow> \E(S) \amp = \E(R_1 + R_2 + \dotsb + R_{97}) </mrow>
+            <mrow> \amp = \E(R_1) + \E(R_2) + \dotsb + \E(R_{97}) </mrow>
+            <mrow> \amp = \underbrace{\frac{1}{16} + \frac{1}{16} + \dotsb + \frac{1}{16}}_{97 \text{ times}} </mrow>
+            <mrow> \amp = \frac{97}{16} </mrow>
+            <mrow> \amp \approx 6. </mrow>
+          </md>
+          Notice that, unlike <xref ref="example-binomial-EV"/>, the events being indicated here are <em>not</em> independent from each other.
+          Linearity is unaffected by the fact that that the runs of heads can overlap.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <exercises xml:id="exercises-Expected-Value">
+  <exercise>
+    <statement>
+      <p>
+        Consider a random variable <m>X</m> with probability distribution below.
+        Find <m>\E(X)</m>.
+      </p>
+
+      <table>
+        <title></title>
+
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell><m>x</m></cell>
+            <cell><m>\Pr(X = x)</m></cell>
+          </row>
+
+          <row>
+            <cell>1</cell>
+            <cell>0.1</cell>
+          </row>
+
+          <row>
+            <cell>2</cell>
+            <cell>0.05</cell>
+          </row>
+
+          <row>
+            <cell>3</cell>
+            <cell>0.2</cell>
+          </row>
+
+          <row>
+            <cell>4</cell>
+            <cell>0.15</cell>
+          </row>
+
+          <row>
+            <cell>5</cell>
+            <cell>0.15</cell>
+          </row>
+
+          <row>
+            <cell>6</cell>
+            <cell>0.1</cell>
+          </row>
+
+          <row>
+            <cell>7</cell>
+            <cell>0.05</cell>
+          </row>
+
+          <row>
+            <cell>8</cell>
+            <cell>0.1</cell>
+          </row>
+
+          <row>
+            <cell>9</cell>
+            <cell>0.1</cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+
+    <answer>
+      <p>
+        4.8.
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>X</m> and <m>Y</m> be random variables each taking the values 1, 2, 3, 4, 5.
+        Write different distribution tables for <m>X</m> and <m>Y</m> so that they have the same expected value.
+      </p>
+    </statement>
+
+    <answer>
+      <table>
+        <title>Example Distributions</title>
+
+        <tabular>
+          <row bottom="minor">
+            <cell><m>a</m></cell>
+            <cell><m>\Pr(X = a)</m></cell>
+            <cell><m>\Pr(Y = a)</m></cell>
+          </row>
+
+          <row>
+            <cell>1</cell>
+            <cell>0.2</cell>
+            <cell>0.1</cell>
+          </row>
+
+          <row>
+            <cell>2</cell>
+            <cell>0.2</cell>
+            <cell>0.1</cell>
+          </row>
+
+          <row>
+            <cell>3</cell>
+            <cell>0.2</cell>
+            <cell>0.6</cell>
+          </row>
+
+          <row>
+            <cell>4</cell>
+            <cell>0.2</cell>
+            <cell>0.1</cell>
+          </row>
+
+          <row>
+            <cell>5</cell>
+            <cell>0.2</cell>
+            <cell>0.1</cell>
+          </row>
+        </tabular>
+      </table>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>
+        Suppose we flip a coin <m>n = 100</m> times, and let <m>N</m> count the number of heads.
+      </p>
+    </introduction>
+
+
+    <task>
+      <statement>
+        <p>
+          If the coin comes up heads on a flip with probability <m>p = 0.4</m>, what is <m>\E(N)</m>?
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          40.
+        </p>
+      </answer>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          What if <m>n = 80</m> and <m>p = 0.6</m>?
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          48.
+        </p>
+      </answer>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          What if <m>n = 200</m> and <m>p = 0.5</m>?
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          100.
+        </p>
+      </answer>
+    </task>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        If <m>\E(X) = 3</m>, <m>\E(Y) = -2</m>, and <m>\E(Z) = 1</m>, what is <m>\E(4X + 5Y - Z + 3)</m>?
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        4.
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        A continuous random variable <m>X</m> taking values in <m>[0, 1]</m> has p.d.f.
+        <m>f(x) = 2x</m>.
+        What is <m>\E(X)</m>?
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        2/3.
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        A continuous random variable <m>X</m> taking values in <m>[-1, 1]</m> has p.d.f.
+        <m>f(x) = \frac{3x^2}{2}</m>.
+        What is <m>\E(X)</m>?
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        0.
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+        <m>f(x) = \frac{4}{3x^2}</m>.
+        What is <m>\E(X)</m>?
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        <m>\frac{4}{3}\ln(4) \approx 1.85.</m>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+        <m>f(x) = k(x - \sqrt{x})</m> for some constant <m>k</m>.
+        In a previous problem, you found the value of <m>k</m>.
+        Now, find <m>\E(X)</m>.
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        <m>E(X) \approx 3.04.</m>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        A continuous random variable <m>X</m> taking values in <m>[1, 2]</m> has p.d.f.
+        <m>\displaystyle{f(x) = \frac{1}{2}\left(\frac{1}{x^2} + x\right)}</m>.
+        Find <m>\E(X)</m>.
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        <m>\frac{1}{2}\left( \ln(2) + \frac{7}{3}\right) \approx 1.513.</m>
+      </p>
+    </answer>
+  </exercise>
+  </exercises>
+</section>

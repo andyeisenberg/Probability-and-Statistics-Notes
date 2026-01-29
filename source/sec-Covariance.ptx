@@ -1,0 +1,227 @@
+<section xml:id="sec-Covariance" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Covariance</title>
+
+    <definition xml:id="def-covariance">
+      <statement>
+        <p>
+          Let <m>X</m> and <m>Y</m> be random variables.
+          The <term>covariance</term> of <m>X</m> and <m>Y</m> is:
+          <md>
+            <mrow> \Cov(X, Y) = \E\left[\left(X - \E(X)\right) \left(Y - \E(Y)\right)\right]. </mrow>
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Let's write <m>\mu_X = \E(X)</m> and <m>\mu_Y = \E(Y)</m> to make this is a bit cleaner to look at:
+      <md>
+        <mrow> \Cov(X, Y) = \E\left[\left(X - \mu_X \right) \left(Y - \mu_Y\right)\right]. </mrow>
+      </md>
+      This looks like a pretty natural generalization of the variance.
+      In fact:
+      <md>
+        <mrow> \Cov(X, X) \amp = \E\left[ (X - \mu_X)(X - \mu_X)\right] = \E\left[\left(X - \mu_X\right)^2\right] = \Var(X). </mrow>
+      </md>
+      One difference worth noting is that <m>\Var(X)</m>, as the average of squared values, must always be nonnegative.
+      The expression <m>(X - \mu_X)(X - \mu_X)</m> can be negative for combinations of <m>X</m> and <m>Y</m> values where one is greater than its average and the other is smaller.
+      If this is the average behavior, then <m>\Cov(X, Y)</m> can be negative overall.
+      This is useful information: a negative <m>\Cov(X, Y)</m> would imply that (on average, not necessarily always) when <m>X</m> is larger than typical, <m>Y</m> is smaller than typical, and vice versa.
+    </p>
+
+    <p>
+      Also as with variance, the covariance definition formula gives us some useful insight, but it can be unwieldy to work with.
+      There is an alternative formula, analogous to <xref ref="thm-variance-formula"/>:
+    </p>
+
+    <theorem xml:id="thm-covariance-formula">
+      <statement>
+        <p>
+          Let <m>X</m> and <m>Y</m> be random variables.
+          Then:
+          <md>
+            <mrow>\Cov(X, Y) = \E\left(XY\right) - \E(X)\E(Y).</mrow>
+          </md>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      To make use of this formula, it's helpful to have both a joint distribution and marginal distributions.
+      The marginal distributions let you find <m>\E(X)</m> and <m>\E(Y)</m>.
+      The joint distribution lets you find <m>\E(XY)</m>.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Let <m>X</m> and <m>Y</m> be indicator random variables with joint and marginal distributions below.
+        </p>
+
+        <sidebyside>
+          <table>
+            <title></title>
+
+            <tabular halign="center">
+              <row bottom="minor">
+                <cell right="minor"></cell>
+                <cell right="minor"><m>X = 0</m></cell>
+                <cell><m>X = 1</m></cell>
+              </row>
+
+              <row bottom="minor">
+                <cell right="minor"><m>Y = 0</m></cell>
+                <cell right="minor">0.2</cell>
+                <cell>0.1</cell>
+              </row>
+
+              <row>
+                <cell right="minor"><m>Y = 1</m></cell>
+                <cell right="minor">0.2</cell>
+                <cell>0.5</cell>
+              </row>
+            </tabular>
+          </table>
+
+          <table>
+            <title></title>
+
+            <tabular halign="center">
+              <row bottom="minor">
+                <cell><m>x</m></cell>
+                <cell><m>\Pr(X = x)</m></cell>
+              </row>
+
+              <row>
+                <cell>0</cell>
+                <cell>0.4</cell>
+              </row>
+
+              <row>
+                <cell>1</cell>
+                <cell>0.6</cell>
+              </row>
+            </tabular>
+          </table>
+
+          <table>
+            <title></title>
+
+            <tabular halign="center">
+              <row bottom="minor">
+                <cell><m>y</m></cell>
+                <cell><m>\Pr(Y = y)</m></cell>
+              </row>
+
+              <row>
+                <cell>0</cell>
+                <cell>0.3</cell>
+              </row>
+
+              <row>
+                <cell>1</cell>
+                <cell>0.7</cell>
+              </row>
+            </tabular>
+          </table>
+        </sidebyside>
+
+        <p>
+          Since they're indicator random variables, we can immediately see that <m>\E(X) = 0.6</m> and <m>\E(Y) = 0.7</m> (see <xref ref="example-indicator-EV"/>).
+          For <m>\E(XY)</m>, we'll traverse cell by cell through the joint distribution table, constructing products of the form <m>X</m>-value times <m>Y</m>-value times probability:
+          <md>
+            <mrow> \E(XY) =\, \amp (0)(0)(0.2) + (1)(0)(0.1) </mrow>
+            <mrow> \amp (0)(1)(0.2) + (1)(1)(0.5) </mrow>
+            <mrow> =\, \amp 0.5. </mrow>
+          </md>
+          Finally:
+          <md>
+            <mrow> \Cov(X, Y) = \E(XY) - \E(X)\E(Y) = 0.5 - (0.6)(0.7) = 0.08. </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <exercises xml:id="exercises-Covariance">
+    <exercise>
+      <statement>
+        <p>
+          Calculate the covariance of <m>X</m> and <m>Y</m>:
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell right="minor"></cell>
+              <cell right="minor"><m>X = 1</m></cell>
+              <cell><m>X = 2</m></cell>
+            </row>
+
+            <row bottom="minor">
+              <cell right="minor"><m>Y = 0</m></cell>
+              <cell right="minor">0.12</cell>
+              <cell>0.24</cell>
+            </row>
+
+            <row>
+              <cell right="minor"><m>Y = 1</m></cell>
+              <cell right="minor">0.3</cell>
+              <cell>34</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Calculate the covariance of <m>X</m> and <m>Y</m>:
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell right="minor"></cell>
+              <cell right="minor"><m>X = 0</m></cell>
+              <cell right="minor"><m>X = 1</m></cell>
+              <cell><m>X = 2</m></cell>
+            </row>
+
+            <row bottom="minor">
+              <cell right="minor"><m>Y = 0</m></cell>
+              <cell right="minor">0.08</cell>
+              <cell right="minor">0.16</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell right="minor"><m>Y = 1</m></cell>
+              <cell right="minor">0.14</cell>
+              <cell right="minor">0.2</cell>
+              <cell>0.32</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we roll a fair, 4-sided die two times.
+          Let <m>X</m> be the sum of the rolls, and let <m>Y</m> be the product of the rolls.
+          Find the covariance of <m>X</m> and <m>Y</m>.
+        </p>
+
+        <p>
+          [Note: Somewhat tedious.]
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
+  </section>

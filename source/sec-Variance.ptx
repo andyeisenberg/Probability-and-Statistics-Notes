@@ -1,0 +1,331 @@
+<section xml:id="sec-Variance" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Variance</title>
+
+    <p>
+      The expected value is one of several statistics sometimes referred to as a "measure of central tendency".
+      These are statistics that try to capture the "typical" value of the random variable.
+      Our next statistic tries to measure how spread out a distribution is.
+    </p>
+
+    <definition xml:id="def-variance">
+      <statement>
+        <p>
+          Let <m>X</m> be a random variable.
+          The <term>variance</term> of <m>X</m> is:
+          <md>
+            <mrow>\Var(X) = \E\left[ \left(X - \E(X)\right)^2 \right].</mrow>
+          </md>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      This formula tries to capture some measure of how spread out the distribution is.
+      One way we might hope to measure spread is to calculate how far away <m>X</m> is from its expected value on average.
+      Squaring the term <m>X - \E(X)</m> ensures that any difference between the value of the random variable and its expected value contributes positively.
+      ("Distance away from" should be positive.) So, the formula in <xref ref="def-variance"/> is conceptually clear.
+      In practice, there's another way to structure the formula that makes for cleaner calculation:
+    </p>
+
+    <theorem xml:id="thm-variance-formula">
+      <statement>
+        <p>
+          Let <m>X</m> be a random variable.
+          Then:
+          <md>
+            <mrow>\Var(X) = \E\left(X^2\right) - \left(\E(X)\right)^2.</mrow>
+          </md>
+        </p>
+      </statement>
+    </theorem>
+
+
+    <proof>
+      <p>
+        <md>
+          <mrow> \Var(X) \amp = \E\left[ \left(X - \E(X)\right)^2 \right] </mrow>
+          <mrow> \amp = \E\left[ X^2 - 2 \E(X) X + \left(\E(X)\right)^2\right] </mrow>
+          <mrow> \amp = \E\left(X^2\right)  - 2 \E(X) \E(X) + \left(\E(X)\right)^2</mrow>
+          <mrow> \amp = \E\left(X^2\right) - \left(\E(X)\right)^2. </mrow>
+        </md>
+      </p>
+    </proof>
+
+    <example xml:id="example-var-die">
+      <statement>
+        <p>
+          Let <m>R</m> be the value of a fair 6-sided die roll.
+          We've seen in <xref ref="example-EV-die"/> that <m>\E(R) = \frac{7}{2}</m>.
+          To find <m>\E\left(R^2\right)</m>:
+          <md>
+            <mrow> \E\left(R^2\right) \amp = 1^2 \left(\frac{1}{6}\right) + 2^2 \left(\frac{1}{6}\right) + 3^2 \left(\frac{1}{6}\right) + 4^2 \left(\frac{1}{6}\right) + 5^2 \left(\frac{1}{6}\right) + 6^2 \left(\frac{1}{6}\right) </mrow>
+            <mrow> \amp = 1 \left(\frac{1}{6}\right) + 4 \left(\frac{1}{6}\right) + 9 \left(\frac{1}{6}\right) + 16 \left(\frac{1}{6}\right) + 25 \left(\frac{1}{6}\right) + 36 \left(\frac{1}{6}\right) </mrow>
+            <mrow> \amp = \frac{91}{6}. </mrow>
+          </md>
+          Then
+          <md>
+            <mrow>\Var(R) = \E\left(R^2\right) - \left(\E(R)\right)^2 = \frac{91}{6} - \frac{49}{4} = \frac{35}{12}. </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Notice that in the <m>\E\left(R^2\right)</m> calculation, we're just taking the basic structure of the <m>\E(R)</m> calculation and squaring the <m>R</m> values.
+      The analogous calculation for a continuous random variable looks similar:
+    </p>
+
+    <example xml:id="example-uniform-variance">
+      <statement>
+        <p>
+          Let <m>X</m> be uniform on the interval <m>[a, b]</m>.
+          So <m>X</m> has the pdf <m>f(x) = \frac{1}{b - a}</m>, and we saw in <xref ref="example-uniform-EV"/> that <m>\E(X) = \frac{a + b}{2}</m>.
+          Now:
+          <md>
+            <mrow> \E\left(X^2\right) \amp = \int_a^b x^2 f(x)\ dx </mrow>
+            <mrow> \amp = \int_a^b \frac{x^2}{b - a} \ dx </mrow>
+            <mrow> \amp = \frac{1}{b-a} \left(\frac{x^3}{3}\right)\bigg|_a^b </mrow>
+            <mrow> \amp = \frac{1}{b-a} \left( \frac{b^3}{3} - \frac{a^3}{3} \right) </mrow>
+            <mrow> \amp = \frac{1}{b - a}\left( \frac{(b - a)(a^2 + ab + b^2)}{3}\right) </mrow>
+            <mrow> \amp = \frac{a^2 + ab + b^2}{3}. </mrow>
+          </md>
+          Then:
+          <md>
+            <mrow> \Var(X) \amp = \E\left(X^2\right) - \left(\E(X)\right)^2 </mrow>
+            <mrow> \amp = \frac{a^2 + ab + b^2}{3} - \frac{(a+b)^2}{4} </mrow>
+            <mrow> \amp = \frac{a^2 + ab + b^2}{3} - \frac{a^2 + 2ab + b^2}{4} </mrow>
+            <mrow> \amp = \frac{4a^2 + 4ab + 4b^2}{12} - \frac{3a^2 + 6ab + 3b^2}{12} </mrow>
+            <mrow> \amp = \frac{a^2 - 2ab + b^2}{12} </mrow>
+            <mrow> \amp = \frac{(a - b)^2}{12}. </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Variance is <em>not</em> linear.
+      In general, you can't split up variance across plus or minus signs, and you can't pull multiplied constants out of the variance like you can with expected value.
+      However, there are some properties we can use to do similar manipulations to the variance.
+    </p>
+
+    <theorem xml:id="thm-variance-properties">
+      <statement>
+        <p>
+          Let <m>X</m> and <m>Y</m> be random variables, and let <m>\alpha \in \R</m>.
+          Then:
+          <ol>
+            <li>
+              <p>
+                <m>\Var(X + \alpha) = \Var(X)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\Var(\alpha X) = \alpha^2 \Var(X)</m>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                If <m>X</m> and <m>Y</m> are independent, then <m>\Var(X + Y) = \Var(X) + \Var(Y)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      We'll omit the proofs and just casually observe that these are reasonable properties.
+      <m>X + \alpha</m> is a shift of <m>X</m>, and shifting shouldn't change how spread out the distribution is.
+      <m>\alpha X</m> scaled <m>X</m> by a constant, so it should scale the spread of the distribution by the same constant.
+      But recall that the variance calculation involves squaring; it's an indirect measure of spread.
+      So it's reasonable that scaling the distribution by a constant should scale the variance by its square.
+    </p>
+
+    <p>
+      Let's put these properties to use in a pair of related examples:
+    </p>
+
+    <example xml:id="example-indicator-variance">
+      <statement>
+        <p>
+          Let <m>X</m> indicate an event <m>A</m> which has probability <m>p</m>.
+          In <xref ref="example-indicator-EV"/>, we saw <m>\E(X) = p</m>.
+          Notice that <m>X</m> takes the values 0 and 1 (with probabilities <m>1 - p</m> and <m>p</m>, respectively).
+          But <m>0^2 = 0</m>, and <m>1^1 = 1</m>, so the expected value calculation for <m>X^2</m> is precisely the same as for <m>X</m>!
+          <md>
+            <mrow> \E\left(X^2\right) \amp = 0^2 \cdot (1-p) + 1^2 \cdot p = p. </mrow>
+          </md>
+          So:
+          <md>
+            <mrow> \Var(X) \amp \E\left(X^2\right) - \left(\E(X)\right)^2 = p - p^2 = p(1 - p). </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="example-binomial-variance">
+      <statement>
+        <p>
+          Recall the setup from <xref ref="example-binomial-EV"/>: a binomial random variable <m>S</m> is the sum <m>H_1 + H_2 + \dotsb + H_n</m> of <m>n</m> indicator random variables, each with parameter <m>p</m>.
+          The results of different coin flips are independent from each other, so the random variables <m>H_1, \dotsc, H_n</m> are independent from each other.
+          From <xref ref="example-indicator-variance"/>, we know that <m>\Var(H_i) = p(1-p)</m> for each <m>i</m>.
+          Therefore:
+          <md>
+            <mrow> \Var(S) \amp = \Var(H_1 + H_2 + \dotsb + H_n) </mrow>
+            <mrow> \amp = \Var(H_1) + \Var(H_2) + \dotsb + \Var(H_n) </mrow>
+            <mrow> \amp = \underbrace{p(1-p) + p(1-p) + \dotsb + p(1-p)}_{n \text{ times}} </mrow>
+            <mrow> \amp = np(1-p). </mrow>
+          </md>
+          Remember this formula! We'll make frequent use of it.
+        </p>
+      </statement>
+    </example>
+
+    <exercises xml:id="exercises-Variance">
+    <exercise>
+      <statement>
+        <p>
+          Consider a random variable <m>X</m> with probability distribution below.
+          Find <m>\Var(X)</m>.
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular halign="center">
+            <row header="yes" bottom="minor">
+              <cell><m>x</m></cell>
+              <cell><m>\Pr(X = x)</m></cell>
+            </row>
+
+            <row>
+              <cell>1</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>2</cell>
+              <cell>0.05</cell>
+            </row>
+
+            <row>
+              <cell>3</cell>
+              <cell>0.2</cell>
+            </row>
+
+            <row>
+              <cell>4</cell>
+              <cell>0.15</cell>
+            </row>
+
+            <row>
+              <cell>5</cell>
+              <cell>0.15</cell>
+            </row>
+
+            <row>
+              <cell>6</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>7</cell>
+              <cell>0.05</cell>
+            </row>
+
+            <row>
+              <cell>8</cell>
+              <cell>0.1</cell>
+            </row>
+
+            <row>
+              <cell>9</cell>
+              <cell>0.1</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>X</m> be a random variable taking the values 1, 2, 3, 4, 5.
+          Write a distribution table for <m>X</m>, then use your table to write a distribution for <m>X^2</m>.
+          Then, find <m>\Var(X)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose we flip a coin <m>n = 100</m> times, and let <m>N</m> count the number of heads.
+          If the coin comes up heads on a flip with probability <m>p = 0.4</m>, what is <m>\Var(N)</m>? What if <m>n = 80</m> and <m>p = 0.6</m>? What if <m>n = 200</m> and <m>p = 0.5</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          If <m>\E(X) = 3</m>, <m>\Var(X) = 2</m>, what is <m>\E(X^2)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[0, 1]</m> has p.d.f.
+          <m>f(x) = 2x</m>.
+          What is <m>\Var(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[-1, 1]</m> has p.d.f.
+          <m>f(x) = \frac{3x^2}{2}</m>.
+          What is <m>\Var(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+          <m>f(x) = \frac{4}{3x^2}</m>.
+          What is <m>\Var(X)</m>?
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 4]</m> has p.d.f.
+          <m>f(x) = k(x - \sqrt{x})</m> for some constant <m>k</m>.
+          In a previous problem, you found the value of <m>k</m>.
+          Now, find <m>\Var(X)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          A continuous random variable <m>X</m> taking values in <m>[1, 2]</m> has p.d.f.
+          <m>\displaystyle{f(x) = \frac{1}{2}\left(\frac{1}{x^2} + x\right)}</m>.
+          Find <m>\Var(X)</m>.
+        </p>
+      </statement>
+    </exercise>
+    </exercises>
+  </section>
