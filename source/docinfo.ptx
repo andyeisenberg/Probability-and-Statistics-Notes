@@ -36,6 +36,8 @@
     \DeclareMathOperator{\E}{E}
     \DeclareMathOperator{\Var}{Var}
     \DeclareMathOperator{\Cov}{Cov}
+    <!-- to indicate an estimator -->
+    \newcommand{\est}{\widehat}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

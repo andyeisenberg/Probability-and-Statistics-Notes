@@ -1,0 +1,64 @@
+<section xml:id="sec-CLT" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Central Limit Theorem</title>
+
+    <p>
+      Text of section.
+    </p>
+
+    <exercises xml:id="exercises-CLT">
+    <exercise>
+      <statement>
+        <p>
+          Suppose a coin has probability 0.4 of coming up heads, and we flip the coin 100 times.
+          Let <m>S</m> be the number of heads.
+          Estimate the probability that <m>34 \leq S \leq 44</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose a fair die is rolled 100 times, and let <m>m</m> be the average value of the rolls.
+          Estimate the probability that <m>3.45 \leq m \leq 3.55</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <introduction>
+        <p>
+          The heights of men in the US have a mean of 69 in and a variance of about 9 in<m>^2</m>, and the heights of women in the US have a mean of 63.5 in with a variance of 6.25 in<m>^2</m>.
+        </p>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Suppose the heights of 30 men are sampled, and a sample mean <m>m</m> is taken.
+            Find the expected value and variance of <m>m</m>.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Estimate the probability that <m>m \geq 69.5</m>.
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            What if the sampled group was women?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+    </exercises>
+  </section>

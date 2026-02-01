@@ -1,0 +1,60 @@
+<section xml:id="sec-Likelihood" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Likelihood</title>
+
+  <p>
+    So far, we've been concerned with probability theory.
+    Starting with a probability distribution and some parameter values, we've tried to answer questions like: What's the probability of seeing certain experimental results? Statistics is concerned with going in the other direction: Upon seeing the experimental results, can we determine the type of underlying probability distribution? Can we determine its parameters?
+  </p>
+
+  <definition xml:id="def-estimator">
+    <statement>
+      <p>
+        An <term>estimator</term> is a value of a parameter computed from a sample of data.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <p>
+      Suppose we find a coin on the street and don't know whether or not it's fair.
+      We want to know the probability <m>p</m> of the coin coming up heads.
+      We might, for example, flip the coin <m>n</m> times and count the number <m>k</m> of heads.
+      Then, we'll estimate <m>p = \frac{k}{n}</m>.
+      We'll refer to this as a <term>common sense</term> estimator.
+      (Other distributions and parameter types will have different notions of "common sense".)
+    </p>
+  </example>
+
+  <p>
+    An estimator is, itself, a random variable: it produces a numerical value based on the results of an experiment.
+    We'll use notation like <m>\est{p}</m> for a random variable which is an estimator for a parameter <m>p</m>.
+    (Similarly, <m>\est{\lambda}</m> would denote an estimator for a parameter called <m>\lambda</m>.)
+  </p>
+
+  <definition xml:id="def-unbiased">
+    <statement>
+      <p>
+        An estimator <m>\est{p}</m> is called <term>unbiased</term> if <m>\E(\est{p}) = p</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Suppose we have a coin with parameter <m>p</m>, which we'll flip <m>n</m> times and count the number <m>k</m> of heads.
+        We use the unbiased estimator <m>\est{p} = \frac{k}{n}</m>.
+        In this case, notice that <m>k \sim \Bin(n, p)</m>, so we know <m>\E(k) = np</m>, although we don't know the value of <m>p</m>.
+        (We probably do know the value of <m>n</m>; after all, we're flipping the coin!) Now:
+        <md>
+          <mrow> \E(\est{p}) = \E\left(\frac{k}{n}\right) = \frac{1}{n} \cdot \E(k) = \frac{1}{n} \cdot np = p. </mrow>
+        </md>
+        It's worth pausing for a moment to be appropriately impressed with ourselves.
+        We still don't know the true value of <m>p</m>.
+        But we managed to show that our common sense method of estimating <m>p</m> gives, on average, the correct value.
+      </p>
+    </statement>
+  </example>
+
+
+</section>
