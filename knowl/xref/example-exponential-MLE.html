@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: boulder                        *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Suppose we observe a cell and measure the time <span class="process-math">\(T\)</span> until a toxin molecule leaves the cell. Then <span class="process-math">\(T \sim \Exp(\lambda)\)</span> for some unknown rate parameter <span class="process-math">\(\lambda\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{gather*}
+f(t) = \lambda e^{-\lambda t}. 
+\end{gather*}
+</div>
+<div class="para">Suppose we observe a molecule leave the cell at <span class="process-math">\(t = 0.3\)</span> minutes. Then:</div>
+<div class="displaymath process-math">
+\begin{align*}
+L(\lambda) \amp = \lambda e^{-0.3\lambda} \\
+L'(\lambda) \amp = e^{-0.3\lambda} + \lambda e^{-0.3t} (-0.3) \\
+\amp = e^{-0.3\lambda}\left[ 1 - 0.3\lambda\right] 
+\end{align*}
+</div>
+<div class="para">The critical point is <span class="process-math">\(\lambda = \frac{1}{0.3} \approx 3.33\text{.}\)</span> Since <span class="process-math">\(\L' \gt 0\)</span> on <span class="process-math">\((0, 3.33)\)</span> and <span class="process-math">\(\L' \lt 0\)</span> on <span class="process-math">\((3.33, \infty)\text{,}\)</span> there is a global maximum at <span class="process-math">\(\lambda \approx 3.33\text{,}\)</span> which is therefore the MLE.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-exponential-MLE-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para">The specific time <span class="process-math">\(0.3\)</span> minutes doesn’t particularly matter in this calculation. Whatever the time <span class="process-math">\(t\text{,}\)</span> essentially the same calculation will result in a MLE of <span class="process-math">\(\lambda = 1/t\text{.}\)</span> But what if we collect multiple pieces of data?<div class="autopermalink" data-description="Paragraph"><a href="#example-exponential-MLE-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Time Data<div class="autopermalink" data-description="Table 4.1.12: Time Data"><a href="#example-exponential-MLE-1-3" title="Copy heading and permalink for Table 4.1.12: Time Data" aria-label="Copy heading and permalink for Table 4.1.12: Time Data">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Molecule</td>
+<td class="c m b1 r0 l0 t0 lines">Waiting Time</td>
+<td class="c m b1 r0 l0 t0 lines">Rate Estimation</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3.33\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.8\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.25\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.5\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2.00\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">4</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.67\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0.9\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.11\)</span></td>
+</tr>
+</table></div></figure> <div class="para">How should take all of this data into account in our maximum likelihood estimation? We might consider taking the average of all of the separate rate estimations, which would give <span class="process-math">\(1.87\text{.}\)</span> Is this the most likely? We need some mathematical justification.<div class="autopermalink" data-description="Paragraph"><a href="#example-exponential-MLE-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical">
+<div class="para">To account for multiple, independent data points, we should multiply the probability densities for each in the creation of our likelihood function:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\L(\lambda) \amp = \left(\lambda e^{-0.3\lambda}\right)\left(\lambda e^{-0.8\lambda}\right)\left(\lambda e^{-0.5\lambda}\right)\left(\lambda e^{-0.6\lambda}\right)\left(\lambda e^{-0.9\lambda}\right) \\
+\amp = \lambda^5 e^{-0.3\lambda - 0.8\lambda - 0.5\lambda - 0.6\lambda - 0.9\lambda } \\
+\amp = \lambda^5 e^{-3.1\lambda} 
+\end{align*}
+</div>
+<div class="para">Now we can find the maximum:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\L'(\lambda) \amp = 5 \lambda^4 e^{-3.1\lambda} + \lambda^5 e^{-3.1\lambda} (-3.1) \\
+\amp = 5 \lambda^4 e^{-3.1\lambda} + \lambda^5 e^{-3.1\lambda} (-3.1) \\
+\amp = \lambda^4 e^{-3.1\lambda} \left[5 - 3.1\lambda \right] 
+\end{align*}
+</div>
+<div class="para">The only critical point is <span class="process-math">\(5/3.1 \approx 1.61\text{.}\)</span> Since <span class="process-math">\(\L' \gt 0\)</span> on <span class="process-math">\((0, 1.61)\)</span> and <span class="process-math">\(\L' \lt 0\)</span> on <span class="process-math">\((1.61, \infty)\text{,}\)</span> there is a global maximum at <span class="process-math">\(\lambda = 1.61\text{,}\)</span> which is therefore the MLE.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-exponential-MLE-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para">It may seem less clear how to generalize this calculation for other tables of data. Observe that the value <span class="process-math">\(3.1\)</span> is the sum of the five times in the table, so <span class="process-math">\(3.1/5\)</span> is the average time. The MLE turned out to be the reciprocal of the average time (just as the MLE with only one data point was the reciprocal of that one time). Notice that this does <em class="emphasis">not</em> match the guess we made previously of averaging the individual rate estimations for each data point.<div class="autopermalink" data-description="Paragraph"><a href="#example-exponential-MLE-1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.1.11"><a href="#example-exponential-MLE" title="Copy heading and permalink for Example 4.1.11" aria-label="Copy heading and permalink for Example 4.1.11">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-Likelihood.html#example-exponential-MLE">in-context</a></span>
+</body>
+</html>
