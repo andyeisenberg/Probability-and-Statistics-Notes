@@ -56,5 +56,312 @@
     </statement>
   </example>
 
+  <p>
+    We'd like to be able to collect some data and use that data to estimate the values of whatever parameters our distribution has.
+    Perhaps as a starting point, it would be good to identify the single most likely value of a parameter:
+  </p>
 
+  <definition xml:id="def-likelihood">
+    <statement>
+      <p>
+        Suppose we collect some data to estimate a parameter <m>p</m>.
+        The <term>likelihood function</term> is:
+        <md>
+          <mrow> \L(p) = \Pr(\text{data} \mid \text{parameter value is } p). </mrow>
+        </md>
+        The value of <m>p</m> which maximizes the function <m>\L(p)</m> is called the <term>maximum likelihood estimation</term>, or <term>MLE</term>, of <m>p</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Suppose we flip a coin 100 times.
+        Let <m>N</m> be the number of heads.
+        Then <m>N\sim \Bin(100, p)</m> for some unknown value of <m>p</m>:
+        <md>
+          <mrow> \Pr(N = k) \amp = b(k; 100, p) = {100 \choose k} p^k (1 - p)^{100 - k} </mrow>
+        </md>
+        In this case, <m>k</m> is the data that we collect, and <m>p</m> is the value of the parameter.
+        Suppose we see <m>52</m> heads.
+        Then:
+        <md>
+          <mrow> \L(p) = {100 \choose 52} p^{52} (1 - p)^{48}. </mrow>
+        </md>
+        If we want to know the most likely value of the parameter <m>p</m>, then we should maximize <m>\L(p)</m> over the interval <m>0 \leq p \leq 1</m>.
+        <md>
+          <mrow> \L'(p) \amp = {100 \choose 52} \left[ 52 p^{51}(1 - p)^{48} + p^{52} 48 (1 - p)^{47}(-1)\right] </mrow>
+          <mrow> \amp = {100 \choose 52} p^{51} (1 - p)^{47} \left[ 52 (1 - p) -  48p \right] </mrow>
+          <mrow> \amp = {100 \choose 52} p^{51} (1 - p)^{47} \left[ 52 - 100 p \right]. </mrow>
+        </md>
+        We can see that <m>\L'(p) = 0</m> when <m>p = 0, 1, \frac{52}{100}</m>, and the endpoints of the interval we're maximizing over are <m>p = 0, 1</m>, so we can build a table:
+      </p>
+
+      <table>
+        <title>Looking for the Maximum</title>
+
+        <tabular halign="center">
+          <row bottom="minor">
+            <cell><m>p</m></cell>
+            <cell><m>\L(p)</m></cell>
+          </row>
+
+          <row>
+            <cell><m>0</m></cell>
+            <cell><m>0</m></cell>
+          </row>
+
+          <row>
+            <cell><m>52/100</m></cell>
+            <cell><m>\gt 0</m></cell>
+          </row>
+
+          <row>
+            <cell><m>1</m></cell>
+            <cell><m>0</m></cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Note that we don't need to know the exact value of <m>\L(52/100)</m> in order to see that it's strictly positive, and therefore the maximum value of <m>\L(p)</m>.
+        So, the MLE of <m>p</m> is <m>52/100</m>.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    We can see in the previous example that the MLE of <m>p</m> is also the common sense estimation of <m>p</m>.
+    This will be the case in general for the binomial distribution, so we won't need to redo this work over and over:
+  </p>
+
+  <fact xml:id="fact-MLE-binomial">
+    <title>Binomial MLE</title>
+
+    <statement>
+      <p>
+        If we see <m>k</m> heads in <m>n</m> coin flips, then the MLE of the bias <m>p</m> is <m>\frac{k}{n}</m>.
+      </p>
+    </statement>
+  </fact>
+
+  <p>
+    As we remember from Calculus 1, maximizing a continuous function works slightly differently over a closed interval (like the previous example) or an open interval (like the next example).
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose a radioactive material emits particles as it decays.
+        Let <m>N</m> count the particles emitted.
+        Then <m>N \sim \Poiss(\lambda)</m> for some unknown rate parameter <m>\lambda</m>:
+        <md>
+          <mrow> \Pr(N = k) = p(k; \lambda) = \frac{\lambda^k}{k!} e^{-\lambda} </mrow>
+        </md>
+        Suppose we observe a sample of material for 1 hour and count 8 particles emitted.
+        Then:
+        <md>
+          <mrow> \L(\lambda) = \frac{\lambda^8}{8!} e^{-\lambda} </mrow>
+        </md>
+        To maximize <m>\L(\lambda)</m> over the interval <m>0 \lt \lambda \lt \infty</m>, we start by finding critical points.
+        <md>
+          <mrow> \L'(\lambda) \amp = \frac{1}{8!} \left[ 8 \lambda^7 e^{-\lambda} + \lambda^8 e^{-\lambda} (-1)\right] </mrow>
+          <mrow> \amp = \frac{1}{8!} \lambda^7 e^{-\lambda} \left[ 8 - e^{-\lambda} \right] </mrow>
+        </md>
+        The only critical point is <m>\lambda = 8</m>, but we have not justified that this is the location of a global maximum.
+        A critical point is only a potential location of a local minimum or maximum.
+        But with a bit more justification: observe that <m>\L'</m> is positive on the interval <m>(0, 8)</m> and negative on the interval <m>(8, \infty)</m>.
+        Therefore the function <m>\L</m> increases on <m>(0, 8)</m> and decreases on <m>(8, \infty)</m>.
+        So it must reach its maximum at <m>\lambda = 8</m>, which is therefore the MLE.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    As with the binomial distribution, the calculation will be essentially the same regardless of the specific number of particles observed, so:
+  </p>
+
+  <fact xml:id="fact-MLE-Poisson">
+    <title>Poisson MLE</title>
+
+    <statement>
+      <p>
+        If we observe a Poisson process and see <m>k</m> events occur, then the MLE of the rate parameter <m>\lambda</m> is <m>k</m>.
+      </p>
+    </statement>
+  </fact>
+
+  <p>
+    The situation for continuous random variables is similar, but slightly different.
+    To build the likelihood function, we should use the pdf of the continuous random variable.
+    So the likelihood function will give the probabiliy density given the data collected, rather than the probability itself.
+  </p>
+
+  <example xml:id="example-exponential-MLE">
+    <statement>
+      <p>
+        Suppose we observe a cell and measure the time <m>T</m> until a toxin molecule leaves the cell.
+        Then <m>T \sim \Exp(\lambda)</m> for some unknown rate parameter <m>\lambda</m>:
+        <md>
+          <mrow> f(t) = \lambda e^{-\lambda t}. </mrow>
+        </md>
+        Suppose we observe a molecule leave the cell at <m>t = 0.3</m> minutes.
+        Then:
+        <md>
+          <mrow> L(\lambda) \amp = \lambda e^{-0.3\lambda} </mrow>
+          <mrow> L'(\lambda) \amp = e^{-0.3\lambda} + \lambda e^{-0.3t} (-0.3) </mrow>
+          <mrow> \amp = e^{-0.3\lambda}\left[ 1 - 0.3\lambda\right] </mrow>
+        </md>
+        The critical point is <m>\lambda = \frac{1}{0.3} \approx 3.33</m>.
+        Since <m>\L' \gt 0</m> on <m>(0, 3.33)</m> and <m>\L' \lt 0</m> on <m>(3.33, \infty)</m>, there is a global maximum at <m>\lambda \approx 3.33</m>, which is therefore the MLE.
+      </p>
+
+      <p>
+        The specific time <m>0.3</m> minutes doesn't particularly matter in this calculation.
+        Whatever the time <m>t</m>, essentially the same calculation will result in a MLE of <m>\lambda = 1/t</m>.
+        But what if we collect multiple pieces of data?
+      </p>
+
+      <table>
+        <title>Time Data</title>
+
+        <tabular halign="center">
+          <row bottom="minor">
+            <cell>Molecule</cell>
+            <cell>Waiting Time</cell>
+            <cell>Rate Estimation</cell>
+          </row>
+
+          <row>
+            <cell>1</cell>
+            <cell><m>0.3</m></cell>
+            <cell><m>3.33</m></cell>
+          </row>
+
+          <row>
+            <cell>2</cell>
+            <cell><m>0.8</m></cell>
+            <cell><m>1.25</m></cell>
+          </row>
+
+          <row>
+            <cell>3</cell>
+            <cell><m>0.5</m></cell>
+            <cell><m>2.00</m></cell>
+          </row>
+
+          <row>
+            <cell>4</cell>
+            <cell><m>0.6</m></cell>
+            <cell><m>1.67</m></cell>
+          </row>
+
+          <row>
+            <cell>5</cell>
+            <cell><m>0.9</m></cell>
+            <cell><m>1.11</m></cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        How should take all of this data into account in our maximum likelihood estimation? We might consider taking the average of all of the separate rate estimations, which would give <m>1.87</m>.
+        Is this the most likely? We need some mathematical justification.
+      </p>
+
+      <p>
+        To account for multiple, independent data points, we should multiply the probability densities for each in the creation of our likelihood function:
+        <md>
+          <mrow> \L(\lambda) \amp = \left(\lambda e^{-0.3\lambda}\right)\left(\lambda e^{-0.8\lambda}\right)\left(\lambda e^{-0.5\lambda}\right)\left(\lambda e^{-0.6\lambda}\right)\left(\lambda e^{-0.9\lambda}\right) </mrow>
+          <mrow> \amp = \lambda^5 e^{-0.3\lambda - 0.8\lambda - 0.5\lambda - 0.6\lambda - 0.9\lambda } </mrow>
+          <mrow> \amp = \lambda^5 e^{-3.1\lambda} </mrow>
+        </md>
+        Now we can find the maximum:
+        <md>
+          <mrow> \L'(\lambda) \amp = 5 \lambda^4 e^{-3.1\lambda} + \lambda^5 e^{-3.1\lambda} (-3.1) </mrow>
+          <mrow> \amp = 5 \lambda^4 e^{-3.1\lambda} + \lambda^5 e^{-3.1\lambda} (-3.1) </mrow>
+          <mrow> \amp = \lambda^4 e^{-3.1\lambda} \left[5 - 3.1\lambda \right] </mrow>
+        </md>
+        The only critical point is <m>5/3.1 \approx 1.61</m>.
+        Since <m>\L' \gt 0</m> on <m>(0, 1.61)</m> and <m>\L' \lt 0</m> on <m>(1.61, \infty)</m>, there is a global maximum at <m>\lambda = 1.61</m>, which is therefore the MLE.
+      </p>
+
+      <p>
+        It may seem less clear how to generalize this calculation for other tables of data.
+        Observe that the value <m>3.1</m> is the sum of the five times in the table, so <m>3.1/5</m> is the average time.
+        The MLE turned out to be the reciprocal of the average time (just as the MLE with only one data point was the reciprocal of that one time).
+        Notice that this does <em>not</em> match the guess we made previously of averaging the individual rate estimations for each data point.
+      </p>
+    </statement>
+  </example>
+
+  <fact xml:id="fact-MLE-exponential">
+    <title>Exponential MLE</title>
+
+    <statement>
+      <p>
+        If we observe a Poisson process and see events occur after waiting times <m>t_1, t_2, \dotsc, t_n</m>, then the MLE of the rate parameter <m>\lambda</m> is <m>\frac{n}{t_1 + t_2 + \dotsb + t_n}</m>.
+      </p>
+    </statement>
+  </fact>
+
+  <exercises>
+  <exercise>
+    <statement>
+      <p>
+        Suppose a coin has an unknown probability of coming up heads.
+        We perform the experiment in five independent trials, during which it takes 4, 5, 4, 3, and 6 flips to see our first heads in each trial.
+        What is the maximum likelihood estimation for the probability of the coin coming up heads on a flip?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose a coin has an unknown probability of coming up heads.
+        We perform the experiment in <m>n</m> independent trials, during which it takes <m>k_1, k_2, \dotsc, k_n</m> flips to see our first heads in each trial.
+        Find a "common sense" MLE formula for the geometric distribution.
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        You <em>could</em> set up a calculation analogous to <xref ref="example-exponential-MLE"/>.
+        Or, you could consider <xref ref="fact-MLE-binomial"/>.
+      </p>
+    </hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        A particular store owner wants to approximate the average hourly rate at which customers come into the store.
+        They observe 80 customers enter during a particular 4-hour shift.
+        What is the maximum likelihood estimation for the hourly customer rate?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        A radioactive material emits particles at an unknown probabilistic rate <m>\lambda</m> particles per minute.
+        We observe particles emitted at times 1.1, 1.7, 1.3, 2.2, 1.9, and 1.8 minutes.
+        Write the likelihood function <m>\mathcal{L}(\lambda)</m> based on this data.
+        What is the maximum likelihood estimation for <m>\lambda</m>?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose a parameter <m>\theta</m> takes values in <m>[0, 1]</m> with likelihood function <m>\mathcal{L}(\theta) = \sqrt{\theta} - \theta^2</m>.
+        Find the maximum likelihood estimation of <m>\theta</m>.
+      </p>
+    </statement>
+  </exercise>
+  </exercises>
 </section>

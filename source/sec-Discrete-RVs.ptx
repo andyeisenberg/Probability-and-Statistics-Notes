@@ -407,17 +407,6 @@
       </solution>
     </task>
   </exercise>
-  <!--
-  <exercise>
-    <statement>
-      <p>
-        Suppose the coin has an unknown probability of coming up heads.
-        We perform the experiment in five independent trials, during which it takes 4, 5, 4, 3, and 6 flips to see our first heads in each trial.
-        What is the maximum likelihood estimation for the probability of the coin coming up heads on a flip?
-      </p>
-    </statement>
-  </exercise>
-  -->
   <exercise>
     <statement>
       <p>
@@ -438,15 +427,5 @@
       </p>
     </solution>
   </exercise>
-  <!--
-  <exercise>
-    <statement>
-      <p>
-        A particular store owner wants to approximate the average hourly rate at which customers come into the store.
-        They observe 80 customers enter during a particular 4-hour shift.
-        What is the maximum likelihood estimation for the hourly customer rate?
-      </p>
-    </statement>
-  </exercise>
-  --> </exercises>
+ </exercises>
 </section>
