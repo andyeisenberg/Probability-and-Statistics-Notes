@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.13';
+eBookConfig.runestone_version = '7.11.14';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.0d5f811896ddeac1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.d892923478694492.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -146,6 +146,7 @@ eBookConfig.enable_chatcodes =  false;
 \DeclareMathOperator{\Geom}{Geom}
 \DeclareMathOperator{\Poiss}{Poiss}
 \DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Norm}{N}
 
 
 \DeclareMathOperator{\E}{E}
@@ -294,7 +295,16 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title"><span class="process-math">\(\Phi(z)\)</span> Table</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Phi-table.html" class="internal"><span class="codenumber">A.1</span> <span class="title"><span class="process-math">\(\Phi(z)\)</span> Table of Values</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Continuous-RVs"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Random Variables</span>
@@ -529,8 +539,10 @@ f(t) = \lambda e^{-\lambda t}
 f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{\frac{-(x-\mu)^2}{2\sigma^2}}. 
 \end{gather*}
 </div>
-<div class="para">The function <span class="process-math">\(f(x; \mu, \sigma^2)\)</span> is called a <dfn class="terminology">normal density function</dfn> with parameters <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma^2\text{.}\)</span> A continuous random variable <span class="process-math">\(X\)</span> with pdf <span class="process-math">\(f(x; \mu, \sigma^2)\)</span> is said to have a <dfn class="terminology">normal distribution</dfn>. In the specific case that <span class="process-math">\(\mu = 0\)</span> and <span class="process-math">\(\sigma^2 = 1\text{,}\)</span> we call the resulting distribution the <dfn class="terminology">standard normal distribution</dfn>.</div>
+<div class="para">The function <span class="process-math">\(f(x; \mu, \sigma^2)\)</span> is called a <dfn class="terminology">normal density function</dfn> with parameters <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\sigma^2\text{.}\)</span> A continuous random variable <span class="process-math">\(X\)</span> with pdf <span class="process-math">\(f(x; \mu, \sigma^2)\)</span> is said to have a <dfn class="terminology">normal distribution</dfn>. We’ll write <span class="process-math">\(X \sim \Norm(\mu, \sigma^2)\text{.}\)</span>
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-normal-distribution-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-normal-distribution-1-2">In the specific case that <span class="process-math">\(\mu = 0\)</span> and <span class="process-math">\(\sigma^2 = 1\text{,}\)</span> we call the resulting distribution the <dfn class="terminology">standard normal distribution</dfn>. We’ll use the notation <span class="process-math">\(\phi(x)\)</span> for the standard normal density function, and <span class="process-math">\(\Phi(x)\)</span> for the standard normal cumulative distribution function.<div class="autopermalink" data-description="Paragraph"><a href="#def-normal-distribution-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Definition 2.2.8"><a href="#def-normal-distribution" title="Copy heading and permalink for Definition 2.2.8" aria-label="Copy heading and permalink for Definition 2.2.8">🔗</a></div></article><div class="para" id="subsec-normal-distribution-3">It’s an unfortunate reality that the normal density functions can’t easily be integrated. (In fact, it is provably impossible to write nice formulas for their antiderivatives). So we won’t worry much about probability computations like <span class="process-math">\(\Pr(c \leq X \leq d)\)</span> for normal distributions. The normal distributions will play a <em class="emphasis">central</em> role in later chapters (after which you can return here and appreciate this pun).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-normal-distribution-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
