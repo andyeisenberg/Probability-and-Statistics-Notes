@@ -1,0 +1,1023 @@
+<section xml:id="app-Phi-table" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title><m>\Phi(z)</m> Table of Values</title>
+
+  <table>
+    <title><m>\Phi(z)</m> Values</title>
+
+    <tabular halign="center">
+      <row bottom="minor" header="yes">
+        <cell><m>z</m></cell>
+        <cell>0.00</cell>
+        <cell>0.01</cell>
+        <cell>0.02</cell>
+        <cell>0.03</cell>
+        <cell>0.04</cell>
+        <cell>0.05</cell>
+        <cell>0.06</cell>
+        <cell>0.07</cell>
+        <cell>0.08</cell>
+        <cell>0.09</cell>
+      </row>
+
+      <row>
+        <cell> −3.4 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0003 </cell>
+        <cell> 0.0002 </cell>
+      </row>
+
+      <row>
+        <cell> −3.3 </cell>
+        <cell> 0.0005 </cell>
+        <cell> 0.0005 </cell>
+        <cell> 0.0005 </cell>
+        <cell> 0.0004 </cell>
+        <cell> 0.0004 </cell>
+        <cell> 0.0004 </cell>
+        <cell> 0.0004 </cell>
+        <cell> 0.0004 </cell>
+        <cell> 0.0004 </cell>
+        <cell> 0.0003 </cell>
+      </row>
+
+      <row>
+        <cell> −3.2 </cell>
+        <cell> 0.0007 </cell>
+        <cell> 0.0007 </cell>
+        <cell> 0.0006 </cell>
+        <cell> 0.0006 </cell>
+        <cell> 0.0006 </cell>
+        <cell> 0.0006 </cell>
+        <cell> 0.0006 </cell>
+        <cell> 0.0005 </cell>
+        <cell> 0.0005 </cell>
+        <cell> 0.0005 </cell>
+      </row>
+
+      <row>
+        <cell> −3.1 </cell>
+        <cell> 0.0010 </cell>
+        <cell> 0.0009 </cell>
+        <cell> 0.0009 </cell>
+        <cell> 0.0009 </cell>
+        <cell> 0.0008 </cell>
+        <cell> 0.0008 </cell>
+        <cell> 0.0008 </cell>
+        <cell> 0.0008 </cell>
+        <cell> 0.0007 </cell>
+        <cell> 0.0007 </cell>
+      </row>
+
+      <row>
+        <cell> −3.0 </cell>
+        <cell> 0.0013 </cell>
+        <cell> 0.0013 </cell>
+        <cell> 0.0013 </cell>
+        <cell> 0.0012 </cell>
+        <cell> 0.0012 </cell>
+        <cell> 0.0011 </cell>
+        <cell> 0.0011 </cell>
+        <cell> 0.0011 </cell>
+        <cell> 0.0010 </cell>
+        <cell> 0.0010 </cell>
+      </row>
+
+      <row>
+        <cell> −2.9 </cell>
+        <cell> 0.0019 </cell>
+        <cell> 0.0018 </cell>
+        <cell> 0.0018 </cell>
+        <cell> 0.0017 </cell>
+        <cell> 0.0016 </cell>
+        <cell> 0.0016 </cell>
+        <cell> 0.0015 </cell>
+        <cell> 0.0015 </cell>
+        <cell> 0.0014 </cell>
+        <cell> 0.0014 </cell>
+      </row>
+
+      <row>
+        <cell> −2.8 </cell>
+        <cell> 0.0026 </cell>
+        <cell> 0.0025 </cell>
+        <cell> 0.0024 </cell>
+        <cell> 0.0023 </cell>
+        <cell> 0.0023 </cell>
+        <cell> 0.0022 </cell>
+        <cell> 0.0021 </cell>
+        <cell> 0.0021 </cell>
+        <cell> 0.0020 </cell>
+        <cell> 0.0019 </cell>
+      </row>
+
+      <row>
+        <cell> −2.7 </cell>
+        <cell> 0.0035 </cell>
+        <cell> 0.0034 </cell>
+        <cell> 0.0033 </cell>
+        <cell> 0.0032 </cell>
+        <cell> 0.0031 </cell>
+        <cell> 0.0030 </cell>
+        <cell> 0.0029 </cell>
+        <cell> 0.0028 </cell>
+        <cell> 0.0027 </cell>
+        <cell> 0.0026 </cell>
+      </row>
+
+      <row>
+        <cell> −2.6 </cell>
+        <cell> 0.0047 </cell>
+        <cell> 0.0045 </cell>
+        <cell> 0.0044 </cell>
+        <cell> 0.0043 </cell>
+        <cell> 0.0041 </cell>
+        <cell> 0.0040 </cell>
+        <cell> 0.0039 </cell>
+        <cell> 0.0038 </cell>
+        <cell> 0.0037 </cell>
+        <cell> 0.0036 </cell>
+      </row>
+
+      <row>
+        <cell> −2.5 </cell>
+        <cell> 0.0062 </cell>
+        <cell> 0.0060 </cell>
+        <cell> 0.0059 </cell>
+        <cell> 0.0057 </cell>
+        <cell> 0.0055 </cell>
+        <cell> 0.0054 </cell>
+        <cell> 0.0052 </cell>
+        <cell> 0.0051 </cell>
+        <cell> 0.0049 </cell>
+        <cell> 0.0048 </cell>
+      </row>
+
+      <row>
+        <cell> −2.4 </cell>
+        <cell> 0.0082 </cell>
+        <cell> 0.0080 </cell>
+        <cell> 0.0078 </cell>
+        <cell> 0.0075 </cell>
+        <cell> 0.0073 </cell>
+        <cell> 0.0071 </cell>
+        <cell> 0.0069 </cell>
+        <cell> 0.0068 </cell>
+        <cell> 0.0066 </cell>
+        <cell> 0.0064 </cell>
+      </row>
+
+      <row>
+        <cell> −2.3 </cell>
+        <cell> 0.0107 </cell>
+        <cell> 0.0104 </cell>
+        <cell> 0.0102 </cell>
+        <cell> 0.0099 </cell>
+        <cell> 0.0096 </cell>
+        <cell> 0.0094 </cell>
+        <cell> 0.0091 </cell>
+        <cell> 0.0089 </cell>
+        <cell> 0.0087 </cell>
+        <cell> 0.0084 </cell>
+      </row>
+
+      <row>
+        <cell> −2.2 </cell>
+        <cell> 0.0139 </cell>
+        <cell> 0.0136 </cell>
+        <cell> 0.0132 </cell>
+        <cell> 0.0129 </cell>
+        <cell> 0.0125 </cell>
+        <cell> 0.0122 </cell>
+        <cell> 0.0119 </cell>
+        <cell> 0.0116 </cell>
+        <cell> 0.0113 </cell>
+        <cell> 0.0110 </cell>
+      </row>
+
+      <row>
+        <cell> −2.1 </cell>
+        <cell> 0.0179 </cell>
+        <cell> 0.0174 </cell>
+        <cell> 0.0170 </cell>
+        <cell> 0.0166 </cell>
+        <cell> 0.0162 </cell>
+        <cell> 0.0158 </cell>
+        <cell> 0.0154 </cell>
+        <cell> 0.0150 </cell>
+        <cell> 0.0146 </cell>
+        <cell> 0.0143 </cell>
+      </row>
+
+      <row>
+        <cell> −2.0 </cell>
+        <cell> 0.0228 </cell>
+        <cell> 0.0222 </cell>
+        <cell> 0.0217 </cell>
+        <cell> 0.0212 </cell>
+        <cell> 0.0207 </cell>
+        <cell> 0.0202 </cell>
+        <cell> 0.0197 </cell>
+        <cell> 0.0192 </cell>
+        <cell> 0.0188 </cell>
+        <cell> 0.0183 </cell>
+      </row>
+
+      <row>
+        <cell> −1.9 </cell>
+        <cell> 0.0287 </cell>
+        <cell> 0.0281 </cell>
+        <cell> 0.0274 </cell>
+        <cell> 0.0268 </cell>
+        <cell> 0.0262 </cell>
+        <cell> 0.0256 </cell>
+        <cell> 0.0250 </cell>
+        <cell> 0.0244 </cell>
+        <cell> 0.0239 </cell>
+        <cell> 0.0233 </cell>
+      </row>
+
+      <row>
+        <cell> −1.8 </cell>
+        <cell> 0.0359 </cell>
+        <cell> 0.0351 </cell>
+        <cell> 0.0344 </cell>
+        <cell> 0.0336 </cell>
+        <cell> 0.0329 </cell>
+        <cell> 0.0322 </cell>
+        <cell> 0.0314 </cell>
+        <cell> 0.0307 </cell>
+        <cell> 0.0301 </cell>
+        <cell> 0.0294 </cell>
+      </row>
+
+      <row>
+        <cell> −1.7 </cell>
+        <cell> 0.0446 </cell>
+        <cell> 0.0436 </cell>
+        <cell> 0.0427 </cell>
+        <cell> 0.0418 </cell>
+        <cell> 0.0409 </cell>
+        <cell> 0.0401 </cell>
+        <cell> 0.0392 </cell>
+        <cell> 0.0384 </cell>
+        <cell> 0.0375 </cell>
+        <cell> 0.0367 </cell>
+      </row>
+
+      <row>
+        <cell> −1.6 </cell>
+        <cell> 0.0548 </cell>
+        <cell> 0.0537 </cell>
+        <cell> 0.0526 </cell>
+        <cell> 0.0516 </cell>
+        <cell> 0.0505 </cell>
+        <cell> 0.0495 </cell>
+        <cell> 0.0485 </cell>
+        <cell> 0.0475 </cell>
+        <cell> 0.0465 </cell>
+        <cell> 0.0455 </cell>
+      </row>
+
+      <row>
+        <cell> −1.5 </cell>
+        <cell> 0.0668 </cell>
+        <cell> 0.0655 </cell>
+        <cell> 0.0643 </cell>
+        <cell> 0.0630 </cell>
+        <cell> 0.0618 </cell>
+        <cell> 0.0606 </cell>
+        <cell> 0.0594 </cell>
+        <cell> 0.0582 </cell>
+        <cell> 0.0571 </cell>
+        <cell> 0.0559 </cell>
+      </row>
+
+      <row>
+        <cell> −1.4 </cell>
+        <cell> 0.0808 </cell>
+        <cell> 0.0793 </cell>
+        <cell> 0.0778 </cell>
+        <cell> 0.0764 </cell>
+        <cell> 0.0749 </cell>
+        <cell> 0.0735 </cell>
+        <cell> 0.0721 </cell>
+        <cell> 0.0708 </cell>
+        <cell> 0.0694 </cell>
+        <cell> 0.0681 </cell>
+      </row>
+
+      <row>
+        <cell> −1.3 </cell>
+        <cell> 0.0968 </cell>
+        <cell> 0.0951 </cell>
+        <cell> 0.0934 </cell>
+        <cell> 0.0918 </cell>
+        <cell> 0.0901 </cell>
+        <cell> 0.0885 </cell>
+        <cell> 0.0869 </cell>
+        <cell> 0.0853 </cell>
+        <cell> 0.0838 </cell>
+        <cell> 0.0823 </cell>
+      </row>
+
+      <row>
+        <cell> −1.2 </cell>
+        <cell> 0.1151 </cell>
+        <cell> 0.1131 </cell>
+        <cell> 0.1112 </cell>
+        <cell> 0.1093 </cell>
+        <cell> 0.1075 </cell>
+        <cell> 0.1056 </cell>
+        <cell> 0.1038 </cell>
+        <cell> 0.1020 </cell>
+        <cell> 0.1003 </cell>
+        <cell> 0.0985 </cell>
+      </row>
+
+      <row>
+        <cell> −1.1 </cell>
+        <cell> 0.1357 </cell>
+        <cell> 0.1335 </cell>
+        <cell> 0.1314 </cell>
+        <cell> 0.1292 </cell>
+        <cell> 0.1271 </cell>
+        <cell> 0.1251 </cell>
+        <cell> 0.1230 </cell>
+        <cell> 0.1210 </cell>
+        <cell> 0.1190 </cell>
+        <cell> 0.1170 </cell>
+      </row>
+
+      <row>
+        <cell> −1.0 </cell>
+        <cell> 0.1587 </cell>
+        <cell> 0.1562 </cell>
+        <cell> 0.1539 </cell>
+        <cell> 0.1515 </cell>
+        <cell> 0.1492 </cell>
+        <cell> 0.1469 </cell>
+        <cell> 0.1446 </cell>
+        <cell> 0.1423 </cell>
+        <cell> 0.1401 </cell>
+        <cell> 0.1379 </cell>
+      </row>
+
+      <row>
+        <cell> −0.9 </cell>
+        <cell> 0.1841 </cell>
+        <cell> 0.1814 </cell>
+        <cell> 0.1788 </cell>
+        <cell> 0.1762 </cell>
+        <cell> 0.1736 </cell>
+        <cell> 0.1711 </cell>
+        <cell> 0.1685 </cell>
+        <cell> 0.1660 </cell>
+        <cell> 0.1635 </cell>
+        <cell> 0.1611 </cell>
+      </row>
+
+      <row>
+        <cell> −0.8 </cell>
+        <cell> 0.2119 </cell>
+        <cell> 0.2090 </cell>
+        <cell> 0.2061 </cell>
+        <cell> 0.2033 </cell>
+        <cell> 0.2005 </cell>
+        <cell> 0.1977 </cell>
+        <cell> 0.1949 </cell>
+        <cell> 0.1922 </cell>
+        <cell> 0.1894 </cell>
+        <cell> 0.1867 </cell>
+      </row>
+
+      <row>
+        <cell> −0.7 </cell>
+        <cell> 0.2420 </cell>
+        <cell> 0.2389 </cell>
+        <cell> 0.2358 </cell>
+        <cell> 0.2327 </cell>
+        <cell> 0.2296 </cell>
+        <cell> 0.2266 </cell>
+        <cell> 0.2236 </cell>
+        <cell> 0.2206 </cell>
+        <cell> 0.2177 </cell>
+        <cell> 0.2148 </cell>
+      </row>
+
+      <row>
+        <cell> −0.6 </cell>
+        <cell> 0.2743 </cell>
+        <cell> 0.2709 </cell>
+        <cell> 0.2676 </cell>
+        <cell> 0.2643 </cell>
+        <cell> 0.2611 </cell>
+        <cell> 0.2578 </cell>
+        <cell> 0.2546 </cell>
+        <cell> 0.2514 </cell>
+        <cell> 0.2483 </cell>
+        <cell> 0.2451 </cell>
+      </row>
+
+      <row>
+        <cell> −0.5 </cell>
+        <cell> 0.3085 </cell>
+        <cell> 0.3050 </cell>
+        <cell> 0.3015 </cell>
+        <cell> 0.2981 </cell>
+        <cell> 0.2946 </cell>
+        <cell> 0.2912 </cell>
+        <cell> 0.2877 </cell>
+        <cell> 0.2843 </cell>
+        <cell> 0.2810 </cell>
+        <cell> 0.2776 </cell>
+      </row>
+
+      <row>
+        <cell> −0.4 </cell>
+        <cell> 0.3446 </cell>
+        <cell> 0.3409 </cell>
+        <cell> 0.3372 </cell>
+        <cell> 0.3336 </cell>
+        <cell> 0.3300 </cell>
+        <cell> 0.3264 </cell>
+        <cell> 0.3228 </cell>
+        <cell> 0.3192 </cell>
+        <cell> 0.3156 </cell>
+        <cell> 0.3121 </cell>
+      </row>
+
+      <row>
+        <cell> −0.3 </cell>
+        <cell> 0.3821 </cell>
+        <cell> 0.3783 </cell>
+        <cell> 0.3745 </cell>
+        <cell> 0.3707 </cell>
+        <cell> 0.3669 </cell>
+        <cell> 0.3632 </cell>
+        <cell> 0.3594 </cell>
+        <cell> 0.3557 </cell>
+        <cell> 0.3520 </cell>
+        <cell> 0.3483 </cell>
+      </row>
+
+      <row>
+        <cell> −0.2 </cell>
+        <cell> 0.4207 </cell>
+        <cell> 0.4168 </cell>
+        <cell> 0.4129 </cell>
+        <cell> 0.4090 </cell>
+        <cell> 0.4052 </cell>
+        <cell> 0.4013 </cell>
+        <cell> 0.3974 </cell>
+        <cell> 0.3936 </cell>
+        <cell> 0.3897 </cell>
+        <cell> 0.3859 </cell>
+      </row>
+
+      <row>
+        <cell> −0.1 </cell>
+        <cell> 0.4602 </cell>
+        <cell> 0.4562 </cell>
+        <cell> 0.4522 </cell>
+        <cell> 0.4483 </cell>
+        <cell> 0.4443 </cell>
+        <cell> 0.4404 </cell>
+        <cell> 0.4364 </cell>
+        <cell> 0.4325 </cell>
+        <cell> 0.4286 </cell>
+        <cell> 0.4247 </cell>
+      </row>
+
+      <row>
+        <cell> −0.0 </cell>
+        <cell> 0.5000 </cell>
+        <cell> 0.4960 </cell>
+        <cell> 0.4920 </cell>
+        <cell> 0.4880 </cell>
+        <cell> 0.4840 </cell>
+        <cell> 0.4801 </cell>
+        <cell> 0.4761 </cell>
+        <cell> 0.4721 </cell>
+        <cell> 0.4681 </cell>
+        <cell> 0.4641 </cell>
+      </row>
+    </tabular>
+  </table>
+
+  <table>
+    <title><m>\Phi(z)</m> Values</title>
+
+    <tabular halign="center">
+      <row bottom="minor" header="yes">
+        <cell><m>z</m></cell>
+        <cell>0.00</cell>
+        <cell>0.01</cell>
+        <cell>0.02</cell>
+        <cell>0.03</cell>
+        <cell>0.04</cell>
+        <cell>0.05</cell>
+        <cell>0.06</cell>
+        <cell>0.07</cell>
+        <cell>0.08</cell>
+        <cell>0.09</cell>
+      </row>
+
+      <row>
+        <cell> 0.0 </cell>
+        <cell> 0.5000 </cell>
+        <cell> 0.5040 </cell>
+        <cell> 0.5080 </cell>
+        <cell> 0.5120 </cell>
+        <cell> 0.5160 </cell>
+        <cell> 0.5199 </cell>
+        <cell> 0.5239 </cell>
+        <cell> 0.5279 </cell>
+        <cell> 0.5319 </cell>
+        <cell> 0.5359 </cell>
+      </row>
+
+      <row>
+        <cell> 0.1 </cell>
+        <cell> 0.5398 </cell>
+        <cell> 0.5438 </cell>
+        <cell> 0.5478 </cell>
+        <cell> 0.5517 </cell>
+        <cell> 0.5557 </cell>
+        <cell> 0.5596 </cell>
+        <cell> 0.5636 </cell>
+        <cell> 0.5675 </cell>
+        <cell> 0.5714 </cell>
+        <cell> 0.5753 </cell>
+      </row>
+
+      <row>
+        <cell> 0.2 </cell>
+        <cell> 0.5793 </cell>
+        <cell> 0.5832 </cell>
+        <cell> 0.5871 </cell>
+        <cell> 0.5910 </cell>
+        <cell> 0.5948 </cell>
+        <cell> 0.5987 </cell>
+        <cell> 0.6026 </cell>
+        <cell> 0.6064 </cell>
+        <cell> 0.6103 </cell>
+        <cell> 0.6141 </cell>
+      </row>
+
+      <row>
+        <cell> 0.3 </cell>
+        <cell> 0.6179 </cell>
+        <cell> 0.6217 </cell>
+        <cell> 0.6255 </cell>
+        <cell> 0.6293 </cell>
+        <cell> 0.6331 </cell>
+        <cell> 0.6368 </cell>
+        <cell> 0.6406 </cell>
+        <cell> 0.6443 </cell>
+        <cell> 0.6480 </cell>
+        <cell> 0.6517 </cell>
+      </row>
+
+      <row>
+        <cell> 0.4 </cell>
+        <cell> 0.6554 </cell>
+        <cell> 0.6591 </cell>
+        <cell> 0.6628 </cell>
+        <cell> 0.6664 </cell>
+        <cell> 0.6700 </cell>
+        <cell> 0.6736 </cell>
+        <cell> 0.6772 </cell>
+        <cell> 0.6808 </cell>
+        <cell> 0.6844 </cell>
+        <cell> 0.6879 </cell>
+      </row>
+
+      <row>
+        <cell> 0.5 </cell>
+        <cell> 0.6915 </cell>
+        <cell> 0.6950 </cell>
+        <cell> 0.6985 </cell>
+        <cell> 0.7019 </cell>
+        <cell> 0.7054 </cell>
+        <cell> 0.7088 </cell>
+        <cell> 0.7123 </cell>
+        <cell> 0.7157 </cell>
+        <cell> 0.7190 </cell>
+        <cell> 0.7224 </cell>
+      </row>
+
+      <row>
+        <cell> 0.6 </cell>
+        <cell> 0.7257 </cell>
+        <cell> 0.7291 </cell>
+        <cell> 0.7324 </cell>
+        <cell> 0.7357 </cell>
+        <cell> 0.7389 </cell>
+        <cell> 0.7422 </cell>
+        <cell> 0.7454 </cell>
+        <cell> 0.7486 </cell>
+        <cell> 0.7517 </cell>
+        <cell> 0.7549 </cell>
+      </row>
+
+      <row>
+        <cell> 0.7 </cell>
+        <cell> 0.7580 </cell>
+        <cell> 0.7611 </cell>
+        <cell> 0.7642 </cell>
+        <cell> 0.7673 </cell>
+        <cell> 0.7704 </cell>
+        <cell> 0.7734 </cell>
+        <cell> 0.7764 </cell>
+        <cell> 0.7794 </cell>
+        <cell> 0.7823 </cell>
+        <cell> 0.7852 </cell>
+      </row>
+
+      <row>
+        <cell> 0.8 </cell>
+        <cell> 0.7881 </cell>
+        <cell> 0.7910 </cell>
+        <cell> 0.7939 </cell>
+        <cell> 0.7967 </cell>
+        <cell> 0.7995 </cell>
+        <cell> 0.8023 </cell>
+        <cell> 0.8051 </cell>
+        <cell> 0.8078 </cell>
+        <cell> 0.8106 </cell>
+        <cell> 0.8133 </cell>
+      </row>
+
+      <row>
+        <cell> 0.9 </cell>
+        <cell> 0.8159 </cell>
+        <cell> 0.8186 </cell>
+        <cell> 0.8212 </cell>
+        <cell> 0.8238 </cell>
+        <cell> 0.8264 </cell>
+        <cell> 0.8289 </cell>
+        <cell> 0.8315 </cell>
+        <cell> 0.8340 </cell>
+        <cell> 0.8365 </cell>
+        <cell> 0.8389 </cell>
+      </row>
+
+      <row>
+        <cell> 1.0 </cell>
+        <cell> 0.8413 </cell>
+        <cell> 0.8438 </cell>
+        <cell> 0.8461 </cell>
+        <cell> 0.8485 </cell>
+        <cell> 0.8508 </cell>
+        <cell> 0.8531 </cell>
+        <cell> 0.8554 </cell>
+        <cell> 0.8577 </cell>
+        <cell> 0.8599 </cell>
+        <cell> 0.8621 </cell>
+      </row>
+
+      <row>
+        <cell> 1.1 </cell>
+        <cell> 0.8643 </cell>
+        <cell> 0.8665 </cell>
+        <cell> 0.8686 </cell>
+        <cell> 0.8708 </cell>
+        <cell> 0.8729 </cell>
+        <cell> 0.8749 </cell>
+        <cell> 0.8770 </cell>
+        <cell> 0.8790 </cell>
+        <cell> 0.8810 </cell>
+        <cell> 0.8830 </cell>
+      </row>
+
+      <row>
+        <cell> 1.2 </cell>
+        <cell> 0.8849 </cell>
+        <cell> 0.8869 </cell>
+        <cell> 0.8888 </cell>
+        <cell> 0.8907 </cell>
+        <cell> 0.8925 </cell>
+        <cell> 0.8944 </cell>
+        <cell> 0.8962 </cell>
+        <cell> 0.8980 </cell>
+        <cell> 0.8997 </cell>
+        <cell> 0.9015 </cell>
+      </row>
+
+      <row>
+        <cell> 1.3 </cell>
+        <cell> 0.9032 </cell>
+        <cell> 0.9049 </cell>
+        <cell> 0.9066 </cell>
+        <cell> 0.9082 </cell>
+        <cell> 0.9099 </cell>
+        <cell> 0.9115 </cell>
+        <cell> 0.9131 </cell>
+        <cell> 0.9147 </cell>
+        <cell> 0.9162 </cell>
+        <cell> 0.9177 </cell>
+      </row>
+
+      <row>
+        <cell> 1.4 </cell>
+        <cell> 0.9192 </cell>
+        <cell> 0.9207 </cell>
+        <cell> 0.9222 </cell>
+        <cell> 0.9236 </cell>
+        <cell> 0.9251 </cell>
+        <cell> 0.9265 </cell>
+        <cell> 0.9279 </cell>
+        <cell> 0.9292 </cell>
+        <cell> 0.9306 </cell>
+        <cell> 0.9319 </cell>
+      </row>
+
+      <row>
+        <cell> 1.5 </cell>
+        <cell> 0.9332 </cell>
+        <cell> 0.9345 </cell>
+        <cell> 0.9357 </cell>
+        <cell> 0.9370 </cell>
+        <cell> 0.9382 </cell>
+        <cell> 0.9394 </cell>
+        <cell> 0.9406 </cell>
+        <cell> 0.9418 </cell>
+        <cell> 0.9429 </cell>
+        <cell> 0.9441 </cell>
+      </row>
+
+      <row>
+        <cell> 1.6 </cell>
+        <cell> 0.9452 </cell>
+        <cell> 0.9463 </cell>
+        <cell> 0.9474 </cell>
+        <cell> 0.9484 </cell>
+        <cell> 0.9495 </cell>
+        <cell> 0.9505 </cell>
+        <cell> 0.9515 </cell>
+        <cell> 0.9525 </cell>
+        <cell> 0.9535 </cell>
+        <cell> 0.9545 </cell>
+      </row>
+
+      <row>
+        <cell> 1.7 </cell>
+        <cell> 0.9554 </cell>
+        <cell> 0.9564 </cell>
+        <cell> 0.9573 </cell>
+        <cell> 0.9582 </cell>
+        <cell> 0.9591 </cell>
+        <cell> 0.9599 </cell>
+        <cell> 0.9608 </cell>
+        <cell> 0.9616 </cell>
+        <cell> 0.9625 </cell>
+        <cell> 0.9633 </cell>
+      </row>
+
+      <row>
+        <cell> 1.8 </cell>
+        <cell> 0.9641 </cell>
+        <cell> 0.9649 </cell>
+        <cell> 0.9656 </cell>
+        <cell> 0.9664 </cell>
+        <cell> 0.9671 </cell>
+        <cell> 0.9678 </cell>
+        <cell> 0.9686 </cell>
+        <cell> 0.9693 </cell>
+        <cell> 0.9699 </cell>
+        <cell> 0.9706 </cell>
+      </row>
+
+      <row>
+        <cell> 1.9 </cell>
+        <cell> 0.9713 </cell>
+        <cell> 0.9719 </cell>
+        <cell> 0.9726 </cell>
+        <cell> 0.9732 </cell>
+        <cell> 0.9738 </cell>
+        <cell> 0.9744 </cell>
+        <cell> 0.9750 </cell>
+        <cell> 0.9756 </cell>
+        <cell> 0.9761 </cell>
+        <cell> 0.9767 </cell>
+      </row>
+
+      <row>
+        <cell> 2.0 </cell>
+        <cell> 0.9772 </cell>
+        <cell> 0.9778 </cell>
+        <cell> 0.9783 </cell>
+        <cell> 0.9788 </cell>
+        <cell> 0.9793 </cell>
+        <cell> 0.9798 </cell>
+        <cell> 0.9803 </cell>
+        <cell> 0.9808 </cell>
+        <cell> 0.9812 </cell>
+        <cell> 0.9817 </cell>
+      </row>
+
+      <row>
+        <cell> 2.1 </cell>
+        <cell> 0.9821 </cell>
+        <cell> 0.9826 </cell>
+        <cell> 0.9830 </cell>
+        <cell> 0.9834 </cell>
+        <cell> 0.9838 </cell>
+        <cell> 0.9842 </cell>
+        <cell> 0.9846 </cell>
+        <cell> 0.9850 </cell>
+        <cell> 0.9854 </cell>
+        <cell> 0.9857 </cell>
+      </row>
+
+      <row>
+        <cell> 2.2 </cell>
+        <cell> 0.9861 </cell>
+        <cell> 0.9864 </cell>
+        <cell> 0.9868 </cell>
+        <cell> 0.9871 </cell>
+        <cell> 0.9875 </cell>
+        <cell> 0.9878 </cell>
+        <cell> 0.9881 </cell>
+        <cell> 0.9884 </cell>
+        <cell> 0.9887 </cell>
+        <cell> 0.9890 </cell>
+      </row>
+
+      <row>
+        <cell> 2.3 </cell>
+        <cell> 0.9893 </cell>
+        <cell> 0.9896 </cell>
+        <cell> 0.9898 </cell>
+        <cell> 0.9901 </cell>
+        <cell> 0.9904 </cell>
+        <cell> 0.9906 </cell>
+        <cell> 0.9909 </cell>
+        <cell> 0.9911 </cell>
+        <cell> 0.9913 </cell>
+        <cell> 0.9916 </cell>
+      </row>
+
+      <row>
+        <cell> 2.4 </cell>
+        <cell> 0.9918 </cell>
+        <cell> 0.9920 </cell>
+        <cell> 0.9922 </cell>
+        <cell> 0.9925 </cell>
+        <cell> 0.9927 </cell>
+        <cell> 0.9929 </cell>
+        <cell> 0.9931 </cell>
+        <cell> 0.9932 </cell>
+        <cell> 0.9934 </cell>
+        <cell> 0.9936 </cell>
+      </row>
+
+      <row>
+        <cell> 2.5 </cell>
+        <cell> 0.9938 </cell>
+        <cell> 0.9940 </cell>
+        <cell> 0.9941 </cell>
+        <cell> 0.9943 </cell>
+        <cell> 0.9945 </cell>
+        <cell> 0.9946 </cell>
+        <cell> 0.9948 </cell>
+        <cell> 0.9949 </cell>
+        <cell> 0.9951 </cell>
+        <cell> 0.9952 </cell>
+      </row>
+
+      <row>
+        <cell> 2.6 </cell>
+        <cell> 0.9953 </cell>
+        <cell> 0.9955 </cell>
+        <cell> 0.9956 </cell>
+        <cell> 0.9957 </cell>
+        <cell> 0.9959 </cell>
+        <cell> 0.9960 </cell>
+        <cell> 0.9961 </cell>
+        <cell> 0.9962 </cell>
+        <cell> 0.9963 </cell>
+        <cell> 0.9964 </cell>
+      </row>
+
+      <row>
+        <cell> 2.7 </cell>
+        <cell> 0.9965 </cell>
+        <cell> 0.9966 </cell>
+        <cell> 0.9967 </cell>
+        <cell> 0.9968 </cell>
+        <cell> 0.9969 </cell>
+        <cell> 0.9970 </cell>
+        <cell> 0.9971 </cell>
+        <cell> 0.9972 </cell>
+        <cell> 0.9973 </cell>
+        <cell> 0.9974 </cell>
+      </row>
+
+      <row>
+        <cell> 2.8 </cell>
+        <cell> 0.9974 </cell>
+        <cell> 0.9975 </cell>
+        <cell> 0.9976 </cell>
+        <cell> 0.9977 </cell>
+        <cell> 0.9977 </cell>
+        <cell> 0.9978 </cell>
+        <cell> 0.9979 </cell>
+        <cell> 0.9979 </cell>
+        <cell> 0.9980 </cell>
+        <cell> 0.9981 </cell>
+      </row>
+
+      <row>
+        <cell> 2.9 </cell>
+        <cell> 0.9981 </cell>
+        <cell> 0.9982 </cell>
+        <cell> 0.9982 </cell>
+        <cell> 0.9983 </cell>
+        <cell> 0.9984 </cell>
+        <cell> 0.9984 </cell>
+        <cell> 0.9985 </cell>
+        <cell> 0.9985 </cell>
+        <cell> 0.9986 </cell>
+        <cell> 0.9986 </cell>
+      </row>
+
+      <row>
+        <cell> 3.0 </cell>
+        <cell> 0.9987 </cell>
+        <cell> 0.9987 </cell>
+        <cell> 0.9987 </cell>
+        <cell> 0.9988 </cell>
+        <cell> 0.9988 </cell>
+        <cell> 0.9989 </cell>
+        <cell> 0.9989 </cell>
+        <cell> 0.9989 </cell>
+        <cell> 0.9990 </cell>
+        <cell> 0.9990 </cell>
+      </row>
+
+      <row>
+        <cell> 3.1 </cell>
+        <cell> 0.9990 </cell>
+        <cell> 0.9991 </cell>
+        <cell> 0.9991 </cell>
+        <cell> 0.9991 </cell>
+        <cell> 0.9992 </cell>
+        <cell> 0.9992 </cell>
+        <cell> 0.9992 </cell>
+        <cell> 0.9992 </cell>
+        <cell> 0.9993 </cell>
+        <cell> 0.9993 </cell>
+      </row>
+
+      <row>
+        <cell> 3.2 </cell>
+        <cell> 0.9993 </cell>
+        <cell> 0.9993 </cell>
+        <cell> 0.9994 </cell>
+        <cell> 0.9994 </cell>
+        <cell> 0.9994 </cell>
+        <cell> 0.9994 </cell>
+        <cell> 0.9994 </cell>
+        <cell> 0.9995 </cell>
+        <cell> 0.9995 </cell>
+        <cell> 0.9995 </cell>
+      </row>
+
+      <row>
+        <cell> 3.3 </cell>
+        <cell> 0.9995 </cell>
+        <cell> 0.9995 </cell>
+        <cell> 0.9995 </cell>
+        <cell> 0.9996 </cell>
+        <cell> 0.9996 </cell>
+        <cell> 0.9996 </cell>
+        <cell> 0.9996 </cell>
+        <cell> 0.9996 </cell>
+        <cell> 0.9996 </cell>
+        <cell> 0.9997 </cell>
+      </row>
+
+      <row>
+        <cell> 3.4 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9997 </cell>
+        <cell> 0.9998 </cell>
+      </row>
+    </tabular>
+  </table>
+</section>

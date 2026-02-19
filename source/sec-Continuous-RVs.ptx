@@ -283,7 +283,12 @@
           </md>
           The function <m>f(x; \mu, \sigma^2)</m> is called a <term>normal density function</term> with parameters <m>\mu</m> and <m>\sigma^2</m>.
           A continuous random variable <m>X</m> with pdf <m>f(x; \mu, \sigma^2)</m> is said to have a <term>normal distribution</term>.
+          We'll write <m>X \sim \Norm(\mu, \sigma^2)</m>.
+        </p>
+
+        <p>
           In the specific case that <m>\mu = 0</m> and <m>\sigma^2 = 1</m>, we call the resulting distribution the <term>standard normal distribution</term>.
+          We'll use the notation <m>\phi(x)</m> for the standard normal density function, and <m>\Phi(x)</m> for the standard normal cumulative distribution function.
         </p>
       </statement>
     </definition>
@@ -386,5 +391,5 @@
       </p>
     </answer>
   </exercise>
- </exercises>
+  </exercises>
 </section>

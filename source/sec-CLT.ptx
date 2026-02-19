@@ -1,64 +1,230 @@
 <section xml:id="sec-CLT" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Central Limit Theorem</title>
+  <title>Central Limit Theorem</title>
 
+  <p>
+    Although we defined the normal distribution earlier (<xref ref="def-normal-distribution"/>), we haven't done much in the way of probability calculations with it.
+    The sense in which this distribution is "normal" is that it turns out other distributions, when added together or averaged, tend to be well-approximated by a normal distribution.
+  </p>
+
+  <theorem xml:id="thm-CLT">
+    <statement>
+      <p>
+        Suppose <m>X_1, X_2, \dotsc, X_n</m> are <term>independent and identically distributed</term> (or <term>iid</term>) random variables with finite expected value <m>\mu</m> and finite variance <m>\sigma^2</m>.
+        Let:
+        <md>
+          <mrow> S_n \amp = X_1 + X_2 + \dotsb + X_n </mrow>
+          <mrow> A_n \amp = \frac{X_1 + X_2 + \dotsb + X_n}{n} </mrow>
+        </md>
+        Then, for sufficiently large <m>n</m>:
+        <md>
+          <mrow> S_n \approx \Norm(n \mu, n \sigma^2) </mrow>
+          <mrow> A_n \approx \Norm\left(\mu, \frac{\sigma^2}{n}\right) </mrow>
+        </md>
+      </p>
+    </statement>
+  </theorem>
+
+  <remark>
     <p>
-      Text of section.
+      How large is "sufficiently large"? We'll make use of two common rules of thumb:
+      <ol>
+        <li>
+          <p>
+            For general distributions, we'd like <m>n \geq 30</m>.
+          </p>
+        </li>
+      </ol>
+
+      <ol>
+        <li>
+          <p>
+            For a binomial distribution specifically, we'd like <m>n</m> large enough that we have at least five heads and five tails.
+          </p>
+        </li>
+      </ol>
     </p>
+  </remark>
 
-    <exercises xml:id="exercises-CLT">
-    <exercise>
+  <p>
+    When a normal distribution gets translated and/or scaled, the result is another normal distribution.
+    It will often be useful to <em>standardize</em> a normal distribution <m>X = \Norm(\mu, \sigma^2)</m> as follows:
+    <md>
+      <mrow> Z = \frac{X - \mu}{\sigma} = \Norm(0, 1). </mrow>
+    </md>
+    Given an <m>X</m>-value <m>a</m>, the corresponding value of <m>Z</m> is called a <term><m>z</m>-score</term>, and is sometimes denoted <m>a^*</m>
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose we flip a fair coin 100 times and let <m>S_{100}</m> be the number of heads.
+        In order to calculate, for example, <m>\Pr(40 \leq S_{100} \leq 60)</m> using the binomial distribution probability formula, we would need to calculate:
+        <md>
+          <mrow> \Pr(40 \leq S_{100} \leq 60) = \sum_{k = 40}^{60} {100 \choose k} (0.5)^k (1 - 0.5)^{100 - k}. </mrow>
+        </md>
+        This could be done using a good calculator.
+        If we increased the number of flips to 1000, or 10000, etc., even a powerful calculator might struggle with the computation.
+        However, if we're willing to accept an approximation, then <xref ref="thm-CLT"/> gives a (mostly) straightforward path:
+        <md>
+          <mrow> \E(S_{100}) \amp = np = (100)(0.5) = 50 </mrow>
+          <mrow> \Var(S_{100}) \amp = np(1-p) = (100)(0.5)(0.5) = 25 </mrow>
+          <mrow>\Rightarrow \quad S_{100} \amp\approx \Norm(50, 25) </mrow>
+          <mrow> Z \amp = \frac{S_{100} - 50}{\sqrt{25}} </mrow>
+          <mrow> \Pr(40 \leq S_{100} \leq 60) \amp\approx \Pr\left(\frac{40 - 50}{5} \leq Z \leq \frac{60 - 50}{5}\right) </mrow>
+          <mrow> \amp= \Pr\left(-2 \leq Z \leq 2\right) </mrow>
+        </md>
+        We now reach a potential impass.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    The random variable <m>Z</m> is the <em>standard normal distribution</em>, with pdf:
+    <md>
+      <mrow> \phi(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2} </mrow>
+    </md>
+    To calculate probabilities like <m>\Pr(-2 \leq Z \leq 2)</m>, we should evaluate the integral:
+    <md>
+      <mrow> \Pr(-2 \leq Z \leq 2) = \int_{-2}^2 \phi(x)\ dx = \int_{-2}^2 \frac{1}{\sqrt{2\pi}} e^{-x^2/2}\ dx </mrow>
+    </md>
+    Alternatively, we could use the cdf:
+    <md>
+      <mrow> \Phi(x) = \int_{-\infty}^x \phi(t)\ dt = \int_{-\infty}^x \frac{1}{\sqrt{2\pi}} e^{-t^2/2}\ dt </mrow>
+    </md>
+    If we had a nice formula for <m>\Phi(x)</m>, then we could complete the probability calculation:
+    <md>
+      <mrow> \Pr(-2\leq Z \leq 2) = \Phi(2) - \Phi(-2). </mrow>
+    </md>
+    Unfortunately, we don't have a nice formula for <m>\Phi(x)</m>.
+    In fact, there is provably no "nice" formula that could be written for <m>\Phi(x)</m> (where "nice" has some technical mathematical meaning that we won't discuss here).
+  </p>
+
+  <p>
+    The true power of <xref ref="thm-CLT"/> comes to the rescue: it doesn't matter what type of distribution the individual <m>X_i</m>'s have, and it doesn't matter what type of distributions <m>S_n</m> and <m>A_n</m> have.
+    The random variable <m>Z</m> is <m>\Norm(0, 1)</m>.
+    Since it's the same particular distribution all the time, and since we're only aiming at an approximation anyway, we can calculate many estimations of probabilities like <m>\Pr(a \leq Z \leq b)</m> ahead of time and just save the results to look up later.
+  </p>
+
+  <p>
+    A table of precalculated <m>\Phi(z)</m> values can be found in <xref ref="app-Phi-table"/>.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Continuing the previous example, and having looked up the values <m>\Phi(2) \approx 0.9772</m> and <m>\Phi(-2) \approx 0.0228</m>, we complete our estimation:
+        <md>
+          <mrow> \Pr(40 \leq S_{100} \leq 60) \amp\approx \Pr\left(\frac{40 - 50}{5} \leq Z \leq \frac{60 - 50}{5}\right) </mrow>
+          <mrow> \amp= \Pr\left(-2 \leq Z \leq 2\right) </mrow>
+          <mrow> \amp \approx \Phi(2) - \Phi(-2) </mrow>
+          <mrow> \amp \approx 0.9772 - 0.0228 </mrow>
+          <mrow> \amp = 0.9544. </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    The true value is approximately <m>0.965</m>, so we underestimated the probability a bit.
+    It turns out this will consistently be the case when using a normal approximation to a discrete distribution, such as the binomial distribution.
+    The range of values <m>40 \leq S_{100} \leq 60</m> is a list of <m>21</m> discrete values.
+    However, the continuous interval <m>[40, 60]</m> has a length of only 20.
+    So calculating the <m>z</m>-scores from the values <m>40</m> and <m>60</m> has the effect of shortening the interval length by 1.
+    To mitigate this, we can make a <term>continuity correction</term> by extending the values out by <m>0.5</m> in each direction:
+    <md>
+      <mrow> \Pr(40 \leq S_{100} \leq 60) \amp\approx \Pr\left(\frac{39.5 - 50}{5} \leq Z \leq \frac{60.5 - 50}{5}\right) </mrow>
+      <mrow> \amp= \Pr\left(-2.1 \leq Z \leq 2.1\right) </mrow>
+      <mrow> \amp \approx \Phi(2.1) - \Phi(-2.1) </mrow>
+      <mrow> \amp \approx 0.9821 - 0.0179 </mrow>
+      <mrow> \amp = 0.9642. </mrow>
+    </md>
+    This is a much more accurate estimate.
+  </p>
+
+  <exercises xml:id="exercises-CLT">
+  <exercise>
+    <statement>
+      <p>
+        Suppose a coin has probability 0.4 of coming up heads, and we flip the coin 100 times.
+        Let <m>S</m> be the number of heads.
+        Estimate the probability that <m>34 \leq S \leq 44</m>.
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        <m>\Pr(34 \leq S \leq 44) \approx 0.8212 - 0.0918 = 0.7294.</m>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose a fair die is rolled 100 times, and let <m>m</m> be the average value of the rolls.
+        Estimate the probability that <m>3.45 \leq m \leq 3.55</m>.
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        <m>\Pr(3.45 \leq m \leq 3.55) \approx 0.6141 - 0.3859 = 0.2282.</m>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>
+        The heights of men in the US have a mean of 69 in and a variance of about 9 in<m>^2</m>, and the heights of women in the US have a mean of 63.5 in with a variance of 6.25 in<m>^2</m>.
+      </p>
+    </introduction>
+
+
+    <task>
       <statement>
         <p>
-          Suppose a coin has probability 0.4 of coming up heads, and we flip the coin 100 times.
-          Let <m>S</m> be the number of heads.
-          Estimate the probability that <m>34 \leq S \leq 44</m>.
+          Suppose the heights of 30 men are sampled, and a sample mean <m>m</m> is taken.
+          Find the expected value and variance of <m>m</m>.
         </p>
       </statement>
-    </exercise>
 
-    <exercise>
+      <answer>
+        <p>
+          <m>\E(m) = 69</m> and <m>\Var(m) = 0.3</m>.
+        </p>
+      </answer>
+    </task>
+
+
+    <task>
       <statement>
         <p>
-          Suppose a fair die is rolled 100 times, and let <m>m</m> be the average value of the rolls.
-          Estimate the probability that <m>3.45 \leq m \leq 3.55</m>.
+          Estimate the probability that <m>m \geq 69.5</m>.
         </p>
       </statement>
-    </exercise>
 
-    <exercise>
-      <introduction>
+      <answer>
         <p>
-          The heights of men in the US have a mean of 69 in and a variance of about 9 in<m>^2</m>, and the heights of women in the US have a mean of 63.5 in with a variance of 6.25 in<m>^2</m>.
+          <m>\Pr(m \geq 69.5) \approx 1 - 0.8186 = 0.1814</m>.
         </p>
-      </introduction>
+      </answer>
+    </task>
 
 
-      <task>
-        <statement>
-          <p>
-            Suppose the heights of 30 men are sampled, and a sample mean <m>m</m> is taken.
-            Find the expected value and variance of <m>m</m>.
-          </p>
-        </statement>
-      </task>
+    <task>
+      <statement>
+        <p>
+          If the sampled group was women, estimate the probability that <m>m \geq 64</m>.
+        </p>
+      </statement>
 
-
-      <task>
-        <statement>
-          <p>
-            Estimate the probability that <m>m \geq 69.5</m>.
-          </p>
-        </statement>
-      </task>
-
-
-      <task>
-        <statement>
-          <p>
-            What if the sampled group was women?
-          </p>
-        </statement>
-      </task>
-    </exercise>
-    </exercises>
-  </section>
+      <answer>
+        <p>
+          <m>\E(m) = 63.5</m> and <m>\Var(m) \approx 0.208</m>. <m>\Pr(m \geq 64) \approx 1 - 0.8643 = 0.1357</m>.
+        </p>
+      </answer>
+    </task>
+  </exercise>
+  </exercises>
+</section>
