@@ -1,54 +1,221 @@
 <section xml:id="sec-Confidence-Intervals" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Confidence Intervals</title>
+  <title>Confidence Intervals</title>
 
-    <p>
-      Text of section.
-    </p>
+  <p>
+    When estimating the value of some parameter, the maximum likelihood estimation provides the single estimate with highest possible likelihood.
+    But we might prefer to have a range of values, with some quantitative measure of how certain we are that the true parameter value could be in the range.
+  </p>
 
-    <exercises xml:id="exercises-Confidence-Intervals">
-    <exercise>
+  <p>
+    Suppose some measurement has a mean <m>\mu</m> and variance <m>\sigma^2</m> across the entire population.
+    Independent measurements <m>X_1, X_2, \dotsc, X_n</m> and calculate the sample mean
+    <md>
+      <mrow> A_n = \frac{X_1 + \dotsb + X_n}{n}. </mrow>
+    </md>
+    Then, according to <xref ref="thm-CLT"/>, <m>A_n \approx \Norm\left(\mu, \frac{\sigma^2}{n}\right)</m> as long as we take a sufficient number of measurements.
+    However, we don't have access to the true values of <m>\mu, \sigma^2</m>.
+  </p>
+
+  <p>
+    We can make an estimate <m>s^2</m> of <m>\sigma^2</m> from the collected data, so we know how spread out the normal distribution should be.
+  </p>
+
+  <definition xml:id="def-sample-variance">
+    <statement>
+      <p>
+        Let <m>X_1, X_2, \dotsc, X_n</m> be independent samples taken from a population.
+        Let <m>A_n = \frac{X_1 + \dotsb + X_n}{n}</m> be the sample mean.
+        The <term>sample variance</term> is:
+        <md>
+          <mrow> s^2 = \frac{\sum \left(X_i - A_n\right)^2}{n - 1} = \frac{\left(\sum X_i^2\right) - n \left(A_n\right)^2}{n - 1}. </mrow>
+        </md>
+        The expression:
+        <md>
+          <mrow> \sqrt{\frac{s^2}{n}} = \frac{s}{\sqrt{n}} </mrow>
+        </md>
+        is called the <term>standard error of the mean</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Note that <m>s^2</m> is an estimate of the variance of each individual measurement <m>X_i</m> taken from the population.
+    Therefore, <m>\frac{s^2}{n}</m> is an estimate of the variance of the mean <m>A_n</m>.
+    Hence "standard error of the mean" is an estimate of the standard deviation of the mean.
+  </p>
+
+  <p>
+    Next, we want to pick a distance <m>c</m> so that our measured sample mean <m>A_n</m> is within <m>c</m> of the true population mean <m>\mu</m> with a high probability.
+    We can pick some value <m>\alpha \in (0, 1)</m>, and let <m>c_{\alpha} = \Phi^{-1}\left(1 - \frac{\alpha}{2}\right)</m>.
+    Then the interval:
+    <md>
+      <mrow> \left[A_n - c_{\alpha} \left(\frac{s}{\sqrt{n}}\right), A_n + c_{\alpha} \left(\frac{s}{\sqrt{n}}\right)\right] </mrow>
+    </md>
+    is called a <term>confidence interval</term> with confidence level <m>1 - \alpha</m>.
+  </p>
+  <!-- TODO: explanation of c_{\alpha} -->
+  <theorem xml:id="thm-CI">
+    <statement>
+      <p>
+        Let <m>X_1, X_2, \dotsc, X_n</m> be independent samples taken from a population.
+        Suppose <m>A_n</m> is the sample mean and <m>s^2</m> the sample variance.
+        Then the 95% confidence limits are:
+        <md>
+          <mrow> \mu_{\ell} \amp = A_n - 1.96 \left(\frac{s}{\sqrt{n}}\right) </mrow>
+          <mrow> \mu_{h} \amp = A_n + 1.96 \left(\frac{s}{\sqrt{n}}\right) </mrow>
+        </md>
+      </p>
+    </statement>
+  </theorem>
+
+  <example>
+    <statement>
+      <p>
+        Suppose measurements are taken of the heights of several plants in a garden plot.
+        The measurements are given below.
+        (Note: for the sake of a managable calculation, only five measurements are given.
+        However, for <xref ref="thm-CLT"/> to apply, the number of measurements would need to be greater.)
+      </p>
+
+      <table>
+        <title>Plant Height Measurements</title>
+
+        <tabular halign="center">
+          <row bottom="minor">
+            <cell>Plant <m>i</m></cell>
+            <cell>Height <m>H_i</m> (in)</cell>
+          </row>
+
+          <row>
+            <cell><m>1</m></cell>
+            <cell><m>9.2</m></cell>
+          </row>
+
+          <row>
+            <cell><m>2</m></cell>
+            <cell><m>9.8</m></cell>
+          </row>
+
+          <row>
+            <cell><m>3</m></cell>
+            <cell><m>10.1</m></cell>
+          </row>
+
+          <row>
+            <cell><m>4</m></cell>
+            <cell><m>9.5</m></cell>
+          </row>
+
+          <row>
+            <cell><m>5</m></cell>
+            <cell><m>10.4</m></cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Then the sample mean is:
+        <md>
+          <mrow> A_5 = \frac{H_1 + \dotsb + H_5}{5} \amp = \frac{9.2 + \dotsb + 10.4}{5} = 9.8. </mrow>
+        </md>
+        The sum of the squares is:
+        <md>
+          <mrow> \sum H_i^2 \amp = H_1^2 + \dotsb + H_5^2 = 9.2^2 + \dotsb + 10.4^2 = 481.1 </mrow>
+        </md>
+        So the sample variance is:
+        <md>
+          <mrow> s^2 = \frac{\left(\sum H_i\right)^2 - 5 (A_5)^2}{5 - 1} = \frac{481.1 - 5(9.8)^2}{4} \approx 0.225 </mrow>
+        </md>
+        Now, the standard error of the mean is:
+        <md>
+          <mrow> \frac{s}{\sqrt{n}} = \sqrt{\frac{0.225}{5}} \approx 0.212 </mrow>
+        </md>
+        Finally, we can give 95% confidence limits:
+        <md>
+          <mrow> \mu_{\ell} \amp = 9.8 - 1.96(0.212) \approx 9.38 </mrow>
+          <mrow> \mu_{h} \amp = 9.8 + 1.96(0.212) \approx 10.22 </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    If the individual measurements <m>X_1, \dotsc, X_n</m> are indicator random variables, then the mean <m>A_n</m> represents the proportion which take on the value 1.
+    For example, if the <m>X_i</m>'s indicate heads on coin flips, then <m>A_n</m> represents the proportion which come up heads.
+    In this setting, we have a nice shortcut formula (<xref ref="example-binomial-variance"/>) for the variance of <m>S_n = X_1 + \dotsc + X_n</m>.
+    We can make use of this formula to get the variance of <m>A_n</m> without going through the sample variance calculation above:
+    <md>
+      <mrow> \Var(S_n) \amp = np(1 - p) </mrow>
+      <mrow> \Var(A_n) \amp = \Var\left(\frac{S_n}{n}\right) </mrow>
+      <mrow> \amp = \frac{1}{n^2} \Var\left(S_n\right) </mrow>
+      <mrow> \amp = \frac{1}{n^2} (np(1 - p)) </mrow>
+      <mrow> \amp = \frac{p(1 - p)}{n}. </mrow>
+    </md>
+    Since we won't have access to the true value of <m>p</m>, we can use the maximum likelihood estimate <m>\widehat{p}</m>.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose in a sample of 100 people, 40 have a particular trait.
+        The maximum likelihood estimate for the probability <m>p</m> of a random person having the trait is <m>\widehat{p} = \frac{40}{100} = 0.4</m>.
+        So the standard error will be:
+        <md>
+          <mrow> \sqrt{\frac{(0.4)(1 - 0.4)}{100}} = \sqrt{\frac{0.24}{100}} \approx 0.049. </mrow>
+        </md>
+        Therefore, 95% confidence limits for <m>p</m> are:
+        <md>
+          <mrow> p_{\ell} \amp = 0.4 - 1.96(0.049) \approx 0.304 </mrow>
+          <mrow> p_{h} \amp = 0.4 + 1.96(0.049) \approx 0.496 </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+
+  <exercises xml:id="exercises-Confidence-Intervals">
+  <exercise>
+    <statement>
+      <p>
+        Suppose we flip a coin 100 times and count 60 heads.
+        Let <m>p</m> be the (unknown) probability that the coin comes up heads on a flip.
+        Give an approximate 95% confidence interval for the value of <m>p</m>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>
+        Suppose in a sample of 100 people, 12 are left-handed.
+      </p>
+    </introduction>
+
+
+    <task>
       <statement>
         <p>
-          Suppose we flip a coin 100 times and count 60 heads.
-          Let <m>p</m> be the (unknown) probability that the coin comes up heads on a flip.
-          Give an approximate 95% confidence interval for the value of <m>p</m>.
+          Give a 95% confidence interval for the proportion <m>p</m> of left-handed people.
         </p>
       </statement>
-    </exercise>
-
-    <exercise>
-      <introduction>
-        <p>
-          Suppose in a sample of 100 people, 12 are left-handed.
-        </p>
-      </introduction>
+    </task>
 
 
-      <task>
-        <statement>
-          <p>
-            Give a 95% confidence interval for the proportion <m>p</m> of left-handed people.
-          </p>
-        </statement>
-      </task>
-
-
-      <task>
-        <statement>
-          <p>
-            Give a 90% confidence interval.
-          </p>
-        </statement>
-      </task>
-    </exercise>
-
-    <exercise>
+    <task>
       <statement>
         <p>
-          The weights of five mice are measured and recorded below.
-          Give a 95% confidence interval for the sample mean weight of mice.
-          (Pretend 5 measurements is large enough for the CLT to apply.)
+          Give a 90% confidence interval.
         </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        The weights of five mice are measured and recorded below.
+        Give a 95% confidence interval for the sample mean weight of mice.
+        (Pretend 5 measurements is large enough for the CLT to apply.)
+      </p>
 
       <table>
         <title></title>
@@ -73,16 +240,16 @@
           </row>
         </tabular>
       </table>
-      </statement>
-    </exercise>
+    </statement>
+  </exercise>
 
-    <exercise>
-      <statement>
-        <p>
-          The heights of five plants are measured and recorded below.
-          Give a 95% confidence interval around the sample mean for the heights of the plants.
-          (Pretend 5 measurements is large enough for the CLT to apply.)
-        </p>
+  <exercise>
+    <statement>
+      <p>
+        The heights of five plants are measured and recorded below.
+        Give a 95% confidence interval around the sample mean for the heights of the plants.
+        (Pretend 5 measurements is large enough for the CLT to apply.)
+      </p>
 
       <table>
         <title></title>
@@ -107,7 +274,7 @@
           </row>
         </tabular>
       </table>
-      </statement>
-    </exercise>
-    </exercises>
-  </section>
+    </statement>
+  </exercise>
+  </exercises>
+</section>
