@@ -168,7 +168,7 @@
 
     <answer>
       <p>
-        <m>\Pr(3.45 \leq m \leq 3.55) \approx 0.6141 - 0.3859 = 0.2282.</m>
+        <m>\Pr(3.45 \leq m \leq 3.55) \approx 0.6255 - 0.3745 = 0.2510.</m>
       </p>
     </answer>
   </exercise>
