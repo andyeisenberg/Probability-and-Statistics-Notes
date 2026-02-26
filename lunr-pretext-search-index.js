@@ -1438,7 +1438,52 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.3",
   "title": "Confidence Intervals",
-  "body": " Confidence Intervals  Text of section.     Suppose we flip a coin 100 times and count 60 heads. Let be the (unknown) probability that the coin comes up heads on a flip. Give an approximate 95% confidence interval for the value of .      Suppose in a sample of 100 people, 12 are left-handed.     Give a 95% confidence interval for the proportion of left-handed people.      Give a 90% confidence interval.       The weights of five mice are measured and recorded below. Give a 95% confidence interval for the sample mean weight of mice. (Pretend 5 measurements is large enough for the CLT to apply.)      mouse  1  2  3  4  5    weight (g)  26  32  33  20  29         The heights of five plants are measured and recorded below. Give a 95% confidence interval around the sample mean for the heights of the plants. (Pretend 5 measurements is large enough for the CLT to apply.)      plant  1  2  3  4  5    height (in)  15  14  18  21  17        "
+  "body": " Confidence Intervals  When estimating the value of some parameter, the maximum likelihood estimation provides the single estimate with highest possible likelihood. But we might prefer to have a range of values, with some quantitative measure of how certain we are that the true parameter value could be in the range.  Suppose some measurement has a mean and variance across the entire population. Independent measurements and calculate the sample mean Then, according to , as long as we take a sufficient number of measurements. However, we don't have access to the true values of .  We can make an estimate of from the collected data, so we know how spread out the normal distribution should be.    Let be independent samples taken from a population. Let be the sample mean. The sample variance is: The expression: is called the standard error of the mean .    Note that is an estimate of the variance of each individual measurement taken from the population. Therefore, is an estimate of the variance of the mean . Hence \"standard error of the mean\" is an estimate of the standard deviation of the mean.  Next, we want to pick a distance so that our measured sample mean is within of the true population mean with a high probability. We can pick some value , and let . Then the interval: is called a confidence interval with confidence level .     Let be independent samples taken from a population. Suppose is the sample mean and the sample variance. Then the 95% confidence limits are:       Suppose measurements are taken of the heights of several plants in a garden plot. The measurements are given below. (Note: for the sake of a managable calculation, only five measurements are given. However, for to apply, the number of measurements would need to be greater.)   Plant Height Measurements    Plant  Height (in)                         Then the sample mean is: The sum of the squares is: So the sample variance is: Now, the standard error of the mean is: Finally, we can give 95% confidence limits:     If the individual measurements are indicator random variables, then the mean represents the proportion which take on the value 1. For example, if the 's indicate heads on coin flips, then represents the proportion which come up heads. In this setting, we have a nice shortcut formula ( ) for the variance of . We can make use of this formula to get the variance of without going through the sample variance calculation above: Since we won't have access to the true value of , we can use the maximum likelihood estimate .    Suppose in a sample of 100 people, 40 have a particular trait. The maximum likelihood estimate for the probability of a random person having the trait is . So the standard error will be: Therefore, 95% confidence limits for are:        Suppose we flip a coin 100 times and count 60 heads. Let be the (unknown) probability that the coin comes up heads on a flip. Give an approximate 95% confidence interval for the value of .     .      Suppose in a sample of 100 people, 12 are left-handed.     Give a 95% confidence interval for the proportion of left-handed people.     .      Give a 90% confidence interval.     .       The weights of five mice are measured and recorded below. Give a 95% confidence interval for the sample mean weight of mice. (Pretend 5 measurements is large enough for the CLT to apply.)      mouse  weight (g)    1  26    2  32    3  33    4  20    5  29            .      The heights of five plants are measured and recorded below. Give a 95% confidence interval around the sample mean for the heights of the plants. (Pretend 5 measurements is large enough for the CLT to apply.)      plant  height (in)    1  15    2  14    3  18    4  21    5  17            .     "
+},
+{
+  "id": "def-sample-variance",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#def-sample-variance",
+  "type": "Definition",
+  "number": "4.3.1",
+  "title": "",
+  "body": "  Let be independent samples taken from a population. Let be the sample mean. The sample variance is: The expression: is called the standard error of the mean .   "
+},
+{
+  "id": "sec-Confidence-Intervals-7",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#sec-Confidence-Intervals-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "confidence interval "
+},
+{
+  "id": "thm-CI",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#thm-CI",
+  "type": "Theorem",
+  "number": "4.3.2",
+  "title": "",
+  "body": "  Let be independent samples taken from a population. Suppose is the sample mean and the sample variance. Then the 95% confidence limits are:    "
+},
+{
+  "id": "sec-Confidence-Intervals-9",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#sec-Confidence-Intervals-9",
+  "type": "Example",
+  "number": "4.3.3",
+  "title": "",
+  "body": "  Suppose measurements are taken of the heights of several plants in a garden plot. The measurements are given below. (Note: for the sake of a managable calculation, only five measurements are given. However, for to apply, the number of measurements would need to be greater.)   Plant Height Measurements    Plant  Height (in)                         Then the sample mean is: The sum of the squares is: So the sample variance is: Now, the standard error of the mean is: Finally, we can give 95% confidence limits:    "
+},
+{
+  "id": "sec-Confidence-Intervals-11",
+  "level": "2",
+  "url": "sec-Confidence-Intervals.html#sec-Confidence-Intervals-11",
+  "type": "Example",
+  "number": "4.3.5",
+  "title": "",
+  "body": "  Suppose in a sample of 100 people, 40 have a particular trait. The maximum likelihood estimate for the probability of a random person having the trait is . So the standard error will be: Therefore, 95% confidence limits for are:    "
 },
 {
   "id": "exercises-Confidence-Intervals-1",
@@ -1447,7 +1492,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.3.1",
   "title": "",
-  "body": "  Suppose we flip a coin 100 times and count 60 heads. Let be the (unknown) probability that the coin comes up heads on a flip. Give an approximate 95% confidence interval for the value of .   "
+  "body": "  Suppose we flip a coin 100 times and count 60 heads. Let be the (unknown) probability that the coin comes up heads on a flip. Give an approximate 95% confidence interval for the value of .     .   "
 },
 {
   "id": "exercises-Confidence-Intervals-2",
@@ -1456,7 +1501,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.3.2",
   "title": "",
-  "body": "  Suppose in a sample of 100 people, 12 are left-handed.     Give a 95% confidence interval for the proportion of left-handed people.      Give a 90% confidence interval.    "
+  "body": "  Suppose in a sample of 100 people, 12 are left-handed.     Give a 95% confidence interval for the proportion of left-handed people.     .      Give a 90% confidence interval.     .    "
 },
 {
   "id": "exercises-Confidence-Intervals-3",
@@ -1465,7 +1510,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.3.3",
   "title": "",
-  "body": "  The weights of five mice are measured and recorded below. Give a 95% confidence interval for the sample mean weight of mice. (Pretend 5 measurements is large enough for the CLT to apply.)      mouse  1  2  3  4  5    weight (g)  26  32  33  20  29      "
+  "body": "  The weights of five mice are measured and recorded below. Give a 95% confidence interval for the sample mean weight of mice. (Pretend 5 measurements is large enough for the CLT to apply.)      mouse  weight (g)    1  26    2  32    3  33    4  20    5  29            .   "
 },
 {
   "id": "exercises-Confidence-Intervals-4",
@@ -1474,7 +1519,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4.3.4",
   "title": "",
-  "body": "  The heights of five plants are measured and recorded below. Give a 95% confidence interval around the sample mean for the heights of the plants. (Pretend 5 measurements is large enough for the CLT to apply.)      plant  1  2  3  4  5    height (in)  15  14  18  21  17      "
+  "body": "  The heights of five plants are measured and recorded below. Give a 95% confidence interval around the sample mean for the heights of the plants. (Pretend 5 measurements is large enough for the CLT to apply.)      plant  height (in)    1  15    2  14    3  18    4  21    5  17            .   "
 },
 {
   "id": "sec-One-Sample-Tests",

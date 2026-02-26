@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.14';
+eBookConfig.runestone_version = '7.11.15';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.d892923478694492.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -309,64 +309,264 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Confidence-Intervals"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Confidence Intervals</span>
 </h2>
-<div class="para" id="sec-Confidence-Intervals-2">Text of section.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-Confidence-Intervals-2">When estimating the value of some parameter, the maximum likelihood estimation provides the single estimate with highest possible likelihood. But we might prefer to have a range of values, with some quantitative measure of how certain we are that the true parameter value could be in the range.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<section class="exercises" id="exercises-Confidence-Intervals"><h3 class="heading hide-type">
+<div class="para logical" id="sec-Confidence-Intervals-3">
+<div class="para">Suppose some measurement has a mean <span class="process-math">\(\mu\)</span> and variance <span class="process-math">\(\sigma^2\)</span> across the entire population. Independent measurements <span class="process-math">\(X_1, X_2, \dotsc, X_n\)</span> and calculate the sample mean</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-CLT.html" id="sec-Confidence-Intervals-3-4">
+\begin{gather*}
+A_n = \frac{X_1 + \dotsb + X_n}{n}. 
+\end{gather*}
+</div>
+<div class="para">Then, according to <a href="sec-CLT.html#thm-CLT" class="xref" data-knowl="./knowl/xref/thm-CLT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.1">Theorem 4.2.1</a>, <span class="process-math">\(A_n \approx \Norm\left(\mu, \frac{\sigma^2}{n}\right)\)</span> as long as we take a sufficient number of measurements. However, we don’t have access to the true values of <span class="process-math">\(\mu, \sigma^2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Confidence-Intervals-4">We can make an estimate <span class="process-math">\(s^2\)</span> of <span class="process-math">\(\sigma^2\)</span> from the collected data, so we know how spread out the normal distribution should be.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-sample-variance"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="def-sample-variance-1-1">
+<div class="para">Let <span class="process-math">\(X_1, X_2, \dotsc, X_n\)</span> be independent samples taken from a population. Let <span class="process-math">\(A_n = \frac{X_1 + \dotsb + X_n}{n}\)</span> be the sample mean. The <dfn class="terminology">sample variance</dfn> is:</div>
+<div class="displaymath process-math" id="def-sample-variance-1-1-4">
+\begin{gather*}
+s^2 = \frac{\sum \left(X_i - A_n\right)^2}{n - 1} = \frac{\left(\sum X_i^2\right) - n \left(A_n\right)^2}{n - 1}. 
+\end{gather*}
+</div>
+<div class="para">The expression:</div>
+<div class="displaymath process-math" id="def-sample-variance-1-1-5">
+\begin{gather*}
+\sqrt{\frac{s^2}{n}} = \frac{s}{\sqrt{n}} 
+\end{gather*}
+</div>
+<div class="para">is called the <dfn class="terminology">standard error of the mean</dfn>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-sample-variance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.3.1"><a href="#def-sample-variance" title="Copy heading and permalink for Definition 4.3.1" aria-label="Copy heading and permalink for Definition 4.3.1">🔗</a></div></article><div class="para" id="sec-Confidence-Intervals-6">Note that <span class="process-math">\(s^2\)</span> is an estimate of the variance of each individual measurement <span class="process-math">\(X_i\)</span> taken from the population. Therefore, <span class="process-math">\(\frac{s^2}{n}\)</span> is an estimate of the variance of the mean <span class="process-math">\(A_n\text{.}\)</span> Hence "standard error of the mean" is an estimate of the standard deviation of the mean.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-Confidence-Intervals-7">
+<div class="para">Next, we want to pick a distance <span class="process-math">\(c\)</span> so that our measured sample mean <span class="process-math">\(A_n\)</span> is within <span class="process-math">\(c\)</span> of the true population mean <span class="process-math">\(\mu\)</span> with a high probability. We can pick some value <span class="process-math">\(\alpha \in (0, 1)\text{,}\)</span> and let <span class="process-math">\(c_{\alpha} = \Phi^{-1}\left(1 - \frac{\alpha}{2}\right)\text{.}\)</span> Then the interval:</div>
+<div class="displaymath process-math" id="sec-Confidence-Intervals-7-7">
+\begin{gather*}
+\left[A_n - c_{\alpha} \left(\frac{s}{\sqrt{n}}\right), A_n + c_{\alpha} \left(\frac{s}{\sqrt{n}}\right)\right] 
+\end{gather*}
+</div>
+<div class="para">is called a <dfn class="terminology">confidence interval</dfn> with confidence level <span class="process-math">\(1 - \alpha\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-CI"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="thm-CI-1-1">
+<div class="para">Let <span class="process-math">\(X_1, X_2, \dotsc, X_n\)</span> be independent samples taken from a population. Suppose <span class="process-math">\(A_n\)</span> is the sample mean and <span class="process-math">\(s^2\)</span> the sample variance. Then the 95% confidence limits are:</div>
+<div class="displaymath process-math" id="thm-CI-1-1-4">
+\begin{align*}
+\mu_{\ell} \amp = A_n - 1.96 \left(\frac{s}{\sqrt{n}}\right) \\
+\mu_{h} \amp = A_n + 1.96 \left(\frac{s}{\sqrt{n}}\right) 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-CI-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.3.2"><a href="#thm-CI" title="Copy heading and permalink for Theorem 4.3.2" aria-label="Copy heading and permalink for Theorem 4.3.2">🔗</a></div></article><article class="example example-like" id="sec-Confidence-Intervals-9"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-Confidence-Intervals-9-1-1">Suppose measurements are taken of the heights of several plants in a garden plot. The measurements are given below. (Note: for the sake of a managable calculation, only five measurements are given. However, for <a href="sec-CLT.html#thm-CLT" class="xref" data-knowl="./knowl/xref/thm-CLT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.1">Theorem 4.2.1</a> to apply, the number of measurements would need to be greater.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="table table-like" id="sec-Confidence-Intervals-9-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Plant Height Measurements<div class="autopermalink" data-description="Table 4.3.4: Plant Height Measurements"><a href="#sec-Confidence-Intervals-9-1-2" title="Copy heading and permalink for Table 4.3.4: Plant Height Measurements" aria-label="Copy heading and permalink for Table 4.3.4: Plant Height Measurements">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Plant <span class="process-math">\(i\)</span>
+</td>
+<td class="c m b1 r0 l0 t0 lines">Height <span class="process-math">\(H_i\)</span> (in)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(9.2\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(9.8\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(10.1\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(9.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(10.4\)</span></td>
+</tr>
+</table></div></figure> <div class="para logical" id="sec-Confidence-Intervals-9-1-3">
+<div class="para">Then the sample mean is:</div>
+<div class="displaymath process-math" id="sec-Confidence-Intervals-9-1-3-1">
+\begin{align*}
+A_5 = \frac{H_1 + \dotsb + H_5}{5} \amp = \frac{9.2 + \dotsb + 10.4}{5} = 9.8. 
+\end{align*}
+</div>
+<div class="para">The sum of the squares is:</div>
+<div class="displaymath process-math" id="sec-Confidence-Intervals-9-1-3-2">
+\begin{align*}
+\sum H_i^2 \amp = H_1^2 + \dotsb + H_5^2 = 9.2^2 + \dotsb + 10.4^2 = 481.1 
+\end{align*}
+</div>
+<div class="para">So the sample variance is:</div>
+<div class="displaymath process-math" id="sec-Confidence-Intervals-9-1-3-3">
+\begin{gather*}
+s^2 = \frac{\left(\sum H_i\right)^2 - 5 (A_5)^2}{5 - 1} = \frac{481.1 - 5(9.8)^2}{4} \approx 0.225 
+\end{gather*}
+</div>
+<div class="para">Now, the standard error of the mean is:</div>
+<div class="displaymath process-math" id="sec-Confidence-Intervals-9-1-3-4">
+\begin{gather*}
+\frac{s}{\sqrt{n}} = \sqrt{\frac{0.225}{5}} \approx 0.212 
+\end{gather*}
+</div>
+<div class="para">Finally, we can give 95% confidence limits:</div>
+<div class="displaymath process-math" id="sec-Confidence-Intervals-9-1-3-5">
+\begin{align*}
+\mu_{\ell} \amp = 9.8 - 1.96(0.212) \approx 9.38 \\
+\mu_{h} \amp = 9.8 + 1.96(0.212) \approx 10.22 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.3.3"><a href="#sec-Confidence-Intervals-9" title="Copy heading and permalink for Example 4.3.3" aria-label="Copy heading and permalink for Example 4.3.3">🔗</a></div></article><div class="para logical" id="sec-Confidence-Intervals-10">
+<div class="para">If the individual measurements <span class="process-math">\(X_1, \dotsc, X_n\)</span> are indicator random variables, then the mean <span class="process-math">\(A_n\)</span> represents the proportion which take on the value 1. For example, if the <span class="process-math">\(X_i\)</span>’s indicate heads on coin flips, then <span class="process-math">\(A_n\)</span> represents the proportion which come up heads. In this setting, we have a nice shortcut formula (<a href="sec-Variance.html#example-binomial-variance" class="xref" data-knowl="./knowl/xref/example-binomial-variance.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.7">Example 3.2.7</a>) for the variance of <span class="process-math">\(S_n = X_1 + \dotsc + X_n\text{.}\)</span> We can make use of this formula to get the variance of <span class="process-math">\(A_n\)</span> without going through the sample variance calculation above:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-binomial-variance.html" id="sec-Confidence-Intervals-10-8">
+\begin{align*}
+\Var(S_n) \amp = np(1 - p) \\
+\Var(A_n) \amp = \Var\left(\frac{S_n}{n}\right) \\
+\amp = \frac{1}{n^2} \Var\left(S_n\right) \\
+\amp = \frac{1}{n^2} (np(1 - p)) \\
+\amp = \frac{p(1 - p)}{n}. 
+\end{align*}
+</div>
+<div class="para">Since we won’t have access to the true value of <span class="process-math">\(p\text{,}\)</span> we can use the maximum likelihood estimate <span class="process-math">\(\widehat{p}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec-Confidence-Intervals-11"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-Confidence-Intervals-11-1-1">
+<div class="para">Suppose in a sample of 100 people, 40 have a particular trait. The maximum likelihood estimate for the probability <span class="process-math">\(p\)</span> of a random person having the trait is <span class="process-math">\(\widehat{p} = \frac{40}{100} = 0.4\text{.}\)</span> So the standard error will be:</div>
+<div class="displaymath process-math" id="sec-Confidence-Intervals-11-1-1-3">
+\begin{gather*}
+\sqrt{\frac{(0.4)(1 - 0.4)}{100}} = \sqrt{\frac{0.24}{100}} \approx 0.049. 
+\end{gather*}
+</div>
+<div class="para">Therefore, 95% confidence limits for <span class="process-math">\(p\)</span> are:</div>
+<div class="displaymath process-math" id="sec-Confidence-Intervals-11-1-1-5">
+\begin{align*}
+p_{\ell} \amp = 0.4 - 1.96(0.049) \approx 0.304 \\
+p_{h} \amp = 0.4 + 1.96(0.049) \approx 0.496 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Confidence-Intervals-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.3.5"><a href="#sec-Confidence-Intervals-11" title="Copy heading and permalink for Example 4.3.5" aria-label="Copy heading and permalink for Example 4.3.5">🔗</a></div></article><section class="exercises" id="exercises-Confidence-Intervals"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-Confidence-Intervals-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises-Confidence-Intervals-1-1-1">Suppose we flip a coin 100 times and count 60 heads. Let <span class="process-math">\(p\)</span> be the (unknown) probability that the coin comes up heads on a flip. Give an approximate 95% confidence interval for the value of <span class="process-math">\(p\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="solutions"><details id="exercises-Confidence-Intervals-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="exercises-Confidence-Intervals-1-2-1">
+<span class="process-math">\([0.504, 0.696]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 4.3.1.1"><a href="#exercises-Confidence-Intervals-1-2" title="Copy heading and permalink for Answer 4.3.1.1" aria-label="Copy heading and permalink for Answer 4.3.1.1">🔗</a></div>
+</div></details></div>
 <div class="autopermalink" data-description="Exercise 4.3.1"><a href="#exercises-Confidence-Intervals-1" title="Copy heading and permalink for Exercise 4.3.1" aria-label="Copy heading and permalink for Exercise 4.3.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Confidence-Intervals-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="introduction" id="exercises-Confidence-Intervals-2-1"><div class="para" id="exercises-Confidence-Intervals-2-1-1">Suppose in a sample of 100 people, 12 are left-handed.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div>
 <article class="task exercise-like" id="exercises-Confidence-Intervals-2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises-Confidence-Intervals-2-2-1-1">Give a 95% confidence interval for the proportion <span class="process-math">\(p\)</span> of left-handed people.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="solutions"><details id="exercises-Confidence-Intervals-2-2-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="exercises-Confidence-Intervals-2-2-2-1">
+<span class="process-math">\([0.056, 0.184]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 4.3.2.a.1"><a href="#exercises-Confidence-Intervals-2-2-2" title="Copy heading and permalink for Answer 4.3.2.a.1" aria-label="Copy heading and permalink for Answer 4.3.2.a.1">🔗</a></div>
+</div></details></div>
 <div class="autopermalink" data-description="Task 4.3.2.a"><a href="#exercises-Confidence-Intervals-2-2" title="Copy heading and permalink for Task 4.3.2.a" aria-label="Copy heading and permalink for Task 4.3.2.a">🔗</a></div></article><article class="task exercise-like" id="exercises-Confidence-Intervals-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises-Confidence-Intervals-2-3-1-1">Give a 90% confidence interval.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="solutions"><details id="exercises-Confidence-Intervals-2-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="exercises-Confidence-Intervals-2-3-2-1">
+<span class="process-math">\([0.066, 0.174]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 4.3.2.b.1"><a href="#exercises-Confidence-Intervals-2-3-2" title="Copy heading and permalink for Answer 4.3.2.b.1" aria-label="Copy heading and permalink for Answer 4.3.2.b.1">🔗</a></div>
+</div></details></div>
 <div class="autopermalink" data-description="Task 4.3.2.b"><a href="#exercises-Confidence-Intervals-2-3" title="Copy heading and permalink for Task 4.3.2.b" aria-label="Copy heading and permalink for Task 4.3.2.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 4.3.2"><a href="#exercises-Confidence-Intervals-2" title="Copy heading and permalink for Exercise 4.3.2" aria-label="Copy heading and permalink for Exercise 4.3.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Confidence-Intervals-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises-Confidence-Intervals-3-1-1">The weights of five mice are measured and recorded below. Give a 95% confidence interval for the sample mean weight of mice. (Pretend 5 measurements is large enough for the CLT to apply.)<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <figure class="table table-like" id="exercises-Confidence-Intervals-3-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 4.3.1: "><a href="#exercises-Confidence-Intervals-3-1-2" title="Copy heading and permalink for Table 4.3.1: " aria-label="Copy heading and permalink for Table 4.3.1: ">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</div> <figure class="table table-like" id="exercises-Confidence-Intervals-3-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 4.3.6: "><a href="#exercises-Confidence-Intervals-3-1-2" title="Copy heading and permalink for Table 4.3.6: " aria-label="Copy heading and permalink for Table 4.3.6: ">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
-<th scope="col" class="c m b0 r0 l0 t0 lines">mouse <span class="process-math">\(i\)</span>
+<th scope="col" class="c m b1 r0 l0 t0 lines">mouse <span class="process-math">\(i\)</span>
 </th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">1</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">2</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">3</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">4</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">5</th>
+<th scope="col" class="c m b1 r0 l0 t0 lines">weight <span class="process-math">\(W_i\)</span> (g)</th>
 </tr>
 <tr>
-<td class="c m b0 r0 l0 t0 lines">weight <span class="process-math">\(\widetilde{w}_i\)</span> (g)</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
 <td class="c m b0 r0 l0 t0 lines">26</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">2</td>
 <td class="c m b0 r0 l0 t0 lines">32</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3</td>
 <td class="c m b0 r0 l0 t0 lines">33</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">4</td>
 <td class="c m b0 r0 l0 t0 lines">20</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">5</td>
 <td class="c m b0 r0 l0 t0 lines">29</td>
 </tr>
-</table></div></figure><div class="autopermalink" data-description="Exercise 4.3.3"><a href="#exercises-Confidence-Intervals-3" title="Copy heading and permalink for Exercise 4.3.3" aria-label="Copy heading and permalink for Exercise 4.3.3">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Confidence-Intervals-4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</table></div></figure><div class="solutions"><details id="exercises-Confidence-Intervals-3-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="exercises-Confidence-Intervals-3-2-1">    <span class="process-math">\([23.39, 32.61]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 4.3.3.1"><a href="#exercises-Confidence-Intervals-3-2" title="Copy heading and permalink for Answer 4.3.3.1" aria-label="Copy heading and permalink for Answer 4.3.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4.3.3"><a href="#exercises-Confidence-Intervals-3" title="Copy heading and permalink for Exercise 4.3.3" aria-label="Copy heading and permalink for Exercise 4.3.3">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Confidence-Intervals-4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises-Confidence-Intervals-4-1-1">The heights of five plants are measured and recorded below. Give a 95% confidence interval around the sample mean for the heights of the plants. (Pretend 5 measurements is large enough for the CLT to apply.)<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <figure class="table table-like" id="exercises-Confidence-Intervals-4-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 4.3.2: "><a href="#exercises-Confidence-Intervals-4-1-2" title="Copy heading and permalink for Table 4.3.2: " aria-label="Copy heading and permalink for Table 4.3.2: ">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</div> <figure class="table table-like" id="exercises-Confidence-Intervals-4-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 4.3.7: "><a href="#exercises-Confidence-Intervals-4-1-2" title="Copy heading and permalink for Table 4.3.7: " aria-label="Copy heading and permalink for Table 4.3.7: ">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
-<th scope="col" class="c m b0 r0 l0 t0 lines">plant <span class="process-math">\(i\)</span>
+<th scope="col" class="c m b1 r0 l0 t0 lines">plant <span class="process-math">\(i\)</span>
 </th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">1</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">2</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">3</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">4</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">5</th>
+<th scope="col" class="c m b1 r0 l0 t0 lines">height <span class="process-math">\(H_i\)</span> (in)</th>
 </tr>
 <tr>
-<td class="c m b0 r0 l0 t0 lines">height <span class="process-math">\(\widetilde{h}_i\)</span> (in)</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
 <td class="c m b0 r0 l0 t0 lines">15</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">2</td>
 <td class="c m b0 r0 l0 t0 lines">14</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3</td>
 <td class="c m b0 r0 l0 t0 lines">18</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">4</td>
 <td class="c m b0 r0 l0 t0 lines">21</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">5</td>
 <td class="c m b0 r0 l0 t0 lines">17</td>
 </tr>
-</table></div></figure><div class="autopermalink" data-description="Exercise 4.3.4"><a href="#exercises-Confidence-Intervals-4" title="Copy heading and permalink for Exercise 4.3.4" aria-label="Copy heading and permalink for Exercise 4.3.4">🔗</a></div></article><div class="autopermalink" data-description="Exercises 4.3"><a href="#exercises-Confidence-Intervals" title="Copy heading and permalink for Exercises 4.3" aria-label="Copy heading and permalink for Exercises 4.3">🔗</a></div></section><div class="autopermalink" data-description="Section 4.3: Confidence Intervals"><a href="#sec-Confidence-Intervals" title="Copy heading and permalink for Section 4.3: Confidence Intervals" aria-label="Copy heading and permalink for Section 4.3: Confidence Intervals">🔗</a></div></section></div>
+</table></div></figure><div class="solutions"><details id="exercises-Confidence-Intervals-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="exercises-Confidence-Intervals-4-2-1">    <span class="process-math">\([14.61, 19.39]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Confidence-Intervals-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 4.3.4.1"><a href="#exercises-Confidence-Intervals-4-2" title="Copy heading and permalink for Answer 4.3.4.1" aria-label="Copy heading and permalink for Answer 4.3.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 4.3.4"><a href="#exercises-Confidence-Intervals-4" title="Copy heading and permalink for Exercise 4.3.4" aria-label="Copy heading and permalink for Exercise 4.3.4">🔗</a></div></article><div class="autopermalink" data-description="Exercises 4.3"><a href="#exercises-Confidence-Intervals" title="Copy heading and permalink for Exercises 4.3" aria-label="Copy heading and permalink for Exercises 4.3">🔗</a></div></section><div class="autopermalink" data-description="Section 4.3: Confidence Intervals"><a href="#sec-Confidence-Intervals" title="Copy heading and permalink for Section 4.3: Confidence Intervals" aria-label="Copy heading and permalink for Section 4.3: Confidence Intervals">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-CLT.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-Hypothesis-Testing.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
