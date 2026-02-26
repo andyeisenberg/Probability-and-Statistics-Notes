@@ -181,6 +181,12 @@
         Give an approximate 95% confidence interval for the value of <m>p</m>.
       </p>
     </statement>
+
+    <answer>
+      <p>
+        <m>[0.504, 0.696]</m>.
+      </p>
+    </answer>
   </exercise>
 
   <exercise>
@@ -197,6 +203,12 @@
           Give a 95% confidence interval for the proportion <m>p</m> of left-handed people.
         </p>
       </statement>
+
+      <answer>
+        <p>
+          <m>[0.056, 0.184]</m>.
+        </p>
+      </answer>
     </task>
 
 
@@ -206,6 +218,12 @@
           Give a 90% confidence interval.
         </p>
       </statement>
+
+      <answer>
+        <p>
+          <m>[0.066, 0.174]</m>.
+        </p>
+      </answer>
     </task>
   </exercise>
 
@@ -220,27 +238,45 @@
       <table>
         <title></title>
 
-        <tabular>
-          <row header="yes">
-            <cell halign="center">mouse <m>i</m></cell>
-            <cell halign="center">1</cell>
-            <cell halign="center">2</cell>
-            <cell halign="center">3</cell>
-            <cell halign="center">4</cell>
-            <cell halign="center">5</cell>
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell>mouse <m>i</m></cell>
+            <cell>weight <m>W_i</m> (g)</cell>
           </row>
 
           <row>
-            <cell halign="center">weight <m>\widetilde{w}_i</m> (g)</cell>
-            <cell halign="center">26</cell>
-            <cell halign="center">32</cell>
-            <cell halign="center">33</cell>
-            <cell halign="center">20</cell>
-            <cell halign="center">29</cell>
+            <cell>1</cell>
+            <cell>26</cell>
+          </row>
+
+          <row>
+            <cell>2</cell>
+            <cell>32</cell>
+          </row>
+
+          <row>
+            <cell>3</cell>
+            <cell>33</cell>
+          </row>
+
+          <row>
+            <cell>4</cell>
+            <cell>20</cell>
+          </row>
+
+          <row>
+            <cell>5</cell>
+            <cell>29</cell>
           </row>
         </tabular>
       </table>
     </statement>
+
+    <answer>
+      <p>
+        <!-- avg weight = 28 --> <!-- sum of squares = 4030 --> <!-- s^2 = 27.5 --> <!-- \sqrt{s^2/n} \approx 2.35 --> <m>[23.39, 32.61]</m>.
+      </p>
+    </answer>
   </exercise>
 
   <exercise>
@@ -254,27 +290,45 @@
       <table>
         <title></title>
 
-        <tabular>
-          <row header="yes">
-            <cell halign="center">plant <m>i</m></cell>
-            <cell halign="center">1</cell>
-            <cell halign="center">2</cell>
-            <cell halign="center">3</cell>
-            <cell halign="center">4</cell>
-            <cell halign="center">5</cell>
+        <tabular halign="center">
+          <row header="yes" bottom="minor">
+            <cell>plant <m>i</m></cell>
+            <cell>height <m>H_i</m> (in)</cell>
           </row>
 
           <row>
-            <cell halign="center">height <m>\widetilde{h}_i</m> (in)</cell>
-            <cell halign="center">15</cell>
-            <cell halign="center">14</cell>
-            <cell halign="center">18</cell>
-            <cell halign="center">21</cell>
-            <cell halign="center">17</cell>
+            <cell>1</cell>
+            <cell>15</cell>
+          </row>
+
+          <row>
+            <cell>2</cell>
+            <cell>14</cell>
+          </row>
+
+          <row>
+            <cell>3</cell>
+            <cell>18</cell>
+          </row>
+
+          <row>
+            <cell>4</cell>
+            <cell>21</cell>
+          </row>
+
+          <row>
+            <cell>5</cell>
+            <cell>17</cell>
           </row>
         </tabular>
       </table>
     </statement>
+
+    <answer>
+      <p>
+        <!-- avg weight = 17 --> <!-- sum of squares = 1475 --> <!-- s^2 = 7.5 --> <!-- \sqrt{s^2/n} \approx 1.22 --> <m>[14.61, 19.39]</m>.
+      </p>
+    </answer>
   </exercise>
   </exercises>
 </section>
