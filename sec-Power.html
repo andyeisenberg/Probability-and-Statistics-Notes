@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.15';
+eBookConfig.runestone_version = '7.11.19';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -309,7 +309,96 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Power"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Power of a Test</span>
 </h2>
-<div class="para" id="sec-Power-2">Text of section.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Power-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-Power-2">
+<div class="para">Recall that the power of a test is the probability of rejecting a false null hypothesis. To understand the power, we must know:</div>
+<ol class="decimal" id="sec-Power-2-1">
+<li id="sec-Power-2-1-1">
+<div class="para" id="sec-Power-2-1-1-1">What data would lead us to reject the null hypothesis?<div class="autopermalink" data-description="Paragraph"><a href="#sec-Power-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-Power-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-Power-2-1-2">
+<div class="para" id="sec-Power-2-1-2-1">What is the probability of seeing such data?<div class="autopermalink" data-description="Paragraph"><a href="#sec-Power-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-Power-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Power-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec-Power-3"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-Power-3-1-1">
+<div class="para">We find a coin and wonder if it’s fair. Let <span class="process-math">\(\theta\)</span> be the probability of the coin coming up heads on a flip. Let <span class="process-math">\(S\)</span> count the number of heads in 100 flips. Under the null hypothesis that <span class="process-math">\(\theta = 0.5\text{,}\)</span> <span class="process-math">\(S\)</span> is binomial, with:</div>
+<div class="displaymath process-math" id="sec-Power-3-1-1-5">
+\begin{align*}
+\E(S) \amp = (n)(\theta) = (100)(0.5) = 50 \\
+\Var(S) \amp = (n)(\theta)(1 - \theta) = (100)(0.5)(0.5) = 25 
+\end{align*}
+</div>
+<div class="para">Using a normal approximation, <span class="process-math">\(S \approx \Norm(50, 25)\text{.}\)</span> In the calculation of the <span class="process-math">\(p\)</span>-value for a 2-tailed test, we will eventually reach the expression:</div>
+<div class="displaymath process-math" id="sec-Power-3-1-1-8">
+\begin{gather*}
+\Pr(Z \geq z) + \Pr(Z \leq -z) 
+\end{gather*}
+</div>
+<div class="para">for some <span class="process-math">\(z\)</span>-score. To address the first question above, we can calculate, for a specified significance level <span class="process-math">\(\alpha\text{,}\)</span> the <span class="process-math">\(z\)</span>-score that represents data at the cutoff between accepting and rejecting the null hypothesis:</div>
+<div class="displaymath process-math" id="sec-Power-3-1-1-12">
+\begin{align*}
+\alpha \amp = \Pr(Z \geq z) + \Pr(Z \leq -z) \\
+\amp = \Phi(-z) + (1 - \Phi(z)) \\
+\amp = 2 \Phi(-z) \\
+\Rightarrow \Phi(-z) \amp = \frac{\alpha}{2} \\
+-z \amp = \Phi^{-1}\left(\frac{\alpha}{2}\right) 
+\end{align*}
+</div>
+<div class="para">For the significance level <span class="process-math">\(\alpha = 0.05\text{,}\)</span> we’ll have <span class="process-math">\(z = 1.96\text{.}\)</span> Now, we convert back to values of <span class="process-math">\(S\text{,}\)</span> keeping in mind that a continuity correction would be involved:</div>
+<div class="displaymath process-math" id="sec-Power-3-1-1-16">
+\begin{align*}
+\frac{S - 0.5 - 50}{\sqrt{25}} \amp = 1.96 \\
+S \amp = 50.5 + 1.96 \sqrt{25} = 60.3. 
+\end{align*}
+</div>
+<div class="para">We can’t flip a fractional number of heads, so it would take a result of 61 or more heads (or, equally extreme in the other direction, 39 heads or fewer) to reject the null hypothesis.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Power-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 5.3.1"><a href="#sec-Power-3" title="Copy heading and permalink for Example 5.3.1" aria-label="Copy heading and permalink for Example 5.3.1">🔗</a></div></article><div class="para" id="sec-Power-4">To address the second question, we find a obstacle. How can we calculate the probability of seeing data extreme enough data to reject <span class="process-math">\(H_0\)</span> without knowing the true value of <span class="process-math">\(\theta\text{?}\)</span> In fact, the power is not a single number, but a function of <span class="process-math">\(\theta\text{.}\)</span> For each hypothetical value of <span class="process-math">\(\theta\text{,}\)</span> we’ll calculate the probability of seeing extreme enough data to reject <span class="process-math">\(H_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Power-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec-Power-5"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-Power-5-1-1">
+<div class="para">Continuing the previous example, we know that, if <span class="process-math">\(S \geq 61\)</span> or <span class="process-math">\(S \leq 39\text{,}\)</span> we would reject <span class="process-math">\(H_0\text{.}\)</span> For a given value of <span class="process-math">\(\theta\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/app-Phi-table.html" id="sec-Power-5-1-1-5">
+\begin{align*}
+\E(S) \amp = n\theta = 100\theta \\
+\Var(S) \amp = n\theta(1-\theta) = 100\theta(1-\theta) \\
+\Pr(S \geq 61) + \Pr(S \leq 39) \amp \approx \Pr\left(Z \geq \frac{60.5 - 100\theta}{\sqrt{100\theta(1 - \theta)}}\right) + \Pr\left(Z \leq \frac{39.5 - 100\theta}{\sqrt{100\theta(1 - \theta)}}\right) 
+\end{align*}
+</div>
+<div class="para">For example, if the true value of the parameter is <span class="process-math">\(\theta = 0.5\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/app-Phi-table.html" id="sec-Power-5-1-1-7">
+\begin{align*}
+\Pr(S \geq 61) + \Pr(S \leq 39) \amp \approx \Pr(Z \geq 1.11) + \Pr(Z \leq -3.12) \\
+\amp \approx (1 - 0.8665) + 0.0009 \\
+\amp = 0.1344 
+\end{align*}
+</div>
+<div class="para">If, instead, <span class="process-math">\(\theta = 0.6\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/app-Phi-table.html" id="sec-Power-5-1-1-9">
+\begin{align*}
+\Pr(S \geq 61) + \Pr(S \leq 39) \amp \approx \Pr(Z \geq 0.10) + \Pr(Z \leq -4.18) \\
+\amp \approx (1 - 0.5398) + 0 \\
+\amp = 0.4602 
+\end{align*}
+</div>
+<div class="para">(Note: for the <span class="process-math">\(z\)</span>-score <span class="process-math">\(-4.18\text{,}\)</span> which is below the range covered by <a href="app-Phi-table.html" class="internal" title="Section A.1: \Phi(z) Table of Values">Section A.1</a>, we will treat the <span class="process-math">\(\Phi\)</span> value as close enough to 0. For a <span class="process-math">\(z\)</span>-score outside the range on the other side, we would treat the <span class="process-math">\(\Phi\)</span> value as 1. If we needed more precision than that, we would consult an expanded table.)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-Power-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 5.3.2"><a href="#sec-Power-5" title="Copy heading and permalink for Example 5.3.2" aria-label="Copy heading and permalink for Example 5.3.2">🔗</a></div></article><div class="para" id="sec-Power-6">We can see in the example that the power of the test was greater when <span class="process-math">\(\theta = 0.6\)</span> than when <span class="process-math">\(\theta = 0.55\text{.}\)</span> The null hypothesis was <span class="process-math">\(\theta = 0.5\text{.}\)</span> It is reasonable that, if the coin is <em class="emphasis">more different</em> from the null hypothesis, then it will have a higher probabiilty of producing data extreme enough to reject the null hypothesis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Power-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <section class="exercises" id="exercises-Power"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>

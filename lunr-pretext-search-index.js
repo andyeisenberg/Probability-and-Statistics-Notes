@@ -1528,7 +1528,70 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "One Sample Tests",
-  "body": " One Sample Tests  Text of section.     In each of the following scenarios, determine whether we should use a 1-tailed test or a 2-tailed test.     We have a coin which we've flipped many times, seeing an above-average number of heads. We suspect the coin comes up heads more often than a fair coin would.      We find a coin on the street and wonder whether or not it's a fair coin.      We suspect there will be a difference in average weight of mice caught during the summer versus during the winter.      In a medical study, a group of patients are gathered and the proportion experiencing particular symptoms is measured. A new drug intended to eliminate these symptoms is administered, after which the proportion experiencing symptoms is measured again.       Suppose we find a coin and wonder whether it's fair. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?      Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?      Suppose we find a six-sided die and wonder whether it's fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. If we roll 22 1's, should we accept or reject the null hypothesis of a fair die at a significance level of 0.05?      Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in . We suspect that growing this plant in a greenhouse will increase its height. A sample of 50 plants grown in a greenhouse has an average height of 40 in. Is this significant enough data to reject the null hypothesis of equal means at the significance level?     "
+  "body": " One Sample Tests    Suppose 10% of the general population is left-handed. In a sample of 100 patients with carpal tunnel syndrome, 16 are found to be left-handed. Is this evidence that the proportion of left-handedness is higher among carpal tunnel syndrome patients than among the general population?    We would like to develop a framework through which we can analyze whether data we've collected provides evidence for a particular hypothesis. In fact, we will generally consider two hypotheses:    The null hypothesis , often denoted , is the assumption that an effect being studied or proposed does not exist. The alternative hypothesis , , is the claim that the effect does exist.    In the previous example, if we write for the true proportion of left-handed people among the population with carpal tunnel syndrome, the null hypothesis would be that this proportion is the same as the general population. The alternative hypothesis might be, for example, that the proportion is higher than among the general population:   After performing an experiment, we will either accept or reject the null hypothesis based on the data we collect. Consider the following scenarios:     accept  reject    true  correct  type I error    false  type II error  correct    We'll use the notation for the probability of making a type I error, also called the significance level , and for the probability of making a type II error. The power of a test is the probability of correctly rejecting , i.e., .    The -value is the probability of observing a result at least as extreme as measured if is true.      Continuing the previous example, under that , the probability of seeing at least 16 left-handed people in a sample of 100 people would be: which is our -value.    The goal of our calculation is to control the chance of making a type I error by choosing a significance level cutoff, often 0.05. If our calculated -value is below the cutoff, then reject . Otherwise, accept . In the previous example, we would reject , because it appears that the data we collected is pretty unlikely to see if the null hypothesis were true. We would accept that, about 4% of the time if the null hypothesis is true, we would see data at least this extreme, and therefore make a mistake by rejecting .  The test we just applied is called 1-tailed . The alternative hypothesis proposed that was different from 0.1 in a specific direction. For a 2-tailed test, we could use the alternative hypothesis that . In this setting, the idea of data \"at least as extreme\" as what was measured is reframed. We measured 16 left-handed people in a sample of 100, which is 6 more than we would expect under the null hypothesis. So we should also include the possibility of seeing at least 6 fewer left-handed people in the sample than expected: so, using a 2-tailed test, we would fail to reject the null hypothesis.  In suitable situations, we can also use a normal approximation via to calculate the -value.    We find a coin on the street and wonder if it's a fair coin. We flip it 100 times and see 62 heads. Is this strong evidence to reject the null hypothesis of a fair coin at a 0.05 significance level?  Let be the random variable which counts the number of heads in 100 flips. The null hypothesis of a fair coin would mean the parameter . (We'll avoid the letter for the parameter to prevent confusion with the new term, -value.) So: Then, by , . So, using a 2-tailed test, the -value is: so this is strong enough evidence to reject .       In each of the following scenarios, determine whether we should use a 1-tailed test or a 2-tailed test.     We have a coin which we've flipped many times, seeing an above-average number of heads. We suspect the coin comes up heads more often than a fair coin would.      We find a coin on the street and wonder whether or not it's a fair coin.      We suspect there will be a difference in average weight of mice caught during the summer versus during the winter.      In a medical study, a group of patients are gathered and the proportion experiencing particular symptoms is measured. A new drug intended to eliminate these symptoms is administered, after which the proportion experiencing symptoms is measured again.       Suppose we find a coin and wonder whether it's fair. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?      Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?      Suppose we find a six-sided die and wonder whether it's fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. If we roll 22 1's, should we accept or reject the null hypothesis of a fair die at a significance level of 0.05?      Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in . We suspect that growing this plant in a greenhouse will increase its height. A sample of 50 plants grown in a greenhouse has an average height of 40 in. Is this significant enough data to reject the null hypothesis of equal means at the significance level?     "
+},
+{
+  "id": "sec-One-Sample-Tests-2",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#sec-One-Sample-Tests-2",
+  "type": "Example",
+  "number": "5.1.1",
+  "title": "",
+  "body": "  Suppose 10% of the general population is left-handed. In a sample of 100 patients with carpal tunnel syndrome, 16 are found to be left-handed. Is this evidence that the proportion of left-handedness is higher among carpal tunnel syndrome patients than among the general population?   "
+},
+{
+  "id": "def-null-hypothesis",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#def-null-hypothesis",
+  "type": "Definition",
+  "number": "5.1.2",
+  "title": "",
+  "body": "  The null hypothesis , often denoted , is the assumption that an effect being studied or proposed does not exist. The alternative hypothesis , , is the claim that the effect does exist.   "
+},
+{
+  "id": "sec-One-Sample-Tests-8",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#sec-One-Sample-Tests-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "significance level power "
+},
+{
+  "id": "def-p-value",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#def-p-value",
+  "type": "Definition",
+  "number": "5.1.3",
+  "title": "",
+  "body": "  The -value is the probability of observing a result at least as extreme as measured if is true.   "
+},
+{
+  "id": "sec-One-Sample-Tests-10",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#sec-One-Sample-Tests-10",
+  "type": "Example",
+  "number": "5.1.4",
+  "title": "",
+  "body": "  Continuing the previous example, under that , the probability of seeing at least 16 left-handed people in a sample of 100 people would be: which is our -value.   "
+},
+{
+  "id": "sec-One-Sample-Tests-12",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#sec-One-Sample-Tests-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "1-tailed 2-tailed "
+},
+{
+  "id": "sec-One-Sample-Tests-14",
+  "level": "2",
+  "url": "sec-One-Sample-Tests.html#sec-One-Sample-Tests-14",
+  "type": "Example",
+  "number": "5.1.5",
+  "title": "",
+  "body": "  We find a coin on the street and wonder if it's a fair coin. We flip it 100 times and see 62 heads. Is this strong evidence to reject the null hypothesis of a fair coin at a 0.05 significance level?  Let be the random variable which counts the number of heads in 100 flips. The null hypothesis of a fair coin would mean the parameter . (We'll avoid the letter for the parameter to prevent confusion with the new term, -value.) So: Then, by , . So, using a 2-tailed test, the -value is: so this is strong enough evidence to reject .   "
 },
 {
   "id": "exercises-One-Sample-Tests-1",
@@ -1582,7 +1645,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "Two Sample Tests",
-  "body": " Two Sample Tests  Text of section.     A farmer is testing an experimental new plant fertilizer that is supposed to increase the weight of a particular apple variety. A control sample of 25 apples grown using the usual fertilizer have a mean weight of 75 grams and a sample variance of 90 grams (for an individual apple). An experimental sample of 25 apples grown using the new fertilizer have a mean weight of 79 grams and a sample variance of 90 grams .      We have an established factory which produces coins that are close to fair. We're opening up a second factory, and we'd like to ensure the machines are calibrated to produce coins which behave similarly to the ones produced in the established factory. We pick one sample coin from each factory, and flip each sample coin 100 times. The coin from the established factory flips 52 heads in 100 flips. The coin from the new factory flips 62 heads in 100 flips. Is this strong enough evidence to reject the null hypothesis that the two factories produce similar coins at a 0.05 significance level?     "
+  "body": " Two Sample Tests  In the previous section, we compared data collected from a sample against a known or supposed baseline. But the statistics for that baseline would also generally be approximated by collecting data from a sample. We'll now consider hypothesis tests that directly involve two samples of data, one called a control group and the other an experimental group .    Suppose a sample of 50 plants have a mean height of 35 cm. A separate sample of 30 plants are taken from another plot which has been using a new fertilizer intended to increase plant growth, and they have a mean height of 36.4 cm. If the height of a plant has a variance of , do we have strong enough evidence to reject the null hypothesis that the new fertilizer has no effect on plant height?  Let be the random variable representing average height of the control group of plants. This sample has size , and we measured the average height . The variance of the average height would be: Similarly, let be the random variable representing average height of the experimental group of plants. This sample has size , and we measured the average height . The variance of the average height would be: Let be the difference between the average heights.  According to the null hypothesis, the two plots of plants should behave the same way, so . We measured the value: The variance would be: So, under the null hypothesis, we will treat as . We then perform a 1-tailed test: so we can reject the null hypothesis.    However, we don't know , so we should replace it with the sample variance.    Suppose a sample of 100 people from the general population contains 10 left-handed people, and a sample of 100 patients from a carpal tunnel syndrome clinic contains 16 left-handed people. If is the proportion of left-handed people in the general population, then the maximum likelihood estimation based on our control group sample would be: If is the proportion of left-handed people in the patient population, then the maximum likelihood estimate would be: Write for the proportion of the control group sample which is left-handed and for the proportion of the experimental group sample. Then we can estimate the variances: Now, if , then: however, we should pause a moment here. The null hypothesis would be that the two populations have the same statistics. That should include the same variance for an individual measurement. (The variances of and could still be different if, e.g., they were averaging over different sized samples.) So we should abandon our two distinct maximum likelihood estimates and instead find one estimate, , estimated from all collected data: Then, we should recalculate the variances of : Finally: Now we can apply a 1-tailed test: so we do not reject the null hypothesis.       A farmer is testing an experimental new plant fertilizer that is supposed to increase the weight of a particular apple variety. A control sample of 25 apples grown using the usual fertilizer have a mean weight of 75 grams and a sample variance of 90 grams (for an individual apple). An experimental sample of 25 apples grown using the new fertilizer have a mean weight of 79 grams and a sample variance of 90 grams .      We have an established factory which produces coins that are close to fair. We're opening up a second factory, and we'd like to ensure the machines are calibrated to produce coins which behave similarly to the ones produced in the established factory. We pick one sample coin from each factory, and flip each sample coin 100 times. The coin from the established factory flips 52 heads in 100 flips. The coin from the new factory flips 62 heads in 100 flips. Is this strong enough evidence to reject the null hypothesis that the two factories produce similar coins at a 0.05 significance level?     "
+},
+{
+  "id": "sec-Two-Sample-Tests-2",
+  "level": "2",
+  "url": "sec-Two-Sample-Tests.html#sec-Two-Sample-Tests-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "control group experimental group "
+},
+{
+  "id": "sec-Two-Sample-Tests-3",
+  "level": "2",
+  "url": "sec-Two-Sample-Tests.html#sec-Two-Sample-Tests-3",
+  "type": "Example",
+  "number": "5.2.1",
+  "title": "",
+  "body": "  Suppose a sample of 50 plants have a mean height of 35 cm. A separate sample of 30 plants are taken from another plot which has been using a new fertilizer intended to increase plant growth, and they have a mean height of 36.4 cm. If the height of a plant has a variance of , do we have strong enough evidence to reject the null hypothesis that the new fertilizer has no effect on plant height?  Let be the random variable representing average height of the control group of plants. This sample has size , and we measured the average height . The variance of the average height would be: Similarly, let be the random variable representing average height of the experimental group of plants. This sample has size , and we measured the average height . The variance of the average height would be: Let be the difference between the average heights.  According to the null hypothesis, the two plots of plants should behave the same way, so . We measured the value: The variance would be: So, under the null hypothesis, we will treat as . We then perform a 1-tailed test: so we can reject the null hypothesis.   "
+},
+{
+  "id": "sec-Two-Sample-Tests-5",
+  "level": "2",
+  "url": "sec-Two-Sample-Tests.html#sec-Two-Sample-Tests-5",
+  "type": "Example",
+  "number": "5.2.2",
+  "title": "",
+  "body": "  Suppose a sample of 100 people from the general population contains 10 left-handed people, and a sample of 100 patients from a carpal tunnel syndrome clinic contains 16 left-handed people. If is the proportion of left-handed people in the general population, then the maximum likelihood estimation based on our control group sample would be: If is the proportion of left-handed people in the patient population, then the maximum likelihood estimate would be: Write for the proportion of the control group sample which is left-handed and for the proportion of the experimental group sample. Then we can estimate the variances: Now, if , then: however, we should pause a moment here. The null hypothesis would be that the two populations have the same statistics. That should include the same variance for an individual measurement. (The variances of and could still be different if, e.g., they were averaging over different sized samples.) So we should abandon our two distinct maximum likelihood estimates and instead find one estimate, , estimated from all collected data: Then, we should recalculate the variances of : Finally: Now we can apply a 1-tailed test: so we do not reject the null hypothesis.   "
 },
 {
   "id": "exercises-Two-Sample-Tests-1",
@@ -1609,7 +1699,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "Power of a Test",
-  "body": " Power of a Test  Text of section.     Suppose we find a coin and wonder whether it's fair. As a first test, we decide to flip the coin 200 times and count the number of heads, . What values of would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?      Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads, . What values of would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?      Suppose we find a six-sided die and wonder whether it's fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. The expected number of 1's is 50\/3, with a variance of 125\/9.     Using a normal approximation, what is the smallest number of 1's greater than 50\/3 that would be extreme enough to reject the null hypothesis of a fair die?      Using a normal approximation, what is the greatest number of 1's less than 50\/3 that would be extreme enough to reject the null hypothesis of a fair die?      Suppose that this die is weighted so that it rolls a 1 with probability 0.2. What would be the power of our test?      Suppose we roll the die 100 times and see 23 1's. Use the maximum likelihood value for the probability of rolling a 1 to calculate the power of the test.       Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in . We suspect that growing this plant in a greenhouse will increase its height. We take the average height of a sample of 50 plants grown in a greenhouse. What is the minimum average height of this sample that would be extreme enough to reject the null hypothesis of equal means at the significance level? If the plants, when grown in a greenhouse, would truly have an average height of 41 in, what is the power of our test?     "
+  "body": " Power of a Test  Recall that the power of a test is the probability of rejecting a false null hypothesis. To understand the power, we must know:   What data would lead us to reject the null hypothesis?    What is the probability of seeing such data?       We find a coin and wonder if it's fair. Let be the probability of the coin coming up heads on a flip. Let count the number of heads in 100 flips. Under the null hypothesis that , is binomial, with: Using a normal approximation, . In the calculation of the -value for a 2-tailed test, we will eventually reach the expression: for some -score. To address the first question above, we can calculate, for a specified significance level , the -score that represents data at the cutoff between accepting and rejecting the null hypothesis: For the significance level , we'll have . Now, we convert back to values of , keeping in mind that a continuity correction would be involved: We can't flip a fractional number of heads, so it would take a result of 61 or more heads (or, equally extreme in the other direction, 39 heads or fewer) to reject the null hypothesis.    To address the second question, we find a obstacle. How can we calculate the probability of seeing data extreme enough data to reject without knowing the true value of ? In fact, the power is not a single number, but a function of . For each hypothetical value of , we'll calculate the probability of seeing extreme enough data to reject .    Continuing the previous example, we know that, if or , we would reject . For a given value of : For example, if the true value of the parameter is : If, instead, : (Note: for the -score , which is below the range covered by , we will treat the value as close enough to 0. For a -score outside the range on the other side, we would treat the value as 1. If we needed more precision than that, we would consult an expanded table.)    We can see in the example that the power of the test was greater when than when . The null hypothesis was . It is reasonable that, if the coin is more different from the null hypothesis, then it will have a higher probabiilty of producing data extreme enough to reject the null hypothesis.     Suppose we find a coin and wonder whether it's fair. As a first test, we decide to flip the coin 200 times and count the number of heads, . What values of would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?      Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads, . What values of would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?      Suppose we find a six-sided die and wonder whether it's fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. The expected number of 1's is 50\/3, with a variance of 125\/9.     Using a normal approximation, what is the smallest number of 1's greater than 50\/3 that would be extreme enough to reject the null hypothesis of a fair die?      Using a normal approximation, what is the greatest number of 1's less than 50\/3 that would be extreme enough to reject the null hypothesis of a fair die?      Suppose that this die is weighted so that it rolls a 1 with probability 0.2. What would be the power of our test?      Suppose we roll the die 100 times and see 23 1's. Use the maximum likelihood value for the probability of rolling a 1 to calculate the power of the test.       Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in . We suspect that growing this plant in a greenhouse will increase its height. We take the average height of a sample of 50 plants grown in a greenhouse. What is the minimum average height of this sample that would be extreme enough to reject the null hypothesis of equal means at the significance level? If the plants, when grown in a greenhouse, would truly have an average height of 41 in, what is the power of our test?     "
+},
+{
+  "id": "sec-Power-3",
+  "level": "2",
+  "url": "sec-Power.html#sec-Power-3",
+  "type": "Example",
+  "number": "5.3.1",
+  "title": "",
+  "body": "  We find a coin and wonder if it's fair. Let be the probability of the coin coming up heads on a flip. Let count the number of heads in 100 flips. Under the null hypothesis that , is binomial, with: Using a normal approximation, . In the calculation of the -value for a 2-tailed test, we will eventually reach the expression: for some -score. To address the first question above, we can calculate, for a specified significance level , the -score that represents data at the cutoff between accepting and rejecting the null hypothesis: For the significance level , we'll have . Now, we convert back to values of , keeping in mind that a continuity correction would be involved: We can't flip a fractional number of heads, so it would take a result of 61 or more heads (or, equally extreme in the other direction, 39 heads or fewer) to reject the null hypothesis.   "
+},
+{
+  "id": "sec-Power-5",
+  "level": "2",
+  "url": "sec-Power.html#sec-Power-5",
+  "type": "Example",
+  "number": "5.3.2",
+  "title": "",
+  "body": "  Continuing the previous example, we know that, if or , we would reject . For a given value of : For example, if the true value of the parameter is : If, instead, : (Note: for the -score , which is below the range covered by , we will treat the value as close enough to 0. For a -score outside the range on the other side, we would treat the value as 1. If we needed more precision than that, we would consult an expanded table.)   "
 },
 {
   "id": "exercises-Power-1",
