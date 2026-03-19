@@ -2,8 +2,113 @@
   <title>Two Sample Tests</title>
 
   <p>
-    Text of section.
+    In the previous section, we compared data collected from a sample against a known or supposed baseline.
+    But the statistics for that baseline would also generally be approximated by collecting data from a sample.
+    We'll now consider hypothesis tests that directly involve two samples of data, one called a <term>control group</term> and the other an <term>experimental group</term>.
   </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose a sample of 50 plants have a mean height of 35 cm.
+        A separate sample of 30 plants are taken from another plot which has been using a new fertilizer intended to increase plant growth, and they have a mean height of 36.4 cm.
+        If the height of a plant has a variance of <m>\sigma^2 = 12 \text{cm}^2</m>, do we have strong enough evidence to reject the null hypothesis that the new fertilizer has no effect on plant height?
+      </p>
+
+      <p>
+        Let <m>A_1</m> be the random variable representing average height of the control group of plants.
+        This sample has size <m>n_1 = 50</m>, and we measured the average height <m>\mu_1 = 35</m>.
+        The variance of the average height would be:
+        <md>
+          <mrow> \Var(A_1) \amp = \frac{\sigma^2}{n_1} = \frac{12}{50} = 0.24. </mrow>
+        </md>
+        Similarly, let <m>A_2</m> be the random variable representing average height of the experimental group of plants.
+        This sample has size <m>n_2 = 30</m>, and we measured the average height <m>\mu_2 = 36.4</m>.
+        The variance of the average height would be:
+        <md>
+          <mrow> \Var(A_2) \amp = \frac{\sigma^2}{n_2} = \frac{12}{30} = 0.4. </mrow>
+        </md>
+        Let <m>D = A_2 - A_1</m> be the difference between the average heights.
+      </p>
+
+      <p>
+        According to the null hypothesis, the two plots of plants should behave the same way, so <m>\E(D) = 0</m>.
+        We measured the value:
+        <md>
+          <mrow>D = A_2 - A_1 = 36.4 - 35 = 1.4 </mrow>
+        </md>
+        The variance would be:
+        <md>
+          <mrow> \Var(D) = \Var(A_2 - A_1) = \Var(A_2) + \Var(A_1) = 0.24 + 0.4 = 0.64. </mrow>
+        </md>
+        So, under the null hypothesis, we will treat <m>D</m> as <m>\Norm(0, 0.64)</m>.
+        We then perform a 1-tailed test:
+        <md>
+          <mrow> \Pr(D \geq 1.4) \amp \approx \Pr\left(Z \geq \frac{1.4 - 0}{\sqrt{0.64}}\right) </mrow>
+          <mrow> \amp = 1 - \Phi(1.75) </mrow>
+          <mrow> \amp = 1 - 0.9599 </mrow>
+          <mrow> \amp = 0.0401 \lt 0.05, </mrow>
+        </md>
+        so we can reject the null hypothesis.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    However, we don't know <m>\sigma^2</m>, so we should replace it with the sample variance.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose a sample of 100 people from the general population contains 10 left-handed people, and a sample of 100 patients from a carpal tunnel syndrome clinic contains 16 left-handed people.
+        If <m>\theta_1</m> is the proportion of left-handed people in the general population, then the maximum likelihood estimation based on our control group sample would be:
+        <md>
+          <mrow> \widehat{\theta}_1 = \frac{10}{100} = 0.1. </mrow>
+        </md>
+        If <m>\theta_2</m> is the proportion of left-handed people in the patient population, then the maximum likelihood estimate would be:
+        <md>
+          <mrow> \widehat{\theta}_2 = \frac{16}{100} = 0.16. </mrow>
+        </md>
+        Write <m>A_1</m> for the proportion of the control group sample which is left-handed and <m>A_2</m> for the proportion of the experimental group sample.
+        Then we can estimate the variances:
+        <md>
+          <mrow> n_1 \amp = 100 \amp n_2 \amp = 100 </mrow>
+          <mrow> \Var(A_1) \amp = \frac{n_1 \widehat{\theta}_1(1 - \widehat{\theta}_1)}{n_1^2} \amp \Var(A_2) \amp = \frac{n_2 \widehat{\theta}_2(1 - \widehat{\theta}_2)}{n_2^2} </mrow>
+          <mrow> \amp = \frac{(0.1)(0.9)}{100} \amp \amp = \frac{(0.16)(0.84)}{100} </mrow>
+          <mrow> \amp = 0.0009 \amp \amp = 0.001344 </mrow>
+        </md>
+        Now, if <m>D = A_2 - A_1</m>, then:
+        <md>
+          <mrow> \Var(D) = \Var(A_2) + \Var(A_1), </mrow>
+        </md>
+        however, we should pause a moment here.
+        The null hypothesis would be that the two populations have the same statistics.
+        That should include the same variance for an individual measurement.
+        (The variances of <m>A_1</m> and <m>A_2</m> could still be different if, e.g., they were averaging over different sized samples.) So we should abandon our two distinct maximum likelihood estimates <m>\widehat{\theta}_1, \widehat{\theta}_2</m> and instead find one estimate, <m>\widehat{\theta}_0</m>, estimated from all collected data:
+        <md>
+          <mrow> \widehat{\theta}_0 = \frac{10 + 16}{100 + 100} = \frac{26}{200} = 0.13. </mrow>
+        </md>
+        Then, we should recalculate the variances of <m>A_1, A_2</m>:
+        <md>
+          <mrow> \Var(A_1) \amp = \frac{(0.13)(0.87)}{100} = 0.001131 </mrow>
+          <mrow> \Var(A_2) \amp = \frac{(0.13)(0.87)}{100} = 0.001131 </mrow>
+        </md>
+        Finally:
+        <md>
+          <mrow> \Var(D) = \Var(A_1) + \Var(A_2) = 0.002262. </mrow>
+        </md>
+        Now we can apply a 1-tailed test:
+        <md>
+          <mrow> \Pr(D \geq 0.06) \approx \Pr\left( Z \geq \frac{0.06 - 0}{\sqrt{0.002262}}\right) </mrow>
+          <mrow> \amp \approx 1 - \Phi(1.27) </mrow>
+          <mrow> \amp \approx 1 - 0.8962 </mrow>
+          <mrow> \amp = 0.1038 \gt 0.05,  </mrow>
+        </md>
+        so we do not reject the null hypothesis.
+      </p>
+    </statement>
+  </example>
 
   <exercises xml:id="exercises-Two-Sample-Tests">
   <exercise>

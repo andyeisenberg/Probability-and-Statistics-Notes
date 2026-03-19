@@ -2,7 +2,98 @@
   <title>Power of a Test</title>
 
   <p>
-    Text of section.
+    Recall that the power of a test is the probability of rejecting a false null hypothesis.
+    To understand the power, we must know:
+    <ol>
+      <li>
+        <p>
+          What data would lead us to reject the null hypothesis?
+        </p>
+      </li>
+
+      <li>
+        <p>
+          What is the probability of seeing such data?
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        We find a coin and wonder if it's fair.
+        Let <m>\theta</m> be the probability of the coin coming up heads on a flip.
+        Let <m>S</m> count the number of heads in 100 flips.
+        Under the null hypothesis that <m>\theta = 0.5</m>, <m>S</m> is binomial, with:
+        <md>
+          <mrow> \E(S) \amp = (n)(\theta) = (100)(0.5) = 50 </mrow>
+          <mrow> \Var(S) \amp = (n)(\theta)(1 - \theta) = (100)(0.5)(0.5) = 25 </mrow>
+        </md>
+        Using a normal approximation, <m>S \approx \Norm(50, 25)</m>.
+        In the calculation of the <m>p</m>-value for a 2-tailed test, we will eventually reach the expression:
+        <md>
+          <mrow> \Pr(Z \geq z) + \Pr(Z \leq -z) </mrow>
+        </md>
+        for some <m>z</m>-score.
+        To address the first question above, we can calculate, for a specified significance level <m>\alpha</m>, the <m>z</m>-score that represents data at the cutoff between accepting and rejecting the null hypothesis:
+        <md>
+          <mrow> \alpha \amp = \Pr(Z \geq z) + \Pr(Z \leq -z) </mrow>
+          <mrow> \amp = \Phi(-z) + (1 - \Phi(z)) </mrow>
+          <mrow> \amp = 2 \Phi(-z) </mrow>
+          <mrow> \Rightarrow \Phi(-z) \amp = \frac{\alpha}{2} </mrow>
+          <mrow> -z \amp = \Phi^{-1}\left(\frac{\alpha}{2}\right) </mrow>
+        </md>
+        For the significance level <m>\alpha = 0.05</m>, we'll have <m>z = 1.96</m>.
+        Now, we convert back to values of <m>S</m>, keeping in mind that a continuity correction would be involved:
+        <md>
+          <mrow> \frac{S - 0.5 - 50}{\sqrt{25}} \amp = 1.96 </mrow>
+          <mrow> S \amp = 50.5 + 1.96 \sqrt{25} = 60.3. </mrow>
+        </md>
+        We can't flip a fractional number of heads, so it would take a result of 61 or more heads (or, equally extreme in the other direction, 39 heads or fewer) to reject the null hypothesis.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    To address the second question, we find a obstacle.
+    How can we calculate the probability of seeing data extreme enough data to reject <m>H_0</m> without knowing the true value of <m>\theta</m>? In fact, the power is not a single number, but a function of <m>\theta</m>.
+    For each hypothetical value of <m>\theta</m>, we'll calculate the probability of seeing extreme enough data to reject <m>H_0</m>.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Continuing the previous example, we know that, if <m>S \geq 61</m> or <m>S \leq 39</m>, we would reject <m>H_0</m>.
+        For a given value of <m>\theta</m>:
+        <md>
+          <mrow> \E(S) \amp = n\theta = 100\theta </mrow>
+          <mrow> \Var(S) \amp = n\theta(1-\theta) = 100\theta(1-\theta) </mrow>
+          <mrow> \Pr(S \geq 61) + \Pr(S \leq 39) \amp \approx \Pr\left(Z \geq \frac{60.5 - 100\theta}{\sqrt{100\theta(1 - \theta)}}\right) + \Pr\left(Z \leq \frac{39.5 - 100\theta}{\sqrt{100\theta(1 - \theta)}}\right) </mrow>
+        </md>
+        For example, if the true value of the parameter is <m>\theta = 0.5</m>:
+        <md>
+          <mrow> \Pr(S \geq 61) + \Pr(S \leq 39) \amp \approx \Pr(Z \geq 1.11) + \Pr(Z \leq -3.12) </mrow>
+          <mrow> \amp \approx (1 - 0.8665) + 0.0009 </mrow>
+          <mrow> \amp = 0.1344 </mrow>
+        </md>
+        If, instead, <m>\theta = 0.6</m>:
+        <md>
+          <mrow> \Pr(S \geq 61) + \Pr(S \leq 39) \amp \approx \Pr(Z \geq 0.10) + \Pr(Z \leq -4.18) </mrow>
+          <mrow> \amp \approx (1 - 0.5398) + 0 </mrow>
+          <mrow> \amp = 0.4602 </mrow>
+        </md>
+        (Note: for the <m>z</m>-score <m>-4.18</m>, which is below the range covered by <xref ref="app-Phi-table"/>, we will treat the <m>\Phi</m> value as close enough to 0.
+        For a <m>z</m>-score outside the range on the other side, we would treat the <m>\Phi</m> value as 1.
+        If we needed more precision than that, we would consult an expanded table.)
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    We can see in the example that the power of the test was greater when <m>\theta = 0.6</m> than when <m>\theta = 0.55</m>.
+    The null hypothesis was <m>\theta = 0.5</m>.
+    It is reasonable that, if the coin is <em>more different</em> from the null hypothesis, then it will have a higher probabiilty of producing data extreme enough to reject the null hypothesis.
   </p>
 
   <exercises xml:id="exercises-Power">
