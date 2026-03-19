@@ -1,0 +1,88 @@
+<section xml:id="sec-Power" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Power of a Test</title>
+
+  <p>
+    Text of section.
+  </p>
+
+  <exercises xml:id="exercises-Power">
+  <exercise>
+    <statement>
+      <p>
+        Suppose we find a coin and wonder whether it's fair.
+        As a first test, we decide to flip the coin 200 times and count the number of heads, <m>S</m>.
+        What values of <m>S</m> would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose we have a coin which we suspect comes up heads more often than a fair coin would.
+        As a first test, we decide to flip the coin 200 times and count the number of heads, <m>S</m>.
+        What values of <m>S</m> would be extreme enough to reject the null hypothesis of a fair coin? If the coin actually has a 0.6 probability of coming up heads, what is the power of this test?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>
+        Suppose we find a six-sided die and wonder whether it's fair.
+        As a first test, we decide to roll the die 100 times and count the number of times it comes up 1.
+        The expected number of 1's is 50/3, with a variance of 125/9.
+      </p>
+    </introduction>
+
+
+    <task>
+      <statement>
+        <p>
+          Using a normal approximation, what is the smallest number of 1's greater than 50/3 that would be extreme enough to reject the null hypothesis of a fair die?
+        </p>
+      </statement>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          Using a normal approximation, what is the greatest number of 1's less than 50/3 that would be extreme enough to reject the null hypothesis of a fair die?
+        </p>
+      </statement>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          Suppose that this die is weighted so that it rolls a 1 with probability 0.2.
+          What would be the power of our test?
+        </p>
+      </statement>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          Suppose we roll the die 100 times and see 23 1's.
+          Use the maximum likelihood value for the probability of rolling a 1 to calculate the power of the test.
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in<m>^2</m>.
+        We suspect that growing this plant in a greenhouse will increase its height.
+        We take the average height of a sample of 50 plants grown in a greenhouse.
+        What is the minimum average height of this sample that would be extreme enough to reject the null hypothesis of equal means at the <m>p = 0.05</m> significance level? If the plants, when grown in a greenhouse, would truly have an average height of 41 in, what is the power of our test?
+      </p>
+    </statement>
+  </exercise>
+  </exercises>
+</section>

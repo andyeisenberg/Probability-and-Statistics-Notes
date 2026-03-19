@@ -1,0 +1,231 @@
+<section xml:id="sec-One-Sample-Tests" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>One Sample Tests</title>
+
+  <example>
+    <statement>
+      <p>
+        Suppose 10% of the general population is left-handed.
+        In a sample of 100 patients with carpal tunnel syndrome, 16 are found to be left-handed.
+        Is this evidence that the proportion of left-handedness is higher among carpal tunnel syndrome patients than among the general population?
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    We would like to develop a framework through which we can analyze whether data we've collected provides evidence for a particular hypothesis.
+    In fact, we will generally consider two hypotheses:
+  </p>
+
+  <definition xml:id="def-null-hypothesis">
+    <statement>
+      <p>
+        The <term>null hypothesis</term>, often denoted <m>H_0</m>, is the assumption that an effect being studied or proposed does not exist.
+        The <term>alternative hypothesis</term>, <m>H_a</m>, is the claim that the effect does exist.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    In the previous example, if we write <m>\theta</m> for the true proportion of left-handed people among the population with carpal tunnel syndrome, the null hypothesis would be that this proportion is the same as the general population.
+    The alternative hypothesis might be, for example, that the proportion is higher than among the general population:
+    <md>
+      <mrow> H_0: \theta \amp = 0.1 </mrow>
+      <mrow> H_a: \theta \amp \gt 0.1 </mrow>
+    </md>
+  </p>
+
+  <p>
+    After performing an experiment, we will either accept or reject the null hypothesis based on the data we collect.
+    Consider the following scenarios:
+  </p>
+
+  <tabular halign="center">
+    <row>
+      <cell></cell>
+      <cell bottom="minor">accept <m>H_0</m></cell>
+      <cell bottom="minor">reject <m>H_0</m></cell>
+    </row>
+
+    <row>
+      <cell right="minor"><m>H_0</m> true</cell>
+      <cell>correct</cell>
+      <cell>type I error</cell>
+    </row>
+
+    <row>
+      <cell right="minor"><m>H_0</m> false</cell>
+      <cell>type II error</cell>
+      <cell>correct</cell>
+    </row>
+  </tabular>
+
+  <p>
+    We'll use the notation <m>\alpha</m> for the probability of making a type I error, also called the <term>significance level</term>, and <m>\beta</m> for the probability of making a type II error.
+    The <term>power</term> of a test is the probability of correctly rejecting <m>H_0</m>, i.e., <m>1 - \beta</m>.
+  </p>
+
+  <definition xml:id="def-p-value">
+    <statement>
+      <p>
+        The <term><m>p</m>-value</term> is the probability of observing a result at least as extreme as measured if <m>H_0</m> is true.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Continuing the previous example, under <m>H_0</m> that <m>\theta = 0.1</m>, the probability of seeing at least 16 left-handed people in a sample of 100 people would be:
+        <md>
+          <mrow> \sum_{k = 16}^{100} {100 \choose k} (0.1)^k (1 - 0.1)^{100 - k} \approx 0.04, </mrow>
+        </md>
+        which is our <m>p</m>-value.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    The goal of our calculation is to control the chance of making a type I error by choosing a significance level cutoff, often 0.05.
+    If our calculated <m>p</m>-value is below the cutoff, then reject <m>H_0</m>.
+    Otherwise, accept <m>H_0</m>.
+    In the previous example, we would reject <m>H_0</m>, because it appears that the data we collected is pretty unlikely to see if the null hypothesis were true.
+    We would accept that, about 4% of the time if the null hypothesis <em>is</em> true, we would see data at least this extreme, and therefore make a mistake by rejecting <m>H_0</m>.
+  </p>
+
+  <p>
+    The test we just applied is called <term>1-tailed</term>.
+    The alternative hypothesis <m>\theta \gt 0.1</m> proposed that <m>\theta</m> was different from 0.1 in a specific direction.
+    For a <term>2-tailed</term> test, we could use the alternative hypothesis that <m>\theta \neq 0.1</m>.
+    In this setting, the idea of data "at least as extreme" as what was measured is reframed.
+    We measured 16 left-handed people in a sample of 100, which is 6 more than we would expect under the null hypothesis.
+    So we should also include the possibility of seeing at least 6 fewer left-handed people in the sample than expected:
+    <md>
+      <mrow> p\text{-value} \amp = \Pr(\geq 16 \text{ left-handed people}) + \Pr(\leq 4 \text{ left-handed people}) </mrow>
+      <mrow> \amp = \left(\sum_{k = 16}^{100} {100 \choose k} (0.1)^k (0.9)^{100 - k}\right) + \left(\sum_{k = 0}^{4} {100 \choose k} (0.1)^k (0.9)^{100 - k}\right) </mrow>
+      <mrow> \amp \approx 0.064 \gt 0.05, </mrow>
+    </md>
+    so, using a 2-tailed test, we would fail to reject the null hypothesis.
+  </p>
+
+  <p>
+    In suitable situations, we can also use a normal approximation via <xref ref="thm-CLT"/> to calculate the <m>p</m>-value.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        We find a coin on the street and wonder if it's a fair coin.
+        We flip it 100 times and see 62 heads.
+        Is this strong evidence to reject the null hypothesis of a fair coin at a 0.05 significance level?
+      </p>
+
+      <p>
+        Let <m>S</m> be the random variable which counts the number of heads in 100 flips.
+        The null hypothesis <m>H_0</m> of a fair coin would mean the parameter <m>\theta = \Pr(\text{heads}) = 0.5</m>.
+        (We'll avoid the letter <m>p</m> for the parameter to prevent confusion with the new term, <m>p</m>-value.) So:
+        <md>
+          <mrow> \E(S) \amp = n\theta = 100(0.5) = 50 </mrow>
+          <mrow> \Var(S) \amp = n\theta(1-\theta) = 100(0.5)(0.5) = 25 </mrow>
+        </md>
+        Then, by <xref ref="thm-CLT"/>, <m>S \approx \Norm(50, 25)</m>.
+        So, using a 2-tailed test, the <m>p</m>-value is:
+        <md>
+          <mrow> \Pr(S \geq 62) + \Pr(S \leq 38) \amp \approx \Pr\left(Z \geq \frac{61.5 - 50}{\sqrt{25}}\right) + \Pr\left(Z \leq \frac{38.5 - 50}{\sqrt{25}}\right) </mrow>
+          <mrow> \amp = (1 - \Phi(2.3)) + \Phi(-2.3) </mrow>
+          <mrow> \amp \approx (1 - 0.9893) + 0.0107 </mrow>
+          <mrow> \amp = 0.0214 \lt 0.05, </mrow>
+        </md>
+        so this is strong enough evidence to reject <m>H_0</m>.
+      </p>
+    </statement>
+  </example>
+
+  <exercises xml:id="exercises-One-Sample-Tests">
+  <exercise>
+    <introduction>
+      <p>
+        In each of the following scenarios, determine whether we should use a 1-tailed test or a 2-tailed test.
+      </p>
+    </introduction>
+
+
+    <task>
+      <statement>
+        <p>
+          We have a coin which we've flipped many times, seeing an above-average number of heads.
+          We suspect the coin comes up heads more often than a fair coin would.
+        </p>
+      </statement>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          We find a coin on the street and wonder whether or not it's a fair coin.
+        </p>
+      </statement>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          We suspect there will be a difference in average weight of mice caught during the summer versus during the winter.
+        </p>
+      </statement>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          In a medical study, a group of patients are gathered and the proportion experiencing particular symptoms is measured.
+          A new drug intended to eliminate these symptoms is administered, after which the proportion experiencing symptoms is measured again.
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose we find a coin and wonder whether it's fair.
+        As a first test, we decide to flip the coin 200 times and count the number of heads.
+        If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose we have a coin which we suspect comes up heads more often than a fair coin would.
+        As a first test, we decide to flip the coin 200 times and count the number of heads.
+        If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose we find a six-sided die and wonder whether it's fair.
+        As a first test, we decide to roll the die 100 times and count the number of times it comes up 1.
+        If we roll 22 1's, should we accept or reject the null hypothesis of a fair die at a significance level of 0.05?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in<m>^2</m>.
+        We suspect that growing this plant in a greenhouse will increase its height.
+        A sample of 50 plants grown in a greenhouse has an average height of 40 in.
+        Is this significant enough data to reject the null hypothesis of equal means at the <m>p = 0.05</m> significance level?
+      </p>
+    </statement>
+  </exercise>
+  </exercises>
+</section>

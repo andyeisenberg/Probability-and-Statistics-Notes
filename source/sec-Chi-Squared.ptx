@@ -1,0 +1,104 @@
+<section xml:id="sec-Chi-Squared" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title><m>\chi^2</m> Test</title>
+
+    <p>
+      Text of section.
+    </p>
+
+    <exercises xml:id="exercises-Chi-Squared">
+    <exercise>
+      <statement>
+        <p>
+          A store owner wants to determine how much shelf space to allocate to each of the drinks that they sell.
+          They survey their customers about their favorite drinks.
+          Is the data below consistent with the null hypothesis that each type of drink will be equally preferred?
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular>
+            <row header="yes" bottom="minor">
+              <cell halign="center">drink type</cell>
+              <cell halign="center">water</cell>
+              <cell halign="center">soda</cell>
+              <cell halign="center">tea</cell>
+              <cell halign="center">coffee</cell>
+              <cell halign="center">energy drinks</cell>
+            </row>
+
+            <row>
+              <cell halign="center">favorite</cell>
+              <cell halign="center">28</cell>
+              <cell halign="center">17</cell>
+              <cell halign="center">15</cell>
+              <cell halign="center">26</cell>
+              <cell halign="center">14</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <introduction>
+        <p>
+          A particular drug is administered in 100 independent trials.
+          In each trial, the drug is administered to four people, and we count how many respond to the drug.
+          The table below shows how many trials have each different count of people who respond to the drug.
+        </p>
+
+        <table>
+          <title></title>
+
+          <tabular>
+            <row header="yes" bottom="minor">
+              <cell halign="center"># who respond to drug</cell>
+              <cell halign="center">0</cell>
+              <cell halign="center">1</cell>
+              <cell halign="center">2</cell>
+              <cell halign="center">3</cell>
+              <cell halign="center">4</cell>
+            </row>
+
+            <row>
+              <cell halign="center"># of trials</cell>
+              <cell halign="center">3</cell>
+              <cell halign="center">11</cell>
+              <cell halign="center">31</cell>
+              <cell halign="center">34</cell>
+              <cell halign="center">21</cell>
+            </row>
+          </tabular>
+        </table>
+      </introduction>
+
+
+      <task>
+        <statement>
+          <p>
+            Is the data consistent with a binomial distribution with parameter <m>p = 0.7</m>?
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            What is the total number of people who have been administered the drug? What is the total number who have responded to it? What is the maximum likelihood estimation for the probability <m>p</m> that a person will respond to the drug?
+          </p>
+        </statement>
+      </task>
+
+
+      <task>
+        <statement>
+          <p>
+            Is the data consistent with a binomial distribution with the MLE value of <m>p</m>?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+    </exercises>
+  </section>

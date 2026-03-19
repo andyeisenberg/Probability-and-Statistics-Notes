@@ -1,0 +1,32 @@
+<section xml:id="sec-Two-Sample-Tests" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Two Sample Tests</title>
+
+  <p>
+    Text of section.
+  </p>
+
+  <exercises xml:id="exercises-Two-Sample-Tests">
+  <exercise>
+    <statement>
+      <p>
+        A farmer is testing an experimental new plant fertilizer that is supposed to increase the weight of a particular apple variety.
+        A control sample of 25 apples grown using the usual fertilizer have a mean weight of 75 grams and a sample variance of 90 grams<m>^2</m> (for an individual apple).
+        An experimental sample of 25 apples grown using the new fertilizer have a mean weight of 79 grams and a sample variance of 90 grams<m>^2</m>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        We have an established factory which produces coins that are close to fair.
+        We're opening up a second factory, and we'd like to ensure the machines are calibrated to produce coins which behave similarly to the ones produced in the established factory.
+        We pick one sample coin from each factory, and flip each sample coin 100 times.
+        The coin from the established factory flips 52 heads in 100 flips.
+        The coin from the new factory flips 62 heads in 100 flips.
+        Is this strong enough evidence to reject the null hypothesis that the two factories produce similar coins at a 0.05 significance level?
+      </p>
+    </statement>
+  </exercise>
+  </exercises>
+</section>
