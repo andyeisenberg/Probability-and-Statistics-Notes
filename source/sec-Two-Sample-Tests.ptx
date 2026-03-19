@@ -100,7 +100,7 @@
         </md>
         Now we can apply a 1-tailed test:
         <md>
-          <mrow> \Pr(D \geq 0.06) \approx \Pr\left( Z \geq \frac{0.06 - 0}{\sqrt{0.002262}}\right) </mrow>
+          <mrow> \Pr(D \geq 0.06) \amp \approx \Pr\left( Z \geq \frac{0.06 - 0}{\sqrt{0.002262}}\right) </mrow>
           <mrow> \amp \approx 1 - \Phi(1.27) </mrow>
           <mrow> \amp \approx 1 - 0.8962 </mrow>
           <mrow> \amp = 0.1038 \gt 0.05,  </mrow>
