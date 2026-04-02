@@ -1,104 +1,320 @@
 <section xml:id="sec-Chi-Squared" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title><m>\chi^2</m> Test</title>
+  <title><m>\chi^2</m> Test</title>
 
-    <p>
-      Text of section.
-    </p>
+  <p>
+    In our previous hypothesis tests, we've asked about the correct value of some distribution parameter.
+    But we might also be interested in whether a particular type of distribution fits the data in the first place.
+    In this situation, we can try to measure the extent to which the observed data differs from what would be expected under a particular distribution.
+  </p>
 
-    <exercises xml:id="exercises-Chi-Squared">
-    <exercise>
+  <definition xml:id="def-chi-squared">
+    <statement>
+      <p>
+        Suppose <m>O_1, \dotsc, O_n</m> are observed data with expected values <m>E_1, \dotsc, E_n</m>.
+        The <term><m>\chi^2</m> statistic</term> is:
+        <md>
+          <mrow> \chi^2 = \sum_{i=1}^n \frac{(O_i - E_i)^2}{E_i}. </mrow>
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The expression <m>O_i - E_i</m> directly measures the difference between an observation and its expected value.
+    However, if we simply summed up these differences, then one observation which is higher than its expected value and another that's lower would have differences that cancel out.
+    Squaring the term ensures that any difference contributes positively when summed together.
+    And dividing by <m>E_i</m> ensures that the differences are expressed relative to the size of the expected value.
+    A difference of <m>0.1</m> might sound like a small difference, but it would have a different interpretation if the expected value is <m>100</m> than if the expected value is <m>0.01</m>.
+  </p>
+
+  <p>
+    So the overall number <m>\chi^2</m> is designed to be a measurement of how much the observed data differs from expectation.
+    It seems like <m>\chi^2</m> could be higher or lower simply as the result of the number of terms involved in the summation.
+    How much difference is enough to reject the distribution which generated those expected values? It seems that it should depend on that number of terms.
+  </p>
+
+  <definition xml:id="def-degrees-of-freedom-1">
+    <statement>
+      <p>
+        If the data collected fall into <m>n</m> categories, then we will say that there are <m>n - 1</m> <term>degrees of freedom</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Suppose our data comes from polling <m>100</m> respondents and arranging their responses into <m>n</m> categories.
+    Then, if we know how many people fall into categories <m>1, 2, \dotsc, n-1</m>, we will automatically know how many people fall into the final category, simply because the total number of respondents is already known.
+  </p>
+
+  <p>
+    For each different number of degrees of freedom, there will be a different critical value of the <m>\chi^2</m> statistic, above which we'll say that the data differs sufficiently from expectation for us to reject the distribution being tested.
+    A table of critical <m>\chi^2</m> values is provided in <xref ref="app-Chi-squared-table"/>.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose <m>100</m> people are surveyed about their favorite color among four choices.
+        The results are below.
+        Is this data consistent with the hypothesis that each of the four colors is equally likely to be a favorite?
+      </p>
+
+      <tabular halign="center">
+        <row bottom="minor" header="yes">
+          <cell>Color</cell>
+          <cell>Chosen as Favorite</cell>
+        </row>
+
+        <row>
+          <cell>Blue</cell>
+          <cell><m>37</m></cell>
+        </row>
+
+        <row>
+          <cell>Green</cell>
+          <cell><m>26</m></cell>
+        </row>
+
+        <row>
+          <cell>Purple</cell>
+          <cell><m>15</m></cell>
+        </row>
+
+        <row>
+          <cell>Red</cell>
+          <cell><m>22</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        In this case, if each color is equally likely to be a favorite, then we would expect <m>25</m> respondents to choose each color.
+        So the <m>\chi^2</m> statistic is:
+        <md>
+          <mrow> \chi^2 = \frac{(37 - 25)^2}{25} + \frac{(26 - 25)^2}{25} + \frac{(15 - 25)^2}{25} + \frac{(22 - 25)^2}{25} = 10.16.</mrow>
+        </md>
+        Since the data fall into four categories, the number of degrees of freedom is <m>4 - 1 = 3</m>.
+        From the table in <xref ref="table-Chi-squared"/>, the critical value is <m>7.815</m>.
+        Since <m>10.16 \gt 7.815</m>, our collected data is sufficiently different to reject the hypothesis of equal color preferences.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    In the previous example, we're testing an <term>extrinsic hypothesis</term>, i.e., a hypothesis made entirely without reference to the data.
+    Knowing that we planned to poll <m>100</m> people, we could determine our expected values for this hypothesis before even conducting the survey.
+    However, sometimes we need to use the collected data to estimate the value(s) of one or more parameters of a distribution.
+    In such a situation, we say the hypothesis is <term>intrinsic</term>, and we adjust our calculation of degrees of freedom.
+  </p>
+
+  <definition xml:id="def-degrees-of-freedom-2">
+    <statement>
+      <p>
+        Suppose it takes <m>m</m> measurements to fully specify the collected data, and suppose there are <m>k</m> parameters that are estimated using the data.
+        Then the number of <term>degrees of freedom</term> is <m>m - k</m>
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Is the data below consistent with a geometric distribution?
+      </p>
+
+      <tabular halign="center">
+        <row bottom="minor" header="yes">
+          <cell>Number</cell>
+          <cell>Observation</cell>
+        </row>
+
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>59</m></cell>
+        </row>
+
+        <row>
+          <cell><m>2</m></cell>
+          <cell><m>21</m></cell>
+        </row>
+
+        <row>
+          <cell><m>3</m></cell>
+          <cell><m>11</m></cell>
+        </row>
+
+        <row>
+          <cell><m>4</m></cell>
+          <cell><m>8</m></cell>
+        </row>
+
+        <row>
+          <cell><m>5</m></cell>
+          <cell><m>1</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        In order to compare this data to a geometric distribution, we would need to know the value of the parameter <m>\theta</m> for the distribution.
+        Based on the collected data, we could provide a maximum likelihood estimate:
+        <md>
+          <mrow> \widehat{\theta} \amp = \frac{59  + 21 + 11 + 8 + 1}{1 \cdot 59 + 2\cdot 21 + 3\cdot 11 + 4\cdot 8 + 5\cdot 1} </mrow>
+          <mrow> \amp = \frac{100}{171} </mrow>
+          <mrow> \amp \approx 0.58. </mrow>
+        </md>
+        We can use <xref ref="fact-geometric-probability-formula"/> with the parameter value <m>0.58</m> to generate expected values for our data.
+        For example:
+        <md>
+          <mrow> g(2; 0.58) \amp = (1 - 0.58)^{1}(0.58) = 0.2436,  </mrow>
+        </md>
+        so we would expect <m>0.2436 \times 100 = 24.36</m> observations for the number <m>2</m>.
+        The rest of the expected values are calculated similarly:
+      </p>
+
+      <tabular halign="center">
+        <row bottom="minor" header="yes">
+          <cell>Number</cell>
+          <cell>Observation</cell>
+          <cell>Expected</cell>
+        </row>
+
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>59</m></cell>
+          <cell><m>58</m></cell>
+        </row>
+
+        <row>
+          <cell><m>2</m></cell>
+          <cell><m>21</m></cell>
+          <cell><m>24.36</m></cell>
+        </row>
+
+        <row>
+          <cell><m>3</m></cell>
+          <cell><m>11</m></cell>
+          <cell><m>10.23</m></cell>
+        </row>
+
+        <row>
+          <cell><m>4</m></cell>
+          <cell><m>8</m></cell>
+          <cell><m>4.30</m></cell>
+        </row>
+
+        <row>
+          <cell><m>5</m></cell>
+          <cell><m>1</m></cell>
+          <cell><m>1.80</m></cell>
+        </row>
+      </tabular>
+
+      <p>
+        Now we can calculate the <m>\chi^2</m> statistic:
+        <md>
+          <mrow> \chi^2 \amp = \frac{(59 - 58)^2}{58} + \dotsb + \frac{(1 - 1.8)^2}{1.8} \approx 4.08.  </mrow>
+        </md>
+        With <m>5</m> categories, it takes <m>4</m> measurements to fully specify the data.
+        Then, we used the data itself to estimate the value of one parameter, <m>\widehat{\theta}</m>.
+        So the number of degrees of freedom is <m>4 - 1 = 3</m>, with critical <m>\chi^2</m> value <m>7.815</m>.
+        Since <m>4.08 \lt 7.815</m>, our data is not sufficiently different from expected to reject the hypothesis of a geometric distribution.
+      </p>
+    </statement>
+  </example>
+
+  <exercises xml:id="exercises-Chi-Squared">
+  <exercise>
+    <statement>
+      <p>
+        A store owner wants to determine how much shelf space to allocate to each of the drinks that they sell.
+        They survey their customers about their favorite drinks.
+        Is the data below consistent with the null hypothesis that each type of drink will be equally preferred?
+      </p>
+
+      <table>
+        <title></title>
+
+        <tabular>
+          <row header="yes" bottom="minor">
+            <cell halign="center">drink type</cell>
+            <cell halign="center">water</cell>
+            <cell halign="center">soda</cell>
+            <cell halign="center">tea</cell>
+            <cell halign="center">coffee</cell>
+            <cell halign="center">energy drinks</cell>
+          </row>
+
+          <row>
+            <cell halign="center">favorite</cell>
+            <cell halign="center">28</cell>
+            <cell halign="center">17</cell>
+            <cell halign="center">15</cell>
+            <cell halign="center">26</cell>
+            <cell halign="center">14</cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>
+        A particular drug is administered in 100 independent trials.
+        In each trial, the drug is administered to four people, and we count how many respond to the drug.
+        The table below shows how many trials have each different count of people who respond to the drug.
+      </p>
+
+      <table>
+        <title></title>
+
+        <tabular>
+          <row header="yes" bottom="minor">
+            <cell halign="center"># who respond to drug</cell>
+            <cell halign="center">0</cell>
+            <cell halign="center">1</cell>
+            <cell halign="center">2</cell>
+            <cell halign="center">3</cell>
+            <cell halign="center">4</cell>
+          </row>
+
+          <row>
+            <cell halign="center"># of trials</cell>
+            <cell halign="center">3</cell>
+            <cell halign="center">11</cell>
+            <cell halign="center">31</cell>
+            <cell halign="center">34</cell>
+            <cell halign="center">21</cell>
+          </row>
+        </tabular>
+      </table>
+    </introduction>
+
+
+    <task>
       <statement>
         <p>
-          A store owner wants to determine how much shelf space to allocate to each of the drinks that they sell.
-          They survey their customers about their favorite drinks.
-          Is the data below consistent with the null hypothesis that each type of drink will be equally preferred?
+          Is the data consistent with a binomial distribution with parameter <m>p = 0.7</m>?
         </p>
-
-        <table>
-          <title></title>
-
-          <tabular>
-            <row header="yes" bottom="minor">
-              <cell halign="center">drink type</cell>
-              <cell halign="center">water</cell>
-              <cell halign="center">soda</cell>
-              <cell halign="center">tea</cell>
-              <cell halign="center">coffee</cell>
-              <cell halign="center">energy drinks</cell>
-            </row>
-
-            <row>
-              <cell halign="center">favorite</cell>
-              <cell halign="center">28</cell>
-              <cell halign="center">17</cell>
-              <cell halign="center">15</cell>
-              <cell halign="center">26</cell>
-              <cell halign="center">14</cell>
-            </row>
-          </tabular>
-        </table>
       </statement>
-    </exercise>
+    </task>
 
-    <exercise>
-      <introduction>
+
+    <task>
+      <statement>
         <p>
-          A particular drug is administered in 100 independent trials.
-          In each trial, the drug is administered to four people, and we count how many respond to the drug.
-          The table below shows how many trials have each different count of people who respond to the drug.
+          What is the total number of people who have been administered the drug? What is the total number who have responded to it? What is the maximum likelihood estimation for the probability <m>p</m> that a person will respond to the drug?
         </p>
-
-        <table>
-          <title></title>
-
-          <tabular>
-            <row header="yes" bottom="minor">
-              <cell halign="center"># who respond to drug</cell>
-              <cell halign="center">0</cell>
-              <cell halign="center">1</cell>
-              <cell halign="center">2</cell>
-              <cell halign="center">3</cell>
-              <cell halign="center">4</cell>
-            </row>
-
-            <row>
-              <cell halign="center"># of trials</cell>
-              <cell halign="center">3</cell>
-              <cell halign="center">11</cell>
-              <cell halign="center">31</cell>
-              <cell halign="center">34</cell>
-              <cell halign="center">21</cell>
-            </row>
-          </tabular>
-        </table>
-      </introduction>
+      </statement>
+    </task>
 
 
-      <task>
-        <statement>
-          <p>
-            Is the data consistent with a binomial distribution with parameter <m>p = 0.7</m>?
-          </p>
-        </statement>
-      </task>
-
-
-      <task>
-        <statement>
-          <p>
-            What is the total number of people who have been administered the drug? What is the total number who have responded to it? What is the maximum likelihood estimation for the probability <m>p</m> that a person will respond to the drug?
-          </p>
-        </statement>
-      </task>
-
-
-      <task>
-        <statement>
-          <p>
-            Is the data consistent with a binomial distribution with the MLE value of <m>p</m>?
-          </p>
-        </statement>
-      </task>
-    </exercise>
-    </exercises>
-  </section>
+    <task>
+      <statement>
+        <p>
+          Is the data consistent with a binomial distribution with the MLE value of <m>p</m>?
+        </p>
+      </statement>
+    </task>
+  </exercise>
+  </exercises>
+</section>

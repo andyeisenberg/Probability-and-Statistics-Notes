@@ -1,0 +1,64 @@
+<section xml:id="app-Chi-squared-table" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title><m>\chi^2</m> Critical Values</title>
+
+  <table xml:id="table-Chi-squared">
+    <title><m>\chi^2</m> Critical Values</title>
+
+    <tabular halign="center">
+      <row bottom="minor" header="yes">
+        <cell>Degrees of Freedom</cell>
+        <cell>Critical value for <m>p = 0.05</m></cell>
+      </row>
+
+      <row>
+        <cell><m>1</m></cell>
+        <cell><m>3.841</m></cell>
+      </row>
+
+      <row>
+        <cell><m>2</m></cell>
+        <cell><m>5.991</m></cell>
+      </row>
+
+      <row>
+        <cell><m>3</m></cell>
+        <cell><m>7.815</m></cell>
+      </row>
+
+      <row>
+        <cell><m>4</m></cell>
+        <cell><m>9.488</m></cell>
+      </row>
+
+      <row>
+        <cell><m>5</m></cell>
+        <cell><m>11.070</m></cell>
+      </row>
+
+      <row>
+        <cell><m>6</m></cell>
+        <cell><m>12.592</m></cell>
+      </row>
+
+      <row>
+        <cell><m>7</m></cell>
+        <cell><m>14.067</m></cell>
+      </row>
+
+      <row>
+        <cell><m>8</m></cell>
+        <cell><m>15.507</m></cell>
+      </row>
+
+      <row>
+        <cell><m>9</m></cell>
+        <cell><m>16.919</m></cell>
+      </row>
+
+      <row>
+        <cell><m>10</m></cell>
+        <cell><m>18.307</m></cell>
+      </row>
+    </tabular>
+  </table>
+</section>

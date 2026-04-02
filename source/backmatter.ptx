@@ -33,6 +33,12 @@
     <xi:include href="./app-Phi-table.ptx" />
   </appendix>
 
+  <appendix>
+    <title><m>\chi^2</m> Critical Values Table</title>
+
+    <xi:include href="./app-Chi-squared-table.ptx" />
+  </appendix>
+
   <colophon>
     <p>
       This book was authored in <pretext />.
