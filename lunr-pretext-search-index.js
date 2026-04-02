@@ -1762,7 +1762,61 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.4",
   "title": "<span class=\"process-math\">\\(\\chi^2\\)<\/span> Test",
-  "body": " Test  Text of section.     A store owner wants to determine how much shelf space to allocate to each of the drinks that they sell. They survey their customers about their favorite drinks. Is the data below consistent with the null hypothesis that each type of drink will be equally preferred?      drink type  water  soda  tea  coffee  energy drinks    favorite  28  17  15  26  14         A particular drug is administered in 100 independent trials. In each trial, the drug is administered to four people, and we count how many respond to the drug. The table below shows how many trials have each different count of people who respond to the drug.      # who respond to drug  0  1  2  3  4    # of trials  3  11  31  34  21        Is the data consistent with a binomial distribution with parameter ?      What is the total number of people who have been administered the drug? What is the total number who have responded to it? What is the maximum likelihood estimation for the probability that a person will respond to the drug?      Is the data consistent with a binomial distribution with the MLE value of ?      "
+  "body": " Test  In our previous hypothesis tests, we've asked about the correct value of some distribution parameter. But we might also be interested in whether a particular type of distribution fits the data in the first place. In this situation, we can try to measure the extent to which the observed data differs from what would be expected under a particular distribution.    Suppose are observed data with expected values . The statistic is:     The expression directly measures the difference between an observation and its expected value. However, if we simply summed up these differences, then one observation which is higher than its expected value and another that's lower would have differences that cancel out. Squaring the term ensures that any difference contributes positively when summed together. And dividing by ensures that the differences are expressed relative to the size of the expected value. A difference of might sound like a small difference, but it would have a different interpretation if the expected value is than if the expected value is .  So the overall number is designed to be a measurement of how much the observed data differs from expectation. It seems like could be higher or lower simply as the result of the number of terms involved in the summation. How much difference is enough to reject the distribution which generated those expected values? It seems that it should depend on that number of terms.    If the data collected fall into categories, then we will say that there are  degrees of freedom .    Suppose our data comes from polling respondents and arranging their responses into categories. Then, if we know how many people fall into categories , we will automatically know how many people fall into the final category, simply because the total number of respondents is already known.  For each different number of degrees of freedom, there will be a different critical value of the statistic, above which we'll say that the data differs sufficiently from expectation for us to reject the distribution being tested. A table of critical values is provided in .    Suppose people are surveyed about their favorite color among four choices. The results are below. Is this data consistent with the hypothesis that each of the four colors is equally likely to be a favorite?    Color  Chosen as Favorite    Blue     Green     Purple     Red     In this case, if each color is equally likely to be a favorite, then we would expect respondents to choose each color. So the statistic is: Since the data fall into four categories, the number of degrees of freedom is . From the table in , the critical value is . Since , our collected data is sufficiently different to reject the hypothesis of equal color preferences.    In the previous example, we're testing an extrinsic hypothesis , i.e., a hypothesis made entirely without reference to the data. Knowing that we planned to poll people, we could determine our expected values for this hypothesis before even conducting the survey. However, sometimes we need to use the collected data to estimate the value(s) of one or more parameters of a distribution. In such a situation, we say the hypothesis is intrinsic , and we adjust our calculation of degrees of freedom.    Suppose it takes measurements to fully specify the collected data, and suppose there are parameters that are estimated using the data. Then the number of degrees of freedom is       Is the data below consistent with a geometric distribution?    Number  Observation                        In order to compare this data to a geometric distribution, we would need to know the value of the parameter for the distribution. Based on the collected data, we could provide a maximum likelihood estimate: We can use with the parameter value to generate expected values for our data. For example: so we would expect observations for the number . The rest of the expected values are calculated similarly:    Number  Observation  Expected                             Now we can calculate the statistic: With categories, it takes measurements to fully specify the data. Then, we used the data itself to estimate the value of one parameter, . So the number of degrees of freedom is , with critical value . Since , our data is not sufficiently different from expected to reject the hypothesis of a geometric distribution.       A store owner wants to determine how much shelf space to allocate to each of the drinks that they sell. They survey their customers about their favorite drinks. Is the data below consistent with the null hypothesis that each type of drink will be equally preferred?      drink type  water  soda  tea  coffee  energy drinks    favorite  28  17  15  26  14         A particular drug is administered in 100 independent trials. In each trial, the drug is administered to four people, and we count how many respond to the drug. The table below shows how many trials have each different count of people who respond to the drug.      # who respond to drug  0  1  2  3  4    # of trials  3  11  31  34  21        Is the data consistent with a binomial distribution with parameter ?      What is the total number of people who have been administered the drug? What is the total number who have responded to it? What is the maximum likelihood estimation for the probability that a person will respond to the drug?      Is the data consistent with a binomial distribution with the MLE value of ?      "
+},
+{
+  "id": "def-chi-squared",
+  "level": "2",
+  "url": "sec-Chi-Squared.html#def-chi-squared",
+  "type": "Definition",
+  "number": "5.4.1",
+  "title": "",
+  "body": "  Suppose are observed data with expected values . The statistic is:    "
+},
+{
+  "id": "def-degrees-of-freedom-1",
+  "level": "2",
+  "url": "sec-Chi-Squared.html#def-degrees-of-freedom-1",
+  "type": "Definition",
+  "number": "5.4.2",
+  "title": "",
+  "body": "  If the data collected fall into categories, then we will say that there are  degrees of freedom .   "
+},
+{
+  "id": "sec-Chi-Squared-9",
+  "level": "2",
+  "url": "sec-Chi-Squared.html#sec-Chi-Squared-9",
+  "type": "Example",
+  "number": "5.4.3",
+  "title": "",
+  "body": "  Suppose people are surveyed about their favorite color among four choices. The results are below. Is this data consistent with the hypothesis that each of the four colors is equally likely to be a favorite?    Color  Chosen as Favorite    Blue     Green     Purple     Red     In this case, if each color is equally likely to be a favorite, then we would expect respondents to choose each color. So the statistic is: Since the data fall into four categories, the number of degrees of freedom is . From the table in , the critical value is . Since , our collected data is sufficiently different to reject the hypothesis of equal color preferences.   "
+},
+{
+  "id": "sec-Chi-Squared-10",
+  "level": "2",
+  "url": "sec-Chi-Squared.html#sec-Chi-Squared-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "extrinsic hypothesis intrinsic "
+},
+{
+  "id": "def-degrees-of-freedom-2",
+  "level": "2",
+  "url": "sec-Chi-Squared.html#def-degrees-of-freedom-2",
+  "type": "Definition",
+  "number": "5.4.4",
+  "title": "",
+  "body": "  Suppose it takes measurements to fully specify the collected data, and suppose there are parameters that are estimated using the data. Then the number of degrees of freedom is    "
+},
+{
+  "id": "sec-Chi-Squared-12",
+  "level": "2",
+  "url": "sec-Chi-Squared.html#sec-Chi-Squared-12",
+  "type": "Example",
+  "number": "5.4.5",
+  "title": "",
+  "body": "  Is the data below consistent with a geometric distribution?    Number  Observation                        In order to compare this data to a geometric distribution, we would need to know the value of the parameter for the distribution. Based on the collected data, we could provide a maximum likelihood estimate: We can use with the parameter value to generate expected values for our data. For example: so we would expect observations for the number . The rest of the expected values are calculated similarly:    Number  Observation  Expected                             Now we can calculate the statistic: With categories, it takes measurements to fully specify the data. Then, we used the data itself to estimate the value of one parameter, . So the number of degrees of freedom is , with critical value . Since , our data is not sufficiently different from expected to reject the hypothesis of a geometric distribution.   "
 },
 {
   "id": "exercises-Chi-Squared-1",
@@ -1873,9 +1927,27 @@ var ptx_lunr_docs = [
   "body": " Values     0.00  0.01  0.02  0.03  0.04  0.05  0.06  0.07  0.08  0.09    0.0  0.5000  0.5040  0.5080  0.5120  0.5160  0.5199  0.5239  0.5279  0.5319  0.5359    0.1  0.5398  0.5438  0.5478  0.5517  0.5557  0.5596  0.5636  0.5675  0.5714  0.5753    0.2  0.5793  0.5832  0.5871  0.5910  0.5948  0.5987  0.6026  0.6064  0.6103  0.6141    0.3  0.6179  0.6217  0.6255  0.6293  0.6331  0.6368  0.6406  0.6443  0.6480  0.6517    0.4  0.6554  0.6591  0.6628  0.6664  0.6700  0.6736  0.6772  0.6808  0.6844  0.6879    0.5  0.6915  0.6950  0.6985  0.7019  0.7054  0.7088  0.7123  0.7157  0.7190  0.7224    0.6  0.7257  0.7291  0.7324  0.7357  0.7389  0.7422  0.7454  0.7486  0.7517  0.7549    0.7  0.7580  0.7611  0.7642  0.7673  0.7704  0.7734  0.7764  0.7794  0.7823  0.7852    0.8  0.7881  0.7910  0.7939  0.7967  0.7995  0.8023  0.8051  0.8078  0.8106  0.8133    0.9  0.8159  0.8186  0.8212  0.8238  0.8264  0.8289  0.8315  0.8340  0.8365  0.8389    1.0  0.8413  0.8438  0.8461  0.8485  0.8508  0.8531  0.8554  0.8577  0.8599  0.8621    1.1  0.8643  0.8665  0.8686  0.8708  0.8729  0.8749  0.8770  0.8790  0.8810  0.8830    1.2  0.8849  0.8869  0.8888  0.8907  0.8925  0.8944  0.8962  0.8980  0.8997  0.9015    1.3  0.9032  0.9049  0.9066  0.9082  0.9099  0.9115  0.9131  0.9147  0.9162  0.9177    1.4  0.9192  0.9207  0.9222  0.9236  0.9251  0.9265  0.9279  0.9292  0.9306  0.9319    1.5  0.9332  0.9345  0.9357  0.9370  0.9382  0.9394  0.9406  0.9418  0.9429  0.9441    1.6  0.9452  0.9463  0.9474  0.9484  0.9495  0.9505  0.9515  0.9525  0.9535  0.9545    1.7  0.9554  0.9564  0.9573  0.9582  0.9591  0.9599  0.9608  0.9616  0.9625  0.9633    1.8  0.9641  0.9649  0.9656  0.9664  0.9671  0.9678  0.9686  0.9693  0.9699  0.9706    1.9  0.9713  0.9719  0.9726  0.9732  0.9738  0.9744  0.9750  0.9756  0.9761  0.9767    2.0  0.9772  0.9778  0.9783  0.9788  0.9793  0.9798  0.9803  0.9808  0.9812  0.9817    2.1  0.9821  0.9826  0.9830  0.9834  0.9838  0.9842  0.9846  0.9850  0.9854  0.9857    2.2  0.9861  0.9864  0.9868  0.9871  0.9875  0.9878  0.9881  0.9884  0.9887  0.9890    2.3  0.9893  0.9896  0.9898  0.9901  0.9904  0.9906  0.9909  0.9911  0.9913  0.9916    2.4  0.9918  0.9920  0.9922  0.9925  0.9927  0.9929  0.9931  0.9932  0.9934  0.9936    2.5  0.9938  0.9940  0.9941  0.9943  0.9945  0.9946  0.9948  0.9949  0.9951  0.9952    2.6  0.9953  0.9955  0.9956  0.9957  0.9959  0.9960  0.9961  0.9962  0.9963  0.9964    2.7  0.9965  0.9966  0.9967  0.9968  0.9969  0.9970  0.9971  0.9972  0.9973  0.9974    2.8  0.9974  0.9975  0.9976  0.9977  0.9977  0.9978  0.9979  0.9979  0.9980  0.9981    2.9  0.9981  0.9982  0.9982  0.9983  0.9984  0.9984  0.9985  0.9985  0.9986  0.9986    3.0  0.9987  0.9987  0.9987  0.9988  0.9988  0.9989  0.9989  0.9989  0.9990  0.9990    3.1  0.9990  0.9991  0.9991  0.9991  0.9992  0.9992  0.9992  0.9992  0.9993  0.9993    3.2  0.9993  0.9993  0.9994  0.9994  0.9994  0.9994  0.9994  0.9995  0.9995  0.9995    3.3  0.9995  0.9995  0.9995  0.9996  0.9996  0.9996  0.9996  0.9996  0.9996  0.9997    3.4  0.9997  0.9997  0.9997  0.9997  0.9997  0.9997  0.9997  0.9997  0.9997  0.9998    "
 },
 {
-  "id": "backmatter-3",
+  "id": "app-Chi-squared-table",
   "level": "1",
-  "url": "backmatter-3.html",
+  "url": "app-Chi-squared-table.html",
+  "type": "Section",
+  "number": "B.1",
+  "title": "<span class=\"process-math\">\\(\\chi^2\\)<\/span> Critical Values",
+  "body": " Critical Values   Critical Values    Degrees of Freedom  Critical value for                                             "
+},
+{
+  "id": "table-Chi-squared",
+  "level": "2",
+  "url": "app-Chi-squared-table.html#table-Chi-squared",
+  "type": "Table",
+  "number": "B.1.1",
+  "title": "<span class=\"process-math\">\\(\\chi^2\\)<\/span> Critical Values",
+  "body": " Critical Values    Degrees of Freedom  Critical value for                                            "
+},
+{
+  "id": "backmatter-4",
+  "level": "1",
+  "url": "backmatter-4.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
