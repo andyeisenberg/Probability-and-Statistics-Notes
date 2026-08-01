@@ -19,67 +19,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "_static/pretext/js"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
+<meta name="twitter:title" content="Math 1044 Notes">
+<meta property="og:title" content="Math 1044 Notes">
 <meta property="book:title" content="Math 1044 Notes">
-<meta property="book:author" content="Andy Eisenberg">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.45"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -101,41 +55,58 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.12.2';
+eBookConfig.runestone_version = '8.2.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.82b0f3334d1d4a05.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.5555907f139e2014.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">Math 1044 Notes</span></a></h1>
-<p class="byline">Andy Eisenberg</p>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">Math 1044 Notes</span></a></div>
+<p class="byline">Andy Eisenberg (testing)</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<h2 class="search-results-heading">Search Results: </h2>
-<div id="searchempty" class="searchempty"><span>No results.</span></div>
-<ol id="searchresults" class="searchresults"></ol>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
 </div>
-</div>
-<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
 <p>Copy the code below to embed this page in your own website or LMS page.</p>
-<div class="embed-code-container">
-<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-Variance.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Expected-Value.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-Confidence-Intervals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-Variance.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Expected-Value.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-Confidence-Intervals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
 \newcommand{\Q}{\mathbb Q} 
@@ -152,7 +123,7 @@ eBookConfig.enable_chatcodes =  false;
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
-\newcommand{\L}{\mathcal{L}}
+\renewcommand{\L}{\mathcal{L}}
 
 \newcommand{\est}{\widehat}
 \newcommand{\lt}{&lt;}
@@ -162,26 +133,27 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Introduction.html" class="internal"><span class="codenumber">0</span> <span class="title">Introduction</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Introduction.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Introduction</span></a></div></li></ul>
+<ul id="ptx-toc-group-ch-Introduction" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Introduction.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Introduction</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Theory</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Probability" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Probability-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Set-Theory.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Set-Theory.html#exercises-Set-Theory" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Set-Theory" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Set-Theory.html#exercises-Set-Theory" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Probability.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Definition of Probability</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Probability.html#exercises-Probability" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Probability" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Probability.html#exercises-Probability" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Conditional-Probability.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Conditional Probability</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-Conditional-Probability" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Conditional-Probability.html#subsec-conditional-probability" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Conditional Probability</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Conditional-Probability.html#subsec-diagnostic-testing" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Diagnostic Testing</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Conditional-Probability.html#exercises-Conditional-Probability" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercises</span></a></div></li>
@@ -189,16 +161,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Independent-Events.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Independent Events</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Independent-Events.html#exercises-Independent-Events" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Independent-Events" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Independent-Events.html#exercises-Independent-Events" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Random-Variables.html" class="internal"><span class="codenumber">2</span> <span class="title">Random Variables</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Random-Variables" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Random-Variables-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Discrete-RVs.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Discrete Random Variables</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-Discrete-RVs" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Discrete-RVs.html#subsec-Discrete-RVs" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Discrete Random Variables</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Discrete-RVs.html#subsec-binomial-distribution" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The Binomial Distribution</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Discrete-RVs.html#subsec-geometric-distribution" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Geometric Distribution</span></a></div></li>
@@ -208,7 +181,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Continuous-RVs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Continuous Random Variables</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-Continuous-RVs" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-RVs.html#subsec-pdfs" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Probability Density Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-RVs.html#subsec-cdf" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cumulative Distribution Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-RVs.html#subsec-exponential-distribution" class="internal"><span class="codenumber">2.2.3</span> <span class="title">The Exponential Distribution</span></a></div></li>
@@ -218,16 +191,16 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Joint-Distributions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Joint Distributions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Joint-Distributions.html#exercises-Joint-Distributions" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Joint-Distributions" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Joint-Distributions.html#exercises-Joint-Distributions" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Expected-Value.html" class="internal"><span class="codenumber">3</span> <span class="title">Expected Value and Variance</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-Expected-Value">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Expected-Value.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Expected Value</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-Expected-Value" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Expected-Value.html#subsec-discrete-EV" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Discrete Expected Value</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Expected-Value.html#subsec-continuous-EV" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Continuous Expected Value</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Expected-Value.html#subsec-linearity-EV" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Linearity of Expected Value</span></a></div></li>
@@ -236,86 +209,91 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Variance.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Variance</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Variance.html#exercises-Variance" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Variance" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Variance.html#exercises-Variance" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-Covariance.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Covariance</span></a></div>
-<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Covariance.html#exercises-Covariance" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-Covariance"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Covariance.html#exercises-Covariance" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Confidence-Intervals.html" class="internal"><span class="codenumber">4</span> <span class="title">Confidence Intervals</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Confidence-Intervals" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Confidence-Intervals-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Likelihood.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Likelihood</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Likelihood.html#sec-Likelihood-20" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Likelihood" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Likelihood.html#sec-Likelihood-20" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-CLT.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Central Limit Theorem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-CLT.html#exercises-CLT" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-CLT" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-CLT.html#exercises-CLT" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Confidence-Intervals.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Confidence Intervals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Confidence-Intervals.html#exercises-Confidence-Intervals" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Confidence-Intervals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Confidence-Intervals.html#exercises-Confidence-Intervals" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Hypothesis-Testing.html" class="internal"><span class="codenumber">5</span> <span class="title">Hypothesis Testing</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Hypothesis-Testing" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Hypothesis-Testing-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-One-Sample-Tests.html" class="internal"><span class="codenumber">5.1</span> <span class="title">One Sample Tests</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-One-Sample-Tests.html#exercises-One-Sample-Tests" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-One-Sample-Tests" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-One-Sample-Tests.html#exercises-One-Sample-Tests" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Two-Sample-Tests.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Two Sample Tests</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Two-Sample-Tests.html#exercises-Two-Sample-Tests" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Two-Sample-Tests" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Two-Sample-Tests.html#exercises-Two-Sample-Tests" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Power.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Power of a Test</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Power.html#exercises-Power" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Power" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Power.html#exercises-Power" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Chi-Squared.html" class="internal"><span class="codenumber">5.4</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Test</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Chi-Squared.html#exercises-Chi-Squared" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Chi-Squared" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Chi-Squared.html#exercises-Chi-Squared" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Linear-Regression.html" class="internal"><span class="codenumber">6</span> <span class="title">Linear Regression</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Linear-Regression" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Linear-Regression-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Correlation.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Correlation</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Correlation.html#exercises-Correlation" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Correlation" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Correlation.html#exercises-Correlation" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Linear-Regression.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Linear Regression</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Linear-Regression.html#exercises-Linear-Regression" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Linear-Regression" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Linear-Regression.html#exercises-Linear-Regression" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
 <li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title"><span class="process-math">\(\Phi(z)\)</span> Table</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Phi-table.html" class="internal"><span class="codenumber">A.1</span> <span class="title"><span class="process-math">\(\Phi(z)\)</span> Table of Values</span></a></div></li></ul>
+<ul id="ptx-toc-group-backmatter-2" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Phi-table.html" class="internal"><span class="codenumber">A.1</span> <span class="title"><span class="process-math">\(\Phi(z)\)</span> Table of Values</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Critical Values Table</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Chi-squared-table.html" class="internal"><span class="codenumber">B.1</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Critical Values</span></a></div></li></ul>
+<ul id="ptx-toc-group-backmatter-3" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Chi-squared-table.html" class="internal"><span class="codenumber">B.1</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Critical Values</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Covariance"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-Covariance">
+<h1 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Covariance</span>
-</h2>
-<article class="definition definition-like" id="def-covariance"><h3 class="heading">
+</h1>
+<article class="definition definition-like" id="def-covariance"><h2 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
+</h2>
 <div class="para logical" id="def-covariance-1-1">
 <div class="para">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be random variables. The <dfn class="terminology">covariance</dfn> of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> is:</div>
 <div class="displaymath process-math" id="def-covariance-1-1-6">
@@ -323,9 +301,11 @@ eBookConfig.enable_chatcodes =  false;
 \Cov(X, Y) = \E\left[\left(X - \E(X)\right) \left(Y - \E(Y)\right)\right]. 
 \end{gather*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#def-covariance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-covariance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.3.1"><a href="#def-covariance" title="Copy heading and permalink for Definition 3.3.1" aria-label="Copy heading and permalink for Definition 3.3.1">🔗</a></div></article><div class="para logical" id="sec-Covariance-3">
+<div class="autopermalink" aria-hidden="true" data-description="Definition 3.3.1"><a tabindex="-1" href="#def-covariance" title="Copy heading and permalink for Definition 3.3.1" aria-label="Copy heading and permalink for Definition 3.3.1">🔗</a></div>
+</article>
+<div class="para logical" id="sec-Covariance-3">
 <div class="para">Let’s write <span class="process-math">\(\mu_X = \E(X)\)</span> and <span class="process-math">\(\mu_Y = \E(Y)\)</span> to make this is a bit cleaner to look at:</div>
 <div class="displaymath process-math" id="sec-Covariance-3-3">
 \begin{gather*}
@@ -339,13 +319,13 @@ eBookConfig.enable_chatcodes =  false;
 \end{align*}
 </div>
 <div class="para">One difference worth noting is that <span class="process-math">\(\Var(X)\text{,}\)</span> as the average of squared values, must always be nonnegative. The expression <span class="process-math">\((X - \mu_X)(X - \mu_X)\)</span> can be negative for combinations of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> values where one is greater than its average and the other is smaller. If this is the average behavior, then <span class="process-math">\(\Cov(X, Y)\)</span> can be negative overall. This is useful information: a negative <span class="process-math">\(\Cov(X, Y)\)</span> would imply that (on average, not necessarily always) when <span class="process-math">\(X\)</span> is larger than typical, <span class="process-math">\(Y\)</span> is smaller than typical, and vice versa.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-Covariance-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-Covariance-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Covariance-4">Also as with variance, the covariance definition formula gives us some useful insight, but it can be unwieldy to work with. There is an alternative formula, analogous to <a href="sec-Variance.html#thm-variance-formula" class="xref" data-knowl="./knowl/xref/thm-variance-formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.2">Theorem 3.2.2</a>:<div class="autopermalink" data-description="Paragraph"><a href="#sec-Covariance-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-Covariance-4">Also as with variance, the covariance definition formula gives us some useful insight, but it can be unwieldy to work with. There is an alternative formula, analogous to <a href="sec-Variance.html#thm-variance-formula" class="xref" data-knowl="./knowl/xref/thm-variance-formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.2">Theorem 3.2.2</a>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-Covariance-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="theorem theorem-like" id="thm-covariance-formula"><h3 class="heading">
+<article class="theorem theorem-like" id="thm-covariance-formula"><h2 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
+</h2>
 <div class="para logical" id="thm-covariance-formula-1-1">
 <div class="para">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be random variables. Then:</div>
 <div class="displaymath process-math" id="thm-covariance-formula-1-1-3">
@@ -353,16 +333,21 @@ eBookConfig.enable_chatcodes =  false;
 \Cov(X, Y) = \E\left(XY\right) - \E(X)\E(Y).
 \end{gather*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm-covariance-formula-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-covariance-formula-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.3.2"><a href="#thm-covariance-formula" title="Copy heading and permalink for Theorem 3.3.2" aria-label="Copy heading and permalink for Theorem 3.3.2">🔗</a></div></article><div class="para" id="sec-Covariance-6">To make use of this formula, it’s helpful to have both a joint distribution and marginal distributions. The marginal distributions let you find <span class="process-math">\(\E(X)\)</span> and <span class="process-math">\(\E(Y)\text{.}\)</span> The joint distribution lets you find <span class="process-math">\(\E(XY)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Covariance-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.3.2"><a tabindex="-1" href="#thm-covariance-formula" title="Copy heading and permalink for Theorem 3.3.2" aria-label="Copy heading and permalink for Theorem 3.3.2">🔗</a></div>
+</article>
+<div class="para" id="sec-Covariance-6">To make use of this formula, it’s helpful to have both a joint distribution and marginal distributions. The marginal distributions let you find <span class="process-math">\(\E(X)\)</span> and <span class="process-math">\(\E(Y)\text{.}\)</span> The joint distribution lets you find <span class="process-math">\(\E(XY)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-Covariance-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="sec-Covariance-7"><h3 class="heading">
+<article class="example example-like" id="sec-Covariance-7"><h2 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="sec-Covariance-7-1-1">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be indicator random variables with joint and marginal distributions below.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Covariance-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:33.3333333333333% 33.3333333333333% 33.3333333333333%;column-gap:0%;">
-<div class="sbspanel fixed-width sbspanel--top top" style=""><figure class="table table-like" id="sec-Covariance-7-1-2-1"><table class="tabular">
+</h2>
+<div class="para" id="sec-Covariance-7-1-1">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be indicator random variables with joint and marginal distributions below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-Covariance-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:33.3333333333333% 33.3333333333333% 33.3333333333333%;column-gap:0%;">
+<div class="sbspanel fixed-width sbspanel--top top" style="">
+<figure class="table table-like" id="sec-Covariance-7-1-2-1"><table class="tabular">
 <tr>
 <td class="c m b1 r1 l0 t0 lines"></td>
 <td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(X = 0\)</span></td>
@@ -379,8 +364,11 @@ eBookConfig.enable_chatcodes =  false;
 <td class="c m b0 r0 l0 t0 lines">0.5</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 3.3.4: "><a href="#sec-Covariance-7-1-2-1" title="Copy heading and permalink for Table 3.3.4: " aria-label="Copy heading and permalink for Table 3.3.4: ">🔗</a></div></figcaption></figure></div>
-<div class="sbspanel fixed-width sbspanel--top top" style=""><figure class="table table-like" id="sec-Covariance-7-1-2-2"><table class="tabular">
+<figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Table 3.3.4: "><a tabindex="-1" href="#sec-Covariance-7-1-2-1" title="Copy heading and permalink for Table 3.3.4: " aria-label="Copy heading and permalink for Table 3.3.4: ">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel fixed-width sbspanel--top top" style="">
+<figure class="table table-like" id="sec-Covariance-7-1-2-2"><table class="tabular">
 <tr>
 <td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
 <td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Pr(X = x)\)</span></td>
@@ -394,8 +382,11 @@ eBookConfig.enable_chatcodes =  false;
 <td class="c m b0 r0 l0 t0 lines">0.6</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 3.3.5: "><a href="#sec-Covariance-7-1-2-2" title="Copy heading and permalink for Table 3.3.5: " aria-label="Copy heading and permalink for Table 3.3.5: ">🔗</a></div></figcaption></figure></div>
-<div class="sbspanel fixed-width sbspanel--top top" style=""><figure class="table table-like" id="sec-Covariance-7-1-2-3"><table class="tabular">
+<figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Table 3.3.5: "><a tabindex="-1" href="#sec-Covariance-7-1-2-2" title="Copy heading and permalink for Table 3.3.5: " aria-label="Copy heading and permalink for Table 3.3.5: ">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel fixed-width sbspanel--top top" style="">
+<figure class="table table-like" id="sec-Covariance-7-1-2-3"><table class="tabular">
 <tr>
 <td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(y\)</span></td>
 <td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Pr(Y = y)\)</span></td>
@@ -409,8 +400,12 @@ eBookConfig.enable_chatcodes =  false;
 <td class="c m b0 r0 l0 t0 lines">0.7</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 3.3.6: "><a href="#sec-Covariance-7-1-2-3" title="Copy heading and permalink for Table 3.3.6: " aria-label="Copy heading and permalink for Table 3.3.6: ">🔗</a></div></figcaption></figure></div>
-</div></div> <div class="para logical" id="sec-Covariance-7-1-3">
+<figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Table 3.3.6: "><a tabindex="-1" href="#sec-Covariance-7-1-2-3" title="Copy heading and permalink for Table 3.3.6: " aria-label="Copy heading and permalink for Table 3.3.6: ">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div> 
+<div class="para logical" id="sec-Covariance-7-1-3">
 <div class="para">Since they’re indicator random variables, we can immediately see that <span class="process-math">\(\E(X) = 0.6\)</span> and <span class="process-math">\(\E(Y) = 0.7\)</span> (see <a href="sec-Expected-Value.html#example-indicator-EV" class="xref" data-knowl="./knowl/xref/example-indicator-EV.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.5">Example 3.1.5</a>). For <span class="process-math">\(\E(XY)\text{,}\)</span> we’ll traverse cell by cell through the joint distribution table, constructing products of the form <span class="process-math">\(X\)</span>-value times <span class="process-math">\(Y\)</span>-value times probability:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-indicator-EV.html" id="sec-Covariance-7-1-3-7">
 \begin{align*}
@@ -425,14 +420,18 @@ eBookConfig.enable_chatcodes =  false;
 \Cov(X, Y) = \E(XY) - \E(X)\E(Y) = 0.5 - (0.6)(0.7) = 0.08. 
 \end{gather*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-Covariance-7-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-Covariance-7-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.3.3"><a href="#sec-Covariance-7" title="Copy heading and permalink for Example 3.3.3" aria-label="Copy heading and permalink for Example 3.3.3">🔗</a></div></article><section class="exercises" id="exercises-Covariance"><h3 class="heading hide-type">
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.3.3"><a tabindex="-1" href="#sec-Covariance-7" title="Copy heading and permalink for Example 3.3.3" aria-label="Copy heading and permalink for Example 3.3.3">🔗</a></div>
+</article>
+<section class="exercises" id="exercises-Covariance">
+<h2 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
-</h3>
-<article class="exercise exercise-like" id="exercises-Covariance-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-Covariance-1-1-1">Calculate the covariance of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Covariance-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <figure class="table table-like" id="exercises-Covariance-1-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 3.3.7: "><a href="#exercises-Covariance-1-1-2" title="Copy heading and permalink for Table 3.3.7: " aria-label="Copy heading and permalink for Table 3.3.7: ">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</h2>
+<article class="exercise exercise-like" id="exercises-Covariance-1"><h3 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="exercises-Covariance-1-1-1">Calculate the covariance of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{:}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Covariance-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="table table-like" id="exercises-Covariance-1-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Table 3.3.7: "><a tabindex="-1" href="#exercises-Covariance-1-1-2" title="Copy heading and permalink for Table 3.3.7: " aria-label="Copy heading and permalink for Table 3.3.7: ">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b1 r1 l0 t0 lines"></th>
 <th scope="col" class="c m b1 r1 l0 t0 lines"><span class="process-math">\(X = 1\)</span></th>
@@ -448,9 +447,13 @@ eBookConfig.enable_chatcodes =  false;
 <td class="c m b0 r1 l0 t0 lines">0.3</td>
 <td class="c m b0 r0 l0 t0 lines">34</td>
 </tr>
-</table></div></figure><div class="autopermalink" data-description="Exercise 3.3.1"><a href="#exercises-Covariance-1" title="Copy heading and permalink for Exercise 3.3.1" aria-label="Copy heading and permalink for Exercise 3.3.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Covariance-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-Covariance-2-1-1">Calculate the covariance of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Covariance-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <figure class="table table-like" id="exercises-Covariance-2-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 3.3.8: "><a href="#exercises-Covariance-2-1-2" title="Copy heading and permalink for Table 3.3.8: " aria-label="Copy heading and permalink for Table 3.3.8: ">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</table></div>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Exercise 3.3.1"><a tabindex="-1" href="#exercises-Covariance-1" title="Copy heading and permalink for Exercise 3.3.1" aria-label="Copy heading and permalink for Exercise 3.3.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises-Covariance-2"><h3 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="exercises-Covariance-2-1-1">Calculate the covariance of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{:}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Covariance-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="table table-like" id="exercises-Covariance-2-1-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Table 3.3.8: "><a tabindex="-1" href="#exercises-Covariance-2-1-2" title="Copy heading and permalink for Table 3.3.8: " aria-label="Copy heading and permalink for Table 3.3.8: ">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b1 r1 l0 t0 lines"></th>
 <th scope="col" class="c m b1 r1 l0 t0 lines"><span class="process-math">\(X = 0\)</span></th>
@@ -469,11 +472,19 @@ eBookConfig.enable_chatcodes =  false;
 <td class="c m b0 r1 l0 t0 lines">0.2</td>
 <td class="c m b0 r0 l0 t0 lines">0.32</td>
 </tr>
-</table></div></figure><div class="autopermalink" data-description="Exercise 3.3.2"><a href="#exercises-Covariance-2" title="Copy heading and permalink for Exercise 3.3.2" aria-label="Copy heading and permalink for Exercise 3.3.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises-Covariance-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-Covariance-3-1-1">Suppose we roll a fair, 4-sided die two times. Let <span class="process-math">\(X\)</span> be the sum of the rolls, and let <span class="process-math">\(Y\)</span> be the product of the rolls. Find the covariance of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-Covariance-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="exercises-Covariance-3-1-2">[Note: Somewhat tedious.]<div class="autopermalink" data-description="Paragraph"><a href="#exercises-Covariance-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</table></div>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Exercise 3.3.2"><a tabindex="-1" href="#exercises-Covariance-2" title="Copy heading and permalink for Exercise 3.3.2" aria-label="Copy heading and permalink for Exercise 3.3.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises-Covariance-3"><h3 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="exercises-Covariance-3-1-1">Suppose we roll a fair, 4-sided die two times. Let <span class="process-math">\(X\)</span> be the sum of the rolls, and let <span class="process-math">\(Y\)</span> be the product of the rolls. Find the covariance of <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Covariance-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="exercises-Covariance-3-1-2">[Note: Somewhat tedious.]<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Covariance-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.3.3"><a href="#exercises-Covariance-3" title="Copy heading and permalink for Exercise 3.3.3" aria-label="Copy heading and permalink for Exercise 3.3.3">🔗</a></div></article><div class="autopermalink" data-description="Exercises 3.3"><a href="#exercises-Covariance" title="Copy heading and permalink for Exercises 3.3" aria-label="Copy heading and permalink for Exercises 3.3">🔗</a></div></section><div class="autopermalink" data-description="Section 3.3: Covariance"><a href="#sec-Covariance" title="Copy heading and permalink for Section 3.3: Covariance" aria-label="Copy heading and permalink for Section 3.3: Covariance">🔗</a></div></section></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.3.3"><a tabindex="-1" href="#exercises-Covariance-3" title="Copy heading and permalink for Exercise 3.3.3" aria-label="Copy heading and permalink for Exercise 3.3.3">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 3.3"><a tabindex="-1" href="#exercises-Covariance" title="Copy heading and permalink for Exercises 3.3" aria-label="Copy heading and permalink for Exercises 3.3">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 3.3: Covariance"><a tabindex="-1" href="#sec-Covariance" title="Copy heading and permalink for Section 3.3: Covariance" aria-label="Copy heading and permalink for Section 3.3: Covariance">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-Variance.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-Confidence-Intervals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

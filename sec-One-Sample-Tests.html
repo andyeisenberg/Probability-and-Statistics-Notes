@@ -19,67 +19,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "_static/pretext/js"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
+<meta name="twitter:title" content="Math 1044 Notes">
+<meta property="og:title" content="Math 1044 Notes">
 <meta property="book:title" content="Math 1044 Notes">
-<meta property="book:author" content="Andy Eisenberg">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.45"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -101,41 +55,58 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.12.2';
+eBookConfig.runestone_version = '8.2.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.82b0f3334d1d4a05.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.5555907f139e2014.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">Math 1044 Notes</span></a></h1>
-<p class="byline">Andy Eisenberg</p>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">Math 1044 Notes</span></a></div>
+<p class="byline">Andy Eisenberg (testing)</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<h2 class="search-results-heading">Search Results: </h2>
-<div id="searchempty" class="searchempty"><span>No results.</span></div>
-<ol id="searchresults" class="searchresults"></ol>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
 </div>
-</div>
-<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
 <p>Copy the code below to embed this page in your own website or LMS page.</p>
-<div class="embed-code-container">
-<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-Hypothesis-Testing.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Hypothesis-Testing.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Two-Sample-Tests.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-Hypothesis-Testing-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Hypothesis-Testing.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Two-Sample-Tests.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
 \newcommand{\Q}{\mathbb Q} 
@@ -152,7 +123,7 @@ eBookConfig.enable_chatcodes =  false;
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
-\newcommand{\L}{\mathcal{L}}
+\renewcommand{\L}{\mathcal{L}}
 
 \newcommand{\est}{\widehat}
 \newcommand{\lt}{&lt;}
@@ -162,26 +133,27 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Introduction.html" class="internal"><span class="codenumber">0</span> <span class="title">Introduction</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Introduction.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Introduction</span></a></div></li></ul>
+<ul id="ptx-toc-group-ch-Introduction" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Introduction.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Introduction</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Theory</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Probability" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Probability-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Set-Theory.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Set-Theory.html#exercises-Set-Theory" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Set-Theory" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Set-Theory.html#exercises-Set-Theory" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Probability.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Definition of Probability</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Probability.html#exercises-Probability" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Probability" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Probability.html#exercises-Probability" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Conditional-Probability.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Conditional Probability</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-Conditional-Probability" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Conditional-Probability.html#subsec-conditional-probability" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Conditional Probability</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Conditional-Probability.html#subsec-diagnostic-testing" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Diagnostic Testing</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Conditional-Probability.html#exercises-Conditional-Probability" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercises</span></a></div></li>
@@ -189,16 +161,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Independent-Events.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Independent Events</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Independent-Events.html#exercises-Independent-Events" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Independent-Events" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Independent-Events.html#exercises-Independent-Events" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Random-Variables.html" class="internal"><span class="codenumber">2</span> <span class="title">Random Variables</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Random-Variables" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Random-Variables-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Discrete-RVs.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Discrete Random Variables</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-Discrete-RVs" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Discrete-RVs.html#subsec-Discrete-RVs" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Discrete Random Variables</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Discrete-RVs.html#subsec-binomial-distribution" class="internal"><span class="codenumber">2.1.2</span> <span class="title">The Binomial Distribution</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Discrete-RVs.html#subsec-geometric-distribution" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Geometric Distribution</span></a></div></li>
@@ -208,7 +181,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Continuous-RVs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Continuous Random Variables</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-Continuous-RVs" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-RVs.html#subsec-pdfs" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Probability Density Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-RVs.html#subsec-cdf" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cumulative Distribution Functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Continuous-RVs.html#subsec-exponential-distribution" class="internal"><span class="codenumber">2.2.3</span> <span class="title">The Exponential Distribution</span></a></div></li>
@@ -218,16 +191,16 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Joint-Distributions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Joint Distributions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Joint-Distributions.html#exercises-Joint-Distributions" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Joint-Distributions" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Joint-Distributions.html#exercises-Joint-Distributions" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Expected-Value.html" class="internal"><span class="codenumber">3</span> <span class="title">Expected Value and Variance</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Expected-Value" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Expected-Value.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Expected Value</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-Expected-Value" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Expected-Value.html#subsec-discrete-EV" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Discrete Expected Value</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Expected-Value.html#subsec-continuous-EV" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Continuous Expected Value</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-Expected-Value.html#subsec-linearity-EV" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Linearity of Expected Value</span></a></div></li>
@@ -236,96 +209,105 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Variance.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Variance</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Variance.html#exercises-Variance" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Variance" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Variance.html#exercises-Variance" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Covariance.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Covariance</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Covariance.html#exercises-Covariance" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Covariance" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Covariance.html#exercises-Covariance" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Confidence-Intervals.html" class="internal"><span class="codenumber">4</span> <span class="title">Confidence Intervals</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Confidence-Intervals" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Confidence-Intervals-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Likelihood.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Likelihood</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Likelihood.html#sec-Likelihood-20" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Likelihood" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Likelihood.html#sec-Likelihood-20" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-CLT.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Central Limit Theorem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-CLT.html#exercises-CLT" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-CLT" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-CLT.html#exercises-CLT" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Confidence-Intervals.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Confidence Intervals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Confidence-Intervals.html#exercises-Confidence-Intervals" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Confidence-Intervals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Confidence-Intervals.html#exercises-Confidence-Intervals" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Hypothesis-Testing.html" class="internal"><span class="codenumber">5</span> <span class="title">Hypothesis Testing</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-Hypothesis-Testing">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Hypothesis-Testing-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-One-Sample-Tests.html" class="internal"><span class="codenumber">5.1</span> <span class="title">One Sample Tests</span></a></div>
-<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-One-Sample-Tests.html#exercises-One-Sample-Tests" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-One-Sample-Tests"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-One-Sample-Tests.html#exercises-One-Sample-Tests" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Two-Sample-Tests.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Two Sample Tests</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Two-Sample-Tests.html#exercises-Two-Sample-Tests" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Two-Sample-Tests" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Two-Sample-Tests.html#exercises-Two-Sample-Tests" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Power.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Power of a Test</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Power.html#exercises-Power" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Power" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Power.html#exercises-Power" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Chi-Squared.html" class="internal"><span class="codenumber">5.4</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Test</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Chi-Squared.html#exercises-Chi-Squared" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Chi-Squared" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Chi-Squared.html#exercises-Chi-Squared" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Linear-Regression.html" class="internal"><span class="codenumber">6</span> <span class="title">Linear Regression</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-Linear-Regression" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-Linear-Regression-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Correlation.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Correlation</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Correlation.html#exercises-Correlation" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Correlation" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Correlation.html#exercises-Correlation" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-Linear-Regression.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Linear Regression</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Linear-Regression.html#exercises-Linear-Regression" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec-Linear-Regression" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-Linear-Regression.html#exercises-Linear-Regression" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
 <li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title"><span class="process-math">\(\Phi(z)\)</span> Table</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Phi-table.html" class="internal"><span class="codenumber">A.1</span> <span class="title"><span class="process-math">\(\Phi(z)\)</span> Table of Values</span></a></div></li></ul>
+<ul id="ptx-toc-group-backmatter-2" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Phi-table.html" class="internal"><span class="codenumber">A.1</span> <span class="title"><span class="process-math">\(\Phi(z)\)</span> Table of Values</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="codenumber">B</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Critical Values Table</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Chi-squared-table.html" class="internal"><span class="codenumber">B.1</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Critical Values</span></a></div></li></ul>
+<ul id="ptx-toc-group-backmatter-3" class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="app-Chi-squared-table.html" class="internal"><span class="codenumber">B.1</span> <span class="title"><span class="process-math">\(\chi^2\)</span> Critical Values</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-One-Sample-Tests"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-One-Sample-Tests">
+<h1 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">One Sample Tests</span>
-</h2>
-<article class="example example-like" id="sec-One-Sample-Tests-2"><h3 class="heading">
+</h1>
+<article class="example example-like" id="sec-One-Sample-Tests-2"><h2 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="sec-One-Sample-Tests-2-1-1">Suppose 10% of the general population is left-handed. In a sample of 100 patients with carpal tunnel syndrome, 16 are found to be left-handed. Is this evidence that the proportion of left-handedness is higher among carpal tunnel syndrome patients than among the general population?<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h2>
+<div class="para" id="sec-One-Sample-Tests-2-1-1">Suppose 10% of the general population is left-handed. In a sample of 100 patients with carpal tunnel syndrome, 16 are found to be left-handed. Is this evidence that the proportion of left-handedness is higher among carpal tunnel syndrome patients than among the general population?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.1"><a href="#sec-One-Sample-Tests-2" title="Copy heading and permalink for Example 5.1.1" aria-label="Copy heading and permalink for Example 5.1.1">🔗</a></div></article><div class="para" id="sec-One-Sample-Tests-3">We would like to develop a framework through which we can analyze whether data we’ve collected provides evidence for a particular hypothesis. In fact, we will generally consider two hypotheses:<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.1"><a tabindex="-1" href="#sec-One-Sample-Tests-2" title="Copy heading and permalink for Example 5.1.1" aria-label="Copy heading and permalink for Example 5.1.1">🔗</a></div>
+</article>
+<div class="para" id="sec-One-Sample-Tests-3">We would like to develop a framework through which we can analyze whether data we’ve collected provides evidence for a particular hypothesis. In fact, we will generally consider two hypotheses:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="def-null-hypothesis"><h3 class="heading">
+<article class="definition definition-like" id="def-null-hypothesis"><h2 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="def-null-hypothesis-1-1">The <dfn class="terminology">null hypothesis</dfn>, often denoted <span class="process-math">\(H_0\text{,}\)</span> is the assumption that an effect being studied or proposed does not exist. The <dfn class="terminology">alternative hypothesis</dfn>, <span class="process-math">\(H_a\text{,}\)</span> is the claim that the effect does exist.<div class="autopermalink" data-description="Paragraph"><a href="#def-null-hypothesis-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h2>
+<div class="para" id="def-null-hypothesis-1-1">The <dfn class="terminology">null hypothesis</dfn>, often denoted <span class="process-math">\(H_0\text{,}\)</span> is the assumption that an effect being studied or proposed does not exist. The <dfn class="terminology">alternative hypothesis</dfn>, <span class="process-math">\(H_a\text{,}\)</span> is the claim that the effect does exist.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-null-hypothesis-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 5.1.2"><a href="#def-null-hypothesis" title="Copy heading and permalink for Definition 5.1.2" aria-label="Copy heading and permalink for Definition 5.1.2">🔗</a></div></article><div class="para logical" id="sec-One-Sample-Tests-5">
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.1.2"><a tabindex="-1" href="#def-null-hypothesis" title="Copy heading and permalink for Definition 5.1.2" aria-label="Copy heading and permalink for Definition 5.1.2">🔗</a></div>
+</article>
+<div class="para logical" id="sec-One-Sample-Tests-5">
 <div class="para">In the previous example, if we write <span class="process-math">\(\theta\)</span> for the true proportion of left-handed people among the population with carpal tunnel syndrome, the null hypothesis would be that this proportion is the same as the general population. The alternative hypothesis might be, for example, that the proportion is higher than among the general population:</div>
 <div class="displaymath process-math" id="sec-One-Sample-Tests-5-2">
 \begin{align*}
@@ -333,9 +315,9 @@ H_0: \theta \amp = 0.1 \\
 H_a: \theta \amp \gt 0.1 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-One-Sample-Tests-6">After performing an experiment, we will either accept or reject the null hypothesis based on the data we collect. Consider the following scenarios:<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-One-Sample-Tests-6">After performing an experiment, we will either accept or reject the null hypothesis based on the data we collect. Consider the following scenarios:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -358,16 +340,18 @@ H_a: \theta \amp \gt 0.1
 <td class="c m b0 r0 l0 t0 lines">correct</td>
 </tr>
 </table></div>
-<div class="para" id="sec-One-Sample-Tests-8">We’ll use the notation <span class="process-math">\(\alpha\)</span> for the probability of making a type I error, also called the <dfn class="terminology">significance level</dfn>, and <span class="process-math">\(\beta\)</span> for the probability of making a type II error. The <dfn class="terminology">power</dfn> of a test is the probability of correctly rejecting <span class="process-math">\(H_0\text{,}\)</span> i.e., <span class="process-math">\(1 - \beta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-One-Sample-Tests-8">We’ll use the notation <span class="process-math">\(\alpha\)</span> for the probability of making a type I error, also called the <dfn class="terminology">significance level</dfn>, and <span class="process-math">\(\beta\)</span> for the probability of making a type II error. The <dfn class="terminology">power</dfn> of a test is the probability of correctly rejecting <span class="process-math">\(H_0\text{,}\)</span> i.e., <span class="process-math">\(1 - \beta\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="def-p-value"><h3 class="heading">
+<article class="definition definition-like" id="def-p-value"><h2 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="def-p-value-1-1">The <dfn class="terminology"><span class="process-math">\(p\)</span>-value</dfn> is the probability of observing a result at least as extreme as measured if <span class="process-math">\(H_0\)</span> is true.<div class="autopermalink" data-description="Paragraph"><a href="#def-p-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h2>
+<div class="para" id="def-p-value-1-1">The <dfn class="terminology"><span class="process-math">\(p\)</span>-value</dfn> is the probability of observing a result at least as extreme as measured if <span class="process-math">\(H_0\)</span> is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-p-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 5.1.3"><a href="#def-p-value" title="Copy heading and permalink for Definition 5.1.3" aria-label="Copy heading and permalink for Definition 5.1.3">🔗</a></div></article><article class="example example-like" id="sec-One-Sample-Tests-10"><h3 class="heading">
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.1.3"><a tabindex="-1" href="#def-p-value" title="Copy heading and permalink for Definition 5.1.3" aria-label="Copy heading and permalink for Definition 5.1.3">🔗</a></div>
+</article>
+<article class="example example-like" id="sec-One-Sample-Tests-10"><h2 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
+</h2>
 <div class="para logical" id="sec-One-Sample-Tests-10-1-1">
 <div class="para">Continuing the previous example, under <span class="process-math">\(H_0\)</span> that <span class="process-math">\(\theta = 0.1\text{,}\)</span> the probability of seeing at least 16 left-handed people in a sample of 100 people would be:</div>
 <div class="displaymath process-math" id="sec-One-Sample-Tests-10-1-1-3">
@@ -376,9 +360,11 @@ H_a: \theta \amp \gt 0.1
 \end{gather*}
 </div>
 <div class="para">which is our <span class="process-math">\(p\)</span>-value.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.4"><a href="#sec-One-Sample-Tests-10" title="Copy heading and permalink for Example 5.1.4" aria-label="Copy heading and permalink for Example 5.1.4">🔗</a></div></article><div class="para" id="sec-One-Sample-Tests-11">The goal of our calculation is to control the chance of making a type I error by choosing a significance level cutoff, often 0.05. If our calculated <span class="process-math">\(p\)</span>-value is below the cutoff, then reject <span class="process-math">\(H_0\text{.}\)</span> Otherwise, accept <span class="process-math">\(H_0\text{.}\)</span> In the previous example, we would reject <span class="process-math">\(H_0\text{,}\)</span> because it appears that the data we collected is pretty unlikely to see if the null hypothesis were true. We would accept that, about 4% of the time if the null hypothesis <em class="emphasis">is</em> true, we would see data at least this extreme, and therefore make a mistake by rejecting <span class="process-math">\(H_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.4"><a tabindex="-1" href="#sec-One-Sample-Tests-10" title="Copy heading and permalink for Example 5.1.4" aria-label="Copy heading and permalink for Example 5.1.4">🔗</a></div>
+</article>
+<div class="para" id="sec-One-Sample-Tests-11">The goal of our calculation is to control the chance of making a type I error by choosing a significance level cutoff, often 0.05. If our calculated <span class="process-math">\(p\)</span>-value is below the cutoff, then reject <span class="process-math">\(H_0\text{.}\)</span> Otherwise, accept <span class="process-math">\(H_0\text{.}\)</span> In the previous example, we would reject <span class="process-math">\(H_0\text{,}\)</span> because it appears that the data we collected is pretty unlikely to see if the null hypothesis were true. We would accept that, about 4% of the time if the null hypothesis <em class="emphasis">is</em> true, we would see data at least this extreme, and therefore make a mistake by rejecting <span class="process-math">\(H_0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-One-Sample-Tests-12">
 <div class="para">The test we just applied is called <dfn class="terminology">1-tailed</dfn>. The alternative hypothesis <span class="process-math">\(\theta \gt 0.1\)</span> proposed that <span class="process-math">\(\theta\)</span> was different from 0.1 in a specific direction. For a <dfn class="terminology">2-tailed</dfn> test, we could use the alternative hypothesis that <span class="process-math">\(\theta \neq 0.1\text{.}\)</span> In this setting, the idea of data "at least as extreme" as what was measured is reframed. We measured 16 left-handed people in a sample of 100, which is 6 more than we would expect under the null hypothesis. So we should also include the possibility of seeing at least 6 fewer left-handed people in the sample than expected:</div>
@@ -390,15 +376,16 @@ p\text{-value} \amp = \Pr(\geq 16 \text{ left-handed people}) + \Pr(\leq 4 \text
 \end{align*}
 </div>
 <div class="para">so, using a 2-tailed test, we would fail to reject the null hypothesis.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-One-Sample-Tests-13">In suitable situations, we can also use a normal approximation via <a href="sec-CLT.html#thm-CLT" class="xref" data-knowl="./knowl/xref/thm-CLT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.1">Theorem 4.2.1</a> to calculate the <span class="process-math">\(p\)</span>-value.<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-One-Sample-Tests-13">In suitable situations, we can also use a normal approximation via <a href="sec-CLT.html#thm-CLT" class="xref" data-knowl="./knowl/xref/thm-CLT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.1">Theorem 4.2.1</a> to calculate the <span class="process-math">\(p\)</span>-value.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="sec-One-Sample-Tests-14"><h3 class="heading">
+<article class="example example-like" id="sec-One-Sample-Tests-14"><h2 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="sec-One-Sample-Tests-14-1-1">We find a coin on the street and wonder if it’s a fair coin. We flip it 100 times and see 62 heads. Is this strong evidence to reject the null hypothesis of a fair coin at a 0.05 significance level?<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="sec-One-Sample-Tests-14-1-2">
+</h2>
+<div class="para" id="sec-One-Sample-Tests-14-1-1">We find a coin on the street and wonder if it’s a fair coin. We flip it 100 times and see 62 heads. Is this strong evidence to reject the null hypothesis of a fair coin at a 0.05 significance level?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="sec-One-Sample-Tests-14-1-2">
 <div class="para">Let <span class="process-math">\(S\)</span> be the random variable which counts the number of heads in 100 flips. The null hypothesis <span class="process-math">\(H_0\)</span> of a fair coin would mean the parameter <span class="process-math">\(\theta = \Pr(\text{heads}) = 0.5\text{.}\)</span> (We’ll avoid the letter <span class="process-math">\(p\)</span> for the parameter to prevent confusion with the new term, <span class="process-math">\(p\)</span>-value.) So:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-CLT.html" id="sec-One-Sample-Tests-14-1-2-6">
 \begin{align*}
@@ -417,41 +404,65 @@ p\text{-value} \amp = \Pr(\geq 16 \text{ left-handed people}) + \Pr(\leq 4 \text
 </div>
 <div class="para">so this is strong enough evidence to reject <span class="process-math">\(H_0\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-One-Sample-Tests-14-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-One-Sample-Tests-14-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 5.1.5"><a href="#sec-One-Sample-Tests-14" title="Copy heading and permalink for Example 5.1.5" aria-label="Copy heading and permalink for Example 5.1.5">🔗</a></div></article><section class="exercises" id="exercises-One-Sample-Tests"><h3 class="heading hide-type">
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.5"><a tabindex="-1" href="#sec-One-Sample-Tests-14" title="Copy heading and permalink for Example 5.1.5" aria-label="Copy heading and permalink for Example 5.1.5">🔗</a></div>
+</article>
+<section class="exercises" id="exercises-One-Sample-Tests">
+<h2 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
-</h3>
-<article class="exercise exercise-like" id="exercises-One-Sample-Tests-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises-One-Sample-Tests-1-1"><div class="para" id="exercises-One-Sample-Tests-1-1-1">In each of the following scenarios, determine whether we should use a 1-tailed test or a 2-tailed test.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
-<article class="task exercise-like" id="exercises-One-Sample-Tests-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="exercises-One-Sample-Tests-1-2-1-1">We have a coin which we’ve flipped many times, seeing an above-average number of heads. We suspect the coin comes up heads more often than a fair coin would.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h2>
+<article class="exercise exercise-like" id="exercises-One-Sample-Tests-1"><h3 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="introduction" id="exercises-One-Sample-Tests-1-1">
+<div class="para" id="exercises-One-Sample-Tests-1-1-1">In each of the following scenarios, determine whether we should use a 1-tailed test or a 2-tailed test.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 5.1.1.a"><a href="#exercises-One-Sample-Tests-1-2" title="Copy heading and permalink for Task 5.1.1.a" aria-label="Copy heading and permalink for Task 5.1.1.a">🔗</a></div></article><article class="task exercise-like" id="exercises-One-Sample-Tests-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="exercises-One-Sample-Tests-1-3-1-1">We find a coin on the street and wonder whether or not it’s a fair coin.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 5.1.1.b"><a href="#exercises-One-Sample-Tests-1-3" title="Copy heading and permalink for Task 5.1.1.b" aria-label="Copy heading and permalink for Task 5.1.1.b">🔗</a></div></article><article class="task exercise-like" id="exercises-One-Sample-Tests-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="exercises-One-Sample-Tests-1-4-1-1">We suspect there will be a difference in average weight of mice caught during the summer versus during the winter.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="exercises-One-Sample-Tests-1-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="exercises-One-Sample-Tests-1-2-1-1">We have a coin which we’ve flipped many times, seeing an above-average number of heads. We suspect the coin comes up heads more often than a fair coin would.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 5.1.1.c"><a href="#exercises-One-Sample-Tests-1-4" title="Copy heading and permalink for Task 5.1.1.c" aria-label="Copy heading and permalink for Task 5.1.1.c">🔗</a></div></article><article class="task exercise-like" id="exercises-One-Sample-Tests-1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para" id="exercises-One-Sample-Tests-1-5-1-1">In a medical study, a group of patients are gathered and the proportion experiencing particular symptoms is measured. A new drug intended to eliminate these symptoms is administered, after which the proportion experiencing symptoms is measured again.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 5.1.1.a"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-2" title="Copy heading and permalink for Task 5.1.1.a" aria-label="Copy heading and permalink for Task 5.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises-One-Sample-Tests-1-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="exercises-One-Sample-Tests-1-3-1-1">We find a coin on the street and wonder whether or not it’s a fair coin.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 5.1.1.d"><a href="#exercises-One-Sample-Tests-1-5" title="Copy heading and permalink for Task 5.1.1.d" aria-label="Copy heading and permalink for Task 5.1.1.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 5.1.1"><a href="#exercises-One-Sample-Tests-1" title="Copy heading and permalink for Exercise 5.1.1" aria-label="Copy heading and permalink for Exercise 5.1.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises-One-Sample-Tests-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-One-Sample-Tests-2-1-1">Suppose we find a coin and wonder whether it’s fair. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 5.1.1.b"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-3" title="Copy heading and permalink for Task 5.1.1.b" aria-label="Copy heading and permalink for Task 5.1.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises-One-Sample-Tests-1-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="exercises-One-Sample-Tests-1-4-1-1">We suspect there will be a difference in average weight of mice caught during the summer versus during the winter.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.1.2"><a href="#exercises-One-Sample-Tests-2" title="Copy heading and permalink for Exercise 5.1.2" aria-label="Copy heading and permalink for Exercise 5.1.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises-One-Sample-Tests-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-One-Sample-Tests-3-1-1">Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 5.1.1.c"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-4" title="Copy heading and permalink for Task 5.1.1.c" aria-label="Copy heading and permalink for Task 5.1.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises-One-Sample-Tests-1-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="exercises-One-Sample-Tests-1-5-1-1">In a medical study, a group of patients are gathered and the proportion experiencing particular symptoms is measured. A new drug intended to eliminate these symptoms is administered, after which the proportion experiencing symptoms is measured again.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.1.3"><a href="#exercises-One-Sample-Tests-3" title="Copy heading and permalink for Exercise 5.1.3" aria-label="Copy heading and permalink for Exercise 5.1.3">🔗</a></div></article><article class="exercise exercise-like" id="exercises-One-Sample-Tests-4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-One-Sample-Tests-4-1-1">Suppose we find a six-sided die and wonder whether it’s fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. If we roll 22 1’s, should we accept or reject the null hypothesis of a fair die at a significance level of 0.05?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 5.1.1.d"><a tabindex="-1" href="#exercises-One-Sample-Tests-1-5" title="Copy heading and permalink for Task 5.1.1.d" aria-label="Copy heading and permalink for Task 5.1.1.d">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.1"><a tabindex="-1" href="#exercises-One-Sample-Tests-1" title="Copy heading and permalink for Exercise 5.1.1" aria-label="Copy heading and permalink for Exercise 5.1.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises-One-Sample-Tests-2"><h3 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="exercises-One-Sample-Tests-2-1-1">Suppose we find a coin and wonder whether it’s fair. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.1.4"><a href="#exercises-One-Sample-Tests-4" title="Copy heading and permalink for Exercise 5.1.4" aria-label="Copy heading and permalink for Exercise 5.1.4">🔗</a></div></article><article class="exercise exercise-like" id="exercises-One-Sample-Tests-5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-One-Sample-Tests-5-1-1">Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in<span class="process-math">\(^2\text{.}\)</span> We suspect that growing this plant in a greenhouse will increase its height. A sample of 50 plants grown in a greenhouse has an average height of 40 in. Is this significant enough data to reject the null hypothesis of equal means at the <span class="process-math">\(p = 0.05\)</span> significance level?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-One-Sample-Tests-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2"><a tabindex="-1" href="#exercises-One-Sample-Tests-2" title="Copy heading and permalink for Exercise 5.1.2" aria-label="Copy heading and permalink for Exercise 5.1.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises-One-Sample-Tests-3"><h3 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="exercises-One-Sample-Tests-3-1-1">Suppose we have a coin which we suspect comes up heads more often than a fair coin would. As a first test, we decide to flip the coin 200 times and count the number of heads. If we see 112 heads, should we accept or reject the null hypothesis of a fair coin at a significance level of 0.05?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 5.1.5"><a href="#exercises-One-Sample-Tests-5" title="Copy heading and permalink for Exercise 5.1.5" aria-label="Copy heading and permalink for Exercise 5.1.5">🔗</a></div></article><div class="autopermalink" data-description="Exercises 5.1"><a href="#exercises-One-Sample-Tests" title="Copy heading and permalink for Exercises 5.1" aria-label="Copy heading and permalink for Exercises 5.1">🔗</a></div></section><div class="autopermalink" data-description="Section 5.1: One Sample Tests"><a href="#sec-One-Sample-Tests" title="Copy heading and permalink for Section 5.1: One Sample Tests" aria-label="Copy heading and permalink for Section 5.1: One Sample Tests">🔗</a></div></section></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.3"><a tabindex="-1" href="#exercises-One-Sample-Tests-3" title="Copy heading and permalink for Exercise 5.1.3" aria-label="Copy heading and permalink for Exercise 5.1.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises-One-Sample-Tests-4"><h3 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="exercises-One-Sample-Tests-4-1-1">Suppose we find a six-sided die and wonder whether it’s fair. As a first test, we decide to roll the die 100 times and count the number of times it comes up 1. If we roll 22 1’s, should we accept or reject the null hypothesis of a fair die at a significance level of 0.05?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.4"><a tabindex="-1" href="#exercises-One-Sample-Tests-4" title="Copy heading and permalink for Exercise 5.1.4" aria-label="Copy heading and permalink for Exercise 5.1.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises-One-Sample-Tests-5"><h3 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="exercises-One-Sample-Tests-5-1-1">Suppose a particular plant when grown outdoors has an average height of 39 in with a variance of 20 in<span class="process-math">\(^2\text{.}\)</span> We suspect that growing this plant in a greenhouse will increase its height. A sample of 50 plants grown in a greenhouse has an average height of 40 in. Is this significant enough data to reject the null hypothesis of equal means at the <span class="process-math">\(p = 0.05\)</span> significance level?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-One-Sample-Tests-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.5"><a tabindex="-1" href="#exercises-One-Sample-Tests-5" title="Copy heading and permalink for Exercise 5.1.5" aria-label="Copy heading and permalink for Exercise 5.1.5">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 5.1"><a tabindex="-1" href="#exercises-One-Sample-Tests" title="Copy heading and permalink for Exercises 5.1" aria-label="Copy heading and permalink for Exercises 5.1">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 5.1: One Sample Tests"><a tabindex="-1" href="#sec-One-Sample-Tests" title="Copy heading and permalink for Section 5.1: One Sample Tests" aria-label="Copy heading and permalink for Section 5.1: One Sample Tests">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="ch-Hypothesis-Testing.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Two-Sample-Tests.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-Hypothesis-Testing-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Two-Sample-Tests.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
