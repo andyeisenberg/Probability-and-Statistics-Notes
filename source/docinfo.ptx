@@ -37,7 +37,7 @@
     \DeclareMathOperator{\E}{E}
     \DeclareMathOperator{\Var}{Var}
     \DeclareMathOperator{\Cov}{Cov}
-    \newcommand{\L}{\mathcal{L}}
+    \renewcommand{\L}{\mathcal{L}}
     <!-- to indicate an estimator -->
     \newcommand{\est}{\widehat}
   </macros>
