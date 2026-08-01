@@ -254,6 +254,12 @@
         </tabular>
       </table>
     </statement>
+
+    <answer>
+      <p>
+        <m>\chi^2 = 8.5</m>, the critical value with 4 degrees of freedom is <m>9.488</m>, so the data is consistent with the null hypothesis.
+      </p>
+    </answer>
   </exercise>
 
   <exercise>
