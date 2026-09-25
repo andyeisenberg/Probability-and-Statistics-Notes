@@ -55,22 +55,22 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.2.0';
+eBookConfig.runestone_version = '8.3.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.82b0f3334d1d4a05.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.5555907f139e2014.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/prefix-runtime.8b982cdcb4aa84b9.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.0499040fbb8ea56b.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
 <div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">Math 1044 Notes</span></a></div>
-<p class="byline">Andy Eisenberg (testing)</p>
+<p class="byline">Andy Eisenberg</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
 <div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -387,7 +387,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="solutions">
 <details id="sec-Probability-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
-<div class="para" id="sec-Probability-8-2-1">Without assuming the distribution is fair (i.e., that each value <span class="process-math">\(1, 2, \dotsc, 10\)</span>) has probability <span class="process-math">\(1/10\)</span> of occurring), we don’t have enough information to answer this question.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-Probability-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-Probability-8-2-1">Without assuming the distribution is fair (i.e., that each value <span class="process-math">\(1, 2, \dotsc, 10\)</span> ) has probability <span class="process-math">\(1/10\)</span> of occurring), we don’t have enough information to answer this question.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-Probability-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec-Probability-8-2-2">In fact, the situation is even more vague than that: the sample space itself is unclear. Are we only allowed to pick integer values? What about fractions like <span class="process-math">\(7/2\text{?}\)</span> What about irrational numbers like <span class="process-math">\(\pi\text{?}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-Probability-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -446,12 +446,46 @@ eBookConfig.enable_chatcodes =  false;
 </tr>
 </table></div>
 </figure><div class="solutions">
-<details id="exercises-Probability-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="answer solution-like knowl__content">
-<div class="para" id="exercises-Probability-1-2-1">
-<span class="process-math">\(\Pr(A) = 0.45, \Pr(B) = 0.4, \Pr(A \cup B) = 0.6, \Pr(A \cap B) = 0.25.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<details id="exercises-Probability-1-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="exercises-Probability-1-2-1">Remember that, to calculate the probability of an event, you should add up the probabilities of each outcome in the event.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 1.2.1.1"><a tabindex="-1" href="#exercises-Probability-1-2" title="Copy heading and permalink for Answer 1.2.1.1" aria-label="Copy heading and permalink for Answer 1.2.1.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 1.2.1.1"><a tabindex="-1" href="#exercises-Probability-1-2" title="Copy heading and permalink for Hint 1.2.1.1" aria-label="Copy heading and permalink for Hint 1.2.1.1">🔗</a></div>
+</div></details>
+<details id="exercises-Probability-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="exercises-Probability-1-3-1">
+<span class="process-math">\(\Pr(A) = 0.45, \Pr(B) = 0.4, \Pr(A \cup B) = 0.6, \Pr(A \cap B) = 0.25.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 1.2.1.1"><a tabindex="-1" href="#exercises-Probability-1-3" title="Copy heading and permalink for Answer 1.2.1.1" aria-label="Copy heading and permalink for Answer 1.2.1.1">🔗</a></div>
+</div></details>
+<details id="exercises-Probability-1-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="exercises-Probability-1-4-1">
+<div class="displaymath process-math" id="exercises-Probability-1-4-1-1">
+\begin{align*}
+\Pr(A) \amp = \Pr(1) + \Pr(3) + \Pr(7) + \Pr(8) \\
+\amp = 0.1 + 0.2 + 0.05 + 0.1 \\
+\amp = 0.45 \\
+\Pr(B) \amp = \Pr(2) + \Pr(3) + \Pr(6) + \Pr(7) \\
+\amp = 0.05 + 0.2 + 0.1 + 0.05 \\
+\amp = 0.4 
+\end{align*}
+</div>
+<div class="para">The other events are <span class="process-math">\(A\cup B = \{1, 2, 3, 6, 7, 8\}\)</span> and <span class="process-math">\(A\cap B = \{3, 7\}\text{,}\)</span> so:</div>
+<div class="displaymath process-math" id="exercises-Probability-1-4-1-4">
+\begin{align*}
+\Pr(A \cup B) \amp = \Pr(1) + \Pr(2) + \Pr(3) + \Pr(6) + \Pr(7) + \Pr(8) \\
+\amp = 0.1 + 0.05 + 0.2 + 0.1 + 0.05 + 0.1 \\
+\amp = 0.6 \\
+\Pr(A \cap B) \amp = \Pr(3) + \Pr(7) \\
+\amp = 0.2 + 0.05 \\
+\amp = 0.25 
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.1.1"><a tabindex="-1" href="#exercises-Probability-1-4" title="Copy heading and permalink for Solution 1.2.1.1" aria-label="Copy heading and permalink for Solution 1.2.1.1">🔗</a></div>
 </div></details>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 1.2.1"><a tabindex="-1" href="#exercises-Probability-1" title="Copy heading and permalink for Exercise 1.2.1" aria-label="Copy heading and permalink for Exercise 1.2.1">🔗</a></div>
@@ -544,7 +578,7 @@ eBookConfig.enable_chatcodes =  false;
 </article>
 <article class="exercise exercise-like" id="exercises-Probability-3"><h3 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="introduction" id="exercises-Probability-3-1">
-<div class="para" id="exercises-Probability-3-1-1">Suppose we roll a die two times. Answer the questions below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises-Probability-3-1-1">Suppose we roll a fair 6-sided die two times. Answer the questions below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 <article class="task exercise-like" id="exercises-Probability-3-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
@@ -590,8 +624,15 @@ eBookConfig.enable_chatcodes =  false;
 <div class="solutions">
 <details id="exercises-Probability-3-4-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
-<div class="para logical" id="exercises-Probability-3-4-2-1">
-<div class="displaymath process-math" id="exercises-Probability-3-4-2-1-1">
+<div class="para" id="exercises-Probability-3-4-2-1">
+<span class="process-math">\(\Pr(A) = \frac{5}{12}, \Pr(B) = \frac{1}{2}, \Pr(A \cap B) = \frac{1}{6}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 1.2.3.c.1"><a tabindex="-1" href="#exercises-Probability-3-4-2" title="Copy heading and permalink for Answer 1.2.3.c.1" aria-label="Copy heading and permalink for Answer 1.2.3.c.1">🔗</a></div>
+</div></details>
+<details id="exercises-Probability-3-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="exercises-Probability-3-4-3-1">
+<div class="displaymath process-math" id="exercises-Probability-3-4-3-1-1">
 \begin{align*}
 A = \{ \amp (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), \\
 \amp (2, 3), (2, 4), (2, 5), (2, 6), \\
@@ -607,9 +648,9 @@ A \cap B = \{ \amp (2, 3), (2, 4), (2, 5), (2, 6), \\
 </div>
 <div class="para">Therefore <span class="process-math">\(\Pr(A) = \frac{15}{36} = \frac{5}{12}, \Pr(B) = \frac{18}{36} = \frac{1}{2}, \Pr(A \cap B) = \frac{6}{36} = \frac{1}{6}.\)</span>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-3-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 1.2.3.c.1"><a tabindex="-1" href="#exercises-Probability-3-4-2" title="Copy heading and permalink for Answer 1.2.3.c.1" aria-label="Copy heading and permalink for Answer 1.2.3.c.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.3.c.1"><a tabindex="-1" href="#exercises-Probability-3-4-3" title="Copy heading and permalink for Solution 1.2.3.c.1" aria-label="Copy heading and permalink for Solution 1.2.3.c.1">🔗</a></div>
 </div></details>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Task 1.2.3.c"><a tabindex="-1" href="#exercises-Probability-3-4" title="Copy heading and permalink for Task 1.2.3.c" aria-label="Copy heading and permalink for Task 1.2.3.c">🔗</a></div>
@@ -653,6 +694,52 @@ A \cap B = \{ \amp (2, 3), (2, 4), (2, 5), (2, 6), \\
 </table></div>
 </figure><div class="autopermalink" aria-hidden="true" data-description="Answer 1.2.4.1"><a tabindex="-1" href="#exercises-Probability-4-2" title="Copy heading and permalink for Answer 1.2.4.1" aria-label="Copy heading and permalink for Answer 1.2.4.1">🔗</a></div>
 </div></details>
+<details id="exercises-Probability-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="exercises-Probability-4-3-1">
+<div class="para">Let <span class="process-math">\(\Pr(1) = x\text{.}\)</span> Then <span class="process-math">\(\Pr(2) = 2 \Pr(1) = 2x\text{,}\)</span> and <span class="process-math">\(\Pr(3) = 3\Pr(1) = 3x\text{,}\)</span> and so on. So the total probability in the space is:</div>
+<div class="displaymath process-math" id="exercises-Probability-4-3-1-4">
+\begin{align*}
+Pr(\Omega) \amp = \Pr(1) + \Pr(2) + \Pr(3) + \Pr(4) + \Pr(5) + \Pr(6) \\
+\amp = x + 2x + 3x + 4x + 5x + 6x \\
+\amp = 21x 
+\end{align*}
+</div>
+<div class="para">Since the total probability must add up to 1, we have <span class="process-math">\(1 = 21x\text{,}\)</span> so <span class="process-math">\(x = \frac{1}{21}\text{,}\)</span> and we can calculate the rest of the probabilities from there.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="exercises-Probability-4-3-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Probability Distribution for a Linearly Scaled Die<div class="autopermalink" aria-hidden="true" data-description="Table 1.2.10: Probability Distribution for a Linearly Scaled Die"><a tabindex="-1" href="#exercises-Probability-4-3-2" title="Copy heading and permalink for Table 1.2.10: Probability Distribution for a Linearly Scaled Die" aria-label="Copy heading and permalink for Table 1.2.10: Probability Distribution for a Linearly Scaled Die">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Pr(x)\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1/21\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2/21\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3/21\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">4</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(4/21\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(5/21\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(6/21\)</span></td>
+</tr>
+</table></div>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.4.1"><a tabindex="-1" href="#exercises-Probability-4-3" title="Copy heading and permalink for Solution 1.2.4.1" aria-label="Copy heading and permalink for Solution 1.2.4.1">🔗</a></div>
+</div></details>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 1.2.4"><a tabindex="-1" href="#exercises-Probability-4" title="Copy heading and permalink for Exercise 1.2.4" aria-label="Copy heading and permalink for Exercise 1.2.4">🔗</a></div>
 </article>
@@ -662,7 +749,7 @@ A \cap B = \{ \amp (2, 3), (2, 4), (2, 5), (2, 6), \\
 <div class="solutions">
 <details id="exercises-Probability-5-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
-<figure class="table table-like" id="exercises-Probability-5-2-1"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Probability Distribution for an Even-biased Die<div class="autopermalink" aria-hidden="true" data-description="Table 1.2.10: Probability Distribution for an Even-biased Die"><a tabindex="-1" href="#exercises-Probability-5-2-1" title="Copy heading and permalink for Table 1.2.10: Probability Distribution for an Even-biased Die" aria-label="Copy heading and permalink for Table 1.2.10: Probability Distribution for an Even-biased Die">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="exercises-Probability-5-2-1"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Probability Distribution for an Even-biased Die<div class="autopermalink" aria-hidden="true" data-description="Table 1.2.11: Probability Distribution for an Even-biased Die"><a tabindex="-1" href="#exercises-Probability-5-2-1" title="Copy heading and permalink for Table 1.2.11: Probability Distribution for an Even-biased Die" aria-label="Copy heading and permalink for Table 1.2.11: Probability Distribution for an Even-biased Die">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
 <td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Pr(x)\)</span></td>
@@ -694,20 +781,90 @@ A \cap B = \{ \amp (2, 3), (2, 4), (2, 5), (2, 6), \\
 </table></div>
 </figure><div class="autopermalink" aria-hidden="true" data-description="Answer 1.2.5.1"><a tabindex="-1" href="#exercises-Probability-5-2" title="Copy heading and permalink for Answer 1.2.5.1" aria-label="Copy heading and permalink for Answer 1.2.5.1">🔗</a></div>
 </div></details>
+<details id="exercises-Probability-5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="exercises-Probability-5-3-1">
+<div class="para">Let <span class="process-math">\(\Pr(1) = x\text{.}\)</span> Then <span class="process-math">\(\Pr(3) = x\)</span> and <span class="process-math">\(\Pr(5) = x\text{,}\)</span> since all odd rolls must have the same probability. The even rolls must have twice the probability, so <span class="process-math">\(\Pr(2) = \Pr(4) = \Pr(6) = 2x\text{.}\)</span> Now:</div>
+<div class="displaymath process-math" id="exercises-Probability-5-3-1-5">
+\begin{align*}
+Pr(\Omega) \amp = \Pr(1) + \Pr(2) + \Pr(3) + \Pr(4) + \Pr(5) + \Pr(6) \\
+\amp = x + 2x + x + 2x + x + 2x \\
+\amp = 9x 
+\end{align*}
+</div>
+<div class="para">Since the total probability must add up to 1, we have <span class="process-math">\(1 = 9x\text{,}\)</span> so <span class="process-math">\(x = \frac{1}{9}\text{,}\)</span> and we can calculate the rest of the probabilities from there.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="exercises-Probability-5-3-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Probability Distribution for an Even-biased Die<div class="autopermalink" aria-hidden="true" data-description="Table 1.2.12: Probability Distribution for an Even-biased Die"><a tabindex="-1" href="#exercises-Probability-5-3-2" title="Copy heading and permalink for Table 1.2.12: Probability Distribution for an Even-biased Die" aria-label="Copy heading and permalink for Table 1.2.12: Probability Distribution for an Even-biased Die">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Pr(x)\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1/9\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2/9\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1/9\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">4</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2/9\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1/9\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2/9\)</span></td>
+</tr>
+</table></div>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.5.1"><a tabindex="-1" href="#exercises-Probability-5-3" title="Copy heading and permalink for Solution 1.2.5.1" aria-label="Copy heading and permalink for Solution 1.2.5.1">🔗</a></div>
+</div></details>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 1.2.5"><a tabindex="-1" href="#exercises-Probability-5" title="Copy heading and permalink for Exercise 1.2.5" aria-label="Copy heading and permalink for Exercise 1.2.5">🔗</a></div>
 </article>
 <article class="exercise exercise-like" id="exercises-Probability-6"><h3 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para" id="exercises-Probability-6-1-1">A toxin molecule inside a cell has a 0.3 probability of leaving the cell during a 1-minute period. For each value of <span class="process-math">\(n = 1, 2, 3, \dotsc\text{,}\)</span> find the probability of the toxin molecule leaving the cell during the <span class="process-math">\(n\)</span>th minute. What is the probability of the molecule leaving the cell during the first 3 minutes?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises-Probability-6-1-1">A toxin molecule inside a cell has a 0.3 probability of leaving the cell during a 1-minute period. For each value of <span class="process-math">\(n = 1, 2, 3, \dotsc\text{,}\)</span> find the probability of the toxin molecule leaving the cell during the <span class="process-math">\(n\)</span> th minute. What is the probability of the molecule leaving the cell during the first 3 minutes?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises-Probability-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
-<div class="para" id="exercises-Probability-6-2-1">For short, write <span class="process-math">\(\Pr(n)\)</span> to mean the probability of the toxin molecule leaving during the <span class="process-math">\(n\)</span>th minute. Then <span class="process-math">\(\Pr(n) = (0.7)^{n - 1} (0.3).\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="exercises-Probability-6-2-2">The probability of leaving during the first 3 minutes is <span class="process-math">\(\Pr(1) + \Pr(2) + \Pr(3) = 0.657.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises-Probability-6-2-1">Write <span class="process-math">\(T\)</span> for the minute that the toxin molecule leaves the cell. Then <span class="process-math">\(\Pr(T = n) = (0.7)^{n - 1} (0.3)\text{,}\)</span> and <span class="process-math">\(\Pr(T \leq 3) = 0.657\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Answer 1.2.6.1"><a tabindex="-1" href="#exercises-Probability-6-2" title="Copy heading and permalink for Answer 1.2.6.1" aria-label="Copy heading and permalink for Answer 1.2.6.1">🔗</a></div>
+</div></details>
+<details id="exercises-Probability-6-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="exercises-Probability-6-3-1">Write <span class="process-math">\(T\)</span> for the minute that the toxin molecule leaves the cell. We’re told that the toxin molecule has probability <span class="process-math">\(0.3\)</span> of leaving during each minute. Therefore, the probability of remaining during a particular minute is <span class="process-math">\(1 - 0.3 = 0.7\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exercises-Probability-6-3-2">
+<div class="para">For the toxin molecule to leave the cell during minute <span class="process-math">\(n\text{,}\)</span> it must remain for minutes <span class="process-math">\(1, 2, \dotsc, n - 1\text{,}\)</span> and then leave during minute <span class="process-math">\(n\text{.}\)</span> The probability to remain each minute is <span class="process-math">\(0.7\text{,}\)</span> so we must multiply <span class="process-math">\(n - 1\)</span> copies of <span class="process-math">\(0.7\text{.}\)</span> Then the probability of leaving is <span class="process-math">\(0.3\text{,}\)</span> so we multiply by a factor of <span class="process-math">\(0.3\text{,}\)</span> yielding the formula:</div>
+<div class="displaymath process-math" id="exercises-Probability-6-3-2-9">
+\begin{gather*}
+\Pr(T = n) = (0.7)^{n - 1}(0.3). 
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-6-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exercises-Probability-6-3-3">
+<div class="para">Then, the probaiblity of the molecule leaving within the first three minutes will be:</div>
+<div class="displaymath process-math" id="exercises-Probability-6-3-3-1">
+\begin{align*}
+\Pr(T \leq 3) \amp = \Pr(T = 1) + \Pr(T = 2) + \Pr(T = 3) \\
+\amp = 0.3 + (0.7)(0.3) + (0.7)^2(0.3) \\
+\amp = 0.657. 
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises-Probability-6-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.6.1"><a tabindex="-1" href="#exercises-Probability-6-3" title="Copy heading and permalink for Solution 1.2.6.1" aria-label="Copy heading and permalink for Solution 1.2.6.1">🔗</a></div>
 </div></details>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 1.2.6"><a tabindex="-1" href="#exercises-Probability-6" title="Copy heading and permalink for Exercise 1.2.6" aria-label="Copy heading and permalink for Exercise 1.2.6">🔗</a></div>
